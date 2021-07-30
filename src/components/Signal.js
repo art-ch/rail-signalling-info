@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 // TODO: refactor [aspect === '...'] with [aspect.match(//g,(match)=>{...})];
 // ideally 1 fuction 2 handle everything [const functionName = (parameter) => {...}]
+// CONSIDER: play with different green and maybe red hex codes
 
 const Signal = ({ aspect }) => {
   return (
