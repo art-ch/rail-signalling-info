@@ -16,7 +16,7 @@ I also have an idea to create a quiz tool that would utilize all the info websit
 
 # State of development
 
-Initial asset (signal functionality) creation
+Initial asset creation
 
 
 ----------------------------------------------------------------------------------------------------------------------------------
