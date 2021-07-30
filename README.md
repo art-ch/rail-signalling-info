@@ -1,3 +1,26 @@
+# Rail Signalling info
+
+This is my first project using React.
+
+# History
+
+I'm a huge railway fan for as long as I can remember myself. My favorite part about railway is signalling. When I was small I created pictures of each aspect on a small piece of paper and sadly, with years passing by, lost them. 
+
+Now, that I started to learn web development, I decided to create a unified place for information about railway signalling systems around the world that anyone can access at any time. All info will be taken from third party websites and all links for original sources will be provided.
+
+# Side note
+
+I also have an idea to create a quiz tool that would utilize all the info website provides.
+
+# State of development
+
+Initial asset (signal functionality) creation
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+# Leaving Reference for now
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
