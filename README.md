@@ -20,9 +20,9 @@ I also have an idea to create a quiz tool that would utilize all the info websit
 
 # State of development
 
-Initial asset creation
+Initial asset creation.
 
-For now focus is on signalling from CIS Region.
+For now, focus is on signalling from CIS Region.
 
 
 ----------------------------------------------------------------------------------------------------------------------------------
