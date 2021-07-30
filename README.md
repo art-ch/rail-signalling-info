@@ -10,7 +10,7 @@ Now, that I started to learn web development, I decided to create a unified plac
 
 # Side notes
 
-All info will be taken from third party websites and all links for original sources will be provided.
+All info will be taken from third party websites and all links for original sources will be provided, where applicable.
 
 I also have an idea to create a quiz tool that would utilize all the info website provides.
 
