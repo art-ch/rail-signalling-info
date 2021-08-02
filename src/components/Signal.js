@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// TODO: refactor [aspect === '...'] with [aspect.match(//g,(match)=>{...})];
-// ideally 1 fuction 2 handle everything [const functionName = (parameter) => {...}]
-// CONSIDER: play with different green and maybe red hex codes
-
 const Signal = ({ aspect }) => {
   return (
     <Wrapper aspect={aspect}>
@@ -111,20 +107,20 @@ const Wrapper = styled.div`
     height: 20px;
     border-radius: 50%;
   }
-  .light.yellow {
+  .yellow {
     background: #ffae42;
   }
-  .light.red {
-    background: red;
+  .red {
+    background: #fa0000;
   }
-  .light.green {
-    background: green;
+  .green {
+    background: #00b600;
   }
   .moon-white {
     background: #c2c5cc;
   }
 
-  .light.yellow-flickering {
+  .yellow-flickering {
     background: #ffae42;
     animation: yellow-flickering 2s infinite;
   }
@@ -149,7 +145,7 @@ const Wrapper = styled.div`
       background: #565656;
     }
     50% {
-      background: green;
+      background: #00b600;
     }
     100% {
       background: #565656;
