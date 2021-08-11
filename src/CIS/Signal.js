@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Signal = ({ aspect }) => {
   return (
-    <Wrapper aspect={aspect}>
+    <Wrapper className="signal" aspect={aspect}>
       <div className="post">
         <div className="plate">
           <div
@@ -74,7 +74,6 @@ const Wrapper = styled.div`
   width: 100px;
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
   .post {
     background: black;
     width: 10px;
