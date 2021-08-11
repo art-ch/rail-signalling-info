@@ -1,15 +1,8 @@
 import './App.css';
-import Signal from './components/Signal';
-import { aspects } from './staticData';
+import CISPage from './CIS/CISPage';
 
-function App() {
-  return (
-    <div>
-      {aspects.map((aspect, index) => {
-        return <Signal key={index} aspect={aspect} />;
-      })}
-    </div>
-  );
-}
+const App = () => {
+  return <CISPage />;
+};
 
 export default App;
