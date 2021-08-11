@@ -10,11 +10,13 @@ const CISPage = () => {
     <Wrapper>
       <Navbar />
       <h1>Signals from CIS Region</h1>
+
       <div className="btn-container">
         <button className="btn">main</button>
         <button className="btn">fast</button>
         <button className="btn">slow</button>
       </div>
+
       {aspects.map((aspect) => {
         const { id, name, description } = aspect;
         return (
