@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
-import Signal from './Signal';
+import Signal from './signal-assets/Signal';
 import Sign from './Sign';
 import { aspects, signs } from './data';
+import SmallSignal from './signal-assets/SmallSignal';
+import CombinedSignals from './signal-assets/CombinedSignals';
 
 const CISPage = () => {
   return (
@@ -21,7 +23,13 @@ const CISPage = () => {
         const { id, name, description } = aspect;
         return (
           <article className="signal-card" key={id}>
-            <Signal aspect={name} />
+            {name === 'moonWhite' ? (
+              <CombinedSignals aspect={name} />
+            ) : name === 'blue' ? (
+              <SmallSignal aspect={name} />
+            ) : (
+              <Signal aspect={name} />
+            )}
             <div className="description-container">
               <h1>{name}</h1>
               <p>{description}</p>

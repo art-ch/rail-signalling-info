@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Signal = ({ aspect }) => {
   return (
-    <Wrapper className="signal" aspect={aspect}>
+    <Wrapper aspect={aspect}>
       <div className="post">
         <div className="plate">
           <div
