@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import Signal from './Signal';
-import SmallSignal from './SmallSignal';
+import { BigSignal, SmallSignal } from './Signals';
 
 const CombinedSignals = ({ aspect }) => {
   return (
     <Wrapper>
-      <Signal aspect={aspect} />
+      <BigSignal aspect={aspect} />
       <SmallSignal aspect={aspect} />
     </Wrapper>
   );
