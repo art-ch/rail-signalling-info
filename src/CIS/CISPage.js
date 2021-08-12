@@ -18,6 +18,11 @@ const CISPage = () => {
         <button className="btn">fast</button>
         <button className="btn">slow</button>
       </div>
+      <div className="btn-container">
+        <button className="btn">in</button>
+        <button className="btn">out</button>
+        <button className="btn">proceed</button>
+      </div>
 
       {aspects.map((aspect) => {
         const { id, name, description, flag } = aspect;
