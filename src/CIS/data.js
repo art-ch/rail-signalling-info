@@ -52,6 +52,7 @@ export const aspects = [
     name: 'green-flickering',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    flag: 'fast',
   },
   {
     id: 10,
@@ -64,6 +65,7 @@ export const aspects = [
     name: 'yellow-green-flickering',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    flag: 'faster',
   },
   {
     id: 12,

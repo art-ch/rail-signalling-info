@@ -20,7 +20,8 @@ const CISPage = () => {
       </div>
 
       {aspects.map((aspect) => {
-        const { id, name, description } = aspect;
+        const { id, name, description, flag } = aspect;
+        console.log(aspect);
         return (
           <article className="signal-card" key={id}>
             {name === 'moonWhite' ? (
@@ -28,7 +29,7 @@ const CISPage = () => {
             ) : name === 'blue' ? (
               <SmallSignal aspect={name} />
             ) : (
-              <Signal aspect={name} />
+              <Signal aspect={name} flag={flag} />
             )}
             <div className="description-container">
               <h1>{name}</h1>

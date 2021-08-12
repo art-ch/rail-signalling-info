@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Signal = ({ aspect }) => {
+const Signal = ({ aspect, flag }) => {
   return (
     <Wrapper aspect={aspect}>
       <div className="post">
@@ -65,6 +65,21 @@ const Signal = ({ aspect }) => {
             }`}
           ></div>
         </div>
+        {flag === 'fast' && (
+          <div className="green-line-container">
+            <div className="green-line"></div>
+          </div>
+        )}
+        {flag === 'faster' && (
+          <div>
+            <div className="green-line-container">
+              <div className="green-line"></div>
+            </div>
+            <div className="green-line-container">
+              <div className="green-line"></div>
+            </div>
+          </div>
+        )}
       </div>
     </Wrapper>
   );
@@ -75,19 +90,23 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   .post {
-    background: black;
-    width: 10px;
+    background: #6c757d;
+    width: 18px;
     height: 400px;
   }
   .plate,
-  .smaller-plate {
-    transform: translate(-40%);
+  .smaller-plate,
+  .green-line-container {
+    transform: translate(-32%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    border-radius: 14px;
+  }
+  .plate,
+  .smaller-plate {
+    width: 50px;
+    border-radius: 50px;
   }
   .plate {
     background: black;
@@ -97,6 +116,21 @@ const Wrapper = styled.div`
   .smaller-plate {
     background: black;
     height: 70px;
+    margin-bottom: 10px;
+  }
+
+  .green-line-container {
+    display: flex;
+    height: 20px;
+    width: 50px;
+    background: black;
+    margin-bottom: 3px;
+    .green-line {
+      align-self: center;
+      height: 15px;
+      width: 45px;
+      background: green;
+    }
   }
 
   .light {

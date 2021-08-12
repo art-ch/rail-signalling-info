@@ -34,12 +34,12 @@ const Wrapper = styled.article`
   .horizontal-support {
     height: 7px;
     width: 40px;
-    background: silver;
+    background: #8b939a;
   }
   .vertical-support {
     height: 35px;
     width: 10px;
-    background: silver;
+    background: #8b939a;
   }
   .light {
     background: #565656;
@@ -52,7 +52,7 @@ const Wrapper = styled.article`
     background: #c2c5cc;
   }
   .blue {
-    background: blue;
+    background: #0060fb;
   }
 `;
 
