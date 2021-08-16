@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import { BigSignal, SmallSignal } from './signal-assets/Signals';
@@ -13,19 +13,22 @@ const CISPage = () => {
       <h1>Signals from CIS Region</h1>
 
       <div className="btn-container">
+        <button className="btn">all</button>
         <button className="btn">main</button>
-        <button className="btn">fast</button>
-        <button className="btn">slow</button>
+        <button className="btn">automatic block area</button>
+        <button className="btn">4 aspect automatic block area</button>
+        <button className="btn">fast switches area</button>
+        <button className="btn">semi-automatic block area</button>
       </div>
       <div className="btn-container">
-        <button className="btn">in</button>
-        <button className="btn">out</button>
-        <button className="btn">proceed</button>
+        <button className="btn">all</button>
+        <button className="btn">entry</button>
+        <button className="btn">exit</button>
       </div>
 
       {aspects.map((aspect) => {
-        const { id, name, description, flag } = aspect;
-        console.log(aspect);
+        const { id, name, signalDescription, flag } = aspect;
+        const { entry, exit } = aspect.signalDescription;
         return (
           <article className="signal-card" key={id}>
             {name === 'moonWhite' ? (
@@ -37,11 +40,21 @@ const CISPage = () => {
             )}
             <div className="description-container">
               <h1>{name}</h1>
-              <p>{description}</p>
+              {typeof signalDescription === 'string' ? (
+                <p>{signalDescription}</p>
+              ) : (
+                <div>
+                  <h4>Entry</h4>
+                  <p>{entry}</p>
+                  <h4>Exit</h4>
+                  <p>{exit}</p>
+                </div>
+              )}
             </div>
           </article>
         );
       })}
+
       {signs.map((sign) => {
         const { id, name, description } = sign;
         return (
@@ -60,6 +73,7 @@ const CISPage = () => {
     </Wrapper>
   );
 };
+
 const Wrapper = styled.main`
   .signal-card {
     padding-bottom: 5rem;

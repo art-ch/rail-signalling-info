@@ -2,88 +2,104 @@ export const aspects = [
   {
     id: 1,
     name: 'green',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    signalDescription: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
   },
   {
     id: 2,
     name: 'yellow',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    signalDescription: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
   },
   {
     id: 3,
     name: 'yellow-flickering',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    signalDescription: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
   },
   {
     id: 4,
     name: 'two-yellows',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    signalDescription: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
   },
   {
     id: 5,
     name: 'two-yellows-flickering',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    signalDescription: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
   },
   {
     id: 6,
     name: 'red',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    signalDescription: 'signal description',
   },
   {
     id: 7,
     name: 'moonWhite',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    signalDescription: 'signal description',
   },
   {
     id: 8,
     name: 'blue',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    signalDescription: 'signal description',
   },
   {
     id: 9,
     name: 'green-flickering',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
-    flag: 'fast',
+    signalDescription: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+      flag: 'fast',
+    },
   },
   {
     id: 10,
     name: 'yellow-green',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    signalDescription: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
   },
   {
     id: 11,
     name: 'yellow-green-flickering',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
-    flag: 'faster',
+    signalDescription: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+    flag: 'fast',
   },
   {
     id: 12,
     name: 'yellow-moonWhite',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    signalDescription: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
   },
   {
     id: 13,
     name: 'yellow-moonWhite-flickering',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    signalDescription: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
   },
   {
     id: 14,
     name: 'three-yellows',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit nulla quam cupiditate esse inventore sunt veritatis cum ullam tempora maxime, excepturi voluptatem rem soluta dolorem corrupti impedit iusto delectus? Nobis pariatur culpa odio ea libero dolores harum eaque, eum veritatis similique mollitia ab! Quis, facilis. In reiciendis quibusdam ratione?',
+    signalDescription: 'signal description',
   },
 ];
 
