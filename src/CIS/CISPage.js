@@ -7,6 +7,8 @@ import { aspects, signs } from './data';
 import CombinedSignals from './signal-assets/CombinedSignals';
 
 const CISPage = () => {
+  const [showAspects, setShowAspects] = useState(aspects);
+
   return (
     <Wrapper>
       <Navbar />
@@ -26,9 +28,10 @@ const CISPage = () => {
         <button className="btn">exit</button>
       </div>
 
-      {aspects.map((aspect) => {
-        const { id, name, signalDescription, flag } = aspect;
-        const { entry, exit } = aspect.signalDescription;
+      {showAspects.map((aspect) => {
+        const { id, name, category, description } = aspect;
+        const { entry, exit } = aspect.description;
+        console.log(aspect);
         return (
           <article className="signal-card" key={id}>
             {name === 'moonWhite' ? (
@@ -36,12 +39,12 @@ const CISPage = () => {
             ) : name === 'blue' ? (
               <SmallSignal aspect={name} />
             ) : (
-              <BigSignal aspect={name} flag={flag} />
+              <BigSignal aspect={name} category={category} />
             )}
             <div className="description-container">
               <h1>{name}</h1>
-              {typeof signalDescription === 'string' ? (
-                <p>{signalDescription}</p>
+              {typeof description === 'string' ? (
+                <p>{description}</p>
               ) : (
                 <div>
                   <h4>Entry</h4>

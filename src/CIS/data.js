@@ -2,7 +2,8 @@ export const aspects = [
   {
     id: 1,
     name: 'green',
-    signalDescription: {
+    category: 'main',
+    description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
     },
@@ -10,7 +11,8 @@ export const aspects = [
   {
     id: 2,
     name: 'yellow',
-    signalDescription: {
+    category: 'main',
+    description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
     },
@@ -18,7 +20,8 @@ export const aspects = [
   {
     id: 3,
     name: 'yellow-flickering',
-    signalDescription: {
+    category: 'main',
+    description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
     },
@@ -26,7 +29,8 @@ export const aspects = [
   {
     id: 4,
     name: 'two-yellows',
-    signalDescription: {
+    category: 'main',
+    description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
     },
@@ -34,7 +38,8 @@ export const aspects = [
   {
     id: 5,
     name: 'two-yellows-flickering',
-    signalDescription: {
+    category: 'main',
+    description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
     },
@@ -42,48 +47,53 @@ export const aspects = [
   {
     id: 6,
     name: 'red',
-    signalDescription: 'signal description',
+    category: 'main',
+    description: 'signal description',
   },
   {
     id: 7,
     name: 'moonWhite',
-    signalDescription: 'signal description',
+    category: 'main',
+    description: 'signal description',
   },
   {
     id: 8,
     name: 'blue',
-    signalDescription: 'signal description',
+    category: 'main',
+    description: 'signal description',
   },
   {
     id: 9,
     name: 'green-flickering',
-    signalDescription: {
+    category: 'fast',
+    description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
-      flag: 'fast',
     },
   },
   {
     id: 10,
-    name: 'yellow-green',
-    signalDescription: {
+    name: 'yellow-green-flickering',
+    category: 'fast',
+    description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
     },
   },
   {
     id: 11,
-    name: 'yellow-green-flickering',
-    signalDescription: {
+    name: 'yellow-green',
+    category: '4 aspect',
+    description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
     },
-    flag: 'fast',
   },
   {
     id: 12,
     name: 'yellow-moonWhite',
-    signalDescription: {
+    category: 'namePending',
+    description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
     },
@@ -91,7 +101,8 @@ export const aspects = [
   {
     id: 13,
     name: 'yellow-moonWhite-flickering',
-    signalDescription: {
+    category: 'namePending',
+    description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
     },
@@ -99,7 +110,8 @@ export const aspects = [
   {
     id: 14,
     name: 'three-yellows',
-    signalDescription: 'signal description',
+    category: 'namePending',
+    description: 'signal description',
   },
 ];
 
