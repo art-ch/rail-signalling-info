@@ -9,29 +9,58 @@ import CombinedSignals from './signal-assets/CombinedSignals';
 const CISPage = () => {
   const [showAspects, setShowAspects] = useState(aspects);
 
+  const clickHandler = (e) => {
+    if (e.target.innerText === 'all') {
+      console.log(e.target.innerText);
+      setShowAspects(aspects);
+    }
+    if (e.target.innerText === 'main') {
+      setShowAspects(
+        showAspects.filter((aspect) => aspect.category === 'main')
+      );
+    }
+  };
+
   return (
     <Wrapper>
       <Navbar />
       <h1>Signals from CIS Region</h1>
 
       <div className="btn-container">
-        <button className="btn">all</button>
-        <button className="btn">main</button>
-        <button className="btn">automatic block area</button>
-        <button className="btn">4 aspect automatic block area</button>
-        <button className="btn">fast switches area</button>
-        <button className="btn">semi-automatic block area</button>
+        <button className="btn" onClick={clickHandler}>
+          all
+        </button>
+        <button className="btn" onClick={clickHandler}>
+          main
+        </button>
+        <button className="btn" onClick={clickHandler}>
+          automatic block area
+        </button>
+        <button className="btn" onClick={clickHandler}>
+          4 aspect automatic block area
+        </button>
+        <button className="btn" onClick={clickHandler}>
+          fast switches area
+        </button>
+        <button className="btn" onClick={clickHandler}>
+          semi-automatic block area
+        </button>
       </div>
       <div className="btn-container">
-        <button className="btn">all</button>
-        <button className="btn">entry</button>
-        <button className="btn">exit</button>
+        <button className="btn" onClick={clickHandler}>
+          all
+        </button>
+        <button className="btn" onClick={clickHandler}>
+          entry
+        </button>
+        <button className="btn" onClick={clickHandler}>
+          exit
+        </button>
       </div>
 
       {showAspects.map((aspect) => {
         const { id, name, category, description } = aspect;
         const { entry, exit } = aspect.description;
-        console.log(aspect);
         return (
           <article className="signal-card" key={id}>
             {name === 'moonWhite' ? (
