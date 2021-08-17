@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SignalWrapper,
   SmallSignalWrapper,
 } from './StyledComponentsForSignals';
+
+// TODO: try major refactor of signals using state
 
 const BigSignal = ({ aspect, flag }) => {
   return (

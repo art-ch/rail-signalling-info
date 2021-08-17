@@ -15,11 +15,18 @@ const CISPage = () => {
       setShowAspects(aspects);
     }
     if (e.target.innerText === 'main') {
+      setShowAspects(aspects.filter((aspect) => aspect.category === 'main'));
+    }
+    if (e.target.innerText === 'fast switches area') {
       setShowAspects(
-        showAspects.filter((aspect) => aspect.category === 'main')
+        aspects.filter(
+          (aspect) => aspect.category === 'main' || aspect.category === 'fast'
+        )
       );
     }
   };
+
+  // TODO: Refactor buttons
 
   return (
     <Wrapper>
@@ -34,16 +41,16 @@ const CISPage = () => {
           main
         </button>
         <button className="btn" onClick={clickHandler}>
-          automatic block area
-        </button>
-        <button className="btn" onClick={clickHandler}>
-          4 aspect automatic block area
-        </button>
-        <button className="btn" onClick={clickHandler}>
           fast switches area
         </button>
         <button className="btn" onClick={clickHandler}>
-          semi-automatic block area
+          atp area (automatic train protection)
+        </button>
+        <button className="btn" onClick={clickHandler}>
+          atp area with 4 aspect signalling
+        </button>
+        <button className="btn" onClick={clickHandler}>
+          semi-automatic tp area
         </button>
       </div>
       <div className="btn-container">
