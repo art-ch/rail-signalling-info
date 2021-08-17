@@ -11,16 +11,15 @@ const CISPage = () => {
 
   const clickHandler = (e) => {
     if (e.target.innerText === 'all') {
-      console.log(e.target.innerText);
       setShowAspects(aspects);
     }
     if (e.target.innerText === 'main') {
-      setShowAspects(aspects.filter((aspect) => aspect.category === 'main'));
+      setShowAspects(aspects.filter((aspect) => aspect.zone === 'main'));
     }
     if (e.target.innerText === 'fast switches area') {
       setShowAspects(
         aspects.filter(
-          (aspect) => aspect.category === 'main' || aspect.category === 'fast'
+          (aspect) => aspect.zone === 'main' || aspect.zone === 'fast'
         )
       );
     }
@@ -41,16 +40,16 @@ const CISPage = () => {
           main
         </button>
         <button className="btn" onClick={clickHandler}>
-          fast switches area
+          fast switches zone
         </button>
         <button className="btn" onClick={clickHandler}>
-          atp area (automatic train protection)
+          atp zone (automatic train protection)
         </button>
         <button className="btn" onClick={clickHandler}>
-          atp area with 4 aspect signalling
+          atp zone with 4 aspect signalling
         </button>
         <button className="btn" onClick={clickHandler}>
-          semi-automatic tp area
+          semi-automatic tp zone
         </button>
       </div>
       <div className="btn-container">
@@ -66,7 +65,7 @@ const CISPage = () => {
       </div>
 
       {showAspects.map((aspect) => {
-        const { id, name, category, description } = aspect;
+        const { id, name, zone, description } = aspect;
         const { entry, exit } = aspect.description;
         return (
           <article className="signal-card" key={id}>
@@ -75,7 +74,7 @@ const CISPage = () => {
             ) : name === 'blue' ? (
               <SmallSignal aspect={name} />
             ) : (
-              <BigSignal aspect={name} category={category} />
+              <BigSignal aspect={name} zone={zone} />
             )}
             <div className="description-container">
               <h1>{name}</h1>

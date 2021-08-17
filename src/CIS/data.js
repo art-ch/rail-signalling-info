@@ -2,7 +2,7 @@ export const aspects = [
   {
     id: 1,
     name: 'green',
-    category: 'main',
+    zone: 'main',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -11,7 +11,7 @@ export const aspects = [
   {
     id: 2,
     name: 'yellow',
-    category: 'main',
+    zone: 'main',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -20,7 +20,7 @@ export const aspects = [
   {
     id: 3,
     name: 'yellow-flickering',
-    category: 'main',
+    zone: 'main',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -29,7 +29,7 @@ export const aspects = [
   {
     id: 4,
     name: 'two-yellows',
-    category: 'main',
+    zone: 'main',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -38,7 +38,7 @@ export const aspects = [
   {
     id: 5,
     name: 'two-yellows-flickering',
-    category: 'main',
+    zone: 'main',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -47,25 +47,25 @@ export const aspects = [
   {
     id: 6,
     name: 'red',
-    category: 'main',
+    zone: 'main',
     description: 'signal description',
   },
   {
     id: 7,
     name: 'moonWhite',
-    category: 'main',
+    zone: 'main',
     description: 'signal description',
   },
   {
     id: 8,
     name: 'blue',
-    category: 'main',
+    zone: 'main',
     description: 'signal description',
   },
   {
     id: 9,
     name: 'green-flickering',
-    category: 'fast',
+    zone: 'fast',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -74,7 +74,7 @@ export const aspects = [
   {
     id: 10,
     name: 'yellow-green-flickering',
-    category: 'fast',
+    zone: 'fast',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -83,7 +83,7 @@ export const aspects = [
   {
     id: 11,
     name: 'yellow-green',
-    category: '4 aspect',
+    zone: '4 aspect',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -92,7 +92,7 @@ export const aspects = [
   {
     id: 12,
     name: 'yellow-moonWhite',
-    category: 'namePending',
+    zone: 'namePending',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -101,7 +101,7 @@ export const aspects = [
   {
     id: 13,
     name: 'yellow-moonWhite-flickering',
-    category: 'namePending',
+    zone: 'namePending',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -110,7 +110,7 @@ export const aspects = [
   {
     id: 14,
     name: 'three-yellows',
-    category: 'namePending',
+    zone: 'namePending',
     description: 'signal description',
   },
 ];
