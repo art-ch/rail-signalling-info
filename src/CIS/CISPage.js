@@ -2,69 +2,19 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import { BigSignal, SmallSignal } from './signal-assets/Signals';
+import Buttons from './page-contents/Buttons';
 import Sign from './Sign';
 import { aspects, signs } from './data';
 import CombinedSignals from './signal-assets/CombinedSignals';
 
 const CISPage = () => {
-  const [showAspects, setShowAspects] = useState(aspects);
-
-  const clickHandler = (e) => {
-    if (e.target.innerText === 'all') {
-      setShowAspects(aspects);
-    }
-    if (e.target.innerText === 'main') {
-      setShowAspects(aspects.filter((aspect) => aspect.zone === 'main'));
-    }
-    if (e.target.innerText === 'fast switches area') {
-      setShowAspects(
-        aspects.filter(
-          (aspect) => aspect.zone === 'main' || aspect.zone === 'fast'
-        )
-      );
-    }
-  };
-
-  // TODO: Refactor buttons
-
   return (
     <Wrapper>
       <Navbar />
       <h1>Signals from CIS Region</h1>
-
-      <div className="btn-container">
-        <button className="btn" onClick={clickHandler}>
-          all
-        </button>
-        <button className="btn" onClick={clickHandler}>
-          main
-        </button>
-        <button className="btn" onClick={clickHandler}>
-          fast switches zone
-        </button>
-        <button className="btn" onClick={clickHandler}>
-          atp zone (automatic train protection)
-        </button>
-        <button className="btn" onClick={clickHandler}>
-          atp zone with 4 aspect signalling
-        </button>
-        <button className="btn" onClick={clickHandler}>
-          semi-automatic tp zone
-        </button>
-      </div>
-      <div className="btn-container">
-        <button className="btn" onClick={clickHandler}>
-          all
-        </button>
-        <button className="btn" onClick={clickHandler}>
-          entry
-        </button>
-        <button className="btn" onClick={clickHandler}>
-          exit
-        </button>
-      </div>
-
-      {showAspects.map((aspect) => {
+      <Buttons />
+      {/* {signals.map((aspect) => {
+        console.log(aspect);
         const { id, name, zone, description } = aspect;
         const { entry, exit } = aspect.description;
         return (
@@ -91,7 +41,7 @@ const CISPage = () => {
             </div>
           </article>
         );
-      })}
+      })} */}
 
       {signs.map((sign) => {
         const { id, name, description } = sign;
