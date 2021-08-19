@@ -10,6 +10,9 @@ const SignalWrapper = styled.div`
     width: 18px;
     height: 400px;
   }
+  .plates {
+    margin-top: 0.5rem;
+  }
   .plate,
   .smaller-plate,
   .green-line-container,
@@ -146,4 +149,9 @@ const SmallSignalWrapper = styled.article`
   }
 `;
 
-export { SignalWrapper, SmallSignalWrapper };
+const CombinedSignalWrapper = styled.article`
+  display: flex;
+  align-items: flex-end;
+`;
+
+export { SignalWrapper, SmallSignalWrapper, CombinedSignalWrapper };
