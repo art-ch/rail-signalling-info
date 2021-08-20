@@ -10,6 +10,12 @@ const CISSignalContext = React.createContext();
 
 const CISSignalProvider = ({ children }) => {
   const [zone, setZone] = useState('all');
+  const [zoneSpecificSignals, setZoneSpecificSignals] = useState(true);
+  const [signalType, setSignalType] = useState('all');
+
+  console.log(zone);
+  console.log(zoneSpecificSignals);
+  console.log(signalType);
 
   const renderSignals = aspects.map((aspect) => {
     const { id, name, description } = aspect;
@@ -40,8 +46,25 @@ const CISSignalProvider = ({ children }) => {
     );
   });
 
+  const filterSignalsByZone = () => {
+    if (zone === 'all') {
+      return renderSignals;
+    }
+    if (zone === 'main' || zone === 'fast') {
+      return renderSignals.slice(0, 8);
+    }
+  };
+
   return (
-    <CISSignalContext.Provider value={{ zone, setZone, renderSignals }}>
+    <CISSignalContext.Provider
+      value={{
+        setZone,
+        setZoneSpecificSignals,
+        setSignalType,
+        renderSignals,
+        filterSignalsByZone,
+      }}
+    >
       {children}
     </CISSignalContext.Provider>
   );

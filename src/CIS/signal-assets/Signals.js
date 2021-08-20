@@ -11,6 +11,14 @@ import {
 export const BigSignal = ({ aspect }) => {
   const { zone } = useContext(CISSignalContext);
 
+  // console.log({
+  //   aspect,
+  //   value:
+  //     /three-yellows|yellow-green[^-flickering]|yellow-moonWhite[^-flickering]|two-yellows[^-flickering]|yellow/g.test(
+  //       aspect
+  //     ),
+  // });
+
   return (
     <SignalWrapper>
       <div className="post">

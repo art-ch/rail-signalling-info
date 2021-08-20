@@ -3,13 +3,43 @@ import { CISSignalContext } from '../CISSignalContext';
 import { filterButtons } from '../data';
 
 const Buttons = () => {
-  const { setZone } = useContext(CISSignalContext);
+  const { setZone, setZoneSpecificSignals, setSignalType } =
+    useContext(CISSignalContext);
+
   const clickHandler = (e) => {
-    if (e.target.innerText === 'all' || e.target.innerText === 'main') {
-      setZone(e.target.innerText);
+    const id = parseInt(e.target.id);
+    if (id === 1) {
+      setZone('all');
     }
-    if (e.target.innerText === 'fast switches zone') {
+    if (id === 2) {
+      setZone('main');
+    }
+    if (id === 3) {
       setZone('fast');
+    }
+    if (id === 4) {
+      setZone('atp');
+    }
+    if (id === 5) {
+      setZone('atp4');
+    }
+    if (id === 6) {
+      setZone('semi-atp');
+    }
+    if (id === 7) {
+      setZoneSpecificSignals(true);
+    }
+    if (id === 8) {
+      setZoneSpecificSignals(false);
+    }
+    if (id === 9) {
+      setSignalType('all');
+    }
+    if (id === 10) {
+      setSignalType('entry');
+    }
+    if (id === 11) {
+      setSignalType('exit');
     }
   };
 
@@ -21,7 +51,7 @@ const Buttons = () => {
             {buttonArray.map((button, index) => {
               const { id, name } = button;
               return (
-                <button className="btn" onClick={clickHandler} key={id}>
+                <button className="btn" id={id} onClick={clickHandler} key={id}>
                   {name}
                 </button>
               );
