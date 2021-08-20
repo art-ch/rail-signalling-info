@@ -105,12 +105,16 @@ export const signs = [{ id: 1, sign: 'sign-name', description: 'description' }];
 
 export const filterButtons = [
   [
-    'all',
-    'main',
-    'fast switches zone',
-    'atp zone (automatic train protection)',
-    'atp zone with 4 aspect signalling',
-    'semi-automatic tp zone',
+    { id: 1, name: 'all' },
+    { id: 2, name: 'main' },
+    { id: 3, name: 'fast switches zone' },
+    { id: 4, name: 'atp zone (automatic train protection)' },
+    { id: 5, name: 'atp zone with 4 aspect signalling' },
+    { id: 6, name: 'semi-automatic tp zone' },
   ],
-  ['all', 'entry', 'exit'],
+  [
+    { id: 1, name: 'all' },
+    { id: 2, name: 'entry' },
+    { id: 3, name: 'exit' },
+  ],
 ];

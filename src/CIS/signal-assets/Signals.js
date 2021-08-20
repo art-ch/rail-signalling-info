@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { CISSignalContext } from '../CISSignalContext';
 import {
   SignalWrapper,
   SmallSignalWrapper,
   CombinedSignalWrapper,
 } from './StyledComponentsForSignals';
 
-// TODO: try major refactor of signals using state
+// TODO: try .test()
 
-export const BigSignal = ({ aspect, flag }) => {
+export const BigSignal = ({ aspect }) => {
+  const { zone } = useContext(CISSignalContext);
+
   return (
-    <SignalWrapper aspect={aspect}>
+    <SignalWrapper>
       <div className="post">
         <div className="plates">
           <div className="plate">
@@ -72,12 +75,7 @@ export const BigSignal = ({ aspect, flag }) => {
               }`}
             ></div>
           </div>
-          {flag === 'fast' && (
-            <div className="green-line-container">
-              <div className="green-line"></div>
-            </div>
-          )}
-          {flag === 'faster' && (
+          {zone === 'fast' && (
             <div>
               <div className="green-line-container">
                 <div className="green-line"></div>

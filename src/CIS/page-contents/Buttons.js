@@ -1,22 +1,15 @@
-import React, { useState } from 'react';
-import { aspects, filterButtons } from '../data';
+import React, { useContext } from 'react';
+import { CISSignalContext } from '../CISSignalContext';
+import { filterButtons } from '../data';
 
 const Buttons = () => {
-  const [signals, setSignals] = useState(aspects);
-
+  const { setZone } = useContext(CISSignalContext);
   const clickHandler = (e) => {
-    if (e.target.innerText === 'all') {
-      setSignals(aspects);
+    if (e.target.innerText === 'all' || e.target.innerText === 'main') {
+      setZone(e.target.innerText);
     }
-    if (e.target.innerText === 'main') {
-      setSignals(aspects.filter((aspect) => aspect.zone === 'main'));
-    }
-    if (e.target.innerText === 'fast switches area') {
-      setSignals(
-        aspects.filter(
-          (aspect) => aspect.zone === 'main' || aspect.zone === 'fast'
-        )
-      );
+    if (e.target.innerText === 'fast switches zone') {
+      setZone('fast');
     }
   };
 
@@ -26,9 +19,10 @@ const Buttons = () => {
         return (
           <div className="btn-container" key={index}>
             {buttonArray.map((button, index) => {
+              const { id, name } = button;
               return (
-                <button className="btn" onClick={clickHandler} key={index}>
-                  {button}
+                <button className="btn" onClick={clickHandler} key={id}>
+                  {name}
                 </button>
               );
             })}
