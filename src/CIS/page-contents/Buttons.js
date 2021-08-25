@@ -48,7 +48,7 @@ const Buttons = () => {
       {filterButtons.map((buttonArray, index) => {
         return (
           <div className="btn-container" key={index}>
-            {buttonArray.map((button, index) => {
+            {buttonArray.map((button) => {
               const { id, name } = button;
               return (
                 <button className="btn" id={id} onClick={clickHandler} key={id}>
