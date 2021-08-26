@@ -9,7 +9,7 @@ import {
 const CISSignalContext = React.createContext();
 
 const CISSignalProvider = ({ children }) => {
-  const [zone, setZone] = useState('all');
+  const [zone, setZone] = useState('fast');
   const [zoneSpecificSignals, setZoneSpecificSignals] = useState(true);
   const [signalType, setSignalType] = useState('all');
 
@@ -50,8 +50,15 @@ const CISSignalProvider = ({ children }) => {
     if (zone === 'all') {
       return renderSignals;
     }
-    if (zone === 'main' || zone === 'fast') {
+    if (zone === 'main') {
       return renderSignals.slice(0, 8);
+    }
+    if (zone === 'fast') {
+      if (zoneSpecificSignals === true) {
+        return renderSignals.slice(8, 14);
+      } else {
+        return [renderSignals.slice(8, 14), renderSignals.slice(0, 8)];
+      }
     }
   };
 

@@ -56,7 +56,7 @@ export const aspects = [
   },
   {
     id: 9,
-    name: 'green-flickering',
+    name: 'green-flickering-yellow-stripe',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -64,7 +64,7 @@ export const aspects = [
   },
   {
     id: 10,
-    name: 'yellow-green-flickering',
+    name: 'two-yellows-stripe',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -72,7 +72,7 @@ export const aspects = [
   },
   {
     id: 11,
-    name: 'yellow-green',
+    name: 'two-yellows-flickering-stripe',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -80,7 +80,7 @@ export const aspects = [
   },
   {
     id: 12,
-    name: 'yellow-moonWhite',
+    name: 'green-flickering-yellow-two-stripes',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -88,7 +88,7 @@ export const aspects = [
   },
   {
     id: 13,
-    name: 'yellow-moonWhite-flickering',
+    name: 'two-yellows-two-stripes',
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -96,8 +96,56 @@ export const aspects = [
   },
   {
     id: 14,
+    name: 'two-yellows-flickering-two-stripes',
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+  },
+  {
+    id: 15,
+    name: 'green-flickering',
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+  },
+  {
+    id: 16,
     name: 'three-yellows',
     description: 'signal description',
+  },
+  {
+    id: 17,
+    name: 'green-moonWhite',
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+  },
+  {
+    id: 18,
+    name: 'yellow-moonWhite',
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+  },
+  {
+    id: 19,
+    name: 'yellow-moonWhite-flickering',
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+  },
+  {
+    id: 20,
+    name: 'yellow-green',
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
   },
 ];
 

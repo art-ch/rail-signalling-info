@@ -44,15 +44,18 @@ const SignalWrapper = styled.div`
   }
   .green-line-container {
     display: flex;
-    height: 20px;
-    width: 50px;
+    flex-direction: row;
+
+    height: 21px;
+    width: 53px;
     background: black;
-    margin-bottom: 3px;
-    .green-line {
-      align-self: center;
-      height: 15px;
-      width: 45px;
-      background: green;
+    margin-bottom: 7px;
+    .green-line-light {
+      height: 13px;
+      width: 13px;
+      margin: 1.5px;
+      border-radius: 50%;
+      background: #00b600;
     }
   }
 

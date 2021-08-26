@@ -28,12 +28,16 @@ export const BigSignal = ({ aspect }) => {
               className={`light ${
                 aspect === 'yellow' ||
                 aspect === 'two-yellows' ||
+                aspect === 'two-yellows-stripe' ||
+                aspect === 'two-yellows-two-stripes' ||
                 aspect === 'three-yellows' ||
                 aspect === 'yellow-green' ||
                 aspect === 'yellow-moonWhite'
                   ? 'yellow'
                   : aspect === 'yellow-flickering' ||
                     aspect === 'two-yellows-flickering' ||
+                    aspect === 'two-yellows-flickering-stripe' ||
+                    aspect === 'two-yellows-flickering-two-stripes' ||
                     aspect === 'yellow-moonWhite-flickering'
                   ? 'yellow-flickering'
                   : null
@@ -41,10 +45,11 @@ export const BigSignal = ({ aspect }) => {
             ></div>
             <div
               className={`light ${
-                aspect === 'green'
+                aspect === 'green' || aspect === 'green-moonWhite'
                   ? 'green'
                   : aspect === 'green-flickering' ||
-                    aspect === 'yellow-green-flickering'
+                    aspect === 'green-flickering-yellow-stripe' ||
+                    aspect === 'green-flickering-yellow-two-stripes'
                   ? 'green-flickering'
                   : null
               }`}
@@ -65,8 +70,13 @@ export const BigSignal = ({ aspect }) => {
             <div
               className={`light ${
                 aspect === 'two-yellows' ||
+                aspect === 'two-yellows-stripe' ||
+                aspect === 'two-yellows-two-stripes' ||
                 aspect === 'two-yellows-flickering' ||
-                aspect === 'yellow-green-flickering'
+                aspect === 'two-yellows-flickering-stripe' ||
+                aspect === 'two-yellows-flickering-two-stripes' ||
+                aspect === 'green-flickering-yellow-stripe' ||
+                aspect === 'green-flickering-yellow-two-stripes'
                   ? 'yellow'
                   : null
               }`}
@@ -74,6 +84,7 @@ export const BigSignal = ({ aspect }) => {
             <div
               className={`light ${
                 aspect === 'moonWhite' ||
+                aspect === 'green-moonWhite' ||
                 aspect === 'yellow-moonWhite' ||
                 aspect === 'yellow-moonWhite-flickering'
                   ? 'moon-white'
@@ -83,13 +94,28 @@ export const BigSignal = ({ aspect }) => {
               }`}
             ></div>
           </div>
-          {zone === 'fast' && (
+          {(aspect === 'two-yellows-stripe' ||
+            aspect === 'two-yellows-flickering-stripe' ||
+            aspect === 'green-flickering-yellow-stripe') && (
+            <div className="green-line-container">
+              <div className="green-line-light"></div>
+              <div className="green-line-light"></div>
+              <div className="green-line-light"></div>
+            </div>
+          )}
+          {(aspect === 'two-yellows-two-stripes' ||
+            aspect === 'two-yellows-flickering-two-stripes' ||
+            aspect === 'green-flickering-yellow-two-stripes') && (
             <div>
               <div className="green-line-container">
-                <div className="green-line"></div>
+                <div className="green-line-light"></div>
+                <div className="green-line-light"></div>
+                <div className="green-line-light"></div>
               </div>
               <div className="green-line-container">
-                <div className="green-line"></div>
+                <div className="green-line-light"></div>
+                <div className="green-line-light"></div>
+                <div className="green-line-light"></div>
               </div>
             </div>
           )}
