@@ -164,5 +164,13 @@ export const filterButtons = [
     { id: 7, name: 'all' },
     { id: 8, name: 'entry' },
     { id: 9, name: 'exit' },
+    { id: 10, name: 'route' },
+    { id: 11, name: 'block' },
+    { id: 12, name: 'cover' },
+    { id: 13, name: 'obstruction' },
+    { id: 14, name: 'warning' },
+    { id: 15, name: 'repeating' },
+    { id: 16, name: 'maneuvering' },
+    { id: 17, name: 'humping' },
   ],
 ];
