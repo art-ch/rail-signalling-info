@@ -3,8 +3,7 @@ import { CISSignalContext } from '../CISSignalContext';
 import { filterButtons } from '../data';
 
 const Buttons = () => {
-  const { setZone, setZoneSpecificSignals, setSignalType } =
-    useContext(CISSignalContext);
+  const { setZone, setSignalType } = useContext(CISSignalContext);
 
   const clickHandler = (e) => {
     const id = parseInt(e.target.id);
@@ -27,18 +26,12 @@ const Buttons = () => {
       setZone('semi-atp');
     }
     if (id === 7) {
-      setZoneSpecificSignals(true);
-    }
-    if (id === 8) {
-      setZoneSpecificSignals(false);
-    }
-    if (id === 9) {
       setSignalType('all');
     }
-    if (id === 10) {
+    if (id === 8) {
       setSignalType('entry');
     }
-    if (id === 11) {
+    if (id === 9) {
       setSignalType('exit');
     }
   };

@@ -161,12 +161,8 @@ export const filterButtons = [
     { id: 6, name: 'semi-automatic tp zone' },
   ],
   [
-    { id: 7, name: 'zone-specific' },
-    { id: 8, name: 'all' },
-  ],
-  [
-    { id: 9, name: 'all' },
-    { id: 10, name: 'entry' },
-    { id: 11, name: 'exit' },
+    { id: 7, name: 'all' },
+    { id: 8, name: 'entry' },
+    { id: 9, name: 'exit' },
   ],
 ];

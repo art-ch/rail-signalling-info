@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
 import { aspects } from './data';
-import {
-  BigSignal,
-  SmallSignal,
-  CombinedSignals,
-} from './signal-assets/Signals';
+import { BigSignal, SmallSignal, CombinedSignals } from './assets/Signals';
 
 const CISSignalContext = React.createContext();
 
 const CISSignalProvider = ({ children }) => {
   const [zone, setZone] = useState('fast');
-  const [zoneSpecificSignals, setZoneSpecificSignals] = useState(true);
   const [signalType, setSignalType] = useState('all');
 
   console.log(zone);
-  console.log(zoneSpecificSignals);
   console.log(signalType);
 
   const renderSignals = aspects.map((aspect) => {
@@ -46,7 +40,7 @@ const CISSignalProvider = ({ children }) => {
     );
   });
 
-  const filterSignalsByZone = () => {
+  const filterSignals = () => {
     if (zone === 'all') {
       return renderSignals;
     }
@@ -54,11 +48,8 @@ const CISSignalProvider = ({ children }) => {
       return renderSignals.slice(0, 8);
     }
     if (zone === 'fast') {
-      if (zoneSpecificSignals === true) {
-        return renderSignals.slice(8, 14);
-      } else {
-        return [renderSignals.slice(8, 14), renderSignals.slice(0, 8)];
-      }
+      // TODO: confirm that this zone has all regular double yellows
+      return [renderSignals.slice(8, 14), renderSignals.slice(0, 8)];
     }
   };
 
@@ -66,10 +57,9 @@ const CISSignalProvider = ({ children }) => {
     <CISSignalContext.Provider
       value={{
         setZone,
-        setZoneSpecificSignals,
         setSignalType,
         renderSignals,
-        filterSignalsByZone,
+        filterSignals,
       }}
     >
       {children}
