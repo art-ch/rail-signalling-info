@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { CISSignalContext } from '../CISSignalContext';
 import {
   SignalWrapper,
-  SmallSignalWrapper,
+  DwarfManeuveringSignalWrapper,
   CombinedSignalWrapper,
 } from './StyledComponentsForSignals';
 
@@ -125,10 +125,10 @@ export const BigSignal = ({ aspect }) => {
   );
 };
 
-export const SmallSignal = ({ aspect }) => {
+export const DwarfManeuveringSignal = ({ aspect }) => {
   return (
     <SignalWrapper>
-      <SmallSignalWrapper>
+      <DwarfManeuveringSignalWrapper>
         <div className="small-signal-plate">
           <div
             className={`light ${aspect === 'moonWhite' && 'moon-white'}`}
@@ -137,7 +137,7 @@ export const SmallSignal = ({ aspect }) => {
         </div>
         <div className="horizontal-support"></div>
         <div className="vertical-support"></div>
-      </SmallSignalWrapper>
+      </DwarfManeuveringSignalWrapper>
     </SignalWrapper>
   );
 };
@@ -146,7 +146,7 @@ export const CombinedSignals = ({ aspect }) => {
   return (
     <CombinedSignalWrapper className="combined-signals">
       <BigSignal aspect={aspect} />
-      <SmallSignal aspect={aspect} />
+      <DwarfManeuveringSignal aspect={aspect} />
     </CombinedSignalWrapper>
   );
 };

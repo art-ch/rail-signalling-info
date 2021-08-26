@@ -112,7 +112,7 @@ const SignalWrapper = styled.div`
   }
 `;
 
-const SmallSignalWrapper = styled.article`
+const DwarfManeuveringSignalWrapper = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -157,4 +157,4 @@ const CombinedSignalWrapper = styled.article`
   align-items: flex-end;
 `;
 
-export { SignalWrapper, SmallSignalWrapper, CombinedSignalWrapper };
+export { SignalWrapper, DwarfManeuveringSignalWrapper, CombinedSignalWrapper };

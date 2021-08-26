@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { aspects } from './data';
-import { BigSignal, SmallSignal, CombinedSignals } from './assets/Signals';
+import {
+  BigSignal,
+  DwarfManeuveringSignal,
+  CombinedSignals,
+} from './assets/Signals';
 
 const CISSignalContext = React.createContext();
 
 const CISSignalProvider = ({ children }) => {
-  const [zone, setZone] = useState('fast');
+  const [zone, setZone] = useState('all');
   const [signalType, setSignalType] = useState('all');
 
-  console.log(zone);
-  console.log(signalType);
+  // console.log(zone);
+  // console.log(signalType);
 
   const renderSignals = aspects.map((aspect) => {
     const { id, name, description } = aspect;
@@ -19,7 +23,7 @@ const CISSignalProvider = ({ children }) => {
         {name === 'moonWhite' ? (
           <CombinedSignals aspect={name} />
         ) : name === 'blue' ? (
-          <SmallSignal aspect={name} />
+          <DwarfManeuveringSignal aspect={name} />
         ) : (
           <BigSignal aspect={name} />
         )}
