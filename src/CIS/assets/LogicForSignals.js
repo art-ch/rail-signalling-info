@@ -82,7 +82,6 @@ const renderPlates = (aspect) => {
   };
   return Object.entries(arrayOfLights).map(
     ([outerDivClass, functions], index) => {
-      console.log(functions);
       return (
         <div className={outerDivClass} key={index}>
           {functions.map((fn) => {
