@@ -75,12 +75,29 @@ const moonWhiteLight = (aspect) => {
   }
 };
 
-export const renderLights = [
-  [yellowLight, greenLight, redLight],
-  [bottomYellowLight, moonWhiteLight],
-];
+const renderPlates = (aspect) => {
+  const arrayOfLights = {
+    plate: [yellowLight, greenLight, redLight],
+    smallerPlate: [bottomYellowLight, moonWhiteLight],
+  };
+  return Object.entries(arrayOfLights).map(
+    ([outerDivClass, functions], index) => {
+      console.log(functions);
+      return (
+        <div className={outerDivClass} key={index}>
+          {functions.map((fn) => {
+            return (
+              // solve unique key prop issue
+              <div className={`light ${fn(aspect)}`}></div>
+            );
+          })}
+        </div>
+      );
+    }
+  );
+};
 
-export const renderStripes = (aspect) => {
+const renderStripes = (aspect) => {
   if (
     aspect === 'two-yellows-stripe' ||
     aspect === 'two-yellows-flickering-stripe' ||
@@ -109,4 +126,10 @@ export const renderStripes = (aspect) => {
       );
     });
   }
+};
+
+export const renderSignal = (aspect) => {
+  const plates = renderPlates(aspect);
+  const stripes = renderStripes(aspect);
+  return [plates, stripes];
 };

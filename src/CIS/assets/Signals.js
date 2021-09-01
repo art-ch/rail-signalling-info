@@ -5,29 +5,15 @@ import {
   DwarfManeuveringSignalWrapper,
   CombinedSignalWrapper,
 } from './StyledComponentsForSignals';
-import { renderLights, renderStripes } from './LogicForSignals';
+import { renderSignal } from './LogicForSignals';
 
 export const BigSignal = ({ aspect }) => {
   const { zone } = useContext(CISSignalContext);
 
-  // continue work on logic refactor
-
   return (
     <SignalWrapper>
       <div className="post">
-        <div className="plates">
-          <div className="plate">
-            {renderLights[0].map((fn, index) => {
-              return <div className={`light ${fn(aspect)}`} key={index}></div>;
-            })}
-          </div>
-          <div className="smaller-plate">
-            {renderLights[1].map((fn, index) => {
-              return <div className={`light ${fn(aspect)}`} key={index}></div>;
-            })}
-          </div>
-          {renderStripes(aspect)}
-        </div>
+        <div className="plates">{renderSignal(aspect)}</div>
       </div>
     </SignalWrapper>
   );

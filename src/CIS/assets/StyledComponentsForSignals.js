@@ -14,7 +14,7 @@ const SignalWrapper = styled.div`
     margin-top: 0.5rem;
   }
   .plate,
-  .smaller-plate,
+  .smallerPlate,
   .green-line-container,
   .small-signal-plate {
     display: flex;
@@ -23,12 +23,12 @@ const SignalWrapper = styled.div`
     justify-content: center;
   }
   .plate,
-  .smaller-plate,
+  .smallerPlate,
   .green-line-container {
     transform: translate(-32%);
   }
   .plate,
-  .smaller-plate {
+  .smallerPlate {
     width: 50px;
     border-radius: 50px;
   }
@@ -37,7 +37,7 @@ const SignalWrapper = styled.div`
     height: 100px;
     margin-bottom: 20px;
   }
-  .smaller-plate {
+  .smallerPlate {
     background: black;
     height: 70px;
     margin-bottom: 10px;
