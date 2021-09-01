@@ -15,81 +15,8 @@ const CISSignalProvider = ({ children }) => {
   // console.log(zone);
   // console.log(signalType);
 
-  const signalLogic = {
-    functionOne(aspect) {
-      switch (aspect) {
-        case 'yellow':
-        case 'two-yellows':
-        case 'two-yellows-stripe':
-        case 'two-yellows-two-stripes':
-        case 'three-yellows':
-        case 'yellow-green':
-        case 'yellow-moonWhite':
-          return 'yellow';
-        case 'yellow-flickering':
-        case 'two-yellows-flickering':
-        case 'two-yellows-flickering-stripe':
-        case 'two-yellows-flickering-two-stripes':
-        case 'yellow-moonWhite-flickering':
-          return 'yellow-flickering';
-        default:
-          return null;
-      }
-    },
-    functionTwo(aspect) {
-      switch (aspect) {
-        case 'green':
-        case 'green-moonWhite':
-          return 'green';
-        case 'green-flickering':
-        case 'green-flickering-yellow-stripe':
-        case 'green-flickering-yellow-two-stripes':
-          return 'green-flickering';
-        default:
-          return null;
-      }
-    },
-    functionThree(aspect) {
-      switch (aspect) {
-        case 'red':
-          return 'red';
-        case 'yellow-green':
-          return 'green';
-        case 'three-yellows':
-          return 'yellow';
-        default:
-          return null;
-      }
-    },
-    functionFour(aspect) {
-      switch (aspect) {
-        case 'two-yellows':
-        case 'two-yellows-stripe':
-        case 'two-yellows-two-stripes':
-        case 'two-yellows-flickering':
-        case 'two-yellows-flickering-stripe':
-        case 'two-yellows-flickering-two-stripes':
-        case 'green-flickering-yellow-stripe':
-        case 'green-flickering-yellow-two-stripes':
-          return 'yellow';
-        default:
-          return null;
-      }
-    },
-    functionFive(aspect) {
-      switch (aspect) {
-        case 'moonWhite':
-        case 'green-moonWhite':
-        case 'yellow-moonWhite':
-        case 'yellow-moonWhite-flickering':
-          return 'moon-white';
-        case 'three-yellows':
-          return 'yellow';
-        default:
-          return null;
-      }
-    },
-  };
+  // TODO: renderSignals to renderBigSignals, renderAtpSignals, renderSemiAtpSignals
+  // and probably separate for combinedSignals
 
   const renderSignals = aspects.map((aspect) => {
     const { id, name, description } = aspect;
@@ -138,7 +65,6 @@ const CISSignalProvider = ({ children }) => {
       value={{
         setZone,
         setSignalType,
-        signalLogic,
         renderSignals,
         filterSignals,
       }}

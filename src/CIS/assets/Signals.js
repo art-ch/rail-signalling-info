@@ -5,67 +5,28 @@ import {
   DwarfManeuveringSignalWrapper,
   CombinedSignalWrapper,
 } from './StyledComponentsForSignals';
-
-// TODO: try .test()
+import { renderLights, renderStripes } from './LogicForSignals';
 
 export const BigSignal = ({ aspect }) => {
-  const {
-    zone,
-    signalLogic: {
-      functionOne,
-      functionTwo,
-      functionThree,
-      functionFour,
-      functionFive,
-    },
-  } = useContext(CISSignalContext);
-  // console.log(signalLogic);
-  // console.log({
-  //   aspect,
-  //   value:
-  //     /three-yellows|yellow-green[^-flickering]|yellow-moonWhite[^-flickering]|two-yellows[^-flickering]|yellow/g.test(
-  //       aspect
-  //     ),
-  // });
+  const { zone } = useContext(CISSignalContext);
+
+  // continue work on logic refactor
 
   return (
     <SignalWrapper>
       <div className="post">
         <div className="plates">
           <div className="plate">
-            <div className={`light ${functionOne(aspect)}`}></div>
-            <div className={`light ${functionTwo(aspect)}`}></div>
-            <div className={`light ${functionThree(aspect)}`}></div>
+            {renderLights[0].map((fn, index) => {
+              return <div className={`light ${fn(aspect)}`} key={index}></div>;
+            })}
           </div>
           <div className="smaller-plate">
-            <div className={`light ${functionFour(aspect)}`}></div>
-            <div className={`light ${functionFive(aspect)}`}></div>
+            {renderLights[1].map((fn, index) => {
+              return <div className={`light ${fn(aspect)}`} key={index}></div>;
+            })}
           </div>
-          {(aspect === 'two-yellows-stripe' ||
-            aspect === 'two-yellows-flickering-stripe' ||
-            aspect === 'green-flickering-yellow-stripe') && (
-            <div className="green-line-container">
-              <div className="green-line-light"></div>
-              <div className="green-line-light"></div>
-              <div className="green-line-light"></div>
-            </div>
-          )}
-          {(aspect === 'two-yellows-two-stripes' ||
-            aspect === 'two-yellows-flickering-two-stripes' ||
-            aspect === 'green-flickering-yellow-two-stripes') && (
-            <div>
-              <div className="green-line-container">
-                <div className="green-line-light"></div>
-                <div className="green-line-light"></div>
-                <div className="green-line-light"></div>
-              </div>
-              <div className="green-line-container">
-                <div className="green-line-light"></div>
-                <div className="green-line-light"></div>
-                <div className="green-line-light"></div>
-              </div>
-            </div>
-          )}
+          {renderStripes(aspect)}
         </div>
       </div>
     </SignalWrapper>
