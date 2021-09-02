@@ -9,12 +9,9 @@ import { renderSignal } from './LogicForSignals';
 
 export const BigSignal = ({ aspect }) => {
   const { zone } = useContext(CISSignalContext);
-
   return (
     <SignalWrapper>
-      <div className="post">
-        <div className="plates">{renderSignal(aspect)}</div>
-      </div>
+      <div className="post">{renderSignal(aspect)}</div>
     </SignalWrapper>
   );
 };

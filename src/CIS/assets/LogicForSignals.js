@@ -84,11 +84,8 @@ const renderPlates = (aspect) => {
     ([outerDivClass, functions], index) => {
       return (
         <div className={outerDivClass} key={index}>
-          {functions.map((fn) => {
-            return (
-              // solve unique key prop issue
-              <div className={`light ${fn(aspect)}`}></div>
-            );
+          {functions.map((fn, index) => {
+            return <div className={`light ${fn(aspect)}`} key={index}></div>;
           })}
         </div>
       );
@@ -128,7 +125,11 @@ const renderStripes = (aspect) => {
 };
 
 export const renderSignal = (aspect) => {
-  const plates = renderPlates(aspect);
-  const stripes = renderStripes(aspect);
-  return [plates, stripes];
+  return [renderPlates(aspect), renderStripes(aspect)].map((fn, index) => {
+    return (
+      <div className="plates" key={index}>
+        {fn}
+      </div>
+    );
+  });
 };
