@@ -76,8 +76,7 @@ const SignalWrapper = styled.div`
     background: #c2c5cc;
   }
 
-  .flickering {
-    background: red;
+  .yellow-flickering {
     animation: flickering 2s infinite;
   }
   @keyframes flickering {
@@ -92,10 +91,7 @@ const SignalWrapper = styled.div`
     }
   }
 
-  /* ffae42 */
-
-  /* .green-flickering {
-    background: green;
+  .green-flickering {
     animation: green-flickering 2s infinite;
   }
   @keyframes green-flickering {
@@ -108,7 +104,7 @@ const SignalWrapper = styled.div`
     100% {
       background: #565656;
     }
-  } */
+  }
 `;
 
 const DwarfManeuveringSignalWrapper = styled.article`
