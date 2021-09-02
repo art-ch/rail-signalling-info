@@ -19,6 +19,7 @@ const SignalWrapper = styled.div`
   .small-signal-plate {
     display: flex;
     flex-direction: column;
+    background: black;
     align-items: center;
     justify-content: center;
   }
@@ -33,22 +34,18 @@ const SignalWrapper = styled.div`
     border-radius: 50px;
   }
   .plate {
-    background: black;
     height: 100px;
     margin-bottom: 20px;
   }
   .smallerPlate {
-    background: black;
     height: 70px;
     margin-bottom: 10px;
   }
   .green-line-container {
     display: flex;
     flex-direction: row;
-
     height: 21px;
     width: 53px;
-    background: black;
     margin-bottom: 7px;
     .green-line-light {
       height: 13px;
@@ -79,11 +76,11 @@ const SignalWrapper = styled.div`
     background: #c2c5cc;
   }
 
-  .yellow-flickering {
-    background: #ffae42;
-    animation: yellow-flickering 2s infinite;
+  .flickering {
+    background: red;
+    animation: flickering 2s infinite;
   }
-  @keyframes yellow-flickering {
+  @keyframes flickering {
     0% {
       background: #565656;
     }
@@ -95,7 +92,9 @@ const SignalWrapper = styled.div`
     }
   }
 
-  .green-flickering {
+  /* ffae42 */
+
+  /* .green-flickering {
     background: green;
     animation: green-flickering 2s infinite;
   }
@@ -109,7 +108,7 @@ const SignalWrapper = styled.div`
     100% {
       background: #565656;
     }
-  }
+  } */
 `;
 
 const DwarfManeuveringSignalWrapper = styled.article`
@@ -124,7 +123,6 @@ const DwarfManeuveringSignalWrapper = styled.article`
     width: 30px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
-    background: black;
     height: 60px;
   }
   .horizontal-support {
