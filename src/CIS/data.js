@@ -2,8 +2,9 @@ export const aspects = [
   {
     id: 1,
     name: 'green',
+    // TODO:
     // stuff here or else in reducer the following
-    // state: {
+    // *state for each aspect*: {
     //   l1: '...',
     //   l2: '...',
     //   l3: '...',
@@ -11,6 +12,15 @@ export const aspects = [
     //   l5: '...',
     //   'green-line': '...',
     //   'routing-display':'...',
+    // EXAMPLE:
+    // green: {
+    //   l1: null,
+    //   l2: green,
+    //   l3: null,
+    //   l4: null,
+    //   l5: null,
+    //   'green-line': null,
+    //   'routing-display': null,
     // },
     description: {
       entry: 'entry signal description',
