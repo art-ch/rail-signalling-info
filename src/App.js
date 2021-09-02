@@ -5,7 +5,7 @@ import CISPage from './CIS/CISPage';
 const App = () => {
   return (
     <CISSignalProvider>
-      <CISPage />;
+      <CISPage />
     </CISSignalProvider>
   );
 };
