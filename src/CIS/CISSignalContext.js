@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { aspects } from './data';
 import {
-  BigSignal,
+  BiggestSignal,
   RegularSignal,
   SmallSignal,
   DwarfManeuveringSignal,
@@ -30,7 +30,7 @@ const CISSignalProvider = ({ children }) => {
         ) : name === 'blue' ? (
           <DwarfManeuveringSignal aspect={name} />
         ) : (
-          <BigSignal aspect={name} />
+          <BiggestSignal aspect={name} />
         )}
         <div className="description-container">
           <h1>{name}</h1>
@@ -73,7 +73,7 @@ const CISSignalProvider = ({ children }) => {
           name === 'red' ? (
           <RegularSignal aspect={name} />
         ) : (
-          <BigSignal aspect={name} />
+          <BiggestSignal aspect={name} />
         )}
         <div className="description-container">
           <h1>{name}</h1>
@@ -104,7 +104,7 @@ const CISSignalProvider = ({ children }) => {
         ) : name === 'green' || name === 'yellow' || name === 'red' ? (
           <SmallSignal aspect={name} />
         ) : (
-          <BigSignal aspect={name} />
+          <BiggestSignal aspect={name} />
         )}
         <div className="description-container">
           <h1>{name}</h1>

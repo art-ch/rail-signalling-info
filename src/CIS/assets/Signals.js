@@ -7,6 +7,15 @@ import {
 } from './StyledComponentsForSignals';
 import { renderSignal } from './LogicForSignals';
 
+export const BiggestSignal = ({ aspect }) => {
+  const { zone } = useContext(CISSignalContext);
+  return (
+    <SignalWrapper>
+      <div className="post">{renderSignal(aspect)}</div>
+    </SignalWrapper>
+  );
+};
+
 export const BigSignal = ({ aspect }) => {
   const { zone } = useContext(CISSignalContext);
   return (
@@ -83,7 +92,7 @@ export const DwarfManeuveringSignal = ({ aspect }) => {
 export const CombinedSignals = ({ aspect }) => {
   return (
     <CombinedSignalWrapper className="combined-signals">
-      <BigSignal aspect={aspect} />
+      <BiggestSignal aspect={aspect} />
       <DwarfManeuveringSignal aspect={aspect} />
     </CombinedSignalWrapper>
   );
