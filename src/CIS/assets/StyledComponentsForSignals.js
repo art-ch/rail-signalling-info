@@ -10,6 +10,8 @@ const SignalWrapper = styled.div`
     width: 18px;
     height: 400px;
   }
+
+  /* plates */
   .plates {
     margin-top: 0.5rem;
   }
@@ -32,15 +34,16 @@ const SignalWrapper = styled.div`
   .smallerPlate {
     width: 50px;
     border-radius: 50px;
+    margin-bottom: 15px;
   }
   .plate {
     height: 100px;
-    margin-bottom: 20px;
   }
   .smallerPlate {
     height: 70px;
-    margin-bottom: 10px;
   }
+
+  /* green line container */
   .green-line-container {
     display: flex;
     flex-direction: row;
@@ -56,6 +59,7 @@ const SignalWrapper = styled.div`
     }
   }
 
+  /* lights */
   .light {
     background: #565656;
     margin: 3px;
@@ -76,6 +80,7 @@ const SignalWrapper = styled.div`
     background: #c2c5cc;
   }
 
+  /* animations */
   .yellow-flickering {
     animation: flickering 2s infinite;
   }
@@ -90,7 +95,6 @@ const SignalWrapper = styled.div`
       background: #565656;
     }
   }
-
   .green-flickering {
     animation: green-flickering 2s infinite;
   }
