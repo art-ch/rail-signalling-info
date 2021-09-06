@@ -126,11 +126,7 @@ const CISSignalProvider = ({ children }) => {
       return renderSignals;
     }
     if (zone === 'main') {
-      return renderSignals.slice(0, 8);
-    }
-    if (zone === 'fast') {
-      // TODO: merge with main
-      return [renderSignals.slice(8, 14), renderSignals.slice(0, 8)];
+      return renderSignals.slice(0, 14);
     }
     if (zone === 'atp') {
       return renderAtpSignals;
