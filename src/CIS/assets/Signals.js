@@ -11,7 +11,7 @@ export const BiggestSignal = ({ aspect }) => {
   const { zone } = useContext(CISSignalContext);
   return (
     <SignalWrapper>
-      <div className="post">{renderSignal(aspect)}</div>
+      <div className="post">{renderSignal(aspect, zone, 'BiggestSignal')}</div>
     </SignalWrapper>
   );
 };
@@ -20,14 +20,13 @@ export const BigSignal = ({ aspect }) => {
   const { zone } = useContext(CISSignalContext);
   return (
     <SignalWrapper>
-      <div className="post">{renderSignal(aspect)}</div>
+      <div className="post">{renderSignal(aspect, zone, 'BigSignal')}</div>
     </SignalWrapper>
   );
 };
 
 export const RegularSignal = ({ aspect }) => {
   const { zone } = useContext(CISSignalContext);
-
   return (
     <SignalWrapper>
       <div className="post">

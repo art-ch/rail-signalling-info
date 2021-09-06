@@ -76,7 +76,7 @@ const SignalWrapper = styled.div`
   .green {
     background: #00b600;
   }
-  .moon-white {
+  .moonWhite {
     background: #c2c5cc;
   }
 

@@ -1,91 +1,124 @@
-const yellowLight = (aspect) => {
-  switch (aspect) {
-    case 'yellow':
-    case 'two-yellows':
-    case 'two-yellows-stripe':
-    case 'two-yellows-two-stripes':
-    case 'three-yellows':
-    case 'yellow-green':
-    case 'yellow-moonWhite':
-      return 'yellow';
-    case 'yellow-flickering':
-    case 'two-yellows-flickering':
-    case 'two-yellows-flickering-stripe':
-    case 'two-yellows-flickering-two-stripes':
-    case 'yellow-moonWhite-flickering':
-      return 'yellow-flickering';
-    default:
-      return null;
-  }
+const state = {
+  yellow: null,
+  green: null,
+  red: null,
+  bottomYellow: null,
+  moonWhite: null,
 };
-const greenLight = (aspect) => {
+let lightState;
+
+const turnOnSignal = (aspect) => {
   switch (aspect) {
     case 'green':
-    case 'green-moonWhite':
-    case 'two-greens':
-      return 'green';
+      return (lightState = { ...state, green: 'green' });
     case 'green-flickering':
-    case 'green-flickering-yellow-stripe':
-    case 'green-flickering-yellow-two-stripes':
-      return 'green-flickering';
-    default:
-      return null;
-  }
-};
-const redLight = (aspect) => {
-  switch (aspect) {
+      return (lightState = { ...state, green: 'green-flickering' });
+    case 'yellow':
+      return (lightState = { ...state, yellow: 'yellow' });
+    case 'yellow-flickering':
+      return (lightState = { ...state, yellow: 'yellow-flickering' });
     case 'red':
-      return 'red';
-    case 'yellow-green':
-      return 'green';
-    case 'three-yellows':
-      return 'yellow';
-    default:
-      return null;
-  }
-};
-const bottomYellowLight = (aspect) => {
-  switch (aspect) {
+      return (lightState = { ...state, red: 'red' });
+    case 'moonWhite':
+      return (lightState = { ...state, moonWhite: 'moonWhite' });
     case 'two-yellows':
     case 'two-yellows-stripe':
     case 'two-yellows-two-stripes':
+      return (lightState = {
+        ...state,
+        yellow: 'yellow',
+        bottomYellow: 'yellow',
+      });
     case 'two-yellows-flickering':
     case 'two-yellows-flickering-stripe':
     case 'two-yellows-flickering-two-stripes':
+      return (lightState = {
+        ...state,
+        yellow: 'yellow-flickering',
+        bottomYellow: 'yellow',
+      });
     case 'green-flickering-yellow-stripe':
     case 'green-flickering-yellow-two-stripes':
-      return 'yellow';
-    case 'two-greens':
-      return 'green';
-    default:
-      return null;
-  }
-};
-const moonWhiteLight = (aspect) => {
-  switch (aspect) {
-    case 'moonWhite':
+      return (lightState = {
+        ...state,
+        green: 'green-flickering',
+        bottomYellow: 'yellow',
+      });
     case 'green-moonWhite':
+      return (lightState = {
+        ...state,
+        green: 'green',
+        moonWhite: 'moonWhite',
+      });
     case 'yellow-moonWhite':
-    case 'yellow-moonWhite-flickering':
-      return 'moon-white';
+      return (lightState = {
+        ...state,
+        yellow: 'yellow',
+        moonWhite: 'moonWhite',
+      });
+    case 'yellow-flickering-moonWhite':
+      return (lightState = {
+        ...state,
+        yellow: 'yellow-flickering',
+        moonWhite: 'moonWhite',
+      });
+    case 'yellow-green':
+      return (lightState = { ...state, yellow: 'yellow', red: 'green' });
+    case 'two-greens':
+      return (lightState = { ...state, green: 'green', bottomYellow: 'green' });
     case 'three-yellows':
-      return 'yellow';
+      return (lightState = {
+        ...state,
+        yellow: 'yellow',
+        red: 'yellow',
+        bottomYellow: 'yellow',
+      });
     default:
-      return null;
+      throw new Error('How did you even got here pal?');
   }
 };
 
-const renderPlates = (aspect) => {
+const renderLights = (aspect, zone, signalSize) => {
+  const { yellow, green, red, bottomYellow, moonWhite } = lightState;
+  const BiggestSignal = {
+    plate: [yellow, green, red],
+    smallerPlate: [bottomYellow, moonWhite],
+  };
+  const BigSignal = {
+    plate: [yellow, green],
+    smallerPlate: [red, bottomYellow],
+    moonWhitePlate: [moonWhite],
+  };
+  const RegularSignal = {
+    plate: [yellow, green, red],
+  };
+  const BiggestSignalAtp4 = {
+    plate: [yellow, green, red],
+    smallerPlate: [bottomYellow, moonWhite],
+  };
+  const BigSignalAtp4 = {
+    plate: [yellow, green],
+    smallerPlate: [red, bottomYellow],
+    moonWhitePlate: [moonWhite],
+  };
+  const RegularSignaAtp4 = {
+    plate: [yellow, green, red],
+  };
+};
+
+const renderPlates = (aspect, zone, signalSize) => {
+  turnOnSignal(aspect);
+  const { yellow, green, red, bottomYellow, moonWhite } = lightState;
   const arrayOfLights = {
-    plate: [yellowLight, greenLight, redLight],
-    smallerPlate: [bottomYellowLight, moonWhiteLight],
+    plate: [yellow, green, red],
+    smallerPlate: [bottomYellow, moonWhite],
   };
   return Object.entries(arrayOfLights).map(
     ([outerDivClass, functions], index) => {
       return (
         <div className={outerDivClass} key={index}>
           {functions.map((fn, index) => {
-            return <div className={`light ${fn(aspect)}`} key={index}></div>;
+            return <div className={`light ${fn}`} key={index}></div>;
           })}
         </div>
       );
