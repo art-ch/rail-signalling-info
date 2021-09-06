@@ -37,10 +37,10 @@ const SignalWrapper = styled.div`
     margin-bottom: 15px;
   }
   .plate {
-    height: 100px;
+    height: 105px;
   }
   .smallerPlate {
-    height: 70px;
+    height: 77px;
   }
 
   /* green line container */
