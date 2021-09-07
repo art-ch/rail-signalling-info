@@ -58,8 +58,33 @@ const Signal = ({ lights }) => {
   console.log(lights);
   return <h1>Signal Component</h1>;
 };
-const Description = () => {
-  return <h1>Description Component</h1>;
+
+const Description = ({ name, description }) => {
+  let newDescription;
+  if (typeof description === 'string') {
+    newDescription = (
+      <div className="description-container">
+        <p>{description}</p>
+      </div>
+    );
+  } else {
+    newDescription = Object.entries(description).map(
+      ([signalType, signalTypeDescription]) => {
+        return (
+          <div className="description-container">
+            <h3>{signalType}</h3>
+            <p>{signalTypeDescription}</p>
+          </div>
+        );
+      }
+    );
+  }
+  return (
+    <div className="information-container">
+      <h3>{name}</h3>
+      {newDescription}
+    </div>
+  );
 };
 
 export const BiggestSignal = ({ aspect }) => {
