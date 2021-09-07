@@ -17,13 +17,7 @@ export const Signals = () => {
     newAspects = aspects.slice(0, 8);
   }
   if (zone === 'atp') {
-    newAspects = [
-      aspects[0],
-      aspects[1],
-      ...aspects.slice(3, 14),
-      aspects[2],
-      aspects[14],
-    ];
+    newAspects = [...aspects.slice(0, 14)];
   }
   if (zone === 'atp-4') {
     newAspects = [
