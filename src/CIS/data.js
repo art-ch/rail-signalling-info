@@ -16,21 +16,6 @@ export const aspects = [
   },
   {
     id: 2,
-    name: 'yellow',
-    lights: {
-      l1: 'yellow',
-      l2: null,
-      l3: null,
-      l4: null,
-      l5: null,
-    },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
-  },
-  {
-    id: 3,
     name: 'yellow-flickering',
     lights: {
       l1: 'yellow-flickering',
@@ -45,10 +30,25 @@ export const aspects = [
     },
   },
   {
-    id: 4,
-    name: 'two-yellows',
+    id: 3,
+    name: 'yellow',
     lights: {
       l1: 'yellow',
+      l2: null,
+      l3: null,
+      l4: null,
+      l5: null,
+    },
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+  },
+  {
+    id: 4,
+    name: 'two-yellows-flickering',
+    lights: {
+      l1: 'yellow-flickering',
       l2: null,
       l3: null,
       l4: 'yellow',
@@ -61,9 +61,9 @@ export const aspects = [
   },
   {
     id: 5,
-    name: 'two-yellows-flickering',
+    name: 'two-yellows',
     lights: {
-      l1: 'yellow-flickering',
+      l1: 'yellow',
       l2: null,
       l3: null,
       l4: 'yellow',
@@ -127,10 +127,10 @@ export const aspects = [
   },
   {
     id: 10,
-    name: 'two-yellows-stripe',
+    name: 'green-flickering-yellow-two-stripes',
     lights: {
-      l1: 'yellow',
-      l2: null,
+      l1: null,
+      l2: 'green-flickering',
       l3: null,
       l4: 'yellow',
       l5: null,
@@ -157,22 +157,7 @@ export const aspects = [
   },
   {
     id: 12,
-    name: 'green-flickering-yellow-two-stripes',
-    lights: {
-      l1: null,
-      l2: 'green-flickering',
-      l3: null,
-      l4: 'yellow',
-      l5: null,
-    },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
-  },
-  {
-    id: 13,
-    name: 'two-yellows-two-stripes',
+    name: 'two-yellows-stripe',
     lights: {
       l1: 'yellow',
       l2: null,
@@ -186,10 +171,25 @@ export const aspects = [
     },
   },
   {
-    id: 14,
+    id: 13,
     name: 'two-yellows-flickering-two-stripes',
     lights: {
       l1: 'yellow-flickering',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: null,
+    },
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+  },
+  {
+    id: 14,
+    name: 'two-yellows-two-stripes',
+    lights: {
+      l1: 'yellow',
       l2: null,
       l3: null,
       l4: 'yellow',
@@ -292,8 +292,8 @@ export const aspects = [
     name: 'yellow-green',
     lights: {
       l1: 'yellow',
-      l2: null,
-      l3: 'green',
+      l2: 'green',
+      l3: null,
       l4: null,
       l5: null,
     },

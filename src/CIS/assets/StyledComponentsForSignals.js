@@ -16,7 +16,8 @@ const SignalWrapper = styled.div`
     margin-top: 0.5rem;
   }
   .plate,
-  .smallerPlate,
+  .smaller-plate,
+  .moonWhite-plate,
   .green-line-container,
   .small-signal-plate {
     display: flex;
@@ -26,21 +27,31 @@ const SignalWrapper = styled.div`
     justify-content: center;
   }
   .plate,
-  .smallerPlate,
+  .smaller-plate,
   .green-line-container {
     transform: translate(-32%);
   }
   .plate,
-  .smallerPlate {
-    width: 50px;
+  .smaller-plate,
+  .moonWhite-plate {
     border-radius: 50px;
+  }
+  .plate,
+  .smaller-plate {
+    width: 50px;
+
     margin-bottom: 15px;
   }
   .plate {
     height: 105px;
   }
-  .smallerPlate {
+  .smaller-plate {
     height: 77px;
+  }
+  .moonWhite-plate {
+    width: 40px;
+    height: 40px;
+    transform: translate(-27%);
   }
 
   /* green line container */
