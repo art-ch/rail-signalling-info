@@ -2,6 +2,13 @@ export const aspects = [
   {
     id: 1,
     name: 'green',
+    lights: {
+      l1: null,
+      l2: 'green',
+      l3: null,
+      l4: null,
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -10,6 +17,13 @@ export const aspects = [
   {
     id: 2,
     name: 'yellow',
+    lights: {
+      l1: 'yellow',
+      l2: null,
+      l3: null,
+      l4: null,
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -18,6 +32,13 @@ export const aspects = [
   {
     id: 3,
     name: 'yellow-flickering',
+    lights: {
+      l1: 'yellow-flickering',
+      l2: null,
+      l3: null,
+      l4: null,
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -26,6 +47,13 @@ export const aspects = [
   {
     id: 4,
     name: 'two-yellows',
+    lights: {
+      l1: 'yellow',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -34,6 +62,13 @@ export const aspects = [
   {
     id: 5,
     name: 'two-yellows-flickering',
+    lights: {
+      l1: 'yellow-flickering',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -42,21 +77,49 @@ export const aspects = [
   {
     id: 6,
     name: 'red',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: 'red',
+      l4: null,
+      l5: null,
+    },
     description: 'signal description',
   },
   {
     id: 7,
     name: 'moonWhite',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: null,
+      l4: null,
+      l5: 'moonWhite',
+    },
     description: 'signal description',
   },
   {
     id: 8,
     name: 'blue',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: null,
+      l4: null,
+      l5: null,
+    },
     description: 'signal description',
   },
   {
     id: 9,
     name: 'green-flickering-yellow-stripe',
+    lights: {
+      l1: null,
+      l2: 'green-flickering',
+      l3: null,
+      l4: 'yellow',
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -65,6 +128,13 @@ export const aspects = [
   {
     id: 10,
     name: 'two-yellows-stripe',
+    lights: {
+      l1: 'yellow',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -73,6 +143,13 @@ export const aspects = [
   {
     id: 11,
     name: 'two-yellows-flickering-stripe',
+    lights: {
+      l1: 'yellow-flickering',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -81,6 +158,13 @@ export const aspects = [
   {
     id: 12,
     name: 'green-flickering-yellow-two-stripes',
+    lights: {
+      l1: null,
+      l2: 'green-flickering',
+      l3: null,
+      l4: 'yellow',
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -89,6 +173,13 @@ export const aspects = [
   {
     id: 13,
     name: 'two-yellows-two-stripes',
+    lights: {
+      l1: 'yellow',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -97,6 +188,13 @@ export const aspects = [
   {
     id: 14,
     name: 'two-yellows-flickering-two-stripes',
+    lights: {
+      l1: 'yellow-flickering',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -105,6 +203,13 @@ export const aspects = [
   {
     id: 15,
     name: 'green-flickering',
+    lights: {
+      l1: null,
+      l2: 'green-flickering',
+      l3: null,
+      l4: null,
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -113,11 +218,25 @@ export const aspects = [
   {
     id: 16,
     name: 'three-yellows',
+    lights: {
+      l1: 'yellow',
+      l2: null,
+      l3: 'yellow',
+      l4: null,
+      l5: 'yellow',
+    },
     description: 'signal description',
   },
   {
     id: 17,
     name: 'green-moonWhite',
+    lights: {
+      l1: null,
+      l2: 'green',
+      l3: null,
+      l4: null,
+      l5: 'moonWhite',
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -126,6 +245,13 @@ export const aspects = [
   {
     id: 18,
     name: 'yellow-moonWhite',
+    lights: {
+      l1: 'yellow',
+      l2: null,
+      l3: null,
+      l4: null,
+      l5: 'moonWhite',
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -134,6 +260,13 @@ export const aspects = [
   {
     id: 19,
     name: 'two-greens',
+    lights: {
+      l1: null,
+      l2: 'green',
+      l3: null,
+      l4: 'green',
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -142,6 +275,13 @@ export const aspects = [
   {
     id: 20,
     name: 'yellow-flickering-moonWhite',
+    lights: {
+      l1: 'yellow-flickering',
+      l2: null,
+      l3: null,
+      l4: null,
+      l5: 'moonWhite',
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
@@ -150,6 +290,13 @@ export const aspects = [
   {
     id: 21,
     name: 'yellow-green',
+    lights: {
+      l1: 'yellow',
+      l2: null,
+      l3: 'green',
+      l4: null,
+      l5: null,
+    },
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',

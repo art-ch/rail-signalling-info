@@ -11,7 +11,7 @@ import {
 const CISSignalContext = React.createContext();
 
 const CISSignalProvider = ({ children }) => {
-  const [zone, setZone] = useState('semi-atp');
+  const [zone, setZone] = useState('all');
   const [signalType, setSignalType] = useState('all');
 
   // console.log(zone);

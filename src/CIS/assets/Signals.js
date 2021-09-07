@@ -1,11 +1,66 @@
 import React, { useContext } from 'react';
 import { CISSignalContext } from '../CISSignalContext';
+import { aspects } from '../data';
 import {
   SignalWrapper,
   DwarfManeuveringSignalWrapper,
   CombinedSignalWrapper,
 } from './StyledComponentsForSignals';
 import { renderSignal } from './LogicForSignals';
+
+export const Signals = () => {
+  const { zone } = useContext(CISSignalContext);
+  let newAspects;
+  if (zone === 'all') {
+    newAspects = aspects;
+  }
+  if (zone === 'main') {
+    newAspects = aspects.slice(0, 8);
+  }
+  if (zone === 'atp') {
+    newAspects = [
+      aspects[0],
+      aspects[1],
+      ...aspects.slice(3, 14),
+      aspects[2],
+      aspects[14],
+    ];
+  }
+  if (zone === 'atp-4') {
+    newAspects = [
+      aspects[0],
+      aspects[20],
+      aspects[1],
+      ...aspects.slice(3, 14),
+      aspects[2],
+      aspects[14],
+    ];
+  }
+  if (zone === 'semi-atp') {
+    newAspects = [aspects[0], ...aspects.slice(3, 8)];
+  }
+  return (
+    <section className="signals">
+      {newAspects.map((aspect) => {
+        const { id, name, lights, description } = aspect;
+        return (
+          <article className="signal-card" key={id}>
+            <Signal lights={lights} />
+            <Description name={name} description={description} />
+          </article>
+        );
+      })}
+    </section>
+  );
+};
+
+const Signal = ({ lights }) => {
+  console.log(lights);
+  return <h1>Signal Component</h1>;
+};
+const Description = () => {
+  return <h1>Description Component</h1>;
+};
 
 export const BiggestSignal = ({ aspect }) => {
   const { zone } = useContext(CISSignalContext);

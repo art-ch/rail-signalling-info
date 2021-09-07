@@ -1,35 +1,25 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Buttons from './assets/Buttons';
-import Sign from './assets/Signs';
+import { Signals } from './assets/Signals';
+import { Signs } from './assets/Signs';
 import { signs } from './data';
-import { CISSignalContext } from './CISSignalContext';
 
 const CISPage = () => {
-  const { filterSignals } = useContext(CISSignalContext);
   return (
-    <Wrapper>
+    <main>
       <Navbar />
-      <h1>Signals from CIS Region</h1>
-      <Buttons />
-      {filterSignals()}
-      {signs.map((sign) => {
-        const { id, name, description } = sign;
-        return (
-          <article className="signal-card" key={id}>
-            <Sign name={name} />
-            <div className="description-container">
-              <h1>{name}</h1>
-              <p>{description}</p>
-            </div>
-          </article>
-        );
-      })}
-      <button type="button" className="btn">
-        test your knowledge
-      </button>
-    </Wrapper>
+      <Wrapper>
+        <h1>Signals from CIS Region</h1>
+        <Buttons />
+        <Signals />
+        <Signs />
+        <button type="button" className="btn">
+          test your knowledge
+        </button>
+      </Wrapper>
+    </main>
   );
 };
 

@@ -17,7 +17,7 @@ const Buttons = () => {
       setZone('atp');
     }
     if (id === 4) {
-      setZone('atp4');
+      setZone('atp-4');
     }
     if (id === 5) {
       setZone('semi-atp');
@@ -34,7 +34,7 @@ const Buttons = () => {
   };
 
   return (
-    <div>
+    <section className="btn-wrapper">
       {filterButtons.map((buttonArray, index) => {
         return (
           <div className="btn-container" key={index}>
@@ -49,7 +49,7 @@ const Buttons = () => {
           </div>
         );
       })}
-    </div>
+    </section>
   );
 };
 
