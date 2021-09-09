@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Buttons from './assets/Buttons';
-import { Signals } from './assets/Signals';
+import { SignalCards } from './assets/Signals';
 import { Signs } from './assets/Signs';
 import { signs } from './data';
 
@@ -13,7 +13,7 @@ const CISPage = () => {
       <Wrapper>
         <h1>Signals from CIS Region</h1>
         <Buttons />
-        <Signals />
+        <SignalCards />
         <Signs />
         <button type="button" className="btn">
           test your knowledge

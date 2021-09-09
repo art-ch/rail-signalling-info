@@ -14,21 +14,24 @@ const Buttons = () => {
       setZone('main');
     }
     if (id === 3) {
-      setZone('atp');
+      setZone('fast');
     }
     if (id === 4) {
-      setZone('atp-4');
+      setZone('atp');
     }
     if (id === 5) {
-      setZone('semi-atp');
+      setZone('atp-4');
     }
     if (id === 6) {
-      setSignalType('all');
+      setZone('semi-atp');
     }
     if (id === 7) {
-      setSignalType('entry');
+      setSignalType('all');
     }
     if (id === 8) {
+      setSignalType('entry');
+    }
+    if (id === 9) {
       setSignalType('exit');
     }
   };

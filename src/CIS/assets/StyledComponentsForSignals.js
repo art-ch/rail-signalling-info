@@ -5,9 +5,17 @@ const SignalWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* post */
+
+  .big-signal-post,
   .post {
     background: #6c757d;
     width: 18px;
+  }
+  .big-signal-post {
+    height: 450px;
+  }
+  .post {
     height: 400px;
   }
 
@@ -19,7 +27,9 @@ const SignalWrapper = styled.div`
   .smaller-plate,
   .moonWhite-plate,
   .green-line-container,
-  .small-signal-plate {
+  .dwarf-signal-plate,
+  .dwarf-signal-smaller-plate,
+  .dwarf-maneuvering-signal-plate {
     display: flex;
     flex-direction: column;
     background: black;
@@ -35,12 +45,11 @@ const SignalWrapper = styled.div`
   .smaller-plate,
   .moonWhite-plate {
     border-radius: 50px;
+    margin-bottom: 15px;
   }
   .plate,
   .smaller-plate {
     width: 50px;
-
-    margin-bottom: 15px;
   }
   .plate {
     height: 105px;
@@ -90,6 +99,9 @@ const SignalWrapper = styled.div`
   .moonWhite {
     background: #c2c5cc;
   }
+  .blue {
+    background: #0060fb;
+  }
 
   /* animations */
   .yellow-flickering {
@@ -122,11 +134,71 @@ const SignalWrapper = styled.div`
   }
 `;
 
+const DwarfSignalWrapper = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .dwarf-signal-plates {
+    display: flex;
+    align-items: flex-end;
+    gap: 7px;
+  }
+  .dwarf-signal-smaller-plate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    height: 60px;
+  }
+  .dwarf-signal-plate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    height: 86px;
+  }
+  .horizontal-support {
+    height: 7px;
+    width: 80px;
+    background: #8b939a;
+  }
+  .vertical-support {
+    height: 35px;
+    width: 10px;
+    background: #8b939a;
+  }
+  .light {
+    background: #565656;
+    margin: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  .yellow {
+    background: #ffae42;
+  }
+  .red {
+    background: #fa0000;
+  }
+  .green {
+    background: #00b600;
+  }
+  .moonWhite {
+    background: #c2c5cc;
+  }
+`;
+
 const DwarfManeuveringSignalWrapper = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
-  .small-signal-plate {
+  .dwarf-maneuvering-signal-plate {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,9 +233,14 @@ const DwarfManeuveringSignalWrapper = styled.article`
   }
 `;
 
-const CombinedSignalWrapper = styled.article`
+const CombinedSignalsWrapper = styled.article`
   display: flex;
   align-items: flex-end;
 `;
 
-export { SignalWrapper, DwarfManeuveringSignalWrapper, CombinedSignalWrapper };
+export {
+  SignalWrapper,
+  DwarfSignalWrapper,
+  DwarfManeuveringSignalWrapper,
+  CombinedSignalsWrapper,
+};

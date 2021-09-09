@@ -3,30 +3,28 @@ import { CISSignalContext } from '../CISSignalContext';
 import { aspects } from '../data';
 import {
   SignalWrapper,
+  DwarfSignalWrapper,
   DwarfManeuveringSignalWrapper,
-  CombinedSignalWrapper,
+  CombinedSignalsWrapper,
 } from './StyledComponentsForSignals';
 
-export const Signals = () => {
+export const SignalCards = () => {
   const { zone } = useContext(CISSignalContext);
   let newAspects;
   if (zone === 'all') {
     newAspects = aspects;
   }
   if (zone === 'main') {
-    newAspects = aspects.slice(0, 8);
+    newAspects = [...aspects.slice(0, 8)];
+  }
+  if (zone === 'fast') {
+    newAspects = [...aspects.slice(8, 14)];
   }
   if (zone === 'atp') {
     newAspects = [...aspects.slice(0, 14)];
   }
   if (zone === 'atp-4') {
-    newAspects = [
-      aspects[0],
-      aspects[20],
-      ...aspects.slice(2, 7),
-      aspects[1],
-      aspects[14],
-    ];
+    newAspects = [aspects[0], aspects[14], aspects[20], ...aspects.slice(1, 8)];
   }
   if (zone === 'semi-atp') {
     newAspects = [aspects[0], ...aspects.slice(3, 8)];
@@ -38,7 +36,7 @@ export const Signals = () => {
         const { id, name, lights, description } = aspect;
         return (
           <article className="signal-card" key={id}>
-            <Signal aspect={name} lights={lights} />
+            <Signal id={id} aspect={name} lights={lights} />
             <Description name={name} description={description} />
           </article>
         );
@@ -47,13 +45,83 @@ export const Signals = () => {
   );
 };
 
-const Signal = ({ aspect, lights }) => {
+const Signal = ({ id, aspect, lights }) => {
   const { zone } = useContext(CISSignalContext);
-  if (zone === 'all' || zone === 'main') {
-    return <BiggestSignal aspect={aspect} lights={lights} />;
+  if (aspect === 'blue') {
+    return (
+      <CombinedSignalsWrapper className="combined-signals">
+        <SmallSignal aspect={aspect} lights={lights} />
+        <DwarfManeuveringSignal aspect={aspect} />
+      </CombinedSignalsWrapper>
+    );
   }
-  if (zone === 'atp' || zone === 'atp-4' || zone === 'semi-atp') {
-    return <BigSignal aspect={aspect} lights={lights} />;
+  if (zone === 'all' || zone === 'main' || zone === 'fast') {
+    if (aspect === 'moonWhite') {
+      return (
+        <CombinedSignalsWrapper className="combined-signals">
+          <BiggestSignal aspect={aspect} lights={lights} />
+          <DwarfSignal aspect={aspect} lights={lights} />
+          <SmallSignal aspect={aspect} lights={lights} />
+          <DwarfManeuveringSignal aspect={aspect} />
+        </CombinedSignalsWrapper>
+      );
+    } else if (id === 1 || id === 3 || id === 6 || id === 19) {
+      return (
+        <CombinedSignalsWrapper className="combined-signals">
+          <BiggestSignal aspect={aspect} lights={lights} />
+          <DwarfSignal aspect={aspect} lights={lights} />
+        </CombinedSignalsWrapper>
+      );
+    } else {
+      return <BiggestSignal aspect={aspect} lights={lights} />;
+    }
+  }
+  if (zone === 'atp' || zone === 'atp-4') {
+    if (aspect === 'moonWhite') {
+      return (
+        <CombinedSignalsWrapper className="combined-signals">
+          <BigSignal aspect={aspect} lights={lights} />
+          <SmallSignal aspect={aspect} lights={lights} />
+          <DwarfManeuveringSignal aspect={aspect} />
+        </CombinedSignalsWrapper>
+      );
+    } else if (
+      Object.values(lights).filter((light) => light !== null).length === 1 ||
+      aspect === 'yellow-green'
+    ) {
+      return (
+        <CombinedSignalsWrapper className="combined-signals">
+          <RegularSignal aspect={aspect} lights={lights} />
+          <BigSignal aspect={aspect} lights={lights} />
+        </CombinedSignalsWrapper>
+      );
+    } else {
+      return <BigSignal aspect={aspect} lights={lights} />;
+    }
+  }
+  if (zone === 'semi-atp') {
+    if (aspect === 'moonWhite') {
+      return (
+        <CombinedSignalsWrapper className="combined-signals">
+          <BigSignal aspect={aspect} lights={lights} />
+          <DwarfSignal aspect={aspect} lights={lights} />
+          <SmallSignal aspect={aspect} lights={lights} />
+          <DwarfManeuveringSignal aspect={aspect} />
+        </CombinedSignalsWrapper>
+      );
+    } else if (
+      Object.values(lights).filter((light) => light !== null).length === 1
+    ) {
+      return (
+        <CombinedSignalsWrapper className="combined-signals">
+          <BigSignal aspect={aspect} lights={lights} />
+          <SmallSignal aspect={aspect} lights={lights} />
+          <DwarfSignal aspect={aspect} lights={lights} />
+        </CombinedSignalsWrapper>
+      );
+    } else {
+      return <BigSignal aspect={aspect} lights={lights} />;
+    }
   }
 };
 
@@ -89,7 +157,7 @@ export const BiggestSignal = ({ aspect, lights }) => {
   // TODO: Try transforming each light into separate component
   return (
     <SignalWrapper>
-      <div className="post">
+      <div className="big-signal-post">
         <div className="plates">
           <div className="plate">
             <div className={`light ${lights.l1}`}></div>
@@ -109,16 +177,17 @@ export const BiggestSignal = ({ aspect, lights }) => {
             <div className={`light ${lights.l5}`}></div>
           </div>
         </div>
+        <Stripes aspect={aspect} />
       </div>
     </SignalWrapper>
   );
 };
 
-export const BigSignal = ({ lights }) => {
+export const BigSignal = ({ aspect, lights }) => {
   const { zone } = useContext(CISSignalContext);
   return (
     <SignalWrapper>
-      <div className="post">
+      <div className="big-signal-post">
         <div className="plates">
           <div className="smaller-plate">
             <div className={`light ${lights.l1}`}></div>
@@ -136,72 +205,84 @@ export const BigSignal = ({ lights }) => {
             <div className={`light ${lights.l5}`}></div>
           </div>
         </div>
+        <Stripes aspect={aspect} />
       </div>
     </SignalWrapper>
   );
 };
 
-export const RegularSignal = ({ aspect }) => {
+export const RegularSignal = ({ lights }) => {
   const { zone } = useContext(CISSignalContext);
   return (
     <SignalWrapper>
       <div className="post">
         <div className="plate" style={{ marginTop: '0.5rem' }}>
+          <div className={`light ${lights.l1}`}></div>
           <div
-            className={`light ${
-              aspect === 'yellow'
-                ? 'yellow'
-                : aspect === 'yellow-flickering'
-                ? 'yellow-flickering'
-                : null
-            }`}
+            className={`light ${zone === 'atp-4' ? lights.l3 : lights.l2}`}
           ></div>
           <div
-            className={`light ${
-              aspect === 'green'
-                ? 'green'
-                : aspect === 'green-flickering'
-                ? 'green-flickering'
-                : null
-            }`}
+            className={`light ${zone === 'atp-4' ? lights.l2 : lights.l3}`}
           ></div>
-          <div className={`light ${aspect === 'red' && 'red'}`}></div>
         </div>
       </div>
     </SignalWrapper>
   );
 };
 
-export const SmallSignal = ({ aspect }) => {
+export const SmallSignal = ({ aspect, lights }) => {
   const { zone } = useContext(CISSignalContext);
 
   return (
     <SignalWrapper>
       <div className="post">
-        <div className="smallerPlate" style={{ marginTop: '0.5rem' }}>
+        <div className="smaller-plate" style={{ marginTop: '0.5rem' }}>
           <div
-            className={`light ${aspect === 'green' ? 'green' : 'moonWhite'}`}
+            className={`light ${
+              aspect === 'green'
+                ? 'green'
+                : aspect === 'moonWhite'
+                ? 'moonWhite'
+                : null
+            }`}
           ></div>
-          <div className={`light ${aspect === 'red' ? 'red' : 'blue'}`}></div>
+          <div
+            className={`light ${
+              aspect === 'blue' ? 'blue' : aspect === 'red' ? 'red' : null
+            }`}
+          ></div>
         </div>
       </div>
     </SignalWrapper>
   );
 };
 
-export const DwarfSignal = ({ aspect }) => {
+export const DwarfSignal = ({ aspect, lights }) => {
+  const { zone } = useContext(CISSignalContext);
   return (
     <SignalWrapper>
-      <DwarfManeuveringSignalWrapper>
-        <div className="small-signal-plate">
-          <div
-            className={`light ${aspect === 'moonWhite' && 'moon-white'}`}
-          ></div>
-          <div className={`light ${aspect === 'blue' && 'blue'}`}></div>
+      <DwarfSignalWrapper>
+        <div className="dwarf-signal-plates">
+          <div className="dwarf-signal-smaller-plate">
+            <div className={`light ${lights.l5}`}></div>
+            <div className={`light ${lights.l3}`}></div>
+          </div>
+          {zone === 'semi-atp' ? (
+            <div className="dwarf-signal-smaller-plate">
+              <div className={`light ${lights.l2}`}></div>
+              <div className="light"></div>
+            </div>
+          ) : (
+            <div className="dwarf-signal-plate">
+              <div className={`light ${lights.l2}`}></div>
+              <div className={`light ${lights.l1}`}></div>
+              <div className={`light ${lights.l4}`}></div>
+            </div>
+          )}
         </div>
         <div className="horizontal-support"></div>
         <div className="vertical-support"></div>
-      </DwarfManeuveringSignalWrapper>
+      </DwarfSignalWrapper>
     </SignalWrapper>
   );
 };
@@ -210,7 +291,7 @@ export const DwarfManeuveringSignal = ({ aspect }) => {
   return (
     <SignalWrapper>
       <DwarfManeuveringSignalWrapper>
-        <div className="small-signal-plate">
+        <div className="dwarf-maneuvering-signal-plate">
           <div
             className={`light ${aspect === 'moonWhite' && 'moon-white'}`}
           ></div>
@@ -223,42 +304,34 @@ export const DwarfManeuveringSignal = ({ aspect }) => {
   );
 };
 
-export const CombinedSignals = ({ aspect }) => {
-  return (
-    <CombinedSignalWrapper className="combined-signals">
-      <BiggestSignal aspect={aspect} />
-      <DwarfManeuveringSignal aspect={aspect} />
-    </CombinedSignalWrapper>
-  );
+const Stripes = ({ aspect }) => {
+  if (
+    aspect === 'two-yellows-stripe' ||
+    aspect === 'two-yellows-flickering-stripe' ||
+    aspect === 'green-flickering-yellow-stripe'
+  ) {
+    return (
+      <div className="green-line-container">
+        {Array.from(Array(3)).map((_, index) => {
+          return <div className="green-line-light" key={index}></div>;
+        })}
+      </div>
+    );
+  } else if (
+    aspect === 'two-yellows-two-stripes' ||
+    aspect === 'two-yellows-flickering-two-stripes' ||
+    aspect === 'green-flickering-yellow-two-stripes'
+  ) {
+    return Array.from(Array(2)).map((_, index) => {
+      return (
+        <div className="green-line-container" key={index}>
+          {Array.from(Array(3)).map((_, index) => {
+            return <div className="green-line-light" key={index}></div>;
+          })}
+        </div>
+      );
+    });
+  } else {
+    return null;
+  }
 };
-
-// const renderStripes = (aspect) => {
-//   if (
-//     aspect === 'two-yellows-stripe' ||
-//     aspect === 'two-yellows-flickering-stripe' ||
-//     aspect === 'green-flickering-yellow-stripe'
-//   ) {
-//     return (
-//       <div className="green-line-container">
-//         {Array.from(Array(3)).map((_, index) => {
-//           return <div className="green-line-light" key={index}></div>;
-//         })}
-//       </div>
-//     );
-//   }
-//   if (
-//     aspect === 'two-yellows-two-stripes' ||
-//     aspect === 'two-yellows-flickering-two-stripes' ||
-//     aspect === 'green-flickering-yellow-two-stripes'
-//   ) {
-//     return Array.from(Array(2)).map((_, index) => {
-//       return (
-//         <div className="green-line-container" key={index}>
-//           {Array.from(Array(3)).map((_, index) => {
-//             return <div className="green-line-light" key={index}></div>;
-//           })}
-//         </div>
-//       );
-//     });
-//   }
-// };
