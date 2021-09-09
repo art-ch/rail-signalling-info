@@ -65,7 +65,7 @@ const Signal = ({ id, aspect, lights }) => {
           <DwarfManeuveringSignal aspect={aspect} />
         </CombinedSignalsWrapper>
       );
-    } else if (id === 1 || id === 3 || id === 6 || id === 19) {
+    } else if (id === 1 || id === 3 || id === 6 || id === 20) {
       return (
         <CombinedSignalsWrapper className="combined-signals">
           <BiggestSignal aspect={aspect} lights={lights} />

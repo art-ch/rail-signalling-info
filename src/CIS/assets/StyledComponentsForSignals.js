@@ -102,7 +102,6 @@ const SignalWrapper = styled.div`
   .blue {
     background: #0060fb;
   }
-
   /* animations */
   .yellow-flickering {
     animation: flickering 2s infinite;
@@ -132,8 +131,23 @@ const SignalWrapper = styled.div`
       background: #565656;
     }
   }
+  .moonWhite-flickering {
+    animation: moonWhite-flickering 2s infinite;
+  }
+  @keyframes moonWhite-flickering {
+    0% {
+      background: #565656;
+    }
+    50% {
+      background: #c2c5cc;
+    }
+    100% {
+      background: #565656;
+    }
+  }
 `;
 
+/* dwarf signals */
 const DwarfSignalWrapper = styled.article`
   display: flex;
   flex-direction: column;

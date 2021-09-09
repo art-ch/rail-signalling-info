@@ -96,7 +96,9 @@ export const aspects = [
       l4: null,
       l5: 'moonWhite',
     },
-    description: 'signal description',
+    description: {
+      maneuvering: 'signal description',
+    },
   },
   {
     id: 8,
@@ -105,7 +107,9 @@ export const aspects = [
       l1: null,
       l2: 'blue',
     },
-    description: 'signal description',
+    description: {
+      maneuvering: 'signal description',
+    },
   },
   {
     id: 9,
@@ -226,6 +230,34 @@ export const aspects = [
   },
   {
     id: 17,
+    name: 'moonWhite-flickering',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: null,
+      l4: null,
+      l5: 'moonWhite-flickering',
+    },
+    description: {
+      invitational: 'invitational signal description',
+    },
+  },
+  {
+    id: 17,
+    name: 'red-moonWhite-flickering',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: 'red',
+      l4: null,
+      l5: 'moonWhite-flickering',
+    },
+    description: {
+      invitational: 'invitational signal description',
+    },
+  },
+  {
+    id: 18,
     name: 'green-moonWhite',
     lights: {
       l1: null,
@@ -240,7 +272,7 @@ export const aspects = [
     },
   },
   {
-    id: 18,
+    id: 19,
     name: 'yellow-moonWhite',
     lights: {
       l1: 'yellow',
@@ -255,7 +287,7 @@ export const aspects = [
     },
   },
   {
-    id: 19,
+    id: 20,
     name: 'two-greens',
     lights: {
       l1: null,
@@ -270,7 +302,7 @@ export const aspects = [
     },
   },
   {
-    id: 20,
+    id: 21,
     name: 'yellow-flickering-moonWhite',
     lights: {
       l1: 'yellow-flickering',
@@ -285,7 +317,7 @@ export const aspects = [
     },
   },
   {
-    id: 21,
+    id: 22,
     name: 'yellow-green',
     lights: {
       l1: 'yellow',
