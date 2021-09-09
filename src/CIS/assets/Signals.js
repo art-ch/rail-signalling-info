@@ -281,7 +281,10 @@ export const DwarfSignal = ({ aspect, lights }) => {
           )}
         </div>
         <div className="horizontal-support"></div>
-        <div className="vertical-support"></div>
+        <div className="vertical-support-container">
+          <div className="vertical-support"></div>
+          <div className="vertical-support"></div>
+        </div>
       </DwarfSignalWrapper>
     </SignalWrapper>
   );

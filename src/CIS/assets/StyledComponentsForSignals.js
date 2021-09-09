@@ -152,27 +152,32 @@ const DwarfSignalWrapper = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
-  .dwarf-signal-plates {
+
+  .dwarf-signal-plates,
+  .dwarf-signal-plate,
+  .dwarf-signal-smaller-plate,
+  .vertical-support-container {
     display: flex;
+  }
+  .dwarf-signal-plate,
+  .dwarf-signal-smaller-plate {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dwarf-signal-plates {
     align-items: flex-end;
     gap: 7px;
   }
   .dwarf-signal-smaller-plate {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 30px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     height: 60px;
   }
   .dwarf-signal-plate {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
+    width: 32px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     height: 86px;
@@ -181,6 +186,11 @@ const DwarfSignalWrapper = styled.article`
     height: 7px;
     width: 80px;
     background: #8b939a;
+  }
+  .vertical-support-container {
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 1.75rem;
   }
   .vertical-support {
     height: 35px;
