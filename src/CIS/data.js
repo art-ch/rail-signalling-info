@@ -288,6 +288,96 @@ export const aspects = [
   },
   {
     id: 20,
+    name: 'two-yellows-flickering-moonWhite',
+    lights: {
+      l1: 'yellow-flickering',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: 'moonWhite',
+    },
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+  },
+  {
+    id: 21,
+    name: 'two-yellows-moonWhite',
+    lights: {
+      l1: 'yellow',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: 'moonWhite',
+    },
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+  },
+  {
+    id: 22,
+    name: 'green-flickering-yellow-moonWhite-stripe',
+    lights: {
+      l1: null,
+      l2: 'green-flickering',
+      l3: null,
+      l4: 'yellow',
+      l5: 'moonWhite',
+    },
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+  },
+  {
+    id: 23,
+    name: 'two-yellows-moonWhite-stripe',
+    lights: {
+      l1: 'yellow',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: 'moonWhite',
+    },
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+  },
+  {
+    id: 24,
+    name: 'green-flickering-yellow-moonWhite-two-stripes',
+    lights: {
+      l1: null,
+      l2: 'green-flickering',
+      l3: null,
+      l4: null,
+      l5: 'moonWhite',
+    },
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+  },
+  {
+    id: 25,
+    name: 'two-yellows-moonWhite-two-stripes',
+    lights: {
+      l1: 'yellow',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: 'moonWhite',
+    },
+    description: {
+      entry: 'entry signal description',
+      exit: 'exit signal description',
+    },
+  },
+  {
+    id: 26,
     name: 'two-greens',
     lights: {
       l1: null,
@@ -302,7 +392,7 @@ export const aspects = [
     },
   },
   {
-    id: 21,
+    id: 27,
     name: 'yellow-flickering-moonWhite',
     lights: {
       l1: 'yellow-flickering',
@@ -317,7 +407,7 @@ export const aspects = [
     },
   },
   {
-    id: 22,
+    id: 28,
     name: 'yellow-green',
     lights: {
       l1: 'yellow',
@@ -342,19 +432,21 @@ export const filterButtons = [
     { id: 3, name: 'fast zone aspects' },
     { id: 4, name: 'atp zone (automatic train protection)' },
     { id: 5, name: 'atp zone with 4 aspect signalling' },
-    { id: 6, name: 'semi-automatic tp zone' },
+    { id: 6, name: 'altp zone' },
+    { id: 7, name: 'semi-automatic tp zone' },
   ],
   [
-    { id: 7, name: 'all' },
-    { id: 8, name: 'entry' },
-    { id: 9, name: 'exit' },
-    { id: 10, name: 'route' },
-    { id: 11, name: 'block' },
-    { id: 12, name: 'cover' },
-    { id: 13, name: 'obstruction' },
-    { id: 14, name: 'warning' },
-    { id: 15, name: 'repeating' },
-    { id: 16, name: 'maneuvering' },
-    { id: 17, name: 'humping' },
+    { id: 8, name: 'all' },
+    { id: 9, name: 'entry' },
+    { id: 10, name: 'exit' },
+    { id: 11, name: 'invitational' },
+    { id: 12, name: 'route' },
+    { id: 13, name: 'block' },
+    { id: 14, name: 'cover' },
+    { id: 15, name: 'obstruction' },
+    { id: 16, name: 'warning' },
+    { id: 17, name: 'repeating' },
+    { id: 18, name: 'maneuvering' },
+    { id: 19, name: 'humping' },
   ],
 ];

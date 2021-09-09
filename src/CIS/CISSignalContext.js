@@ -4,7 +4,7 @@ import { aspects } from './data';
 const CISSignalContext = React.createContext();
 
 const CISSignalProvider = ({ children }) => {
-  const [zone, setZone] = useState('all');
+  const [zone, setZone] = useState('altp');
   const [signalType, setSignalType] = useState('all');
 
   return (

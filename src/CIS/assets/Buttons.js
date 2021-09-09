@@ -23,16 +23,22 @@ const Buttons = () => {
       setZone('atp-4');
     }
     if (id === 6) {
-      setZone('semi-atp');
+      setZone('altp');
     }
     if (id === 7) {
-      setSignalType('all');
+      setZone('semi-atp');
     }
     if (id === 8) {
-      setSignalType('entry');
+      setSignalType('all');
     }
     if (id === 9) {
+      setSignalType('entry');
+    }
+    if (id === 10) {
       setSignalType('exit');
+    }
+    if (id === 11) {
+      setSignalType('invitational');
     }
   };
 

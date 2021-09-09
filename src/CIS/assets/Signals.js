@@ -26,6 +26,9 @@ export const SignalCards = () => {
   if (zone === 'atp-4') {
     newAspects = [aspects[0], aspects[14], aspects[20], ...aspects.slice(1, 8)];
   }
+  if (zone === 'altp') {
+    newAspects = [...aspects.slice(18, 26), aspects[5]];
+  }
   if (zone === 'semi-atp') {
     newAspects = [aspects[0], ...aspects.slice(3, 8)];
   }
@@ -65,13 +68,15 @@ const Signal = ({ id, aspect, lights }) => {
           <DwarfManeuveringSignal aspect={aspect} />
         </CombinedSignalsWrapper>
       );
-    } else if (id === 1 || id === 3 || id === 6 || id === 20) {
+    } else if (id === 1 || id === 3 || id === 6 || id === 26) {
       return (
         <CombinedSignalsWrapper className="combined-signals">
           <BiggestSignal aspect={aspect} lights={lights} />
           <DwarfSignal aspect={aspect} lights={lights} />
         </CombinedSignalsWrapper>
       );
+    } else if (id >= 18 && id <= 25) {
+      return <BigSignal aspect={aspect} lights={lights} />;
     } else {
       return <BiggestSignal aspect={aspect} lights={lights} />;
     }
@@ -98,6 +103,9 @@ const Signal = ({ id, aspect, lights }) => {
     } else {
       return <BigSignal aspect={aspect} lights={lights} />;
     }
+  }
+  if (zone === 'altp') {
+    return <BigSignal aspect={aspect} lights={lights} />;
   }
   if (zone === 'semi-atp') {
     if (aspect === 'moonWhite') {
