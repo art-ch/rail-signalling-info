@@ -98,6 +98,7 @@ const Signal = ({ id, aspect, lights }) => {
       return <BigSignal aspect={aspect} lights={lights} />;
     }
   }
+  throw new Error('Signals cannot be rendered without zone');
 };
 
 export default Signal;
