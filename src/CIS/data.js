@@ -243,7 +243,7 @@ export const aspects = [
     },
   },
   {
-    id: 17,
+    id: 18,
     name: 'red-moonWhite-flickering',
     lights: {
       l1: null,
@@ -257,7 +257,7 @@ export const aspects = [
     },
   },
   {
-    id: 18,
+    id: 19,
     name: 'green-moonWhite',
     lights: {
       l1: null,
@@ -272,7 +272,7 @@ export const aspects = [
     },
   },
   {
-    id: 19,
+    id: 20,
     name: 'yellow-moonWhite',
     lights: {
       l1: 'yellow',
@@ -287,7 +287,7 @@ export const aspects = [
     },
   },
   {
-    id: 20,
+    id: 21,
     name: 'two-yellows-flickering-moonWhite',
     lights: {
       l1: 'yellow-flickering',
@@ -302,7 +302,7 @@ export const aspects = [
     },
   },
   {
-    id: 21,
+    id: 22,
     name: 'two-yellows-moonWhite',
     lights: {
       l1: 'yellow',
@@ -317,7 +317,7 @@ export const aspects = [
     },
   },
   {
-    id: 22,
+    id: 23,
     name: 'green-flickering-yellow-moonWhite-stripe',
     lights: {
       l1: null,
@@ -332,7 +332,7 @@ export const aspects = [
     },
   },
   {
-    id: 23,
+    id: 24,
     name: 'two-yellows-moonWhite-stripe',
     lights: {
       l1: 'yellow',
@@ -347,13 +347,13 @@ export const aspects = [
     },
   },
   {
-    id: 24,
+    id: 25,
     name: 'green-flickering-yellow-moonWhite-two-stripes',
     lights: {
       l1: null,
       l2: 'green-flickering',
       l3: null,
-      l4: null,
+      l4: 'yellow',
       l5: 'moonWhite',
     },
     description: {
@@ -362,7 +362,7 @@ export const aspects = [
     },
   },
   {
-    id: 25,
+    id: 26,
     name: 'two-yellows-moonWhite-two-stripes',
     lights: {
       l1: 'yellow',
@@ -377,7 +377,7 @@ export const aspects = [
     },
   },
   {
-    id: 26,
+    id: 27,
     name: 'two-greens',
     lights: {
       l1: null,
@@ -392,7 +392,7 @@ export const aspects = [
     },
   },
   {
-    id: 27,
+    id: 28,
     name: 'yellow-flickering-moonWhite',
     lights: {
       l1: 'yellow-flickering',
@@ -407,7 +407,7 @@ export const aspects = [
     },
   },
   {
-    id: 28,
+    id: 29,
     name: 'yellow-green',
     lights: {
       l1: 'yellow',

@@ -24,7 +24,7 @@ export const SignalCards = () => {
     newAspects = [...aspects.slice(0, 14)];
   }
   if (zone === 'atp-4') {
-    newAspects = [aspects[0], aspects[14], aspects[20], ...aspects.slice(1, 8)];
+    newAspects = [aspects[0], aspects[14], aspects[28], ...aspects.slice(1, 8)];
   }
   if (zone === 'altp') {
     newAspects = [...aspects.slice(18, 26), aspects[5]];
@@ -68,14 +68,14 @@ const Signal = ({ id, aspect, lights }) => {
           <DwarfManeuveringSignal aspect={aspect} />
         </CombinedSignalsWrapper>
       );
-    } else if (id === 1 || id === 3 || id === 6 || id === 26) {
+    } else if (id === 1 || id === 3 || id === 6 || id === 27) {
       return (
         <CombinedSignalsWrapper className="combined-signals">
           <BiggestSignal aspect={aspect} lights={lights} />
           <DwarfSignal aspect={aspect} lights={lights} />
         </CombinedSignalsWrapper>
       );
-    } else if (id >= 18 && id <= 25) {
+    } else if (id >= 21 && id <= 26) {
       return <BigSignal aspect={aspect} lights={lights} />;
     } else {
       return <BiggestSignal aspect={aspect} lights={lights} />;
@@ -316,23 +316,7 @@ export const DwarfManeuveringSignal = ({ aspect }) => {
 };
 
 const Stripes = ({ aspect }) => {
-  if (
-    aspect === 'two-yellows-stripe' ||
-    aspect === 'two-yellows-flickering-stripe' ||
-    aspect === 'green-flickering-yellow-stripe'
-  ) {
-    return (
-      <div className="green-line-container">
-        {Array.from(Array(3)).map((_, index) => {
-          return <div className="green-line-light" key={index}></div>;
-        })}
-      </div>
-    );
-  } else if (
-    aspect === 'two-yellows-two-stripes' ||
-    aspect === 'two-yellows-flickering-two-stripes' ||
-    aspect === 'green-flickering-yellow-two-stripes'
-  ) {
+  if (aspect.includes('two-stripes')) {
     return Array.from(Array(2)).map((_, index) => {
       return (
         <div className="green-line-container" key={index}>
@@ -342,6 +326,14 @@ const Stripes = ({ aspect }) => {
         </div>
       );
     });
+  } else if (aspect.includes('stripe')) {
+    return (
+      <div className="green-line-container">
+        {Array.from(Array(3)).map((_, index) => {
+          return <div className="green-line-light" key={index}></div>;
+        })}
+      </div>
+    );
   } else {
     return null;
   }
