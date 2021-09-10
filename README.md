@@ -18,14 +18,12 @@ I also have an idea to create a quiz tool that would utilize all the info websit
 
 # State of development
 
-Initial asset creation.
-
-For now, focus is on signalling system from CIS Region.
+Focused on signalling system from CIS Region.
 
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
-# Leaving Reference for now
+# Leaving As Reference for now
 
 # Getting Started with Create React App
 
