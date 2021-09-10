@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Description = ({ name, description }) => {
+  // TODO: functionality for filtering description itself
   let newDescription;
   if (typeof description === 'string') {
     newDescription = (

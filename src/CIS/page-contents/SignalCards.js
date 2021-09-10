@@ -17,7 +17,7 @@ const SignalCards = () => {
     newAspects = [...aspects.slice(8, 14)];
   }
   if (zone === 'atp') {
-    newAspects = [...aspects.slice(0, 14)];
+    newAspects = [aspects[0], aspects[14], ...aspects.slice(1, 14)];
   }
   if (zone === 'atp-4') {
     newAspects = [aspects[0], aspects[14], aspects[28], ...aspects.slice(1, 8)];
