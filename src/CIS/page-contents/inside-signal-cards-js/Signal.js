@@ -53,6 +53,11 @@ const Signal = ({ id, aspect, lights }) => {
         </CombinedSignalsWrapper>
       );
     } else if (
+      aspect === 'green-flickering' ||
+      aspect === 'yellow-flickering'
+    ) {
+      return <RegularSignal aspect={aspect} lights={lights} />;
+    } else if (
       Object.values(lights).filter((light) => light !== null).length === 1 ||
       aspect === 'yellow-green'
     ) {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Description = ({ name, description }) => {
+const Description = ({ aspect, description }) => {
   // TODO: functionality for filtering description itself
   let newDescription;
   if (typeof description === 'string') {
@@ -23,7 +23,7 @@ const Description = ({ name, description }) => {
   }
   return (
     <div className="information-container">
-      <h3>{name}</h3>
+      <h3>{aspect}</h3>
       {newDescription}
     </div>
   );

@@ -6,7 +6,6 @@ import { Signal, Description } from './inside-signal-cards-js/index';
 const SignalCards = () => {
   const { zone } = useContext(CISSignalContext);
   let newAspects;
-  console.log(newAspects);
   if (zone === 'all') {
     newAspects = aspects;
   }
@@ -36,7 +35,7 @@ const SignalCards = () => {
         return (
           <article className="signal-card" key={id}>
             <Signal id={id} aspect={name} lights={lights} />
-            <Description name={name} description={description} />
+            <Description aspect={name} description={description} />
           </article>
         );
       })}

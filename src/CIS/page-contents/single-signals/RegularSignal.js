@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { CISSignalContext } from '../../CISSignalContext';
 import { SignalWrapper } from '../inside-signal-cards-js/StyledComponentsForSignals';
+import RoutingSignalBoard from '../inside-single-signals/RoutingSignalBoard';
 
-const RegularSignal = ({ lights }) => {
+const RegularSignal = ({ aspect, lights }) => {
   const { zone } = useContext(CISSignalContext);
   return (
     <SignalWrapper>
@@ -16,6 +17,7 @@ const RegularSignal = ({ lights }) => {
             className={`light ${zone === 'atp-4' ? lights.l2 : lights.l3}`}
           ></div>
         </div>
+        <RoutingSignalBoard aspect={aspect} zone={zone} />
       </div>
     </SignalWrapper>
   );
