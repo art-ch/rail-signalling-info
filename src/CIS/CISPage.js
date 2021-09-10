@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
-import Buttons from './assets/Buttons';
-import { SignalCards } from './assets/Signals';
-import { Signs } from './assets/Signs';
-import { signs } from './data';
+import Buttons from './page-contents/Buttons';
+import SignalCards from './page-contents/SignalCards';
+import { Signs } from './page-contents/Signs';
 
 const CISPage = () => {
   return (
