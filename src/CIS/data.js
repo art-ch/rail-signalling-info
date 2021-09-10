@@ -10,6 +10,7 @@ export const aspects = [
       l5: null,
     },
     description: {
+      main: 'main signal description',
       entry: 'entry signal description',
       exit: 'exit signal description',
     },
@@ -25,8 +26,10 @@ export const aspects = [
       l5: null,
     },
     description: {
+      main: 'main signal description',
       entry: 'entry signal description',
       exit: 'exit signal description',
+      block: 'block signal description',
     },
   },
   {
@@ -40,6 +43,7 @@ export const aspects = [
       l5: null,
     },
     description: {
+      main: 'main signal description',
       entry: 'entry signal description',
       exit: 'exit signal description',
     },
@@ -55,6 +59,7 @@ export const aspects = [
       l5: null,
     },
     description: {
+      main: 'main signal description',
       entry: 'entry signal description',
       exit: 'exit signal description',
     },
@@ -70,6 +75,7 @@ export const aspects = [
       l5: null,
     },
     description: {
+      main: 'main signal description',
       entry: 'entry signal description',
       exit: 'exit signal description',
     },
@@ -84,7 +90,7 @@ export const aspects = [
       l4: null,
       l5: null,
     },
-    description: 'signal description',
+    description: 'Stop! Passing is forbidden.',
   },
   {
     id: 7,
@@ -214,6 +220,7 @@ export const aspects = [
     description: {
       entry: 'entry signal description',
       exit: 'exit signal description',
+      block: 'block signal description',
     },
   },
   {
