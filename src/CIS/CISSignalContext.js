@@ -42,10 +42,34 @@ const CISSignalProvider = ({ children }) => {
     if (id === 11) {
       setSignalType('invitational');
     }
+    if (id === 12) {
+      setSignalType('route');
+    }
+    if (id === 13) {
+      setSignalType('block');
+    }
+    if (id === 14) {
+      setSignalType('cover');
+    }
+    if (id === 15) {
+      setSignalType('obstruction');
+    }
+    if (id === 16) {
+      setSignalType('warning');
+    }
+    if (id === 17) {
+      setSignalType('repeating');
+    }
+    if (id === 18) {
+      setSignalType('maneuvering');
+    }
+    if (id === 19) {
+      setSignalType('humping');
+    }
   };
 
   const filterAspectsByZone = () => {
-    let newAspects;
+    let newAspects = [];
     if (zone === 'all') {
       newAspects = aspects;
     }
@@ -75,8 +99,20 @@ const CISSignalProvider = ({ children }) => {
     return newAspects;
   };
 
-  const filterAspectsBySignalType = (description) => {
-    console.log(description);
+  const filterAspectsBySignalType = (aspect, description) => {
+    let newDescription = {};
+    if (zone === 'main') {
+      newDescription.main = description.main || description.maneuvering;
+    } else if (zone === 'atp' || zone === 'atp-4') {
+      if (aspect === 'green-flickering' || aspect === 'yellow-flickering') {
+        newDescription.block = description.block;
+      } else {
+        newDescription = description;
+      }
+    } else {
+      newDescription = description;
+    }
+    return newDescription;
   };
 
   return (
