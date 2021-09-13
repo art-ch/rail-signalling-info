@@ -90,7 +90,7 @@ export const aspects = [
       l4: null,
       l5: null,
     },
-    description: 'Stop! Passing is forbidden.',
+    description: { main: 'Stop! Passing is forbidden.' },
   },
   {
     id: 7,
@@ -233,7 +233,7 @@ export const aspects = [
       l4: null,
       l5: 'yellow',
     },
-    description: 'signal description',
+    description: { other: 'signal description' },
   },
   {
     id: 17,
