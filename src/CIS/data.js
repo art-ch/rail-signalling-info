@@ -432,7 +432,7 @@ export const aspects = [
 
 export const signs = [{ id: 1, sign: 'sign-name', description: 'description' }];
 
-export const filterButtons = [
+export const buttons = [
   [
     { id: 1, name: 'all' },
     { id: 2, name: 'main aspects' },
