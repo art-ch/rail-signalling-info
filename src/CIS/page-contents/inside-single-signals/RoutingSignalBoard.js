@@ -2,18 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 const RoutingSignalBoard = ({ zone, aspect }) => {
-  console.log(aspect);
   const divs = Array.from(Array(3));
   // temp solution before description functionality added
   if (zone === 'atp' || zone === 'atp-4') {
     if (aspect === 'green-flickering' || aspect === 'yellow-flickering') {
       return (
         <Wrapper style={{ transform: 'translate(-10%)' }}>
-          {divs.map((_) => {
+          {divs.map((_, index) => {
             return (
-              <div class="black-stripe">
-                {divs.map((_) => {
-                  return <div class="white-dot"></div>;
+              <div className="black-stripe" key={index}>
+                {divs.map((_, index) => {
+                  return <div className="white-dot" key={index}></div>;
                 })}
               </div>
             );
