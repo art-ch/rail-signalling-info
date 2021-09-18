@@ -9,11 +9,11 @@ export const aspects = [
       l4: null,
       l5: null,
     },
-    description: {
-      main: 'main signal description',
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'main', description: 'main signal description' },
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 2,
@@ -25,12 +25,12 @@ export const aspects = [
       l4: null,
       l5: null,
     },
-    description: {
-      main: 'main signal description',
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-      block: 'block signal description',
-    },
+    info: [
+      { type: 'main', description: 'main signal description' },
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+      { type: 'block', description: 'block signal description' },
+    ],
   },
   {
     id: 3,
@@ -42,11 +42,11 @@ export const aspects = [
       l4: null,
       l5: null,
     },
-    description: {
-      main: 'main signal description',
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'main', description: 'main signal description' },
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 4,
@@ -58,11 +58,11 @@ export const aspects = [
       l4: 'yellow',
       l5: null,
     },
-    description: {
-      main: 'main signal description',
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'main', description: 'main signal description' },
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 5,
@@ -74,11 +74,11 @@ export const aspects = [
       l4: 'yellow',
       l5: null,
     },
-    description: {
-      main: 'main signal description',
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'main', description: 'main signal description' },
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 6,
@@ -90,7 +90,7 @@ export const aspects = [
       l4: null,
       l5: null,
     },
-    description: { main: 'Stop! Passing is forbidden.' },
+    info: [{ type: 'main', description: 'main signal description' }],
   },
   {
     id: 7,
@@ -102,9 +102,7 @@ export const aspects = [
       l4: null,
       l5: 'moonWhite',
     },
-    description: {
-      maneuvering: 'signal description',
-    },
+    info: [{ type: 'maneuvering', description: 'signal description' }],
   },
   {
     id: 8,
@@ -113,9 +111,7 @@ export const aspects = [
       l1: null,
       l2: 'blue',
     },
-    description: {
-      maneuvering: 'signal description',
-    },
+    info: [{ type: 'maneuvering', description: 'signal description' }],
   },
   {
     id: 9,
@@ -127,10 +123,10 @@ export const aspects = [
       l4: 'yellow',
       l5: null,
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'main', description: 'main signal description' },
+      { type: 'entry', description: 'entry signal description' },
+    ],
   },
   {
     id: 10,
@@ -142,10 +138,10 @@ export const aspects = [
       l4: 'yellow',
       l5: null,
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'main', description: 'main signal description' },
+      { type: 'entry', description: 'entry signal description' },
+    ],
   },
   {
     id: 11,
@@ -157,10 +153,10 @@ export const aspects = [
       l4: 'yellow',
       l5: null,
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'main', description: 'main signal description' },
+      { type: 'entry', description: 'entry signal description' },
+    ],
   },
   {
     id: 12,
@@ -172,10 +168,10 @@ export const aspects = [
       l4: 'yellow',
       l5: null,
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'main', description: 'main signal description' },
+      { type: 'entry', description: 'entry signal description' },
+    ],
   },
   {
     id: 13,
@@ -187,10 +183,10 @@ export const aspects = [
       l4: 'yellow',
       l5: null,
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'main', description: 'main signal description' },
+      { type: 'entry', description: 'entry signal description' },
+    ],
   },
   {
     id: 14,
@@ -202,10 +198,10 @@ export const aspects = [
       l4: 'yellow',
       l5: null,
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'main', description: 'main signal description' },
+      { type: 'entry', description: 'entry signal description' },
+    ],
   },
   {
     id: 15,
@@ -217,11 +213,11 @@ export const aspects = [
       l4: null,
       l5: null,
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-      block: 'block signal description',
-    },
+    info: [
+      { type: 'main', description: 'main signal description' },
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'block', description: 'block signal description' },
+    ],
   },
   {
     id: 16,
@@ -233,7 +229,7 @@ export const aspects = [
       l4: null,
       l5: 'yellow',
     },
-    description: { other: 'signal description' },
+    info: [{ type: 'other', description: 'signal description' }],
   },
   {
     id: 17,
@@ -245,9 +241,9 @@ export const aspects = [
       l4: null,
       l5: 'moonWhite-flickering',
     },
-    description: {
-      invitational: 'invitational signal description',
-    },
+    info: [
+      { type: 'invitational', description: 'invitational signal description' },
+    ],
   },
   {
     id: 18,
@@ -259,9 +255,9 @@ export const aspects = [
       l4: null,
       l5: 'moonWhite-flickering',
     },
-    description: {
-      invitational: 'invitational signal description',
-    },
+    info: [
+      { type: 'invitational', description: 'invitational signal description' },
+    ],
   },
   {
     id: 19,
@@ -273,10 +269,10 @@ export const aspects = [
       l4: null,
       l5: 'moonWhite',
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 20,
@@ -288,10 +284,10 @@ export const aspects = [
       l4: null,
       l5: 'moonWhite',
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 21,
@@ -303,10 +299,10 @@ export const aspects = [
       l4: 'yellow',
       l5: 'moonWhite',
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 22,
@@ -318,10 +314,10 @@ export const aspects = [
       l4: 'yellow',
       l5: 'moonWhite',
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 23,
@@ -333,10 +329,10 @@ export const aspects = [
       l4: 'yellow',
       l5: 'moonWhite',
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 24,
@@ -348,10 +344,10 @@ export const aspects = [
       l4: 'yellow',
       l5: 'moonWhite',
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 25,
@@ -363,10 +359,10 @@ export const aspects = [
       l4: 'yellow',
       l5: 'moonWhite',
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 26,
@@ -378,10 +374,10 @@ export const aspects = [
       l4: 'yellow',
       l5: 'moonWhite',
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 27,
@@ -393,10 +389,10 @@ export const aspects = [
       l4: 'green',
       l5: null,
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 28,
@@ -408,10 +404,10 @@ export const aspects = [
       l4: null,
       l5: 'moonWhite',
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
   {
     id: 29,
@@ -423,10 +419,10 @@ export const aspects = [
       l4: null,
       l5: null,
     },
-    description: {
-      entry: 'entry signal description',
-      exit: 'exit signal description',
-    },
+    info: [
+      { type: 'entry', description: 'entry signal description' },
+      { type: 'exit', description: 'exit signal description' },
+    ],
   },
 ];
 

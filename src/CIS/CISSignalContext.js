@@ -68,13 +68,15 @@ const CISSignalProvider = ({ children }) => {
     }
   };
 
-  const filterAspectsByZone = () => {
+  const filterAspects = (aspects) => {
     let newAspects = [];
     if (zone === 'all') {
       newAspects = aspects;
     }
     if (zone === 'main') {
-      newAspects = [...aspects.slice(0, 8)];
+      newAspects = [...aspects.slice(0, 8)].map((aspect) => {
+        return { ...aspect, info: aspect.info[0] };
+      });
     }
     if (zone === 'fast') {
       newAspects = [...aspects.slice(8, 14)];
@@ -90,30 +92,94 @@ const CISSignalProvider = ({ children }) => {
         ...aspects.slice(1, 8),
       ];
     }
+    if (zone === 'atp' || zone === 'atp-4') {
+      newAspects = newAspects.map((aspect) => {
+        if (
+          aspect.name === 'green-flickering' ||
+          aspect.name === 'yellow-flickering'
+        ) {
+          return {
+            ...aspect,
+            info: aspect.info.filter(
+              (description) => description.type === 'block'
+            ),
+          };
+        }
+        return aspect;
+      });
+      console.log(newAspects);
+    }
     if (zone === 'altp') {
       newAspects = [...aspects.slice(18, 26), aspects[5]];
     }
     if (zone === 'semi-atp') {
       newAspects = [aspects[0], ...aspects.slice(3, 8)];
     }
-    return newAspects;
+
+    // console.log(signalType);
+    // if (signalType !== 'all' && description[signalType]) {
+    //   newDescription = description[signalType];
+    // } else if (signalType !== 'all' && !description[signalType]) {
+    //   newDescription = null;
+    // } else if (zone === 'main') {
+    //   // newDescription = { main: description.main || description.maneuvering };
+    // } else if (zone === 'atp' || zone === 'atp-4') {
+    //   if (name === 'green-flickering' || name === 'yellow-flickering') {
+    //     newDescription = { block: description.block };
+    //   } else {
+    //     newDescription = description;
+    //   }
+    // } else {
+    //   newDescription = description;
+    // }
   };
 
-  const filterAspectsBySignalType = (aspect, description) => {
-    let newDescription = {};
-    if (zone === 'main') {
-      newDescription.main = description.main || description.maneuvering;
-    } else if (zone === 'atp' || zone === 'atp-4') {
-      if (aspect === 'green-flickering' || aspect === 'yellow-flickering') {
-        newDescription.block = description.block;
-      } else {
-        newDescription = description;
-      }
-    } else {
-      newDescription = description;
-    }
-    return newDescription;
-  };
+  // const filterAspectsByZone = () => {
+  //   let newAspects = [];
+  //   if (zone === 'all') {
+  //     newAspects = aspects;
+  //   }
+  //   if (zone === 'main') {
+  //     newAspects = [...aspects.slice(0, 8)];
+  //   }
+  //   if (zone === 'fast') {
+  //     newAspects = [...aspects.slice(8, 14)];
+  //   }
+  //   if (zone === 'atp') {
+  //     newAspects = [aspects[0], aspects[14], ...aspects.slice(1, 14)];
+  //   }
+  //   if (zone === 'atp-4') {
+  //     newAspects = [
+  //       aspects[0],
+  //       aspects[14],
+  //       aspects[28],
+  //       ...aspects.slice(1, 8),
+  //     ];
+  //   }
+  //   if (zone === 'altp') {
+  //     newAspects = [...aspects.slice(18, 26), aspects[5]];
+  //   }
+  //   if (zone === 'semi-atp') {
+  //     newAspects = [aspects[0], ...aspects.slice(3, 8)];
+  //   }
+  //   return newAspects;
+  // };
+
+  // const filterAspectsBySignalType = (aspect, description) => {
+  //   let newDescription = {};
+  //   if (zone === 'main') {
+  //     newDescription.main = description.main || description.maneuvering;
+  //   } else if (zone === 'atp' || zone === 'atp-4') {
+  //     if (aspect === 'green-flickering' || aspect === 'yellow-flickering') {
+  //       newDescription.block = description.block;
+  //     } else {
+  //       newDescription = description;
+  //     }
+  //   } else if (signalType !== 'all') {
+  //     newDescription = description[`${signalType}`];
+  //   }
+  //   return newDescription;
+  // };
 
   return (
     <CISSignalContext.Provider
@@ -121,8 +187,7 @@ const CISSignalProvider = ({ children }) => {
         zone,
         setZone,
         filterButtons,
-        filterAspectsByZone,
-        filterAspectsBySignalType,
+        filterAspects,
       }}
     >
       {children}
