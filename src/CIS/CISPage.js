@@ -7,7 +7,7 @@ import { Signs } from './page-contents/Signs';
 
 const CISPage = () => {
   return (
-    <main>
+    <div>
       <Navbar />
       <Wrapper>
         <h1>Signals from CIS Region</h1>
@@ -18,7 +18,7 @@ const CISPage = () => {
           test your knowledge
         </button>
       </Wrapper>
-    </main>
+    </div>
   );
 };
 
