@@ -90,7 +90,7 @@ export const aspects = [
       l4: null,
       l5: null,
     },
-    info: [{ type: 'main', description: 'main signal description' }],
+    info: [{ type: 'main', description: 'Stop! Passing is forbidden' }],
   },
   {
     id: 7,

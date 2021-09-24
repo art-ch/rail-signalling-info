@@ -7,6 +7,8 @@ const SignalCards = () => {
   const { zone, filterAspects } = useContext(CISSignalContext);
   const newAspects = filterAspects(aspects);
 
+  console.log(newAspects.length);
+
   if (newAspects.length > 0) {
     return (
       <section className="signals">

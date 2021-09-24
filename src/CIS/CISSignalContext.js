@@ -127,10 +127,13 @@ const CISSignalProvider = ({ children }) => {
     if (signalType === 'all') {
       if (zone !== 'all' && zone !== 'main') {
         return newAspects.map((aspect) => {
-          return {
-            ...aspect,
-            info: aspect.info.filter(({ type }) => type !== 'main'),
-          };
+          if (aspect.name !== 'red') {
+            return {
+              ...aspect,
+              info: aspect.info.filter(({ type }) => type !== 'main'),
+            };
+          }
+          return aspect;
         });
       }
       return newAspects;

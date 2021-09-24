@@ -5,8 +5,8 @@ const SignalWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* post */
 
+  /* post */
   .big-signal-post,
   .post {
     background: #6c757d;
@@ -20,12 +20,14 @@ const SignalWrapper = styled.div`
   }
 
   /* plates */
-  .plates {
+  .plates,
+  .three-aspect-plate,
+  .two-aspect-plate {
     margin-top: 0.5rem;
   }
-  .plate,
-  .smaller-plate,
-  .moonWhite-plate,
+  .three-aspect-plate,
+  .two-aspect-plate,
+  .one-aspect-plate,
   .green-line-container,
   .dwarf-signal-plate,
   .dwarf-signal-smaller-plate,
@@ -36,28 +38,28 @@ const SignalWrapper = styled.div`
     align-items: center;
     justify-content: center;
   }
-  .plate,
-  .smaller-plate,
+  .three-aspect-plate,
+  .two-aspect-plate,
   .green-line-container {
     transform: translate(-32%);
   }
-  .plate,
-  .smaller-plate,
-  .moonWhite-plate {
+  .three-aspect-plate,
+  .two-aspect-plate,
+  .one-aspect-plate {
     border-radius: 50px;
     margin-bottom: 15px;
   }
-  .plate,
-  .smaller-plate {
+  .three-aspect-plate,
+  .two-aspect-plate {
     width: 50px;
   }
-  .plate {
+  .three-aspect-plate {
     height: 105px;
   }
-  .smaller-plate {
+  .two-aspect-plate {
     height: 77px;
   }
-  .moonWhite-plate {
+  .one-aspect-plate {
     width: 40px;
     height: 40px;
     transform: translate(-27%);
