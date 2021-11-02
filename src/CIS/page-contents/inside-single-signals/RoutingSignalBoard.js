@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const RoutingSignalBoard = ({ zone, aspect }) => {
   const divs = Array.from(Array(3));
-  // temp solution before description functionality added
   if (zone === 'atp' || zone === 'atp-4') {
     if (aspect === 'green-flickering' || aspect === 'yellow-flickering') {
       return (

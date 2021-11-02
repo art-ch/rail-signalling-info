@@ -20,6 +20,9 @@ const Signal = ({ id, aspect, lights }) => {
       </CombinedSignalsWrapper>
     );
   }
+  if (aspect === 'conditional') {
+    return <RegularSignal aspect={aspect} lights={lights} />;
+  }
   if (zone === 'all' || zone === 'main' || zone === 'fast') {
     if (aspect === 'moonWhite') {
       return (

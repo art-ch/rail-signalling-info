@@ -1,5 +1,6 @@
 import { ThreeAspectPlate, TwoAspectPlate, OneAspectPlate } from './Plates';
 import RoutingSignalBoard from './RoutingSignalBoard';
+import ConditionalSignalBoard from './ConditionalSignalBoard';
 import Stripes from './Stripes';
 
 export {
@@ -7,5 +8,6 @@ export {
   TwoAspectPlate,
   OneAspectPlate,
   RoutingSignalBoard,
+  ConditionalSignalBoard,
   Stripes,
 };

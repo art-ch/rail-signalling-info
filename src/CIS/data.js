@@ -430,6 +430,20 @@ export const aspects = [
       { type: 'exit', description: 'exit signal description' },
     ],
   },
+  {
+    id: 30,
+    name: 'conditional',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: 'red',
+      l4: null,
+      l5: null,
+    },
+    info: [
+      { type: 'conditional', description: 'conditional signal description' },
+    ],
+  },
 ];
 
 export const signs = [{ id: 1, sign: 'sign-name', description: 'description' }];
@@ -455,11 +469,12 @@ export const buttons = [
     { id: 11, name: 'invitational' },
     { id: 12, name: 'route' },
     { id: 13, name: 'block' },
-    { id: 14, name: 'cover' },
-    { id: 15, name: 'obstruction' },
-    { id: 16, name: 'warning' },
-    { id: 17, name: 'repeating' },
-    { id: 18, name: 'maneuvering' },
-    { id: 19, name: 'humping' },
+    { id: 14, name: 'conditional' },
+    { id: 15, name: 'cover' },
+    { id: 16, name: 'obstruction' },
+    { id: 17, name: 'warning' },
+    { id: 18, name: 'repeating' },
+    { id: 19, name: 'maneuvering' },
+    { id: 20, name: 'humping' },
   ],
 ];

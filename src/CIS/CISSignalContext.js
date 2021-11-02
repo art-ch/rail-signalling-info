@@ -26,7 +26,7 @@ const CISSignalProvider = ({ children }) => {
           ...aspect,
           info: aspect.info.filter(
             ({ type }) => type === 'main' || type === 'maneuvering'
-          )
+          ),
         };
       });
     }
@@ -34,7 +34,7 @@ const CISSignalProvider = ({ children }) => {
       newAspects = [...aspects.slice(8, 14)].map((aspect) => {
         return {
           ...aspect,
-          info: aspect.info.filter(({ type }) => type === 'main')
+          info: aspect.info.filter(({ type }) => type === 'main'),
         };
       });
     }
@@ -46,7 +46,7 @@ const CISSignalProvider = ({ children }) => {
         aspects[0],
         aspects[14],
         aspects[28],
-        ...aspects.slice(1, 8)
+        ...aspects.slice(1, 8),
       ];
     }
     if (zone === 'atp' || zone === 'atp-4') {
@@ -57,7 +57,7 @@ const CISSignalProvider = ({ children }) => {
         ) {
           return {
             ...aspect,
-            info: aspect.info.filter(({ type }) => type === 'block')
+            info: aspect.info.filter(({ type }) => type === 'block'),
           };
         }
         return aspect;
@@ -76,7 +76,7 @@ const CISSignalProvider = ({ children }) => {
           if (aspect.name !== 'red') {
             return {
               ...aspect,
-              info: aspect.info.filter(({ type }) => type !== 'main')
+              info: aspect.info.filter(({ type }) => type !== 'main'),
             };
           }
           return aspect;
@@ -88,7 +88,7 @@ const CISSignalProvider = ({ children }) => {
         .map((aspect) => {
           return {
             ...aspect,
-            info: aspect.info.filter(({ type }) => type === signalType)
+            info: aspect.info.filter(({ type }) => type === signalType),
           };
         })
         .filter(({ info }) => info.length > 0);
@@ -101,7 +101,7 @@ const CISSignalProvider = ({ children }) => {
         zone,
         setZone,
         filterButtons,
-        filterAspects
+        filterAspects,
       }}
     >
       {children}
