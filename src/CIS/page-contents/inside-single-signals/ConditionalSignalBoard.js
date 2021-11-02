@@ -1,28 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ConditionalSignalBoard = (aspect) => {
+const ConditionalSignalBoard = ({ aspect }) => {
   if (aspect === 'conditional') {
-  }
-  return (
-    <Wrapper>
-      <div className="vertical-support">
-        <div className="t-plate">
-          <div className="t-container">
-            <div className="horizontal-stroke">
-              <div className="reflective-element"></div>
-              <div className="reflective-element"></div>
-              <div className="reflective-element"></div>
-            </div>
-            <div className="vertical-stroke">
-              <div className="reflective-element"></div>
-              <div className="reflective-element"></div>
+    return (
+      <Wrapper>
+        <div className="vertical-support">
+          <div className="t-plate">
+            <div className="t-container">
+              <div className="horizontal-stroke">
+                <div className="reflective-element"></div>
+                <div className="reflective-element"></div>
+                <div className="reflective-element"></div>
+              </div>
+              <div className="vertical-stroke">
+                <div className="reflective-element"></div>
+                <div className="reflective-element"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </Wrapper>
-  );
+      </Wrapper>
+    );
+  } else {
+    return null;
+  }
 };
 
 export default ConditionalSignalBoard;
