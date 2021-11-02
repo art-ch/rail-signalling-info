@@ -6,71 +6,12 @@ const CISSignalProvider = ({ children }) => {
   const [zone, setZone] = useState('all');
   const [signalType, setSignalType] = useState('all');
 
-  const filterButtons = (e) => {
-    const id = parseInt(e.target.id);
-    if (id === 1) {
-      setZone('all');
+  const filterButtons = (id, name) => {
+    if (id >= 8) {
+      setSignalType(`${name}`);
+    } else {
+      setZone(`${name}`);
       setSignalType('all');
-    }
-    if (id === 2) {
-      setZone('main');
-      setSignalType('all');
-    }
-    if (id === 3) {
-      setZone('fast');
-      setSignalType('all');
-    }
-    if (id === 4) {
-      setZone('atp');
-      setSignalType('all');
-    }
-    if (id === 5) {
-      setZone('atp-4');
-      setSignalType('all');
-    }
-    if (id === 6) {
-      setZone('altp');
-      setSignalType('all');
-    }
-    if (id === 7) {
-      setZone('semi-atp');
-      setSignalType('all');
-    }
-    if (id === 8) {
-      setSignalType('all');
-    }
-    if (id === 9) {
-      setSignalType('entry');
-    }
-    if (id === 10) {
-      setSignalType('exit');
-    }
-    if (id === 11) {
-      setSignalType('invitational');
-    }
-    if (id === 12) {
-      setSignalType('route');
-    }
-    if (id === 13) {
-      setSignalType('block');
-    }
-    if (id === 14) {
-      setSignalType('cover');
-    }
-    if (id === 15) {
-      setSignalType('obstruction');
-    }
-    if (id === 16) {
-      setSignalType('warning');
-    }
-    if (id === 17) {
-      setSignalType('repeating');
-    }
-    if (id === 18) {
-      setSignalType('maneuvering');
-    }
-    if (id === 19) {
-      setSignalType('humping');
     }
   };
 
@@ -85,12 +26,17 @@ const CISSignalProvider = ({ children }) => {
           ...aspect,
           info: aspect.info.filter(
             ({ type }) => type === 'main' || type === 'maneuvering'
-          ),
+          )
         };
       });
     }
     if (zone === 'fast') {
-      newAspects = [...aspects.slice(8, 14)];
+      newAspects = [...aspects.slice(8, 14)].map((aspect) => {
+        return {
+          ...aspect,
+          info: aspect.info.filter(({ type }) => type === 'main')
+        };
+      });
     }
     if (zone === 'atp') {
       newAspects = [aspects[0], aspects[14], ...aspects.slice(1, 14)];
@@ -100,7 +46,7 @@ const CISSignalProvider = ({ children }) => {
         aspects[0],
         aspects[14],
         aspects[28],
-        ...aspects.slice(1, 8),
+        ...aspects.slice(1, 8)
       ];
     }
     if (zone === 'atp' || zone === 'atp-4') {
@@ -111,7 +57,7 @@ const CISSignalProvider = ({ children }) => {
         ) {
           return {
             ...aspect,
-            info: aspect.info.filter(({ type }) => type === 'block'),
+            info: aspect.info.filter(({ type }) => type === 'block')
           };
         }
         return aspect;
@@ -125,12 +71,12 @@ const CISSignalProvider = ({ children }) => {
     }
 
     if (signalType === 'all') {
-      if (zone !== 'all' && zone !== 'main') {
+      if (zone !== 'all' && zone !== 'main' && zone !== 'fast') {
         return newAspects.map((aspect) => {
           if (aspect.name !== 'red') {
             return {
               ...aspect,
-              info: aspect.info.filter(({ type }) => type !== 'main'),
+              info: aspect.info.filter(({ type }) => type !== 'main')
             };
           }
           return aspect;
@@ -142,7 +88,7 @@ const CISSignalProvider = ({ children }) => {
         .map((aspect) => {
           return {
             ...aspect,
-            info: aspect.info.filter(({ type }) => type === signalType),
+            info: aspect.info.filter(({ type }) => type === signalType)
           };
         })
         .filter(({ info }) => info.length > 0);
@@ -155,7 +101,7 @@ const CISSignalProvider = ({ children }) => {
         zone,
         setZone,
         filterButtons,
-        filterAspects,
+        filterAspects
       }}
     >
       {children}

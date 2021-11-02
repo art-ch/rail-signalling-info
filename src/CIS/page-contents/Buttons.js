@@ -11,15 +11,15 @@ const Buttons = () => {
         return (
           <div className="btn-container" key={index}>
             {buttonArray.map((button) => {
-              const { id, name } = button;
+              const { id, name, displayName } = button;
               return (
                 <button
                   className="btn"
                   id={id}
-                  onClick={filterButtons}
+                  onClick={() => filterButtons(id, name)}
                   key={id}
                 >
-                  {name}
+                  {id < 8 ? displayName : name}
                 </button>
               );
             })}
