@@ -15,6 +15,9 @@ export const aspects = [
       { type: 'exit', description: 'exit signal description' },
       { type: 'route', description: 'route signal description' },
       { type: 'block', description: 'block signal description' },
+      { type: 'cover', description: 'cover signal description' },
+      { type: 'warning', description: 'warning signal description' },
+      { type: 'humping', description: 'humping signal description' },
     ],
   },
   {
@@ -33,6 +36,7 @@ export const aspects = [
       { type: 'exit', description: 'exit signal description' },
       { type: 'route', description: 'route signal description' },
       { type: 'block', description: 'block signal description' },
+      { type: 'warning', description: 'warning signal description' },
     ],
   },
   {
@@ -51,6 +55,18 @@ export const aspects = [
       { type: 'exit', description: 'exit signal description' },
       { type: 'route', description: 'route signal description' },
       { type: 'block', description: 'block signal description' },
+      {
+        type: 'obstruction',
+        description: 'repeating before obstruction signal description',
+      },
+      { type: 'warning', description: 'warning signal description' },
+      { type: 'repeating', description: 'repeating signal description' },
+      { type: 'industrial', description: 'industrial signal description' },
+      {
+        type: 'technological',
+        description: 'technological signal description',
+      },
+      { type: 'humping', description: 'humping signal description' },
     ],
   },
   {
@@ -107,7 +123,14 @@ export const aspects = [
       l4: null,
       l5: 'moonWhite',
     },
-    info: [{ type: 'maneuvering', description: 'signal description' }],
+    info: [
+      { type: 'repeating', description: 'repeating signal description' },
+      { type: 'maneuvering', description: 'maneuvering signal description' },
+      {
+        type: 'technological',
+        description: 'technological signal description',
+      },
+    ],
   },
   {
     id: 8,
@@ -428,6 +451,7 @@ export const aspects = [
     info: [
       { type: 'entry', description: 'entry signal description' },
       { type: 'exit', description: 'exit signal description' },
+      { type: 'humping', description: 'humping signal description' },
     ],
   },
   {
@@ -444,11 +468,94 @@ export const aspects = [
       { type: 'conditional', description: 'conditional signal description' },
     ],
   },
+  {
+    id: 31,
+    name: 'obstruction',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: null,
+      l4: null,
+      l5: null,
+    },
+    info: [
+      {
+        type: 'obstruction',
+        description: `Normally this type of signal is turned off and in this case does not care any meaning`,
+      },
+    ],
+  },
+  {
+    id: 32,
+    name: 'repeating',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: null,
+      l4: null,
+      l5: null,
+    },
+    info: [
+      {
+        type: 'repeating',
+        description: `Normally this type of signal is turned off and in this case does not care any meaning`,
+      },
+    ],
+  },
+  {
+    id: 33,
+    name: 'moonWhite-red',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: 'red',
+      l4: null,
+      l5: 'moonWhite',
+    },
+    info: [
+      {
+        type: 'technological',
+        description: 'technological signal description',
+      },
+    ],
+  },
+  {
+    id: 34,
+    name: 'route-pointer',
+    lights: {
+      l1: 'yellow-flickering',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: null,
+    },
+    info: [
+      {
+        type: 'other',
+        description: 'route pointer description',
+      },
+    ],
+  },
+  {
+    id: 35,
+    name: 'route-pointer-green',
+    lights: {
+      l1: 'yellow',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: null,
+    },
+    info: [
+      {
+        type: 'other',
+        description: 'green route pointer description',
+      },
+    ],
+  },
 ];
 
-export const signs = [{ id: 1, sign: 'sign-name', description: 'description' }];
-
-export const buttons = [
+export const signalFilterButtons = [
   [
     { id: 1, name: 'all', displayName: 'all' },
     { id: 2, name: 'main', displayName: 'main aspects' },
@@ -474,7 +581,11 @@ export const buttons = [
     { id: 16, name: 'obstruction' },
     { id: 17, name: 'warning' },
     { id: 18, name: 'repeating' },
-    { id: 19, name: 'maneuvering' },
-    { id: 20, name: 'humping' },
+    { id: 19, name: 'industrial' },
+    { id: 20, name: 'technological' },
+    { id: 21, name: 'maneuvering' },
+    { id: 22, name: 'humping' },
   ],
 ];
+
+export const signs = [{ id: 1, sign: 'sign-name', description: 'description' }];

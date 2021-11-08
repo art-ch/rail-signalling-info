@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { CISSignalContext } from '../CISSignalContext';
-import { buttons } from '../data';
+import { signalFilterButtons } from '../data';
 
 const Buttons = () => {
   const { filterButtons } = useContext(CISSignalContext);
 
   return (
     <section className="btn-wrapper">
-      {buttons.map((buttonArray, index) => {
+      {signalFilterButtons.map((buttonArray, index) => {
         return (
           <div className="btn-container" key={index}>
             {buttonArray.map((button) => {
