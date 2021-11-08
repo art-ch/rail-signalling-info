@@ -4,6 +4,7 @@ import { signalFilterButtons } from '../data';
 
 const Buttons = () => {
   const { filterButtons } = useContext(CISSignalContext);
+  const { zone } = useContext(CISSignalContext);
 
   return (
     <section className="btn-wrapper">
@@ -18,8 +19,9 @@ const Buttons = () => {
                   id={id}
                   onClick={() => filterButtons(id, name)}
                   key={id}
+                  disabled={(zone === 'main' || zone === 'fast') && id > 8}
                 >
-                  {id < 8 ? displayName : name}
+                  {id < 9 ? displayName : name}
                 </button>
               );
             })}

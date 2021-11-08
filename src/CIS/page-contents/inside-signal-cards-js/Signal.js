@@ -7,11 +7,13 @@ import {
   SmallSignal,
   DwarfSignal,
   DwarfManeuveringSignal,
+  ObstructionSignal,
+  RepeatingSignal,
 } from '../single-signals/index';
 import { CombinedSignalsWrapper } from './StyledComponentsForSignals';
 
 const Signal = ({ id, aspect, lights }) => {
-  const { zone } = useContext(CISSignalContext);
+  const { zone, signalType } = useContext(CISSignalContext);
   if (aspect === 'blue') {
     return (
       <CombinedSignalsWrapper className="combined-signals">
@@ -20,8 +22,26 @@ const Signal = ({ id, aspect, lights }) => {
       </CombinedSignalsWrapper>
     );
   }
-  if (aspect === 'conditional') {
+  if (
+    signalType === 'conditional' ||
+    signalType === 'block' ||
+    signalType === 'technological' ||
+    signalType === 'humping'
+  ) {
     return <RegularSignal aspect={aspect} lights={lights} />;
+  }
+  if (
+    signalType === 'cover' ||
+    signalType === 'warning' ||
+    signalType === 'industrial'
+  ) {
+    return <SmallSignal aspect={aspect} lights={lights} />;
+  }
+  if (signalType === 'obstruction') {
+    return <ObstructionSignal aspect={aspect} lights={lights} />;
+  }
+  if (signalType === 'repeating') {
+    return <RepeatingSignal aspect={aspect} lights={lights} />;
   }
   if (zone === 'all' || zone === 'main' || zone === 'fast') {
     if (aspect === 'moonWhite') {
@@ -42,6 +62,10 @@ const Signal = ({ id, aspect, lights }) => {
       );
     } else if (id >= 21 && id <= 26) {
       return <BigSignal aspect={aspect} lights={lights} />;
+    } else if (id === 31) {
+      return <ObstructionSignal />;
+    } else if (id === 32) {
+      return <RepeatingSignal />;
     } else {
       return <BiggestSignal aspect={aspect} lights={lights} />;
     }
@@ -101,6 +125,7 @@ const Signal = ({ id, aspect, lights }) => {
       return <BigSignal aspect={aspect} lights={lights} />;
     }
   }
+  // private zone
   throw new Error('Signals cannot be rendered without zone');
 };
 

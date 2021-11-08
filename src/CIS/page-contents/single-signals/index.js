@@ -4,6 +4,8 @@ import RegularSignal from './RegularSignal';
 import SmallSignal from './SmallSignal';
 import DwarfSignal from './DwarfSignal';
 import DwarfManeuveringSignal from './DwarfManeuveringSignal';
+import ObstructionSignal from './ObstructionSignal';
+import RepeatingSignal from './RepeatingSignal';
 
 export {
   BiggestSignal,
@@ -12,4 +14,6 @@ export {
   SmallSignal,
   DwarfSignal,
   DwarfManeuveringSignal,
+  ObstructionSignal,
+  RepeatingSignal,
 };

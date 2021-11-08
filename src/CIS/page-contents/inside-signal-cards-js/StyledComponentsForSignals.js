@@ -7,16 +7,31 @@ const SignalWrapper = styled.div`
   align-items: center;
 
   /* post */
+  .obstruction-signal-post,
+  .big-signal-post,
+  .post {
+    width: 18px;
+  }
   .big-signal-post,
   .post {
     background: #6c757d;
-    width: 18px;
   }
   .big-signal-post {
     height: 450px;
   }
+  .obstruction-signal-post,
   .post {
     height: 400px;
+  }
+  .obstruction-signal-post {
+    border: 1px solid black;
+    background: repeating-linear-gradient(
+      45deg,
+      black,
+      black 10px,
+      white 10px,
+      white 20px
+    );
   }
 
   /* plates */
@@ -63,6 +78,11 @@ const SignalWrapper = styled.div`
     width: 40px;
     height: 40px;
     transform: translate(-27%);
+  }
+  .diamond-shaped {
+    padding: 0.7rem;
+    border-radius: initial;
+    transform: translateX(-65%) translateY(-25%) rotate(45deg);
   }
 
   /* green line container */

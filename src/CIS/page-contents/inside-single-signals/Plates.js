@@ -17,9 +17,9 @@ export const TwoAspectPlate = ({ l1, l2 }) => {
     </div>
   );
 };
-export const OneAspectPlate = ({ l1 }) => {
+export const OneAspectPlate = ({ l1, specialClass }) => {
   return (
-    <div className="one-aspect-plate">
+    <div className={`one-aspect-plate ${specialClass}`}>
       <Light active={l1} />
     </div>
   );

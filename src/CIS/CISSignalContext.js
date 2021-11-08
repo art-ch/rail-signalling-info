@@ -99,6 +99,7 @@ const CISSignalProvider = ({ children }) => {
     <CISSignalContext.Provider
       value={{
         zone,
+        signalType,
         setZone,
         filterButtons,
         filterAspects,
