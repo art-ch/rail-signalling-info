@@ -128,7 +128,6 @@ const Signal = ({ id, aspect, lights }) => {
   if (zone === 'private') {
     return <BiggestSignal aspect={aspect} lights={lights} />;
   }
-  // private zone
   throw new Error('Signals cannot be rendered without zone');
 };
 

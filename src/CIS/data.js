@@ -470,7 +470,7 @@ export const aspects = [
   },
   {
     id: 31,
-    name: 'obstruction',
+    name: 'turned-off-signal',
     lights: {
       l1: null,
       l2: null,
@@ -487,7 +487,7 @@ export const aspects = [
   },
   {
     id: 32,
-    name: 'repeating',
+    name: 'turned-off-signal',
     lights: {
       l1: null,
       l2: null,
