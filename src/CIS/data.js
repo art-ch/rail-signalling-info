@@ -418,10 +418,7 @@ export const aspects = [
       l4: 'green',
       l5: null,
     },
-    info: [
-      { type: 'entry', description: 'entry signal description' },
-      { type: 'exit', description: 'exit signal description' },
-    ],
+    info: [{ type: 'other', description: 'other signal description' }],
   },
   {
     id: 28,
@@ -586,6 +583,7 @@ export const signalFilterButtons = [
     { id: 21, name: 'technological' },
     { id: 22, name: 'maneuvering' },
     { id: 23, name: 'humping' },
+    { id: 24, name: 'other' },
   ],
 ];
 

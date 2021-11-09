@@ -119,7 +119,8 @@ const CISSignalProvider = ({ children }) => {
             info: aspect.info.filter(({ type }) =>
               signalType === 'maneuvering' ||
               signalType === 'conditional' ||
-              signalType === 'warning'
+              signalType === 'warning' ||
+              signalType === 'other'
                 ? type === signalType
                 : type === signalType || aspect.name === 'red'
             ),
