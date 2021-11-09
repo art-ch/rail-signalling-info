@@ -4,6 +4,7 @@ import {
   ThreeAspectPlate,
   TwoAspectPlate,
   Stripes,
+  ConditionalSignalBoard,
 } from '../inside-single-signals/';
 
 const BiggestSignal = ({ aspect, lights: { l1, l2, l3, l4, l5 } }) => {
@@ -19,6 +20,7 @@ const BiggestSignal = ({ aspect, lights: { l1, l2, l3, l4, l5 } }) => {
           <TwoAspectPlate l1={l4} l2={l5} />
         </div>
         <Stripes aspect={aspect} />
+        <ConditionalSignalBoard aspect={aspect} />
       </div>
     </SignalWrapper>
   );

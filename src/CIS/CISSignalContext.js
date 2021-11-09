@@ -7,7 +7,7 @@ const CISSignalProvider = ({ children }) => {
   const [signalType, setSignalType] = useState('all');
 
   const filterButtons = (id, name) => {
-    if (id >= 8) {
+    if (id >= 9) {
       setSignalType(`${name}`);
     } else {
       setZone(`${name}`);
@@ -68,6 +68,17 @@ const CISSignalProvider = ({ children }) => {
     }
     if (zone === 'semi-atp') {
       newAspects = [aspects[0], ...aspects.slice(3, 8)];
+    }
+    if (zone === 'private') {
+      newAspects = [
+        aspects[0],
+        aspects[2],
+        ...aspects.slice(4, 7),
+
+        ...aspects.slice(15, 18),
+        aspects[32],
+        aspects[29],
+      ];
     }
 
     if (signalType === 'all') {
