@@ -8,6 +8,7 @@ const CISSignalProvider = ({ children }) => {
 
   const filterButtons = (id, name) => {
     if (id >= 9) {
+      setZone('all');
       setSignalType(`${name}`);
     } else {
       setZone(`${name}`);
@@ -74,7 +75,6 @@ const CISSignalProvider = ({ children }) => {
         aspects[0],
         aspects[2],
         ...aspects.slice(4, 7),
-
         ...aspects.slice(15, 18),
         aspects[32],
         aspects[29],
@@ -97,9 +97,32 @@ const CISSignalProvider = ({ children }) => {
     } else {
       return newAspects
         .map((aspect) => {
+          // optimize this
+          // if (
+          //   (signalType === 'obstruction' || signalType === 'repeating') &&
+          //   aspect.name === 'red'
+          // ) {
+          //   newAspects.push(
+          //     newAspects.splice(newAspects.indexOf(aspect), 1)[0]
+          //   );
+          // }
+          // if (
+          //   (signalType === 'obstruction' || signalType === 'repeating') &&
+          //   aspect.name === 'turned-off-signal'
+          // ) {
+          //   newAspects.unshift(
+          //     newAspects.splice(newAspects.indexOf(aspect), 1)[0]
+          //   );
+          // }
           return {
             ...aspect,
-            info: aspect.info.filter(({ type }) => type === signalType),
+            info: aspect.info.filter(({ type }) =>
+              signalType === 'maneuvering' ||
+              signalType === 'conditional' ||
+              signalType === 'warning'
+                ? type === signalType
+                : type === signalType || aspect.name === 'red'
+            ),
           };
         })
         .filter(({ info }) => info.length > 0);

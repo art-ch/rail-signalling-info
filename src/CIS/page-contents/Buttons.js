@@ -19,7 +19,6 @@ const Buttons = () => {
                   id={id}
                   onClick={() => filterButtons(id, name)}
                   key={id}
-                  disabled={(zone === 'main' || zone === 'fast') && id > 8}
                 >
                   {id < 9 ? displayName : name}
                 </button>
