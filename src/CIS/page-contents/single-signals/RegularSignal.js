@@ -9,13 +9,18 @@ import {
 
 const RegularSignal = ({ aspect, lights: { l1, l2, l3, l5 } }) => {
   const { zone, signalType } = useContext(CISSignalContext);
-  console.log(l5);
   return (
     <SignalWrapper>
       <div className="post">
         <ThreeAspectPlate
-          l1={l5 !== null ? l5 : l1}
-          l2={zone === 'atp-4' || signalType === 'humping' ? l3 : l2}
+          l1={l5 !== null ? l5 : signalType === 'technological' ? null : l1}
+          l2={
+            zone === 'atp-4' || signalType === 'humping'
+              ? l3
+              : signalType === 'technological'
+              ? l1
+              : l2
+          }
           l3={zone === 'atp-4' || signalType === 'humping' ? l2 : l3}
         />
         <RoutingSignalBoard aspect={aspect} zone={zone} />
