@@ -3,8 +3,9 @@ import { CISSignalContext } from '../../CISSignalContext';
 import { SignalWrapper } from '../inside-signal-cards-js/StyledComponentsForSignals';
 import {
   ThreeAspectPlate,
-  RoutingSignalBoard,
+  SpecialBlockSignalBoard,
   ConditionalSignalBoard,
+  RoutePointerBoard,
 } from '../inside-single-signals';
 
 const RegularSignal = ({ aspect, lights: { l1, l2, l3, l5 } }) => {
@@ -23,8 +24,9 @@ const RegularSignal = ({ aspect, lights: { l1, l2, l3, l5 } }) => {
           }
           l3={zone === 'atp-4' || signalType === 'humping' ? l2 : l3}
         />
-        <RoutingSignalBoard aspect={aspect} zone={zone} />
+        <SpecialBlockSignalBoard aspect={aspect} zone={zone} />
         <ConditionalSignalBoard aspect={aspect} />
+        <RoutePointerBoard aspect={aspect} />
       </div>
     </SignalWrapper>
   );

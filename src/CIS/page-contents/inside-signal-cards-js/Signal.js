@@ -43,7 +43,7 @@ const Signal = ({ id, aspect, lights }) => {
   if (signalType === 'repeating') {
     return <RepeatingSignal aspect={aspect} lights={lights} />;
   }
-  if (zone === 'all' || zone === 'main' || zone === 'fast') {
+  if (zone === 'all') {
     if (aspect === 'moonWhite') {
       return (
         <CombinedSignalsWrapper className="combined-signals">
@@ -67,7 +67,7 @@ const Signal = ({ id, aspect, lights }) => {
     } else if (id === 32) {
       return <RepeatingSignal />;
     } else {
-      return <BiggestSignal aspect={aspect} lights={lights} />;
+      return <BiggestSignal id={id} aspect={aspect} lights={lights} />;
     }
   }
   if (zone === 'atp' || zone === 'atp-4') {
@@ -128,7 +128,9 @@ const Signal = ({ id, aspect, lights }) => {
   if (zone === 'private') {
     return <BiggestSignal aspect={aspect} lights={lights} />;
   }
-  throw new Error('Signals cannot be rendered without zone');
+  throw new Error(
+    'Signals cannot be rendered without specified zone or signal type'
+  );
 };
 
 export default Signal;

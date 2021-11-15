@@ -5,9 +5,10 @@ import {
   TwoAspectPlate,
   Stripes,
   ConditionalSignalBoard,
+  RoutePointerBoard,
 } from '../inside-single-signals/';
 
-const BiggestSignal = ({ aspect, lights: { l1, l2, l3, l4, l5 } }) => {
+const BiggestSignal = ({ id, aspect, lights: { l1, l2, l3, l4, l5 } }) => {
   return (
     <SignalWrapper>
       <div className="big-signal-post">
@@ -21,6 +22,7 @@ const BiggestSignal = ({ aspect, lights: { l1, l2, l3, l4, l5 } }) => {
         </div>
         <Stripes aspect={aspect} />
         <ConditionalSignalBoard aspect={aspect} />
+        <RoutePointerBoard id={id} aspect={aspect} />
       </div>
     </SignalWrapper>
   );

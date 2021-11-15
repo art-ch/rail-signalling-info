@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const RoutingSignalBoard = ({ zone, aspect }) => {
+const SpecialBlockSignalBoard = ({ zone, aspect }) => {
   const divs = Array.from(Array(3));
   if (zone === 'atp' || zone === 'atp-4') {
     if (aspect === 'green-flickering' || aspect === 'yellow-flickering') {
@@ -26,7 +26,7 @@ const RoutingSignalBoard = ({ zone, aspect }) => {
   }
 };
 
-export default RoutingSignalBoard;
+export default SpecialBlockSignalBoard;
 
 const Wrapper = styled.article`
   display: flex;
