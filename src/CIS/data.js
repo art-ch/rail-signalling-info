@@ -152,7 +152,7 @@ export const aspects = [
       l5: null,
     },
     info: [
-      { type: 'main', description: 'main signal description' },
+      { type: 'fast', description: 'fast signal description' },
       { type: 'entry', description: 'entry signal description' },
     ],
   },
@@ -167,7 +167,7 @@ export const aspects = [
       l5: null,
     },
     info: [
-      { type: 'main', description: 'main signal description' },
+      { type: 'fast', description: 'fast signal description' },
       { type: 'entry', description: 'entry signal description' },
     ],
   },
@@ -182,7 +182,7 @@ export const aspects = [
       l5: null,
     },
     info: [
-      { type: 'main', description: 'main signal description' },
+      { type: 'fast', description: 'fast signal description' },
       { type: 'entry', description: 'entry signal description' },
     ],
   },
@@ -197,7 +197,7 @@ export const aspects = [
       l5: null,
     },
     info: [
-      { type: 'main', description: 'main signal description' },
+      { type: 'fast', description: 'fast signal description' },
       { type: 'entry', description: 'entry signal description' },
     ],
   },
@@ -212,7 +212,7 @@ export const aspects = [
       l5: null,
     },
     info: [
-      { type: 'main', description: 'main signal description' },
+      { type: 'fast', description: 'fast signal description' },
       { type: 'entry', description: 'entry signal description' },
     ],
   },
@@ -227,7 +227,7 @@ export const aspects = [
       l5: null,
     },
     info: [
-      { type: 'main', description: 'main signal description' },
+      { type: 'fast', description: 'fast signal description' },
       { type: 'entry', description: 'entry signal description' },
     ],
   },
@@ -242,7 +242,6 @@ export const aspects = [
       l5: null,
     },
     info: [
-      { type: 'main', description: 'main signal description' },
       { type: 'entry', description: 'entry signal description' },
       { type: 'route', description: 'route signal description' },
       { type: 'block', description: 'block signal description' },
@@ -258,7 +257,7 @@ export const aspects = [
       l4: null,
       l5: 'yellow',
     },
-    info: [{ type: 'other', description: 'signal description' }],
+    info: [{ type: 'special', description: 'special signal description' }],
   },
   {
     id: 17,
@@ -418,7 +417,7 @@ export const aspects = [
       l4: 'green',
       l5: null,
     },
-    info: [{ type: 'other', description: 'other signal description' }],
+    info: [{ type: 'special', description: 'special signal description' }],
   },
   {
     id: 28,
@@ -535,6 +534,23 @@ export const aspects = [
   },
   {
     id: 35,
+    name: 'route-pointer-letter',
+    lights: {
+      l1: 'yellow-flickering',
+      l2: null,
+      l3: null,
+      l4: 'yellow',
+      l5: null,
+    },
+    info: [
+      {
+        type: 'other',
+        description: 'route pointer description',
+      },
+    ],
+  },
+  {
+    id: 36,
     name: 'route-pointer-green',
     lights: {
       l1: 'yellow',
@@ -550,25 +566,42 @@ export const aspects = [
       },
     ],
   },
+  {
+    id: 37,
+    name: 'red-route-pointer-N',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: 'red',
+      l4: null,
+      l5: null,
+    },
+    info: [
+      {
+        type: 'humping',
+        description: 'humping signal description',
+      },
+    ],
+  },
 ];
 
 export const signalFilterButtons = [
   [
     { id: 1, name: 'all', displayName: 'all' },
-    { id: 2, name: 'main', displayName: 'main aspects' },
-    { id: 3, name: 'fast', displayName: 'fast zone aspects' },
     {
-      id: 4,
+      id: 2,
       name: 'atp',
       displayName: 'atp zone (automatic train protection)',
     },
-    { id: 5, name: 'atp-4', displayName: 'atp zone with 4 aspect signalling' },
-    { id: 6, name: 'altp', displayName: 'altp zone' },
-    { id: 7, name: 'semi-atp', displayName: 'semi-automatic tp zone' },
-    { id: 8, name: 'private', displayName: 'private zone' },
+    { id: 3, name: 'atp-4', displayName: 'atp zone with 4 aspect signalling' },
+    { id: 4, name: 'altp', displayName: 'altp zone' },
+    { id: 5, name: 'semi-atp', displayName: 'semi-automatic tp zone' },
+    { id: 6, name: 'private', displayName: 'private zone' },
   ],
   [
-    { id: 9, name: 'all' },
+    { id: 7, name: 'all' },
+    { id: 8, name: 'main', displayName: 'main aspects' },
+    { id: 9, name: 'fast', displayName: 'fast switch aspects' },
     { id: 10, name: 'entry' },
     { id: 11, name: 'exit' },
     { id: 12, name: 'invitational' },
@@ -583,7 +616,8 @@ export const signalFilterButtons = [
     { id: 21, name: 'technological' },
     { id: 22, name: 'maneuvering' },
     { id: 23, name: 'humping' },
-    { id: 24, name: 'other' },
+    { id: 24, name: 'special' },
+    { id: 25, name: 'other' },
   ],
 ];
 

@@ -4,10 +4,10 @@ const CISSignalContext = React.createContext();
 
 const CISSignalProvider = ({ children }) => {
   const [zone, setZone] = useState('all');
-  const [signalType, setSignalType] = useState('all');
+  const [signalType, setSignalType] = useState('humping');
 
   const filterButtons = (id, name) => {
-    if (id >= 9) {
+    if (id > 6) {
       setZone('all');
       setSignalType(`${name}`);
     } else {
@@ -21,24 +21,12 @@ const CISSignalProvider = ({ children }) => {
     if (zone === 'all') {
       newAspects = aspects;
     }
-    if (zone === 'main') {
-      newAspects = [...aspects.slice(0, 8)].map((aspect) => {
-        return {
-          ...aspect,
-          info: aspect.info.filter(
-            ({ type }) => type === 'main' || type === 'maneuvering'
-          ),
-        };
-      });
-    }
-    if (zone === 'fast') {
-      newAspects = [...aspects.slice(8, 14)].map((aspect) => {
-        return {
-          ...aspect,
-          info: aspect.info.filter(({ type }) => type === 'main'),
-        };
-      });
-    }
+    // if (zone === 'main') {
+
+    // }
+    // if (zone === 'fast') {
+
+    // }
     if (zone === 'atp') {
       newAspects = [aspects[0], aspects[14], ...aspects.slice(1, 14)];
     }
@@ -82,7 +70,7 @@ const CISSignalProvider = ({ children }) => {
     }
 
     if (signalType === 'all') {
-      if (zone !== 'all' && zone !== 'main' && zone !== 'fast') {
+      if (zone !== 'all') {
         return newAspects.map((aspect) => {
           if (aspect.name !== 'red') {
             return {
@@ -94,26 +82,21 @@ const CISSignalProvider = ({ children }) => {
         });
       }
       return newAspects;
+    } else if (signalType === 'main') {
+      return newAspects.map((aspect) => {
+        if (aspect.name !== 'red') {
+          return {
+            ...aspect,
+            info: aspect.info.filter(
+              ({ type }) => type === 'main' || type === 'maneuvering'
+            ),
+          };
+        }
+        return aspect;
+      });
     } else {
       return newAspects
         .map((aspect) => {
-          // optimize this
-          // if (
-          //   (signalType === 'obstruction' || signalType === 'repeating') &&
-          //   aspect.name === 'red'
-          // ) {
-          //   newAspects.push(
-          //     newAspects.splice(newAspects.indexOf(aspect), 1)[0]
-          //   );
-          // }
-          // if (
-          //   (signalType === 'obstruction' || signalType === 'repeating') &&
-          //   aspect.name === 'turned-off-signal'
-          // ) {
-          //   newAspects.unshift(
-          //     newAspects.splice(newAspects.indexOf(aspect), 1)[0]
-          //   );
-          // }
           return {
             ...aspect,
             info: aspect.info.filter(({ type }) =>

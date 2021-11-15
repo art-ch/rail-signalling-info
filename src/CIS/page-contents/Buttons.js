@@ -20,7 +20,7 @@ const Buttons = () => {
                   onClick={() => filterButtons(id, name)}
                   key={id}
                 >
-                  {id < 9 ? displayName : name}
+                  {displayName || name}
                 </button>
               );
             })}
