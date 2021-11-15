@@ -4,7 +4,7 @@ const CISSignalContext = React.createContext();
 
 const CISSignalProvider = ({ children }) => {
   const [zone, setZone] = useState('all');
-  const [signalType, setSignalType] = useState('humping');
+  const [signalType, setSignalType] = useState('all');
 
   const filterButtons = (id, name) => {
     if (id > 6) {
@@ -21,12 +21,6 @@ const CISSignalProvider = ({ children }) => {
     if (zone === 'all') {
       newAspects = aspects;
     }
-    // if (zone === 'main') {
-
-    // }
-    // if (zone === 'fast') {
-
-    // }
     if (zone === 'atp') {
       newAspects = [aspects[0], aspects[14], ...aspects.slice(1, 14)];
     }
