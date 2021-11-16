@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const RoutePointerBoard = ({ id, aspect }) => {
   const { signalType } = useContext(CISSignalContext);
-  if (signalType === 'humping' || id > 34) {
+  if (signalType === 'humping' || id > 35) {
     return (
       <Wrapper id={id} aspect={aspect} signalType={signalType}>
         <div className="frame">
@@ -70,7 +70,7 @@ const RoutePointerBoard = ({ id, aspect }) => {
         </div>
       </Wrapper>
     );
-  } else if (id === 34) {
+  } else if (id === 35) {
     return (
       <Wrapper>
         <div className="frame">
@@ -155,7 +155,7 @@ const Wrapper = styled.article`
   }
   .line {
     width: ${({ id, signalType }) =>
-      id === 37 || signalType === 'humping' ? '25px' : '30px'};
+      id === 38 || signalType === 'humping' ? '25px' : '30px'};
     height: 5px;
     margin-bottom: 2px;
     display: flex;
@@ -167,7 +167,7 @@ const Wrapper = styled.article`
     height: 5px;
     width: 5px;
     :first-child {
-      margin-right: ${({ id }) => id < 37 && '2px'};
+      margin-right: ${({ id }) => id < 38 && '2px'};
     }
   }
   .active {

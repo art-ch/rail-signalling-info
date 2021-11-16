@@ -62,7 +62,7 @@ const Signal = ({ id, aspect, lights }) => {
           <DwarfManeuveringSignal aspect={aspect} />
         </CombinedSignalsWrapper>
       );
-    } else if (id === 1 || id === 3 || id === 6 || id === 27) {
+    } else if (id === 1 || id === 3 || id === 6 || id === 27 || id === 28) {
       return (
         <CombinedSignalsWrapper className="combined-signals">
           <BiggestSignal aspect={aspect} lights={lights} />
@@ -71,7 +71,7 @@ const Signal = ({ id, aspect, lights }) => {
       );
     } else if (id >= 21 && id <= 26) {
       return <BigSignal aspect={aspect} lights={lights} />;
-    } else if (id === 31 || id === 32) {
+    } else if (id === 32 || id === 33) {
       return <DiamondShapedSignal id={id} />;
     } else {
       return <BiggestSignal id={id} aspect={aspect} lights={lights} />;

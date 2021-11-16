@@ -13,7 +13,7 @@ const DiamondShapedSignal = ({ id, lights }) => {
     <SignalWrapper>
       <div
         className={`${
-          signalType === 'obstruction' || id === 31
+          signalType === 'obstruction' || id === 32
             ? 'obstruction-signal-post'
             : 'post'
         }`}

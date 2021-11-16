@@ -421,6 +421,18 @@ export const aspects = [
   },
   {
     id: 28,
+    name: 'two-yellows-special',
+    lights: {
+      l1: 'yellow',
+      l2: null,
+      l3: 'yellow',
+      l4: null,
+      l5: null,
+    },
+    info: [{ type: 'special', description: 'special signal description' }],
+  },
+  {
+    id: 29,
     name: 'yellow-flickering-moonWhite',
     lights: {
       l1: 'yellow-flickering',
@@ -435,7 +447,7 @@ export const aspects = [
     ],
   },
   {
-    id: 29,
+    id: 30,
     name: 'yellow-green',
     lights: {
       l1: 'yellow',
@@ -451,7 +463,7 @@ export const aspects = [
     ],
   },
   {
-    id: 30,
+    id: 31,
     name: 'conditional',
     lights: {
       l1: null,
@@ -465,7 +477,7 @@ export const aspects = [
     ],
   },
   {
-    id: 31,
+    id: 32,
     name: 'turned-off-signal',
     lights: {
       l1: null,
@@ -482,7 +494,7 @@ export const aspects = [
     ],
   },
   {
-    id: 32,
+    id: 33,
     name: 'turned-off-signal',
     lights: {
       l1: null,
@@ -499,7 +511,7 @@ export const aspects = [
     ],
   },
   {
-    id: 33,
+    id: 34,
     name: 'moonWhite-red',
     lights: {
       l1: null,
@@ -516,7 +528,7 @@ export const aspects = [
     ],
   },
   {
-    id: 34,
+    id: 35,
     name: 'route-pointer',
     lights: {
       l1: 'yellow-flickering',
@@ -533,7 +545,7 @@ export const aspects = [
     ],
   },
   {
-    id: 35,
+    id: 36,
     name: 'route-pointer-letter',
     lights: {
       l1: 'yellow-flickering',
@@ -550,7 +562,7 @@ export const aspects = [
     ],
   },
   {
-    id: 36,
+    id: 37,
     name: 'route-pointer-green',
     lights: {
       l1: 'yellow',
@@ -567,7 +579,7 @@ export const aspects = [
     ],
   },
   {
-    id: 37,
+    id: 38,
     name: 'red-route-pointer-N',
     lights: {
       l1: null,
@@ -583,6 +595,16 @@ export const aspects = [
       },
     ],
   },
+];
+
+export const signalTypeSigns = [
+  ['Н', 'НД'],
+  'Ч2',
+  'ЧМ',
+  'НП',
+  ['З', 'ЗП', 'НЗ'],
+  'П',
+  'М1',
 ];
 
 export const signalFilterButtons = [

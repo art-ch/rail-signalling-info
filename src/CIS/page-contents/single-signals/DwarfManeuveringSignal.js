@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CISSignalContext } from '../../CISSignalContext';
 import {
   SignalWrapper,
   DwarfManeuveringSignalWrapper,
 } from '../inside-signal-cards-js/StyledComponentsForSignals';
+import { SignalTypeSign } from '../inside-single-signals/';
 
 const DwarfManeuveringSignal = ({ aspect }) => {
+  const { signalType } = useContext(CISSignalContext);
   return (
     <SignalWrapper>
       <DwarfManeuveringSignalWrapper>
@@ -14,7 +17,9 @@ const DwarfManeuveringSignal = ({ aspect }) => {
           ></div>
           <div className={`light ${aspect === 'blue' && 'blue'}`}></div>
         </div>
-        <div className="horizontal-support"></div>
+        <div className="horizontal-support">
+          <SignalTypeSign signalType={signalType} />
+        </div>
         <div className="vertical-support"></div>
       </DwarfManeuveringSignalWrapper>
     </SignalWrapper>
