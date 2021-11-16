@@ -5,10 +5,10 @@ import {
   BigSignal,
   RegularSignal,
   SmallSignal,
+  InvitationalSignal,
   DwarfSignal,
   DwarfManeuveringSignal,
-  ObstructionSignal,
-  RepeatingSignal,
+  DiamondShapedSignal,
 } from '../single-signals/index';
 import { CombinedSignalsWrapper } from './StyledComponentsForSignals';
 
@@ -37,11 +37,20 @@ const Signal = ({ id, aspect, lights }) => {
   ) {
     return <SmallSignal aspect={aspect} lights={lights} />;
   }
-  if (signalType === 'obstruction') {
-    return <ObstructionSignal aspect={aspect} lights={lights} />;
+  if (
+    aspect === 'moonWhite-flickering' ||
+    aspect === 'red-moonWhite-flickering' ||
+    signalType === 'invitational'
+  ) {
+    return (
+      <CombinedSignalsWrapper className="combined-signals">
+        <InvitationalSignal aspect={aspect} lights={lights} />
+        <BiggestSignal aspect={aspect} lights={lights} />
+      </CombinedSignalsWrapper>
+    );
   }
-  if (signalType === 'repeating') {
-    return <RepeatingSignal aspect={aspect} lights={lights} />;
+  if (signalType === 'obstruction' || signalType === 'repeating') {
+    return <DiamondShapedSignal aspect={aspect} lights={lights} />;
   }
   if (zone === 'all') {
     if (aspect === 'moonWhite') {
@@ -62,10 +71,8 @@ const Signal = ({ id, aspect, lights }) => {
       );
     } else if (id >= 21 && id <= 26) {
       return <BigSignal aspect={aspect} lights={lights} />;
-    } else if (id === 31) {
-      return <ObstructionSignal />;
-    } else if (id === 32) {
-      return <RepeatingSignal />;
+    } else if (id === 31 || id === 32) {
+      return <DiamondShapedSignal id={id} />;
     } else {
       return <BiggestSignal id={id} aspect={aspect} lights={lights} />;
     }

@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { SignalWrapper } from '../inside-signal-cards-js/StyledComponentsForSignals';
+import { CISSignalContext } from '../../CISSignalContext';
 import {
   ThreeAspectPlate,
   TwoAspectPlate,
   Stripes,
   ConditionalSignalBoard,
   RoutePointerBoard,
+  SignalTypeSign,
 } from '../inside-single-signals/';
 
 const BiggestSignal = ({ id, aspect, lights: { l1, l2, l3, l4, l5 } }) => {
+  const { signalType } = useContext(CISSignalContext);
+
   return (
     <SignalWrapper>
       <div className="big-signal-post">
@@ -23,6 +27,7 @@ const BiggestSignal = ({ id, aspect, lights: { l1, l2, l3, l4, l5 } }) => {
         <Stripes aspect={aspect} />
         <ConditionalSignalBoard aspect={aspect} />
         <RoutePointerBoard id={id} aspect={aspect} />
+        <SignalTypeSign signalType={signalType} />
       </div>
     </SignalWrapper>
   );

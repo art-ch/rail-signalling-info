@@ -6,6 +6,7 @@ import {
   SpecialBlockSignalBoard,
   ConditionalSignalBoard,
   RoutePointerBoard,
+  SignalTypeSign,
 } from '../inside-single-signals';
 
 const RegularSignal = ({ aspect, lights: { l1, l2, l3, l5 } }) => {
@@ -27,6 +28,7 @@ const RegularSignal = ({ aspect, lights: { l1, l2, l3, l5 } }) => {
         <SpecialBlockSignalBoard aspect={aspect} zone={zone} />
         <ConditionalSignalBoard aspect={aspect} />
         <RoutePointerBoard aspect={aspect} />
+        <SignalTypeSign signalType={signalType} />
       </div>
     </SignalWrapper>
   );

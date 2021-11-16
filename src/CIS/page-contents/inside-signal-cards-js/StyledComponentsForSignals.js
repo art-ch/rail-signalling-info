@@ -79,10 +79,15 @@ const SignalWrapper = styled.div`
     height: 40px;
     transform: translate(-27%);
   }
-  .diamond-shaped {
+
+  .diamond-shaped-plate {
     padding: 0.7rem;
     border-radius: initial;
     transform: translateX(-65%) translateY(-25%) rotate(45deg);
+  }
+  .invitational-signal-plate {
+    padding: 0.5rem;
+    transform: translateX(-35%);
   }
 
   /* green line container */
