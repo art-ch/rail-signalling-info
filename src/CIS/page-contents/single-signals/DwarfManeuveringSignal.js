@@ -18,7 +18,10 @@ const DwarfManeuveringSignal = ({ aspect }) => {
           <div className={`light ${aspect === 'blue' && 'blue'}`}></div>
         </div>
         <div className="horizontal-support">
-          <SignalTypeSign signalType={signalType} />
+          <SignalTypeSign
+            signalType={signalType}
+            signalSize="dwarf-maneuvering"
+          />
         </div>
         <div className="vertical-support"></div>
       </DwarfManeuveringSignalWrapper>

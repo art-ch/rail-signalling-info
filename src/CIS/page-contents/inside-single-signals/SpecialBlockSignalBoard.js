@@ -1,26 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SpecialBlockSignalBoard = ({ zone, aspect }) => {
+const SpecialBlockSignalBoard = ({ zone, aspect, signalType }) => {
   const divs = Array.from(Array(3));
-  if (zone === 'atp' || zone === 'atp-4') {
-    if (aspect === 'green-flickering' || aspect === 'yellow-flickering') {
-      return (
-        <Wrapper style={{ transform: 'translate(-10%)' }}>
-          {divs.map((_, index) => {
-            return (
-              <div className="black-stripe" key={index}>
-                {divs.map((_, index) => {
-                  return <div className="white-dot" key={index}></div>;
-                })}
-              </div>
-            );
-          })}
-        </Wrapper>
-      );
-    } else {
-      return null;
-    }
+  if (
+    (zone === 'atp' || zone === 'atp-4' || signalType === 'block') &&
+    (aspect === 'green-flickering' || aspect === 'yellow-flickering')
+  ) {
+    return (
+      <Wrapper style={{ transform: 'translate(-10%)' }}>
+        {divs.map((_, index) => {
+          return (
+            <div className="black-stripe" key={index}>
+              {divs.map((_, index) => {
+                return <div className="white-dot" key={index}></div>;
+              })}
+            </div>
+          );
+        })}
+      </Wrapper>
+    );
   } else {
     return null;
   }
@@ -38,6 +37,7 @@ const Wrapper = styled.article`
   border: 2px solid black;
   translate: (-100%);
   overflow: hidden;
+  margin-bottom: 10px;
   .black-stripe {
     display: flex;
     align-items: center;

@@ -46,7 +46,11 @@ export const DwarfSignal = ({ aspect, lights: { l1, l2, l3, l4, l5 } }) => {
           )}
         </div>
         <div className="horizontal-support">
-          <SignalTypeSign signalType={signalType} />
+          <SignalTypeSign
+            aspect={aspect}
+            signalType={signalType}
+            signalSize="dwarf"
+          />
         </div>
         <div className="vertical-support-container">
           <div className="vertical-support"></div>

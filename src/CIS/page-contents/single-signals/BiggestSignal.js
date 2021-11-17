@@ -27,7 +27,11 @@ const BiggestSignal = ({ id, aspect, lights: { l1, l2, l3, l4, l5 } }) => {
         <Stripes aspect={aspect} />
         <ConditionalSignalBoard aspect={aspect} />
         <RoutePointerBoard id={id} aspect={aspect} />
-        <SignalTypeSign signalType={signalType} />
+        <SignalTypeSign
+          aspect={aspect}
+          signalType={signalType}
+          signalSize="biggest"
+        />
       </div>
     </SignalWrapper>
   );

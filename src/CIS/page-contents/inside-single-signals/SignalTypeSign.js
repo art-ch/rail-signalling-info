@@ -1,17 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { signalTypeSigns } from '../../data';
 import { CISSignalContext } from '../../CISSignalContext';
 import styled from 'styled-components';
 
-const SignalTypeSign = () => {
+const SignalTypeSign = ({ aspect, signalSize }) => {
   const { signalType } = useContext(CISSignalContext);
-  console.log(signalTypeSigns);
 
-  if (signalType !== 'all' && signalType !== 'main' && signalType !== 'fast') {
-    return <Wrapper></Wrapper>;
-  }
-
-  return null;
+  return (
+    <Wrapper signalSize={signalSize}>
+      {signalTypeSigns.map((el) => {
+        if (el.type === signalType) {
+          return el.letters.map((letter, index) => {
+            if (
+              aspect === 'moonWhite' &&
+              (signalSize === 'biggest' || signalSize === 'dwarf')
+            ) {
+              return <p key={index}>{letter.replace('М', 'Ч')}</p>;
+            }
+            if (aspect === 'yellow' && signalType === 'obstruction') {
+              return <p key={index}>{letter.replace('З', 'ЗП')}</p>;
+            }
+            return <p key={index}>{letter}</p>;
+          });
+        }
+        return null;
+      })}
+    </Wrapper>
+  );
 };
 
 export default SignalTypeSign;
@@ -20,8 +35,17 @@ const Wrapper = styled.article`
   background: white;
   border: 1px solid black;
   display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+
+  width: ${({ signalSize }) =>
+    (signalSize === 'dwarf' || signalSize === 'dwarf-maneuvering') && '31px'};
+
+  flex-direction: ${({ signalSize }) =>
+    signalSize !== 'dwarf' && signalSize !== 'dwarf-maneuvering' && 'column'};
+
   p {
-    margin: 0 3px;
+    margin: 0;
+    padding: 1px 2px 5px;
   }
+  z-index: 1;
 `;

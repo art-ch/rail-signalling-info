@@ -597,16 +597,6 @@ export const aspects = [
   },
 ];
 
-export const signalTypeSigns = [
-  ['Н', 'НД'],
-  'Ч2',
-  'ЧМ',
-  'НП',
-  ['З', 'ЗП', 'НЗ'],
-  'П',
-  'М1',
-];
-
 export const signalFilterButtons = [
   [
     { id: 1, name: 'all', displayName: 'all' },
@@ -641,6 +631,19 @@ export const signalFilterButtons = [
     { id: 24, name: 'special' },
     { id: 25, name: 'other' },
   ],
+];
+
+export const signalTypeSigns = [
+  { type: 'entry', letters: ['Н', '1'] },
+  { type: 'exit', letters: ['Ч', '2'] },
+  { type: 'route', letters: ['Ч', 'М'] },
+  { type: 'block', letters: ['2', 'II'] },
+  { type: 'cover', letters: ['Н', 'П'] },
+  { type: 'obstruction', letters: ['З'] },
+  { type: 'warning', letters: ['П'] },
+  { type: 'repeating', letters: ['П'] },
+  { type: 'maneuvering', letters: ['М', '4'] },
+  { type: 'humping', letters: ['Г'] },
 ];
 
 export const signs = [{ id: 1, sign: 'sign-name', description: 'description' }];

@@ -223,6 +223,7 @@ const DwarfSignalWrapper = styled.article`
     height: 35px;
     width: 10px;
     background: #8b939a;
+    z-index: -1;
   }
   .light {
     background: #565656;
@@ -268,6 +269,7 @@ const DwarfManeuveringSignalWrapper = styled.article`
     height: 35px;
     width: 10px;
     background: #8b939a;
+    z-index: -1;
   }
   .light {
     background: #565656;

@@ -148,6 +148,7 @@ const Wrapper = styled.article`
   align-items: center;
   justify-content: center;
   background: black;
+  margin-bottom: 1rem;
   .frame {
     display: flex;
     flex-direction: column;

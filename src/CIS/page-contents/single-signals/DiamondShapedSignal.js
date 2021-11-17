@@ -3,7 +3,7 @@ import { CISSignalContext } from '../../CISSignalContext';
 import { OneAspectPlate, SignalTypeSign } from '../inside-single-signals';
 import { SignalWrapper } from '../inside-signal-cards-js/StyledComponentsForSignals';
 
-const DiamondShapedSignal = ({ id, lights }) => {
+const DiamondShapedSignal = ({ id, aspect, lights }) => {
   const { signalType } = useContext(CISSignalContext);
   let l1 = null;
   if (typeof lights === 'object') {
@@ -19,7 +19,7 @@ const DiamondShapedSignal = ({ id, lights }) => {
         }`}
       >
         <OneAspectPlate l1={l1} specialClass="diamond-shaped-plate" />
-        <SignalTypeSign signalType={signalType} />
+        <SignalTypeSign aspect={aspect} signalType={signalType} />
       </div>
     </SignalWrapper>
   );
