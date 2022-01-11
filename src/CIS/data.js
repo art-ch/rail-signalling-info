@@ -636,14 +636,18 @@ export const signalFilterButtons = [
 export const signalTypeSigns = [
   { type: 'entry', letters: ['Н', '1'] },
   { type: 'exit', letters: ['Ч', '2'] },
+  { type: 'invitational', letters: ['Ч', '4'] },
   { type: 'route', letters: ['Ч', 'М'] },
   { type: 'block', letters: ['2', 'II'] },
+  { type: 'conditional', letters: ['4'] },
   { type: 'cover', letters: ['Н', 'П'] },
   { type: 'obstruction', letters: ['З'] },
   { type: 'warning', letters: ['П'] },
   { type: 'repeating', letters: ['П'] },
   { type: 'maneuvering', letters: ['М', '4'] },
   { type: 'humping', letters: ['Г'] },
+  { type: 'special', letters: ['Н', '3'] },
+  { type: 'other', letters: ['Ч', '6'] },
 ];
 
 export const signs = [{ id: 1, sign: 'sign-name', description: 'description' }];
