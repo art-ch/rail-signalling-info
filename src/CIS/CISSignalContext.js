@@ -82,7 +82,7 @@ const CISSignalProvider = ({ children }) => {
           return {
             ...aspect,
             info: aspect.info.filter(
-              ({ type }) => type === 'main' || type === 'maneuvering'
+              ({ type }) => type === 'main' || type === 'shunting'
             ),
           };
         }
@@ -94,7 +94,7 @@ const CISSignalProvider = ({ children }) => {
           return {
             ...aspect,
             info: aspect.info.filter(({ type }) =>
-              signalType === 'maneuvering' ||
+              signalType === 'shunting' ||
               signalType === 'warning' ||
               signalType === 'other'
                 ? type === signalType
