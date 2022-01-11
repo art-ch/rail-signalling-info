@@ -18,7 +18,7 @@ I also have an idea to create a quiz tool that would utilize all the info websit
 
 # State of development
 
-Stalled because of bootcamp.
+Focus is on signals from CIS Region
 
 ---
 
