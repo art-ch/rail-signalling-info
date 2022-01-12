@@ -17,13 +17,21 @@ const RegularSignal = ({ aspect, lights: { l1, l2, l3, l5 } }) => {
         <ThreeAspectPlate
           l1={l5 !== null ? l5 : signalType === 'technological' ? null : l1}
           l2={
-            zone === 'atp-4' || signalType === 'humping'
+            zone === 'atp-4' ||
+            (signalType === 'block' && aspect === 'yellow-green') ||
+            signalType === 'humping'
               ? l3
               : signalType === 'technological'
               ? l1
               : l2
           }
-          l3={zone === 'atp-4' || signalType === 'humping' ? l2 : l3}
+          l3={
+            zone === 'atp-4' ||
+            (signalType === 'block' && aspect === 'yellow-green') ||
+            signalType === 'humping'
+              ? l2
+              : l3
+          }
         />
         <SpecialBlockSignalBoard
           aspect={aspect}
