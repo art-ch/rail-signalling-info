@@ -6,6 +6,7 @@ import {
   TwoAspectPlate,
   Stripes,
   ConditionalSignalBoard,
+  ShortBlockSign,
   RoutePointerBoard,
   SignalTypeSign,
 } from '../inside-single-signals/';
@@ -27,6 +28,10 @@ const BiggestSignal = ({ id, aspect, lights: { l1, l2, l3, l4, l5 } }) => {
         <Stripes aspect={aspect} />
         <ConditionalSignalBoard aspect={aspect} />
         <RoutePointerBoard id={id} aspect={aspect} />
+        <ShortBlockSign
+          aspect={aspect}
+          signalType={signalType}
+        ></ShortBlockSign>
         <SignalTypeSign
           aspect={aspect}
           signalType={signalType}
