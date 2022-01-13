@@ -39,9 +39,19 @@ export const aspects = [
         atp4Description:
           'Passing is allowed with initial speed restrictions. Three or more blocks ahead are clear',
       },
-      { type: 'cover', description: 'cover signal description' },
-      { type: 'warning', description: 'warning signal description' },
-      { type: 'humping', description: 'humping signal description' },
+      {
+        type: 'cover',
+        description: 'Passing is allowed with initial speed restrictions',
+      },
+      {
+        type: 'warning',
+        description: 'Passing is allowed with initial speed restrictions',
+      },
+      { type: 'repeating', description: 'Main signal is open' },
+      {
+        type: 'humping',
+        description: 'Pushing is allowed with initial speed limit',
+      },
     ],
   },
   {
@@ -75,7 +85,11 @@ export const aspects = [
         description:
           'Passing is allowed with initial speed restrictions. Entry signal is open and sets lowered speed limit. Train is accepted to the station through the branch track',
       },
-      { type: 'warning', description: 'warning signal description' },
+      {
+        type: 'warning',
+        description:
+          'Passing is allowed with initial speed restrictions. Entry signal is open and sets lowered speed limit. Train is accepted to the station through the branch track',
+      },
     ],
   },
   {
@@ -117,16 +131,24 @@ export const aspects = [
       },
       {
         type: 'obstruction',
-        description: 'repeating before obstruction signal description',
+        description:
+          'Passing is allowed. Be ready to stop. Main signal is closed',
       },
       { type: 'warning', description: 'warning signal description' },
-      { type: 'repeating', description: 'repeating signal description' },
-      { type: 'industrial', description: 'industrial signal description' },
+      {
+        type: 'repeating',
+        description:
+          'Private zone only. [Entry, exit, technological] signal is open',
+      },
+      {
+        type: 'industrial',
+        description: 'Entry to (exit from) industrial building is allowed',
+      },
       {
         type: 'technological',
-        description: 'technological signal description',
+        description: 'Push cars into the object on the track',
       },
-      { type: 'humping', description: 'humping signal description' },
+      { type: 'humping', description: 'Pushing allowed with lowered speed' },
     ],
   },
   {
@@ -221,11 +243,19 @@ export const aspects = [
       l5: 'moonWhite',
     },
     info: [
-      { type: 'repeating', description: 'repeating signal description' },
+      {
+        type: 'repeating',
+        description: 'Private zone only. Shunting signal is open',
+      },
       { type: 'shunting', description: 'Shunting is allowed' },
       {
         type: 'technological',
-        description: 'technological signal description',
+        description: 'Push all cars away from the object on the track',
+      },
+      {
+        type: 'humping',
+        description:
+          'Allows humping locomotive to pass the hump, proceed onto the hump yard to perform shunting.',
       },
     ],
   },
@@ -702,7 +732,7 @@ export const aspects = [
     info: [
       {
         type: 'special',
-        description: `Special case use when there are branch line(s) without route pointer. Same meaning as 'green'`,
+        description: `Special case use when there are branch line without route pointer. Same meaning as 'green'`,
       },
     ],
   },
@@ -716,7 +746,13 @@ export const aspects = [
       l4: null,
       l5: null,
     },
-    info: [{ type: 'special', description: 'special signal description' }],
+    info: [
+      {
+        type: 'special',
+        description:
+          'Used only when block length is shorter than braking distance. Passing onto the branch track is allowed. Be ready to stop before next turned off or red [route or exit] signal',
+      },
+    ],
   },
   {
     id: 29,
@@ -755,7 +791,11 @@ export const aspects = [
           'Used only when block length is shorter than braking distance. Passing is allowed with lowered speed',
       },
       { type: 'block', description: 'Two blocks ahead are clear' },
-      { type: 'humping', description: 'humping signal description' },
+      {
+        type: 'humping',
+        description:
+          'Pushing is allowed. Speed limit is in range between initial and lowered',
+      },
     ],
   },
   {
@@ -769,7 +809,11 @@ export const aspects = [
       l5: null,
     },
     info: [
-      { type: 'conditional', description: 'conditional signal description' },
+      {
+        type: 'conditional',
+        description:
+          'Allows freight train to pass red signal with speed limit of 20 km/h (~12 mph) and extreme attention. Be ready to stop immediately if there is obstruction on the way',
+      },
     ],
   },
   {
@@ -802,7 +846,7 @@ export const aspects = [
     info: [
       {
         type: 'repeating',
-        description: `Normally this type of signal is turned off and in this case does not care any meaning`,
+        description: `Proceed with extreme attention. Be ready to stop before closed main signal`,
       },
     ],
   },
@@ -819,7 +863,8 @@ export const aspects = [
     info: [
       {
         type: 'technological',
-        description: 'technological signal description',
+        description:
+          'Maintenance aspect. Push all cars away from the object on the track',
       },
     ],
   },
@@ -836,7 +881,7 @@ export const aspects = [
     info: [
       {
         type: 'other',
-        description: 'route pointer description',
+        description: 'Shows direction in which train is going to be accepted',
       },
     ],
   },
@@ -853,7 +898,8 @@ export const aspects = [
     info: [
       {
         type: 'other',
-        description: 'route pointer description',
+        description:
+          'Shows letter or number of track on which train is going to be accepted',
       },
     ],
   },
@@ -870,7 +916,7 @@ export const aspects = [
     info: [
       {
         type: 'other',
-        description: 'green route pointer description',
+        description: 'Shows number of track from which departure is allowed',
       },
     ],
   },
@@ -887,7 +933,26 @@ export const aspects = [
     info: [
       {
         type: 'humping',
-        description: 'humping signal description',
+        description:
+          'Direct cars from hump onto tracks of receiving yard or reserved station track',
+      },
+    ],
+  },
+  {
+    id: 39,
+    name: 'out-of-service',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: null,
+      l4: null,
+      l5: null,
+    },
+    info: [
+      {
+        type: 'other',
+        description:
+          'Out of service signals should be turned off and protected with 2 crossing planks',
       },
     ],
   },
