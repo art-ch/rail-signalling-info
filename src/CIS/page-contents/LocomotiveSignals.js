@@ -6,6 +6,7 @@ import { locomotiveSignals } from '../data';
 export const LocomotiveSignals = () => {
   return (
     <SectionWrapper>
+      <h2>Locomotive Signals</h2>
       {locomotiveSignals.map(({ id, name, info, lights }) => {
         return (
           <article className="signal-card" key={id}>

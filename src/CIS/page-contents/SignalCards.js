@@ -10,6 +10,7 @@ const SignalCards = () => {
   if (newAspects.length > 0) {
     return (
       <section className="signals">
+        <h2>Signals</h2>
         {newAspects.map(
           ({ id, name, lights, info }) =>
             info.length > 0 && (

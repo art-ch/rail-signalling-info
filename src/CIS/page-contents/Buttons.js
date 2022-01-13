@@ -4,7 +4,6 @@ import { signalFilterButtons } from '../data';
 
 const Buttons = () => {
   const { filterButtons } = useContext(CISSignalContext);
-  const { zone } = useContext(CISSignalContext);
 
   return (
     <section className="btn-wrapper">
