@@ -22,11 +22,13 @@ const Signal = ({ id, aspect, lights }) => {
       </CombinedSignalsWrapper>
     );
   }
+  if (signalType === 'humping') {
+    return <BigSignal aspect={aspect} lights={lights} />;
+  }
   if (
     signalType === 'conditional' ||
     signalType === 'block' ||
-    signalType === 'technological' ||
-    signalType === 'humping'
+    signalType === 'technological'
   ) {
     return <RegularSignal aspect={aspect} lights={lights} />;
   }

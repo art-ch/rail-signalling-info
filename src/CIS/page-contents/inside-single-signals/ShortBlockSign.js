@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { CISSignalContext } from '../../CISSignalContext';
 import { ImArrowDown } from 'react-icons/im';
 
 const ShortBlockSign = ({ aspect, signalType }) => {
+  const { zone } = useContext(CISSignalContext);
   if (
-    aspect === 'yellow-green' &&
-    (signalType === 'entry' || signalType === 'route')
+    (aspect === 'yellow-green' &&
+      (signalType === 'entry' || signalType === 'route')) ||
+    (aspect === 'two-yellows-special' && signalType === 'special')
   ) {
     return (
       <Wrapper>
