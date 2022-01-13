@@ -9,6 +9,7 @@ import {
   ShortBlockSign,
   RoutePointerBoard,
   SignalTypeSign,
+  OutOfServicePlanks,
 } from '../inside-single-signals/';
 
 const BiggestSignal = ({ id, aspect, lights: { l1, l2, l3, l4, l5 } }) => {
@@ -32,6 +33,7 @@ const BiggestSignal = ({ id, aspect, lights: { l1, l2, l3, l4, l5 } }) => {
           aspect={aspect}
           signalType={signalType}
         ></ShortBlockSign>
+        <OutOfServicePlanks id={id} />
         <SignalTypeSign
           aspect={aspect}
           signalType={signalType}

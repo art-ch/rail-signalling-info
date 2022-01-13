@@ -5,6 +5,7 @@ import ShortBlockSign from './ShortBlockSign';
 import RoutePointerBoard from './RoutePointerBoard';
 import SignalTypeSign from './SignalTypeSign';
 import Stripes from './Stripes';
+import OutOfServicePlanks from './OutOfServicePlanks';
 
 export {
   ThreeAspectPlate,
@@ -16,4 +17,5 @@ export {
   RoutePointerBoard,
   SignalTypeSign,
   Stripes,
+  OutOfServicePlanks,
 };

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const RoutePointerBoard = ({ id, aspect }) => {
   const { signalType } = useContext(CISSignalContext);
-  if (signalType === 'humping' || id > 35) {
+  if (signalType === 'humping' || (id > 35 && id < 39)) {
     return (
       <Wrapper id={id} aspect={aspect} signalType={signalType}>
         <div className="frame">
