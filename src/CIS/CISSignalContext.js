@@ -4,7 +4,7 @@ const CISSignalContext = React.createContext();
 
 const CISSignalProvider = ({ children }) => {
   const [zone, setZone] = useState('all');
-  const [signalType, setSignalType] = useState('other');
+  const [signalType, setSignalType] = useState('all');
 
   const filterButtons = (id, name) => {
     if (id > 6) {

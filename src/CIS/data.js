@@ -1011,4 +1011,89 @@ export const signalTypeSigns = [
   { type: 'other', letters: ['Ч', '6'] },
 ];
 
+export const locomotiveSignals = [
+  {
+    id: 1,
+    name: 'green',
+    lights: {
+      l1: 'green',
+      l2: null,
+      l3: null,
+      l4: null,
+      l5: null,
+    },
+    info: {
+      description:
+        'Movement is allowed. Track signal shows [green/yellow flickering/green flickering/two greens/green yellow] light',
+      altpDescription:
+        'Movement is allowed with initial speed restrictions. Three or more blocks ahead are clear',
+    },
+  },
+  {
+    id: 2,
+    name: 'yellow',
+    lights: {
+      l1: null,
+      l2: 'yellow',
+      l3: null,
+      l4: null,
+      l5: null,
+    },
+    info: {
+      description:
+        'Movement is allowed. Track signal shows [yellow/yellow flickering] light or any other light that indicates track changing on upcoming rail switch',
+      altpDescription:
+        'Movement is allowed with lowered speed. One or two blocks ahead are free',
+    },
+  },
+  {
+    id: 3,
+    name: 'redyellow',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: 'active',
+      l4: null,
+      l5: null,
+    },
+    info: {
+      description: 'Movement is allowed. Track signal is red.',
+      altpDescription:
+        'Movement is allowed. Be ready to stop before "block border" sign. Next block is occupied',
+    },
+  },
+  {
+    id: 4,
+    name: 'red',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: null,
+      l4: 'red',
+      l5: null,
+    },
+    info: {
+      description: 'You passed red signal!',
+      altpDescription: 'You passed into occupied block!',
+    },
+  },
+  {
+    id: 5,
+    name: 'moonWhite',
+    lights: {
+      l1: null,
+      l2: null,
+      l3: null,
+      l4: null,
+      l5: 'moonWhite',
+    },
+    info: {
+      description:
+        'Locomotive devices are turned on, but track signals are not transmitting anything to the locomotive one. Driver should only rely on track signals',
+      altpDescription:
+        'Locomotive devices are turned on, but track signals are not transmitting anything to the locomotive one',
+    },
+  },
+];
+
 export const signs = [{ id: 1, sign: 'sign-name', description: 'description' }];

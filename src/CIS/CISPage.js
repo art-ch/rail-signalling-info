@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Buttons from './page-contents/Buttons';
+import { LocomotiveSignals } from './page-contents/LocomotiveSignals';
 import SignalCards from './page-contents/SignalCards';
 import { Signs } from './page-contents/Signs';
 
@@ -13,10 +14,8 @@ const CISPage = () => {
         <h1>Signals from CIS Region</h1>
         <Buttons />
         <SignalCards />
+        <LocomotiveSignals />
         <Signs />
-        <button type="button" className="btn">
-          test your knowledge
-        </button>
       </Wrapper>
     </div>
   );
