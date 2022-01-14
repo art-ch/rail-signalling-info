@@ -1096,4 +1096,32 @@ export const locomotiveSignals = [
   },
 ];
 
-export const signs = [{ id: 1, sign: 'sign-name', description: 'description' }];
+export const signs = [
+  {
+    id: 1,
+    sign: 'Slow Down. Permanent Signal',
+    description: `Yellow circle. Clear to pass while slowing down. Be ready to pass dangerous place, that is marked by "[start|end] of dangerous place" signs.
+      Green circle. Train passed dangerous place`,
+  },
+  {
+    id: 2,
+    sign: 'Slow Down. Temporary Signal',
+    description: `Yellow square. Clear to pass. Be ready to slow down and stop for dangerous place ahead.
+      Green square. Train passed dangerous place and can speed up to the maximal authorized speed after passing of this sign with the last car`,
+  },
+  {
+    id: 3,
+    sign: 'Dangerous Place Boundaries',
+    description: `Start Of Dangerous Place (left). End Of Dangerous Place (right)`,
+  },
+  {
+    id: 4,
+    sign: 'Stop',
+    description: `Red rectangle is used during daytime and red light during nighttime. Stop! Passing is forbidden`,
+  },
+  {
+    id: 5,
+    sign: 'Sound The Horn',
+    description: `Permanently installed before tunnels, bridges, rail crossings. Temporarily installed before dangerous places where train is not required to slow down or stop, but have to notify maintenance crew of approaching`,
+  },
+];

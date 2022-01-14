@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Buttons from './page-contents/Buttons';
 import { LocomotiveSignals } from './page-contents/LocomotiveSignals';
 import SignalCards from './page-contents/SignalCards';
-import { Signs } from './page-contents/Signs';
+import { SignCards } from './page-contents/SignCards';
 
 const CISPage = () => {
   return (
@@ -15,7 +15,7 @@ const CISPage = () => {
         <Buttons />
         <SignalCards />
         <LocomotiveSignals />
-        <Signs />
+        <SignCards />
       </Wrapper>
     </div>
   );

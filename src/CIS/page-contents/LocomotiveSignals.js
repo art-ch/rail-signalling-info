@@ -10,7 +10,7 @@ export const LocomotiveSignals = () => {
       {locomotiveSignals.map(({ id, name, info, lights }) => {
         return (
           <article className="signal-card" key={id}>
-            <Signal name={name} lights={lights} />
+            <Signal lights={lights} />
             <Description name={name} data={info} />
           </article>
         );
@@ -19,7 +19,7 @@ export const LocomotiveSignals = () => {
   );
 };
 
-const Signal = ({ name, lights }) => {
+const Signal = ({ lights }) => {
   const generateLights = () => {
     return Object.values(lights).map((value, id) => {
       if (id === 2) {
@@ -65,7 +65,7 @@ const Description = ({ name, data }) => {
 
   return (
     <article>
-      <h2>{name}</h2>
+      <h3>{name}</h3>
       <p>
         {(zone === 'altp' && Object.values(data)[1]) || Object.values(data)[0]}
       </p>
