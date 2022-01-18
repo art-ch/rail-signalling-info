@@ -2,7 +2,11 @@ import SlowDownPermanent from './SlowDownPermanent';
 import SlowDownTemporary from './SlowDownTemporary';
 import DangerousPlaceBoundaries from './DangerousPlaceBoundaries';
 import Stop from './Stop';
+import StopNightTime from './StopNightTime';
 import Horn from './Horn';
+import HandheldLight from './HandheldLight';
+import HandheldFlag from './HandheldFlag';
+import HandheldDisc from './HandheldDisc';
 import { CombinedSignsWrapper } from './StyledComponentsForSigns';
 
 export const setOfSigns = [
@@ -33,6 +37,60 @@ export const setOfSigns = [
       </CombinedSignsWrapper>
     ),
   },
-  { id: 4, component: <Stop /> },
+  {
+    id: 4,
+    component: (
+      <CombinedSignsWrapper>
+        <Stop />
+        <StopNightTime />
+      </CombinedSignsWrapper>
+    ),
+  },
   { id: 5, component: <Horn /> },
+  {
+    id: 6,
+    component: (
+      <CombinedSignsWrapper>
+        <HandheldDisc />
+        <HandheldLight color="green" />
+      </CombinedSignsWrapper>
+    ),
+  },
+  {
+    id: 7,
+    component: (
+      <CombinedSignsWrapper>
+        <HandheldFlag color="yellow" />
+        <HandheldLight color="yellow" />
+        <HandheldLight color="white" path="slowDown" />
+      </CombinedSignsWrapper>
+    ),
+  },
+  {
+    id: 8,
+    component: (
+      <CombinedSignsWrapper>
+        <HandheldFlag color="red" />
+        <HandheldLight color="red" />
+        <HandheldLight color="white" path="stop" />
+      </CombinedSignsWrapper>
+    ),
+  },
+  {
+    id: 9,
+    component: (
+      <CombinedSignsWrapper>
+        <HandheldFlag color="yellow" folded />
+        <HandheldLight color="white" />
+      </CombinedSignsWrapper>
+    ),
+  },
+  {
+    id: 10,
+    component: <HandheldLight color="white" path="startBreaking" />,
+  },
+  {
+    id: 11,
+    component: <HandheldLight color="white" path="endBreaking" />,
+  },
 ];

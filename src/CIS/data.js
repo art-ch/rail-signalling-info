@@ -1124,4 +1124,34 @@ export const signs = [
     sign: 'Sound The Horn',
     description: `Permanently installed before tunnels, bridges, rail crossings. Temporarily installed before dangerous places where train is not required to slow down or stop, but have to notify maintenance crew of approaching`,
   },
+  {
+    id: 6,
+    sign: 'Clear',
+    description: `Used by station master. Allows train to depart the station or it pass non-stop`,
+  },
+  {
+    id: 7,
+    sign: 'Slow Down',
+    description: `Opened yellow flag during day and handheld yellow or white light during the night. Used only within station limits. Clear to pass with authorised speed. If there is no authorisation, speed limit is 25 km/h (15 mph) in regular zone and 15 km/h (~9 mph) in private zone.`,
+  },
+  {
+    id: 8,
+    sign: 'Stop',
+    description: `Opened red flag during day and handheld red or white light during the night. Stop! Passing is forbidden. If used by station master: signalizes a train to make an unscheduled stop on the station`,
+  },
+  {
+    id: 9,
+    sign: 'White',
+    description: `Folded yellow flag during day and handheld white light during the night. Used by security and railway crossing stuff. Track ahead is clear.`,
+  },
+  {
+    id: 10,
+    sign: 'Start Braking',
+    description: `Hand during day and handheld white light during the night. Driver answers this signal with one short whistle and starts breaking`,
+  },
+  {
+    id: 11,
+    sign: 'Stop Braking',
+    description: `Hand during day and handheld white light during the night. Driver answers this signal with two short whistles and stops breaking`,
+  },
 ];
