@@ -4,6 +4,7 @@ import DangerousPlaceBoundaries from './DangerousPlaceBoundaries';
 import Stop from './Stop';
 import StopNightTime from './StopNightTime';
 import Horn from './Horn';
+import Hand from './Hand';
 import HandheldLight from './HandheldLight';
 import HandheldFlag from './HandheldFlag';
 import HandheldDisc from './HandheldDisc';
@@ -62,6 +63,7 @@ export const setOfSigns = [
       <CombinedSignsWrapper>
         <HandheldFlag color="yellow" />
         <HandheldLight color="yellow" />
+        <Hand path="slowDown" />
         <HandheldLight color="white" path="slowDown" />
       </CombinedSignsWrapper>
     ),
@@ -72,6 +74,7 @@ export const setOfSigns = [
       <CombinedSignsWrapper>
         <HandheldFlag color="red" />
         <HandheldLight color="red" />
+        <Hand path="stop" />
         <HandheldLight color="white" path="stop" />
       </CombinedSignsWrapper>
     ),
@@ -87,10 +90,20 @@ export const setOfSigns = [
   },
   {
     id: 10,
-    component: <HandheldLight color="white" path="startBreaking" />,
+    component: (
+      <CombinedSignsWrapper>
+        <Hand path="startBreaking" />,
+        <HandheldLight color="white" path="startBreaking" />,
+      </CombinedSignsWrapper>
+    ),
   },
   {
     id: 11,
-    component: <HandheldLight color="white" path="endBreaking" />,
+    component: (
+      <CombinedSignsWrapper>
+        <Hand path="endBreaking" />,
+        <HandheldLight color="white" path="endBreaking" />,
+      </CombinedSignsWrapper>
+    ),
   },
 ];

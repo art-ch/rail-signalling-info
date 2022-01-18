@@ -1,19 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import hand from './img/hand.png';
 
-const HandheldLight = ({ color, path }) => {
+const Hand = ({ color, path }) => {
   return (
     <Wrapper color={color} path={path}>
-      <div className="grip">
-        <div className="frame">
-          <div className="light"></div>
-        </div>
-      </div>
+      <img src={hand} alt="" />
     </Wrapper>
   );
 };
 
-export default HandheldLight;
+export default Hand;
 
 const animationPath = {
   stop: `
