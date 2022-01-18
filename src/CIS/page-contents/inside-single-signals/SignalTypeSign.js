@@ -41,7 +41,7 @@ const SignalTypeSign = ({ aspect, signalSize }) => {
 
 export default SignalTypeSign;
 
-const Wrapper = styled.article`
+const Wrapper = styled.div`
   background: white;
   border: 1px solid black;
   display: flex;

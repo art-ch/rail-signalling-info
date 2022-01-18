@@ -16,7 +16,7 @@ const OutOfServicePlanks = ({ id }) => {
 
 export default OutOfServicePlanks;
 
-const Wrapper = styled.article`
+const Wrapper = styled.div`
   margin-bottom: 1rem;
   .plank {
     background: white;

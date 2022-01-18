@@ -140,7 +140,7 @@ const RoutePointerBoard = ({ id, aspect }) => {
 
 export default RoutePointerBoard;
 
-const Wrapper = styled.article`
+const Wrapper = styled.div`
   transform: translateX(-23%);
   width: 32.5px;
   height: 54.5px;

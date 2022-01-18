@@ -5,17 +5,17 @@ import { setOfSigns } from './signs';
 
 export const SignCards = () => {
   return (
-    <SectionWrapper>
+    <section>
       <h2>Signs</h2>
       {signs.map(({ id, sign, description }) => {
         return (
-          <article className="sign-card" key={id}>
+          <article key={id}>
             <Sign id={id} />
             <Description name={sign} description={description} />
           </article>
         );
       })}
-    </SectionWrapper>
+    </section>
   );
 };
 
@@ -35,14 +35,3 @@ const Description = ({ name, description }) => {
     </article>
   );
 };
-
-const SectionWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .sign-card {
-    display: flex;
-    margin-bottom: 2rem;
-    gap: 20rem;
-  }
-`;

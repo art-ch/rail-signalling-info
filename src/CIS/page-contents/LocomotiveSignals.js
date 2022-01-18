@@ -5,17 +5,17 @@ import { locomotiveSignals } from '../data';
 
 export const LocomotiveSignals = () => {
   return (
-    <SectionWrapper>
+    <section>
       <h2>Locomotive Signals</h2>
       {locomotiveSignals.map(({ id, name, info, lights }) => {
         return (
-          <article className="signal-card" key={id}>
+          <article key={id}>
             <Signal lights={lights} />
             <Description name={name} data={info} />
           </article>
         );
       })}
-    </SectionWrapper>
+    </section>
   );
 };
 
@@ -73,20 +73,17 @@ const Description = ({ name, data }) => {
   );
 };
 
-const SectionWrapper = styled.section`
+const SignalWrapper = styled.div`
+  width: 100px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  .signal-card {
-    display: flex;
-    gap: 20rem;
-  }
-`;
 
-const SignalWrapper = styled.div`
   .upper-frame {
     transform: translateY(25%);
     height: 20px;
+    width: 60px;
     background: #6c757d;
   }
   .box {

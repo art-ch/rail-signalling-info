@@ -27,7 +27,7 @@ const SpecialBlockSignalBoard = ({ zone, aspect, signalType }) => {
 
 export default SpecialBlockSignalBoard;
 
-const Wrapper = styled.article`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;

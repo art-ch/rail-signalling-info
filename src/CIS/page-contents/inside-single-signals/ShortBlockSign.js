@@ -27,7 +27,7 @@ const ShortBlockSign = ({ aspect, signalType }) => {
 
 export default ShortBlockSign;
 
-const Wrapper = styled.article`
+const Wrapper = styled.div`
   margin-bottom: 1rem;
   .board {
     margin-bottom: 2px;

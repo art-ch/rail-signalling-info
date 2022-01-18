@@ -29,7 +29,7 @@ const ConditionalSignalBoard = ({ aspect }) => {
 
 export default ConditionalSignalBoard;
 
-const Wrapper = styled.article`
+const Wrapper = styled.div`
   .vertical-support {
     width: 40px;
     height: 5px;

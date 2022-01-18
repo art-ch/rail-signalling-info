@@ -10,27 +10,13 @@ const CISPage = () => {
   return (
     <div>
       <Navbar />
-      <Wrapper>
-        <h1>Signals from CIS Region</h1>
-        <Buttons />
-        <SignalCards />
-        <LocomotiveSignals />
-        <SignCards />
-      </Wrapper>
+      <h1>Signals from CIS Region</h1>
+      <Buttons />
+      <SignalCards />
+      <LocomotiveSignals />
+      <SignCards />
     </div>
   );
 };
-
-const Wrapper = styled.main`
-  .signal-card {
-    padding-bottom: 5rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    p {
-      width: 30rem;
-    }
-  }
-`;
 
 export default CISPage;
