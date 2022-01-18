@@ -1,7 +1,8 @@
 import React from 'react';
-import { signs } from '../data';
 import styled from 'styled-components';
+import { signs } from '../data';
 import { setOfSigns } from './signs';
+import { SignWrapper } from './signs/StyledComponentsForSigns';
 
 export const SignCards = () => {
   return (

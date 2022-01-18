@@ -92,8 +92,8 @@ export const setOfSigns = [
     id: 10,
     component: (
       <CombinedSignsWrapper>
-        <Hand path="startBreaking" />,
-        <HandheldLight color="white" path="startBreaking" />,
+        <Hand path="startBreaking" />
+        <HandheldLight color="white" path="startBreaking" />
       </CombinedSignsWrapper>
     ),
   },
@@ -101,8 +101,8 @@ export const setOfSigns = [
     id: 11,
     component: (
       <CombinedSignsWrapper>
-        <Hand path="endBreaking" />,
-        <HandheldLight color="white" path="endBreaking" />,
+        <Hand path="endBreaking" />
+        <HandheldLight color="white" path="endBreaking" />
       </CombinedSignsWrapper>
     ),
   },
