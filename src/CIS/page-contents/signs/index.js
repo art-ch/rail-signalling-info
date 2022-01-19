@@ -33,8 +33,10 @@ export const setOfSigns = [
     id: 3,
     component: (
       <CombinedSignsWrapper>
+        <DangerousPlaceBoundaries tempPole />
         <DangerousPlaceBoundaries />
-        <DangerousPlaceBoundaries special />
+        <DangerousPlaceBoundaries tempPole ending />
+        <DangerousPlaceBoundaries ending />
       </CombinedSignsWrapper>
     ),
   },
@@ -53,7 +55,7 @@ export const setOfSigns = [
     component: (
       <CombinedSignsWrapper>
         <HandheldDisc />
-        <HandheldLight color="green" />
+        <HandheldLight lightColor="green" gripColor="black" />
       </CombinedSignsWrapper>
     ),
   },
@@ -61,10 +63,10 @@ export const setOfSigns = [
     id: 7,
     component: (
       <CombinedSignsWrapper>
-        <HandheldFlag color="yellow" />
-        <HandheldLight color="yellow" />
+        <HandheldFlag lightColor="yellow" />
+        <HandheldLight lightColor="yellow" />
         <Hand path="slowDown" />
-        <HandheldLight color="white" path="slowDown" />
+        <HandheldLight lightColor="white" path="slowDown" />
       </CombinedSignsWrapper>
     ),
   },
@@ -72,10 +74,10 @@ export const setOfSigns = [
     id: 8,
     component: (
       <CombinedSignsWrapper>
-        <HandheldFlag color="red" />
-        <HandheldLight color="red" />
+        <HandheldFlag lightColor="red" />
+        <HandheldLight lightColor="red" />
         <Hand path="stop" />
-        <HandheldLight color="white" path="stop" />
+        <HandheldLight lightColor="white" path="stop" />
       </CombinedSignsWrapper>
     ),
   },
@@ -83,8 +85,8 @@ export const setOfSigns = [
     id: 9,
     component: (
       <CombinedSignsWrapper>
-        <HandheldFlag color="yellow" folded />
-        <HandheldLight color="white" />
+        <HandheldFlag lightColor="yellow" folded />
+        <HandheldLight lightColor="white" />
       </CombinedSignsWrapper>
     ),
   },
@@ -93,7 +95,7 @@ export const setOfSigns = [
     component: (
       <CombinedSignsWrapper>
         <Hand path="startBreaking" />
-        <HandheldLight color="white" path="startBreaking" />
+        <HandheldLight lightColor="white" path="startBreaking" />
       </CombinedSignsWrapper>
     ),
   },
@@ -102,7 +104,7 @@ export const setOfSigns = [
     component: (
       <CombinedSignsWrapper>
         <Hand path="endBreaking" />
-        <HandheldLight color="white" path="endBreaking" />
+        <HandheldLight lightColor="white" path="endBreaking" />
       </CombinedSignsWrapper>
     ),
   },

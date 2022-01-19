@@ -1,8 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import { signs } from '../data';
 import { setOfSigns } from './signs';
-import { SignWrapper } from './signs/StyledComponentsForSigns';
+import { CombinedSignsWrapper } from './signs/StyledComponentsForSigns';
 
 export const SignCards = () => {
   return (
@@ -21,13 +20,18 @@ export const SignCards = () => {
 };
 
 const Sign = ({ id }) => {
-  return setOfSigns.map(({ id: componentID, component }) => {
-    if (componentID === id) {
-      return <div key={componentID}>{component}</div>;
-    }
-    return null;
-  });
+  return (
+    <CombinedSignsWrapper>
+      {setOfSigns.map(({ id: componentID, component }) => {
+        if (componentID === id) {
+          return <div key={componentID}>{component}</div>;
+        }
+        return null;
+      })}
+    </CombinedSignsWrapper>
+  );
 };
+
 const Description = ({ name, description }) => {
   return (
     <article>

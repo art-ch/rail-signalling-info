@@ -1,15 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import { SignWrapper } from './StyledComponentsForSigns';
 
-const HandheldFlag = ({ color, folded }) => {
+const HandheldFlag = ({ lightColor, folded }) => {
   return (
-    <Wrapper color={color} folded={folded}>
-      <div className="grip">
-        <div className="fabric">
-          <div className="light"></div>
+    <SignWrapper width="150px" gripColor="#8b939a">
+      <Wrapper lightColor={lightColor} folded={folded}>
+        <div className="grip">
+          <div className="fabric">
+            <div className="light"></div>
+          </div>
         </div>
-      </div>
-    </Wrapper>
+      </Wrapper>
+    </SignWrapper>
   );
 };
 
@@ -26,19 +29,11 @@ const foldedFlagStyles = `
 
 const Wrapper = styled.div`
   transform: rotate(-45deg);
-  .fabric,
-  .grip {
-    border: 1px solid black;
-  }
-  .grip {
-    height: 65px;
-    width: 5px;
-    background: #8b939a;
-  }
   .fabric {
+    border: 1px solid black;
     height: 32px;
     ${({ folded }) => (folded ? foldedFlagStyles : openedFlagStyles)}
-    background: ${({ color }) => color};
+    background: ${({ lightColor }) => lightColor};
     display: grid;
     place-items: center;
   }

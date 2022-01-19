@@ -1,50 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
+import { SignWrapper } from './StyledComponentsForSigns';
 
-const DangerousPlaceBoundaries = ({ special }) => {
+const DangerousPlaceBoundaries = ({ tempPole, ending }) => {
   return (
-    <Wrapper special={special}>
-      <div className="pole">
-        <div className="outer-polka-dot">
-          <div className="inner-polka-dot-container">
-            <div className="inner-polka-dot">
-              {Array.from({ length: 3 }).map((_, id) => {
-                return <div key={id} className="dot"></div>;
-              })}
+    <SignWrapper tempPole={tempPole}>
+      <Wrapper ending={ending}>
+        <div className="pole">
+          <div className="outer-polka-dot">
+            <div className="inner-polka-dot-container">
+              <div className="inner-polka-dot">
+                {Array.from({ length: 3 }).map((_, id) => {
+                  return <div key={id} className="dot"></div>;
+                })}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </Wrapper>
+      </Wrapper>
+    </SignWrapper>
   );
 };
 
 export default DangerousPlaceBoundaries;
 
 const Wrapper = styled.div`
-  .pole {
-    border: 1px solid black;
-  }
-  .disk,
   .outer-polka-dot,
   .inner-polka-dot-container,
   .dot {
     border-radius: 50%;
-  }
-  .pole {
-    height: 170px;
-    width: 5px;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 1) 10%,
-      rgba(255, 255, 255, 1) 10%,
-      rgba(255, 255, 255, 1) 36%,
-      rgba(0, 0, 0, 1) 36%,
-      rgba(0, 0, 0, 1) 42%,
-      rgba(255, 255, 255, 1) 36%,
-      rgba(255, 255, 255, 1) 76%,
-      rgba(0, 0, 0, 1) 76%
-    );
   }
   .outer-polka-dot {
     width: 35px;
@@ -62,8 +46,8 @@ const Wrapper = styled.div`
         background: black;
         width: 33px;
         height: 10px;
-        transform: ${({ special }) =>
-          (special && 'translateY(110%) rotate(90deg)') || 'translateY(110%)'};
+        transform: ${({ ending }) =>
+          (ending && 'translateY(110%) rotate(90deg)') || 'translateY(110%)'};
         display: flex;
         align-items: center;
         justify-content: space-evenly;
