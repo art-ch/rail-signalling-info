@@ -21,17 +21,20 @@ export const SignCards = () => {
 
 const Sign = ({ id }) => {
   return (
-    <CombinedSignsWrapper>
-      {setOfSigns.map(({ id: componentID, component }) => {
+    <>
+      {setOfSigns.map(({ id: componentID, components }) => {
         if (componentID === id) {
-          return <div key={componentID}>{component}</div>;
+          return (
+            <CombinedSignsWrapper key={componentID}>
+              {components}
+            </CombinedSignsWrapper>
+          );
         }
         return null;
       })}
-    </CombinedSignsWrapper>
+    </>
   );
 };
-
 const Description = ({ name, description }) => {
   return (
     <article>

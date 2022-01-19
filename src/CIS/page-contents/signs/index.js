@@ -8,104 +8,80 @@ import Hand from './Hand';
 import HandheldLight from './HandheldLight';
 import HandheldFlag from './HandheldFlag';
 import HandheldDisc from './HandheldDisc';
-import { CombinedSignsWrapper } from './StyledComponentsForSigns';
 
 export const setOfSigns = [
   {
     id: 1,
-    component: (
-      <CombinedSignsWrapper>
-        <SlowDownPermanent color="yellow" />
-        <SlowDownPermanent color="green" />
-      </CombinedSignsWrapper>
-    ),
+    components: [
+      <SlowDownPermanent color="yellow" />,
+      <SlowDownPermanent color="green" />,
+    ],
   },
   {
     id: 2,
-    component: (
-      <CombinedSignsWrapper>
-        <SlowDownTemporary color="yellow" />
-        <SlowDownTemporary color="green" />
-      </CombinedSignsWrapper>
-    ),
+    components: [
+      <SlowDownTemporary color="yellow" />,
+      <SlowDownTemporary color="green" />,
+    ],
   },
   {
     id: 3,
-    component: (
-      <CombinedSignsWrapper>
-        <DangerousPlaceBoundaries tempPole />
-        <DangerousPlaceBoundaries />
-        <DangerousPlaceBoundaries tempPole ending />
-        <DangerousPlaceBoundaries ending />
-      </CombinedSignsWrapper>
-    ),
+    components: [
+      <DangerousPlaceBoundaries tempPole />,
+      <DangerousPlaceBoundaries />,
+      <DangerousPlaceBoundaries tempPole ending />,
+      <DangerousPlaceBoundaries ending />,
+    ],
   },
   {
     id: 4,
-    component: (
-      <CombinedSignsWrapper>
-        <Stop />
-        <StopNightTime />
-      </CombinedSignsWrapper>
-    ),
+    components: [<Stop />, <StopNightTime />],
   },
-  { id: 5, component: <Horn /> },
+  { id: 5, components: [<Horn />] },
   {
     id: 6,
-    component: (
-      <CombinedSignsWrapper>
-        <HandheldDisc />
-        <HandheldLight lightColor="green" gripColor="black" />
-      </CombinedSignsWrapper>
-    ),
+    components: [
+      <HandheldDisc />,
+      <HandheldLight lightColor="green" gripColor="black" />,
+    ],
   },
   {
     id: 7,
-    component: (
-      <CombinedSignsWrapper>
-        <HandheldFlag lightColor="yellow" />
-        <HandheldLight lightColor="yellow" />
-        <Hand path="slowDown" />
-        <HandheldLight lightColor="white" path="slowDown" />
-      </CombinedSignsWrapper>
-    ),
+    components: [
+      <HandheldFlag lightColor="yellow" />,
+      <HandheldLight lightColor="yellow" />,
+      <Hand path="slowDown" />,
+      <HandheldLight lightColor="white" path="slowDown" />,
+    ],
   },
   {
     id: 8,
-    component: (
-      <CombinedSignsWrapper>
-        <HandheldFlag lightColor="red" />
-        <HandheldLight lightColor="red" />
-        <Hand path="stop" />
-        <HandheldLight lightColor="white" path="stop" />
-      </CombinedSignsWrapper>
-    ),
+    components: [
+      <HandheldFlag lightColor="red" />,
+      <HandheldLight lightColor="red" />,
+      <Hand path="stop" />,
+      <HandheldLight lightColor="white" path="stop" />,
+    ],
   },
   {
     id: 9,
-    component: (
-      <CombinedSignsWrapper>
-        <HandheldFlag lightColor="yellow" folded />
-        <HandheldLight lightColor="white" />
-      </CombinedSignsWrapper>
-    ),
+    components: [
+      <HandheldFlag lightColor="yellow" folded />,
+      <HandheldLight lightColor="white" />,
+    ],
   },
   {
     id: 10,
-    component: (
-      <CombinedSignsWrapper>
-        <Hand path="startBreaking" />
-        <HandheldLight lightColor="white" path="startBreaking" />
-      </CombinedSignsWrapper>
-    ),
+    components: [
+      <Hand path="startBreaking" />,
+      <HandheldLight lightColor="white" path="startBreaking" />,
+    ],
   },
   {
     id: 11,
-    component: (
-      <CombinedSignsWrapper>
-        <Hand path="endBreaking" />
-        <HandheldLight lightColor="white" path="endBreaking" />
-      </CombinedSignsWrapper>
-    ),
+    components: [
+      <Hand path="endBreaking" />,
+      <HandheldLight lightColor="white" path="endBreaking" />,
+    ],
   },
 ];
