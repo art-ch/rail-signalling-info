@@ -1099,59 +1099,111 @@ export const locomotiveSignals = [
 export const signs = [
   {
     id: 1,
+    sign: 'Clear',
+    description: `Used by station master. Allows train to depart the station or it pass non-stop`,
+  },
+  {
+    id: 2,
+    sign: 'Slow Down',
+    description: `Opened yellow flag during day and handheld yellow or white light during the night. Used only within station limits. Clear to pass with authorised speed. If there is no authorisation, speed limit is 25 km/h (15 mph) in regular zone and 15 km/h (~9 mph) in private zone.`,
+  },
+  {
+    id: 3,
+    sign: 'Stop',
+    description: `Opened red flag during day and handheld red or white light during the night. Stop! Passing is forbidden. If used by station master: signalizes a train to make an unscheduled stop on the station`,
+  },
+  {
+    id: 4,
+    sign: 'White',
+    description: `Folded yellow flag during day and handheld white light during the night. Used by security and railway crossing stuff. Track ahead is clear.`,
+  },
+  {
+    id: 5,
+    sign: 'Start Braking',
+    description: `Hand during day and handheld white light during the night. Driver answers this signal with one short whistle and starts breaking`,
+  },
+  {
+    id: 6,
+    sign: 'Stop Braking',
+    description: `Hand during day and handheld white light during the night. Driver answers this signal with two short whistles and stops breaking`,
+  },
+  {
+    id: 7,
+    sign: 'Drop Pantograph (Hand Signal)',
+    description:
+      'During day: hand closer to track does horisontal movements other one is raised straight up. During night - horisontal and vertical movements with handheld signal. Used by track electrician when they suddenly found catenary damage. Driver should answer with horn and drop pantograph, then, continue through damaged place with extra care. After driver made sure that train passed damaged catenary they can raise pantograph and continue as usual.',
+  },
+  {
+    id: 8,
+    sign: 'Rail Switch Straight',
+    description: 'Upon passing rail switch train will go straight',
+  },
+  {
+    id: 9,
+    sign: 'Rail Switch Divert',
+    description:
+      'Upon passing rail switch train will divert onto the branch track',
+  },
+  {
+    id: 10,
+    sign: 'Slip Rail Switch Is In Direct Position',
+    description:
+      'First pair is shown during a day and other one - during the night. Upon passing rail switch train will go on direct track',
+  },
+  {
+    id: 11,
+    sign: 'Slip Rail Switch Is In Across Direct Position',
+    description:
+      'First pair is shown during a day and other one - during the night. Upon passing rail switch train from other track will go across direct track',
+  },
+  {
+    id: 12,
+    sign: 'Slip Rail Switch Is In From Direct Track To Branch One Position',
+    description:
+      'First pair is shown during a day and other one - during the night. Upon passing rail switch train will divert onto the branch track',
+  },
+  {
+    id: 13,
+    sign: 'Slip Rail Switch Is In From Branch Track To Direct One Position',
+    description:
+      'First pair is shown during a day and other one - during the night. Upon passing rail switch train from other track will divert onto direct track',
+  },
+  {
+    id: 14,
+    sign: 'Intentional Track Obstruction',
+    description:
+      'If track is obstructed white circle or light (during the night time only) with horisontal black line on the middle is shown. If track is not obstructed - same signage but with vertical black line on the middle.',
+  },
+  {
+    id: 15,
+    sign: 'Railroad water tower sign',
+    description: `During the day rotating part's position is seen. During the night if rotating part is obstructing way - red light is shown both ways, otherwise - white one.`,
+  },
+  {
+    id: 16,
     sign: 'Slow Down. Permanent Signal',
     description: `Yellow circle. Clear to pass while slowing down. Be ready to pass dangerous place, that is marked by "[start|end] of dangerous place" signs.
       Green circle. Train passed dangerous place`,
   },
   {
-    id: 2,
+    id: 17,
     sign: 'Slow Down. Temporary Signal',
     description: `Yellow square. Clear to pass. Be ready to slow down and stop for dangerous place ahead.
       Green square. Train passed dangerous place and can speed up to the maximal authorized speed after passing of this sign with the last car`,
   },
   {
-    id: 3,
+    id: 18,
     sign: 'Dangerous Place Boundaries',
     description: `Start Of Dangerous Place (left). End Of Dangerous Place (right)`,
   },
   {
-    id: 4,
+    id: 19,
     sign: 'Stop',
     description: `Red rectangle is used during daytime and red light during nighttime. Stop! Passing is forbidden`,
   },
   {
-    id: 5,
+    id: 20,
     sign: 'Sound The Horn',
     description: `Permanently installed before tunnels, bridges, rail crossings. Temporarily installed before dangerous places where train is not required to slow down or stop, but have to notify maintenance crew of approaching`,
-  },
-  {
-    id: 6,
-    sign: 'Clear',
-    description: `Used by station master. Allows train to depart the station or it pass non-stop`,
-  },
-  {
-    id: 7,
-    sign: 'Slow Down',
-    description: `Opened yellow flag during day and handheld yellow or white light during the night. Used only within station limits. Clear to pass with authorised speed. If there is no authorisation, speed limit is 25 km/h (15 mph) in regular zone and 15 km/h (~9 mph) in private zone.`,
-  },
-  {
-    id: 8,
-    sign: 'Stop',
-    description: `Opened red flag during day and handheld red or white light during the night. Stop! Passing is forbidden. If used by station master: signalizes a train to make an unscheduled stop on the station`,
-  },
-  {
-    id: 9,
-    sign: 'White',
-    description: `Folded yellow flag during day and handheld white light during the night. Used by security and railway crossing stuff. Track ahead is clear.`,
-  },
-  {
-    id: 10,
-    sign: 'Start Braking',
-    description: `Hand during day and handheld white light during the night. Driver answers this signal with one short whistle and starts breaking`,
-  },
-  {
-    id: 11,
-    sign: 'Stop Braking',
-    description: `Hand during day and handheld white light during the night. Driver answers this signal with two short whistles and stops breaking`,
   },
 ];

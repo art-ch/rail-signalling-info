@@ -3,17 +3,20 @@ import styled from 'styled-components';
 const animationPaths = {
   stop: `
   margin-left: 3rem;
-  animation: stop 3000ms infinite linear;
+  animation: stop 3s infinite linear;
   `,
   slowDown: `
   margin-left: 3rem;
-  animation: slowDown 2000ms infinite alternate ease-in-out;
+  animation: slowDown 2s infinite alternate ease-in-out;
   `,
   startBreaking: `
-  animation: startBreaking 1000ms infinite alternate ease-in-out;
+  animation: startBreaking 1s infinite alternate ease-in-out;
   `,
   endBreaking: `
-  animation: endBreaking 1000ms infinite alternate ease-in-out;
+  animation: endBreaking 1s infinite alternate ease-in-out;
+  `,
+  damagedCatenary: `
+  animation: damagedCatenary 5s infinite ease-in-out;
   `,
 };
 
@@ -29,12 +32,12 @@ const SignWrapper = styled.div`
     border: 1px solid black;
   }
   .pole {
-    height: 170px;
+    height: ${({ switchPole }) => (switchPole && '80px') || '170px'};
     width: 5px;
-    background: ${({ tempPole }) =>
-      tempPole
-        ? '#6c757d'
-        : `linear-gradient(
+    background: ${({ tempPole, switchPole }) =>
+      (tempPole && '#6c757d') ||
+      (switchPole && 'black') ||
+      `linear-gradient(
       180deg,
       rgba(0, 0, 0, 1) 10%,
       rgba(255, 255, 255, 1) 10%,
@@ -50,6 +53,12 @@ const SignWrapper = styled.div`
     height: 70px;
     width: 5px;
     background: ${({ gripColor }) => gripColor};
+  }
+  .cap {
+    width: 11px;
+    height: 10px;
+    background: black;
+    transform: translate(-30%);
   }
   .frame,
   .light-frame {
@@ -122,6 +131,27 @@ const SignWrapper = styled.div`
     }
     to {
       transform: translateX(5rem);
+    }
+  }
+
+  @keyframes damagedCatenary {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translateX(10rem);
+    }
+    40% {
+      transform: translateX(5rem);
+    }
+    60% {
+      transform: translate(5rem, -5rem);
+    }
+    80% {
+      transform: translate(5rem, 0rem);
+    }
+    100% {
+      transform: translate(0rem);
     }
   }
 `;

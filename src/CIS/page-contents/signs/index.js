@@ -8,80 +8,205 @@ import Hand from './Hand';
 import HandheldLight from './HandheldLight';
 import HandheldFlag from './HandheldFlag';
 import HandheldDisc from './HandheldDisc';
+import RailSwitchSign from './RailSwitchSign';
+import TrackObstruction from './TrackObstruction';
 
 export const setOfSigns = [
   {
     id: 1,
-    components: [
-      <SlowDownPermanent color="yellow" />,
-      <SlowDownPermanent color="green" />,
-    ],
+    components: (
+      <>
+        <HandheldDisc />
+        <HandheldLight lightColor="green" gripColor="black" />
+      </>
+    ),
   },
   {
     id: 2,
-    components: [
-      <SlowDownTemporary color="yellow" />,
-      <SlowDownTemporary color="green" />,
-    ],
+    components: (
+      <>
+        <HandheldFlag lightColor="yellow" />
+        <HandheldLight lightColor="yellow" />
+        <Hand path="slowDown" />
+        <HandheldLight lightColor="white" path="slowDown" />
+      </>
+    ),
   },
   {
     id: 3,
-    components: [
-      <DangerousPlaceBoundaries tempPole />,
-      <DangerousPlaceBoundaries />,
-      <DangerousPlaceBoundaries tempPole ending />,
-      <DangerousPlaceBoundaries ending />,
-    ],
+    components: (
+      <>
+        <HandheldFlag lightColor="red" />
+        <HandheldLight lightColor="red" />
+        <Hand path="stop" />
+        <HandheldLight lightColor="white" path="stop" />
+      </>
+    ),
   },
   {
     id: 4,
-    components: [<Stop />, <StopNightTime />],
+    components: (
+      <>
+        <HandheldFlag lightColor="yellow" folded />
+        <HandheldLight lightColor="white" />
+      </>
+    ),
   },
-  { id: 5, components: [<Horn />] },
+  {
+    id: 5,
+    components: (
+      <>
+        <Hand path="startBreaking" />
+        <HandheldLight lightColor="white" path="startBreaking" />
+      </>
+    ),
+  },
   {
     id: 6,
-    components: [
-      <HandheldDisc />,
-      <HandheldLight lightColor="green" gripColor="black" />,
-    ],
+    components: (
+      <>
+        <Hand path="endBreaking" />
+        <HandheldLight lightColor="white" path="endBreaking" />
+      </>
+    ),
   },
   {
     id: 7,
-    components: [
-      <HandheldFlag lightColor="yellow" />,
-      <HandheldLight lightColor="yellow" />,
-      <Hand path="slowDown" />,
-      <HandheldLight lightColor="white" path="slowDown" />,
-    ],
+    components: (
+      <>
+        <Hand path="endBreaking" />
+        <Hand />
+        <HandheldLight lightColor="white" path="damagedCatenary" />
+      </>
+    ),
   },
   {
     id: 8,
-    components: [
-      <HandheldFlag lightColor="red" />,
-      <HandheldLight lightColor="red" />,
-      <Hand path="stop" />,
-      <HandheldLight lightColor="white" path="stop" />,
-    ],
+    components: (
+      <>
+        <RailSwitchSign mode="straightDay" />
+        <RailSwitchSign mode="straightNight" />
+        <RailSwitchSign mode="straightAnalog" />
+      </>
+    ),
   },
   {
     id: 9,
-    components: [
-      <HandheldFlag lightColor="yellow" folded />,
-      <HandheldLight lightColor="white" />,
-    ],
+    components: (
+      <>
+        <RailSwitchSign lightColor="grey" mode="divert" />
+        <RailSwitchSign lightColor="orange" mode="divert" />
+        <RailSwitchSign divertAnalog mode="divertAnalog" />
+      </>
+    ),
   },
   {
     id: 10,
-    components: [
-      <Hand path="startBreaking" />,
-      <HandheldLight lightColor="white" path="startBreaking" />,
-    ],
+    components: (
+      <>
+        <RailSwitchSign mode="straightDay" />
+        <RailSwitchSign mode="straightDay" shrink />
+        <RailSwitchSign mode="straightNight" />
+        <RailSwitchSign mode="straightNight" shrink />
+      </>
+    ),
   },
   {
     id: 11,
-    components: [
-      <Hand path="endBreaking" />,
-      <HandheldLight lightColor="white" path="endBreaking" />,
-    ],
+    components: (
+      <>
+        <RailSwitchSign lightColor="grey" mode="divert" />
+        <RailSwitchSign lightColor="grey" mode="divert" shrink />
+        <RailSwitchSign lightColor="orange" mode="divert" />
+        <RailSwitchSign lightColor="orange" mode="divert" shrink />
+      </>
+    ),
+  },
+  {
+    id: 12,
+    components: (
+      <>
+        <RailSwitchSign lightColor="grey" mode="divert" />
+        <RailSwitchSign mode="straightDay" shrink />
+        <RailSwitchSign lightColor="orange" mode="divert" />
+        <RailSwitchSign mode="straightNight" shrink />
+      </>
+    ),
+  },
+  {
+    id: 13,
+    components: (
+      <>
+        <RailSwitchSign mode="straightDay" />
+        <RailSwitchSign lightColor="grey" mode="divert" shrink />
+        <RailSwitchSign mode="straightNight" />
+        <RailSwitchSign lightColor="orange" mode="divert" shrink />
+      </>
+    ),
+  },
+  {
+    id: 14,
+    components: (
+      <>
+        <TrackObstruction />
+        <TrackObstruction closed />
+      </>
+    ),
+  },
+  {
+    id: 15,
+    components: (
+      <>
+        <RailSwitchSign waterTowerDay lightColor="grey" mode="divert" />
+        <RailSwitchSign lightColor="red" mode="divert" />
+        <RailSwitchSign lightColor="white" mode="divert" />
+      </>
+    ),
+  },
+  {
+    id: 16,
+    components: (
+      <>
+        <SlowDownPermanent color="yellow" />
+        <SlowDownPermanent color="green" />
+      </>
+    ),
+  },
+  {
+    id: 17,
+    components: (
+      <>
+        <SlowDownTemporary color="yellow" />
+        <SlowDownTemporary color="green" />
+      </>
+    ),
+  },
+  {
+    id: 18,
+    components: (
+      <>
+        <DangerousPlaceBoundaries tempPole />
+        <DangerousPlaceBoundaries />
+        <DangerousPlaceBoundaries tempPole ending />
+        <DangerousPlaceBoundaries ending />
+      </>
+    ),
+  },
+  {
+    id: 19,
+    components: (
+      <>
+        <Stop />
+        <StopNightTime />
+      </>
+    ),
+  },
+  {
+    id: 20,
+    components: (
+      <>
+        <Horn />
+      </>
+    ),
   },
 ];
