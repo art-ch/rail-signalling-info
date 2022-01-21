@@ -75,7 +75,7 @@ export const setOfSigns = [
     components: (
       <>
         <Hand path="endBreaking" />
-        <Hand />
+        <Hand left />
         <HandheldLight lightColor="white" path="damagedCatenary" />
       </>
     ),

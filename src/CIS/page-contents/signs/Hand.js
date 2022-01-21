@@ -1,11 +1,12 @@
 import React from 'react';
-import hand from './img/hand.png';
+import rightHand from './img/right-hand.png';
+import leftHand from './img/left-hand.png';
 import { SignWrapper } from './StyledComponentsForSigns';
 
-const Hand = ({ color, path }) => {
+const Hand = ({ color, path, left }) => {
   return (
     <SignWrapper width="200px" color={color} path={path}>
-      <img src={hand} alt="" />
+      <img src={(left && leftHand) || rightHand} alt="" />
     </SignWrapper>
   );
 };
