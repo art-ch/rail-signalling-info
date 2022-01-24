@@ -4,9 +4,9 @@ import { SignWrapper } from './StyledComponentsForSigns';
 
 const DangerousPlaceBoundaries = ({ tempPole, ending }) => {
   return (
-    <SignWrapper tempPole={tempPole}>
+    <SignWrapper tempSignPoleGradientColor="black">
       <Wrapper ending={ending}>
-        <div className="pole">
+        <div className={(tempPole && 'temp-sign-pole') || 'pole'}>
           <div className="outer-polka-dot">
             <div className="inner-polka-dot-container">
               <div className="inner-polka-dot">

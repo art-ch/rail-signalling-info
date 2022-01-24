@@ -16,7 +16,7 @@ const RailSwitchSign = ({
       style={(divertAnalog || waterTowerDay) && { width: '150px' }}
     >
       <Wrapper mode={mode} shrink={shrink}>
-        <div className="pole">
+        <div className="short-pole">
           <div className="cap"></div>
           <div className="frame">
             {mode === 'divert' && <div className="light"></div>}

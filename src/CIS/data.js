@@ -1104,106 +1104,206 @@ export const signs = [
   },
   {
     id: 2,
-    sign: 'Slow Down',
-    description: `Opened yellow flag during day and handheld yellow or white light during the night. Used only within station limits. Clear to pass with authorised speed. If there is no authorisation, speed limit is 25 km/h (15 mph) in regular zone and 15 km/h (~9 mph) in private zone.`,
+    sign: 'Train Is Allowed On Main Track',
+    description: `Folded yellow flag during day and handheld white light during the night. Used by security and railway crossing stuff. Clear to pass non-stop with authorised speed. If there is no authorisation, speed limit is 25 km/h (15 mph) in regular zone and 15 km/h (~9 mph) in private zone`,
   },
   {
     id: 3,
-    sign: 'Stop',
-    description: `Opened red flag during day and handheld red or white light during the night. Stop! Passing is forbidden. If used by station master: signalizes a train to make an unscheduled stop on the station`,
+    sign: 'Train Is Received On Branch Track',
+    description: `Opened yellow flag during day and handheld yellow light during the night. Used by security and railway crossing stuff. Train goes onto branch track. Yellow light should only be used within station boundaries`,
   },
   {
     id: 4,
-    sign: 'White',
-    description: `Folded yellow flag during day and handheld white light during the night. Used by security and railway crossing stuff. Track ahead is clear.`,
+    sign: 'Stop',
+    description: `Opened red flag during day and handheld red or white light during the night or three short blows of hand horn. Stop! Passing is forbidden. If used by station master: signalizes a train to make an unscheduled stop on the station`,
   },
   {
     id: 5,
+    sign: 'Continue Driving Forward',
+    description: `Opened yellow flag during day and handheld white light during the night or long blow of hand horn`,
+  },
+  {
+    id: 6,
+    sign: 'Continue Driving Backward',
+    description: `Opened yellow flag during day and handheld white light during the night or two long blows of hand horn`,
+  },
+  {
+    id: 7,
+    sign: 'Slow Down',
+    description: `Opened yellow flag during day and handheld white light during the night or two short blows of hand horn`,
+  },
+  {
+    id: 8,
     sign: 'Start Braking',
     description: `Hand during day and handheld white light during the night. Driver answers this signal with one short whistle and starts breaking`,
   },
   {
-    id: 6,
+    id: 9,
     sign: 'Stop Braking',
     description: `Hand during day and handheld white light during the night. Driver answers this signal with two short whistles and stops breaking`,
   },
   {
-    id: 7,
+    id: 10,
     sign: 'Drop Pantograph (Hand Signal)',
     description:
       'During day: hand closer to track does horisontal movements other one is raised straight up. During night - horisontal and vertical movements with handheld signal. Used by track electrician when they suddenly found catenary damage. Driver should answer with horn and drop pantograph, then, continue through damaged place with extra care. After driver made sure that train passed damaged catenary they can raise pantograph and continue as usual.',
   },
   {
-    id: 8,
+    id: 11,
     sign: 'Rail Switch Straight',
     description: 'Upon passing rail switch train will go straight',
   },
   {
-    id: 9,
+    id: 12,
     sign: 'Rail Switch Divert',
     description:
       'Upon passing rail switch train will divert onto the branch track',
   },
   {
-    id: 10,
+    id: 13,
     sign: 'Slip Rail Switch Is In Direct Position',
     description:
       'First pair is shown during a day and other one - during the night. Upon passing rail switch train will go on direct track',
   },
   {
-    id: 11,
+    id: 14,
     sign: 'Slip Rail Switch Is In Across Direct Position',
     description:
       'First pair is shown during a day and other one - during the night. Upon passing rail switch train from other track will go across direct track',
   },
   {
-    id: 12,
+    id: 15,
     sign: 'Slip Rail Switch Is In From Direct Track To Branch One Position',
     description:
       'First pair is shown during a day and other one - during the night. Upon passing rail switch train will divert onto the branch track',
   },
   {
-    id: 13,
+    id: 16,
     sign: 'Slip Rail Switch Is In From Branch Track To Direct One Position',
     description:
       'First pair is shown during a day and other one - during the night. Upon passing rail switch train from other track will divert onto direct track',
   },
   {
-    id: 14,
+    id: 17,
     sign: 'Intentional Track Obstruction',
     description:
       'If track is obstructed white circle or light (during the night time only) with horisontal black line on the middle is shown. If track is not obstructed - same signage but with vertical black line on the middle.',
   },
   {
-    id: 15,
+    id: 18,
     sign: 'Railroad water tower sign',
     description: `During the day rotating part's position is seen. During the night if rotating part is obstructing way - red light is shown both ways, otherwise - white one.`,
   },
   {
-    id: 16,
+    id: 19,
     sign: 'Slow Down. Permanent Signal',
     description: `Yellow circle. Clear to pass while slowing down. Be ready to pass dangerous place, that is marked by "[start|end] of dangerous place" signs.
       Green circle. Train passed dangerous place`,
   },
   {
-    id: 17,
+    id: 20,
     sign: 'Slow Down. Temporary Signal',
     description: `Yellow square. Clear to pass. Be ready to slow down and stop for dangerous place ahead.
       Green square. Train passed dangerous place and can speed up to the maximal authorized speed after passing of this sign with the last car`,
   },
   {
-    id: 18,
+    id: 21,
     sign: 'Dangerous Place Boundaries',
     description: `Start Of Dangerous Place (left). End Of Dangerous Place (right)`,
   },
   {
-    id: 19,
+    id: 22,
     sign: 'Stop',
     description: `Red rectangle is used during daytime and red light during nighttime. Stop! Passing is forbidden`,
   },
   {
-    id: 20,
+    id: 23,
     sign: 'Sound The Horn',
     description: `Permanently installed before tunnels, bridges, rail crossings. Temporarily installed before dangerous places where train is not required to slow down or stop, but have to notify maintenance crew of approaching`,
+  },
+  {
+    id: 24,
+    sign: 'Hot axle box detector',
+    description: `Installed in places where train axles condition is controlled automatically. This sign has no meaning while it is turned off. If signal is turned on it means some axles are overheating and in this case driver should use service brake and slow down to 20 km/h (~12 mph). Proceed with extra care watching train condition [and be ready to stop immediately in case of emergency]. Approach station switch with speed limit of 15 km/h (~9 mph). If there is no special instructions received - stop train on receiving track of the station, regardless of [route/exit] signal aspect`,
+  },
+  {
+    id: 25,
+    sign: 'Block Border. Locomotive signalling is primary',
+    description: `Signalizes block border in zones where locomotive signalling is used as primary one`,
+  },
+  {
+    id: 26,
+    sign: 'Block Border. Locomotive signalling is primary only on wrong way track',
+    description: `Signalizes block border in zones where locomotive signalling is used on wrong way tracks`,
+  },
+  {
+    id: 27,
+    sign: 'Drop Pantograph',
+    description: `Temporarily installed in case of catenary maintenance. Permanently installed in direct current zone, before neutral section, where train is not allowed to proceed with raised pantograph in case of section blackout. If signal is turned off it doesn't care any meaning. If signal is flickering driver should drop pantograph to pass neutral section`,
+  },
+  {
+    id: 28,
+    sign: 'Attention! Neutral Section',
+    description: `Installed in places where "Drop Pantograph" sign is used, just before neutral section`,
+  },
+  {
+    id: 29,
+    sign: 'Raise Pantograph',
+    description: `Installed in places where "Drop Pantograph" sign is used, after neutral section. Singled sign is for locomotive and doubled sign is for multiple unit`,
+  },
+  {
+    id: 30,
+    sign: 'Turn Off Current',
+    description: `Installed before neutral section`,
+  },
+  {
+    id: 31,
+    sign: 'Turn On Current',
+    description: `Installed after neutral section. Singled sign is for locomotive and doubled sign is for multiple unit`,
+  },
+  {
+    id: 32,
+    sign: 'Neutral Section',
+    description: `These signs denote start (bigger) and end (smaller) of neutral section`,
+  },
+  {
+    id: 33,
+    sign: 'Oil Gas Karst',
+    description: `These signs denote places where railway track crosses oil or gas pipes or karst zones. Driver should proceed with extra care`,
+  },
+  {
+    id: 34,
+    sign: 'Automatic brakes check',
+    description: `Denote zone where driver can test their automatic brakes. Start braking (left), end braking (right)`,
+  },
+  {
+    id: 35,
+    sign: 'Boundary poles',
+    description: `Denote point beyond which rolling stock should not be placed because of upcoming rail switch or diamond crossing. Left one is for main track and right one is for branch tracks`,
+  },
+  {
+    id: 36,
+    sign: 'Boundary signs',
+    description: `Left - station boundary. Right - industrial spur boundary.`,
+  },
+  {
+    id: 37,
+    sign: 'Stop Here signs',
+    description: `Installed at the end of the platform. Left - stop locomotive here. Right - stop first car of multiple unit here.`,
+  },
+  {
+    id: 38,
+    sign: 'Catenary signs',
+    description: `Readings from left to right. Changing to branch catenary (means current is supplied by private company). Change to central catenary (means current is suplied by government company). End of catenary`,
+  },
+  {
+    id: 39,
+    sign: 'Snow Plow signs',
+    description: `Readings from left to right. [Used when high speed plow train is used] Prepare to raise knife and close wings. [Before obstruction] Raise knife and close wings. Same meaning, but installed before multiple obstructions, where plowing is not possible in between them. Drop knife and open wings`,
+  },
+  {
+    id: 40,
+    sign: 'Biohazard',
+    description: `Denotes biohazard zone. From left to right appearance at the front, from the side and from behind. During the night sign is enlitten. Driver should sound special 'Chemical alarm' or 'Radiation alarm' signal and proceed with authorized speed.`,
   },
 ];

@@ -1,13 +1,21 @@
 import styled from 'styled-components';
 
 const animationPaths = {
-  stop: `
+  driveForward: `
   margin-left: 3rem;
-  animation: stop 3s infinite linear;
+  animation: driveForward 2s infinite alternate ease-in-out;
+  `,
+  driveBackward: `
+  margin-left: 3rem;
+  animation: driveBackward 2s infinite alternate ease-in-out;
   `,
   slowDown: `
   margin-left: 3rem;
   animation: slowDown 2s infinite alternate ease-in-out;
+  `,
+  stop: `
+  margin-left: 3rem;
+  animation: stop 3s infinite linear;
   `,
   startBreaking: `
   animation: startBreaking 1s infinite alternate ease-in-out;
@@ -31,13 +39,19 @@ const SignWrapper = styled.div`
   .light-frame {
     border: 1px solid black;
   }
-  .pole {
-    height: ${({ switchPole }) => (switchPole && '80px') || '170px'};
+  .pole,
+  .temp-sign-pole,
+  .short-pole {
     width: 5px;
-    background: ${({ tempPole, switchPole }) =>
-      (tempPole && '#6c757d') ||
-      (switchPole && 'black') ||
-      `linear-gradient(
+    border: 1px solid black;
+  }
+  .pole,
+  .temp-sign-pole {
+    height: 170px;
+  }
+  .pole {
+    width: 5px;
+    background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 1) 10%,
       rgba(255, 255, 255, 1) 10%,
@@ -47,7 +61,21 @@ const SignWrapper = styled.div`
       rgba(255, 255, 255, 1) 36%,
       rgba(255, 255, 255, 1) 76%,
       rgba(0, 0, 0, 1) 76%
-    )`};
+    );
+  }
+  .temp-sign-pole {
+    background: ${({ tempSignPoleSpecial, tempSignPoleGradientColor }) =>
+      (tempSignPoleSpecial && 'grey') ||
+      `repeating-linear-gradient(${tempSignPoleGradientColor}, ${tempSignPoleGradientColor} 15px, white 15px, white 30px)`};
+  }
+  .short-pole {
+    height: 80px;
+    background: black;
+  }
+  .catenary-pole {
+    background: #6c757d;
+    width: 30px;
+    height: 120px;
   }
   .grip {
     height: 70px;
@@ -62,7 +90,8 @@ const SignWrapper = styled.div`
   }
   .frame,
   .light-frame {
-    transform: translate(-42%, 5%);
+    transform: ${({ catenaryPoleSign }) =>
+      (catenaryPoleSign && 'translate(-12%, 50%)') || 'translate(-42%, 5%)'};
   }
   .frame {
     ${({ roundedFrame }) => roundedFrame && 'border-radius: 50%'};
@@ -98,12 +127,21 @@ const SignWrapper = styled.div`
 
   ${({ path }) => path && animationPaths[path]}
 
-  @keyframes stop {
+  @keyframes driveForward {
     from {
       transform: rotate(0deg) translateX(-50px) rotate(0deg);
     }
     to {
-      transform: rotate(-360deg) translateX(-50px) rotate(360deg);
+      transform: rotate(180deg) translateX(-50px) rotate(-180deg);
+    }
+  }
+
+  @keyframes driveBackward {
+    from {
+      transform: rotate(0deg) translateX(-50px) rotate(0deg);
+    }
+    to {
+      transform: rotate(-180deg) translateX(-50px) rotate(180deg);
     }
   }
 
@@ -113,6 +151,15 @@ const SignWrapper = styled.div`
     }
     to {
       transform: rotate(180deg) translateY(50px) rotate(-180deg);
+    }
+  }
+
+  @keyframes stop {
+    from {
+      transform: rotate(0deg) translateX(-50px) rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg) translateX(-50px) rotate(360deg);
     }
   }
 

@@ -4,9 +4,9 @@ import { SignWrapper } from './StyledComponentsForSigns';
 
 const Stop = () => {
   return (
-    <SignWrapper width="100px" tempPole>
+    <SignWrapper width="100px" tempSignPoleGradientColor="red">
       <Wrapper>
-        <div className="pole">
+        <div className="temp-sign-pole">
           <div className="frame">
             <div className="colored-frame"></div>
           </div>

@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { SignWrapper } from './StyledComponentsForSigns';
 
-const HandheldFlag = ({ lightColor, folded }) => {
+const HandheldFlag = ({ lightColor, folded, path }) => {
   return (
-    <SignWrapper width="150px" gripColor="#8b939a">
+    <SignWrapper width="150px" gripColor="#8b939a" path={path}>
       <Wrapper lightColor={lightColor} folded={folded}>
         <div className="grip">
           <div className="fabric">

@@ -2,11 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { SignWrapper } from './StyledComponentsForSigns';
 
-const Horn = () => {
+const Horn = ({ tempSignPole, catenaryPole }) => {
   return (
-    <SignWrapper>
-      <Wrapper>
-        <div className="pole">
+    <SignWrapper tempSignPoleSpecial catenaryPoleSign={catenaryPole}>
+      <Wrapper catenaryPole>
+        <div
+          className={
+            (tempSignPole && 'temp-sign-pole') ||
+            (catenaryPole && 'catenary-pole') ||
+            'pole'
+          }
+        >
           <div className="frame">
             <div className="upperPart">
               <p>C</p>

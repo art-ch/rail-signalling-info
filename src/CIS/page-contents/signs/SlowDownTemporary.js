@@ -3,8 +3,8 @@ import { SignWrapper } from './StyledComponentsForSigns';
 
 const SlowDownTemporary = ({ color }) => {
   return (
-    <SignWrapper innerFrameColor={color} tempPole>
-      <div className="pole">
+    <SignWrapper innerFrameColor={color} tempSignPoleGradientColor={color}>
+      <div className="temp-sign-pole">
         <div className="frame">
           <div className="colored-frame"></div>
         </div>

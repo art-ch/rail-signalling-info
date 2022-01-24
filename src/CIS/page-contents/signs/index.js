@@ -25,10 +25,8 @@ export const setOfSigns = [
     id: 2,
     components: (
       <>
-        <HandheldFlag lightColor="yellow" />
-        <HandheldLight lightColor="yellow" />
-        <Hand path="slowDown" />
-        <HandheldLight lightColor="white" path="slowDown" />
+        <HandheldFlag lightColor="yellow" folded />
+        <HandheldLight lightColor="white" />
       </>
     ),
   },
@@ -36,10 +34,8 @@ export const setOfSigns = [
     id: 3,
     components: (
       <>
-        <HandheldFlag lightColor="red" />
-        <HandheldLight lightColor="red" />
-        <Hand path="stop" />
-        <HandheldLight lightColor="white" path="stop" />
+        <HandheldFlag lightColor="yellow" />
+        <HandheldLight lightColor="yellow" />
       </>
     ),
   },
@@ -47,13 +43,44 @@ export const setOfSigns = [
     id: 4,
     components: (
       <>
-        <HandheldFlag lightColor="yellow" folded />
-        <HandheldLight lightColor="white" />
+        <HandheldFlag lightColor="red" />
+        <HandheldLight lightColor="red" />
+        <Hand path="stop" />
+        <HandheldFlag lightColor="yellow" path="stop" />
+        <HandheldLight lightColor="white" path="stop" />
       </>
     ),
   },
   {
     id: 5,
+    components: (
+      <>
+        <HandheldFlag lightColor="yellow" path="driveForward" />
+        <HandheldLight lightColor="white" path="driveForward" />
+      </>
+    ),
+  },
+  {
+    id: 6,
+    components: (
+      <>
+        <HandheldFlag lightColor="yellow" path="driveBackward" />
+        <HandheldLight lightColor="white" path="driveBackward" />
+      </>
+    ),
+  },
+  {
+    id: 7,
+    components: (
+      <>
+        <Hand path="slowDown" />
+        <HandheldFlag lightColor="yellow" path="slowDown" />
+        <HandheldLight lightColor="white" path="slowDown" />
+      </>
+    ),
+  },
+  {
+    id: 8,
     components: (
       <>
         <Hand path="startBreaking" />
@@ -62,7 +89,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 6,
+    id: 9,
     components: (
       <>
         <Hand path="endBreaking" />
@@ -71,7 +98,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 7,
+    id: 10,
     components: (
       <>
         <Hand path="endBreaking" />
@@ -81,7 +108,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 8,
+    id: 11,
     components: (
       <>
         <RailSwitchSign mode="straightDay" />
@@ -91,7 +118,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 9,
+    id: 12,
     components: (
       <>
         <RailSwitchSign lightColor="grey" mode="divert" />
@@ -101,51 +128,51 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 10,
-    components: (
-      <>
-        <RailSwitchSign mode="straightDay" />
-        <RailSwitchSign mode="straightDay" shrink />
-        <RailSwitchSign mode="straightNight" />
-        <RailSwitchSign mode="straightNight" shrink />
-      </>
-    ),
-  },
-  {
-    id: 11,
-    components: (
-      <>
-        <RailSwitchSign lightColor="grey" mode="divert" />
-        <RailSwitchSign lightColor="grey" mode="divert" shrink />
-        <RailSwitchSign lightColor="orange" mode="divert" />
-        <RailSwitchSign lightColor="orange" mode="divert" shrink />
-      </>
-    ),
-  },
-  {
-    id: 12,
-    components: (
-      <>
-        <RailSwitchSign lightColor="grey" mode="divert" />
-        <RailSwitchSign mode="straightDay" shrink />
-        <RailSwitchSign lightColor="orange" mode="divert" />
-        <RailSwitchSign mode="straightNight" shrink />
-      </>
-    ),
-  },
-  {
     id: 13,
     components: (
       <>
         <RailSwitchSign mode="straightDay" />
-        <RailSwitchSign lightColor="grey" mode="divert" shrink />
+        <RailSwitchSign mode="straightDay" shrink />
         <RailSwitchSign mode="straightNight" />
-        <RailSwitchSign lightColor="orange" mode="divert" shrink />
+        <RailSwitchSign mode="straightNight" shrink />
       </>
     ),
   },
   {
     id: 14,
+    components: (
+      <>
+        <RailSwitchSign lightColor="grey" mode="divert" />
+        <RailSwitchSign lightColor="grey" mode="divert" shrink />
+        <RailSwitchSign lightColor="orange" mode="divert" />
+        <RailSwitchSign lightColor="orange" mode="divert" shrink />
+      </>
+    ),
+  },
+  {
+    id: 15,
+    components: (
+      <>
+        <RailSwitchSign lightColor="grey" mode="divert" />
+        <RailSwitchSign mode="straightDay" shrink />
+        <RailSwitchSign lightColor="orange" mode="divert" />
+        <RailSwitchSign mode="straightNight" shrink />
+      </>
+    ),
+  },
+  {
+    id: 16,
+    components: (
+      <>
+        <RailSwitchSign mode="straightDay" />
+        <RailSwitchSign lightColor="grey" mode="divert" shrink />
+        <RailSwitchSign mode="straightNight" />
+        <RailSwitchSign lightColor="orange" mode="divert" shrink />
+      </>
+    ),
+  },
+  {
+    id: 17,
     components: (
       <>
         <TrackObstruction />
@@ -154,7 +181,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 15,
+    id: 18,
     components: (
       <>
         <RailSwitchSign waterTowerDay lightColor="grey" mode="divert" />
@@ -164,7 +191,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 16,
+    id: 19,
     components: (
       <>
         <SlowDownPermanent color="yellow" />
@@ -173,7 +200,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 17,
+    id: 20,
     components: (
       <>
         <SlowDownTemporary color="yellow" />
@@ -182,7 +209,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 18,
+    id: 21,
     components: (
       <>
         <DangerousPlaceBoundaries tempPole />
@@ -193,7 +220,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 19,
+    id: 22,
     components: (
       <>
         <Stop />
@@ -202,10 +229,12 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 20,
+    id: 23,
     components: (
       <>
+        <Horn tempSignPole />
         <Horn />
+        <Horn catenaryPole />
       </>
     ),
   },
