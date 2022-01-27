@@ -66,7 +66,9 @@ const SignWrapper = styled.div`
   .temp-sign-pole {
     background: ${({ tempSignPoleSpecial, tempSignPoleGradientColor }) =>
       (tempSignPoleSpecial && 'grey') ||
-      `repeating-linear-gradient(${tempSignPoleGradientColor}, ${tempSignPoleGradientColor} 15px, white 15px, white 30px)`};
+      `repeating-linear-gradient(${tempSignPoleGradientColor || 'black'}, ${
+        tempSignPoleGradientColor || 'black'
+      } 15px, white 15px, white 30px)`};
   }
   .short-pole {
     height: 80px;
@@ -75,7 +77,7 @@ const SignWrapper = styled.div`
   .catenary-pole {
     background: #6c757d;
     width: 30px;
-    height: 120px;
+    height: 200px;
   }
   .grip {
     height: 70px;
@@ -91,15 +93,17 @@ const SignWrapper = styled.div`
   .frame,
   .light-frame {
     transform: ${({ catenaryPoleSign }) =>
-      (catenaryPoleSign && 'translate(-12%, 50%)') || 'translate(-42%, 5%)'};
+      (catenaryPoleSign && 'translate(-23%, 50%)') || 'translate(-42%, 5%)'};
   }
   .frame {
     ${({ roundedFrame }) => roundedFrame && 'border-radius: 50%'};
+    ${({ diamondFrame }) =>
+      diamondFrame && 'transform: rotate(45deg) translate(20%, 50%)'};
     width: 50px;
     height: 50px;
     background: white;
     display: flex;
-    place-items: center;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
   }

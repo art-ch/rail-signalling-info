@@ -10,6 +10,18 @@ import HandheldFlag from './HandheldFlag';
 import HandheldDisc from './HandheldDisc';
 import RailSwitchSign from './RailSwitchSign';
 import TrackObstruction from './TrackObstruction';
+import HotAxles from './HotAxles';
+import BlockBorderALTP from './BlockBorderALTP';
+import BlockBorderWWLTP from './BlockBorderWWLTP';
+import DropPantograph from './DropPantograph';
+import NeutralZoneAttention from './NeutralZoneAttention';
+import TurnOffCurrent from './TurnOffCurrent';
+import TurnOnCurrent from './TurnOnCurrent';
+import NeutralZone from './NeutralZone';
+import BoundaryPole from './BoundaryPole';
+import { SignWithText } from './SignWithText';
+import { SnowPlowSign } from './SnowPlowSign';
+import BioHazardSign from './BioHazardSign';
 
 export const setOfSigns = [
   {
@@ -235,6 +247,197 @@ export const setOfSigns = [
         <Horn tempSignPole />
         <Horn />
         <Horn catenaryPole />
+      </>
+    ),
+  },
+  {
+    id: 24,
+    components: (
+      <>
+        <HotAxles />
+        <HotAxles turnedOn />
+      </>
+    ),
+  },
+  {
+    id: 25,
+    components: (
+      <>
+        <BlockBorderALTP />
+      </>
+    ),
+  },
+  {
+    id: 26,
+    components: (
+      <>
+        <BlockBorderWWLTP />
+      </>
+    ),
+  },
+  {
+    id: 27,
+    components: (
+      <>
+        <DropPantograph innerFrameColor="black" />
+        <DropPantograph innerFrameColor="black" turnedOn />
+        <DropPantograph innerFrameColor="#3c86c3" tempSignPoleSpecial />
+        <DropPantograph
+          innerFrameColor="#3c86c3"
+          tempSignPoleSpecial
+          turnedOn
+        />
+      </>
+    ),
+  },
+  {
+    id: 28,
+    components: (
+      <>
+        <NeutralZoneAttention innerFrameColor="black" />
+        <NeutralZoneAttention innerFrameColor="#3c86c3" tempSignPoleSpecial />
+      </>
+    ),
+  },
+  {
+    id: 29,
+    components: (
+      <>
+        <DropPantograph raise innerFrameColor="black" />
+        <DropPantograph raise innerFrameColor="#3c86c3" tempSignPoleSpecial />
+        <DropPantograph raise innerFrameColor="black" doubled />
+        <DropPantograph
+          raise
+          innerFrameColor="#3c86c3"
+          tempSignPoleSpecial
+          doubled
+        />
+      </>
+    ),
+  },
+  {
+    id: 30,
+    components: (
+      <>
+        <TurnOffCurrent innerFrameColor="#3c86c3" />
+      </>
+    ),
+  },
+  {
+    id: 31,
+    components: (
+      <>
+        <TurnOnCurrent innerFrameColor="#3c86c3" />
+        <TurnOnCurrent innerFrameColor="#3c86c3" doubled />
+      </>
+    ),
+  },
+  {
+    id: 32,
+    components: (
+      <>
+        <NeutralZone ending />
+        <NeutralZone />
+      </>
+    ),
+  },
+  {
+    id: 33,
+    components: (
+      <>
+        <SignWithText
+          pole="catenary-pole"
+          exclamation
+          line="diagonal-line"
+          text="Газ"
+        />
+        <SignWithText
+          pole="catenary-pole"
+          exclamation
+          line="diagonal-line"
+          text="Нафта"
+        />
+        <SignWithText
+          pole="catenary-pole"
+          line="horizontal-line"
+          text="Карст"
+        />
+        <SignWithText pole="catenary-pole" line="vertical-line" text="Карст" />
+      </>
+    ),
+  },
+  {
+    id: 34,
+    components: (
+      <>
+        <SignWithText pole="catenary-pole" text="НТ" red />
+        <SignWithText pole="catenary-pole" text="КТ" />
+      </>
+    ),
+  },
+  {
+    id: 35,
+    components: (
+      <>
+        <BoundaryPole />
+        <BoundaryPole branch />
+      </>
+    ),
+  },
+  {
+    id: 36,
+    components: (
+      <>
+        <SignWithText pole="pole" rectangular text="МЕЖА СТАНЦІЇ" />
+        <SignWithText pole="pole" rectangular text="МЕЖА ПІД'ЇЗНОЇ КОЛІЇ" />
+      </>
+    ),
+  },
+  {
+    id: 37,
+    components: (
+      <>
+        <SignWithText pole="pole" rectangular text="ЗУПИНКА ЛОКОМОТИВА" />
+        <SignWithText pole="pole" rectangular text="ЗУПИНКА ПЕРШОГО ВАГОНА" />
+      </>
+    ),
+  },
+  {
+    id: 38,
+    components: (
+      <>
+        <SignWithText
+          rectangular
+          catenarySign
+          text="ПЕРЕХОД НА БОКОВУЮ КОНТАКТНУЮ СЕТЬ"
+        />
+        <SignWithText
+          rectangular
+          catenarySign
+          text="ПЕРЕХОД НА ЦЕНТРАЛЬНУЮ КОНТАКТНУЮ СЕТЬ"
+        />
+        <SignWithText rectangular catenarySign text="КОНЕЦ КОНТАКТНОЙ СЕТИ" />
+      </>
+    ),
+  },
+  {
+    id: 39,
+    components: (
+      <>
+        <SnowPlowSign getReady />
+        <SnowPlowSign />
+        <SnowPlowSign doubled />
+        <SnowPlowSign cut />
+      </>
+    ),
+  },
+  {
+    id: 40,
+    components: (
+      <>
+        <BioHazardSign front />
+        <BioHazardSign sideWays />
+        <BioHazardSign fromBehind />
       </>
     ),
   },

@@ -5,7 +5,7 @@ import { SignWrapper } from './StyledComponentsForSigns';
 const Horn = ({ tempSignPole, catenaryPole }) => {
   return (
     <SignWrapper tempSignPoleSpecial catenaryPoleSign={catenaryPole}>
-      <Wrapper catenaryPole>
+      <Wrapper catenaryPole={catenaryPole}>
         <div
           className={
             (tempSignPole && 'temp-sign-pole') ||
@@ -29,6 +29,7 @@ export default Horn;
 
 const Wrapper = styled.div`
   .frame {
+    ${({ catenaryPole }) => catenaryPole && 'transform: translate(-15%, 50%)'};
     display: block;
     width: 40px;
     border-top-left-radius: 50%;
