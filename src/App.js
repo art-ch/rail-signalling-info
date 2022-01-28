@@ -1,7 +1,13 @@
-import './App.css';
+import './styles/global.css';
 import { Header, Footer } from './components/';
-import { CISSignalProvider } from './CIS/CISSignalContext';
-import { HomePage, CISPage } from './page-components/index';
+import { CISSignalProvider } from './content/CIS/CISSignalContext';
+import {
+  HomePage,
+  NavigationPage,
+  ContactPage,
+  AboutPage,
+  CISPage,
+} from './page-components/index';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -10,6 +16,9 @@ const App = () => {
       <Header />
       <Routes>
         <Route exact path="/" element={<HomePage />} />
+        <Route exact path="/navigate" element={<NavigationPage />} />
+        <Route exact path="/contact" element={<ContactPage />} />
+        <Route exact path="/about" element={<AboutPage />} />
         <Route
           exact
           path="/CIS"

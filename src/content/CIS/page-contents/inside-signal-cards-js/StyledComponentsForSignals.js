@@ -175,7 +175,7 @@ const SignalWrapper = styled.div`
 `;
 
 /* dwarf signals */
-const DwarfSignalWrapper = styled.article`
+const DwarfSignalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -246,7 +246,7 @@ const DwarfSignalWrapper = styled.article`
   }
 `;
 
-const DwarfManeuveringSignalWrapper = styled.article`
+const DwarfManeuveringSignalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -286,7 +286,7 @@ const DwarfManeuveringSignalWrapper = styled.article`
   }
 `;
 
-const CombinedSignalsWrapper = styled.article`
+const CombinedSignalsWrapper = styled.div`
   display: flex;
   align-items: flex-end;
 `;

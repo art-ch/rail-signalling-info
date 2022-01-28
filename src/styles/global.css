@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&family=Roboto+Slab&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --primary-font: 'Roboto Slab', serif;
+  --headings-font: 'Oswald', sans-serif;
+  --transition: 0.3s;
+  --radius: 5px;
+}
+body {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  font-family: var(--primary-font);
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+section {
+  max-width: 1170px;
+  width: 80%;
+  margin: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--headings-font);
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+.btn {
+  color: white;
+  background: seagreen;
+  padding: 1rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.btn:hover {
+  border: 1px solid seagreen;
+  background: white;
+  color: seagreen;
+}
