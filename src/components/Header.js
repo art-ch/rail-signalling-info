@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { flexCenterSpaceBetween, flexColumnCenter } from '../styles/Mixins';
+import { flexCenterSpaceBetween } from '../styles/Mixins';
 import { Links } from './Links';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
-const Header = ({ backgroundColor }) => {
+const Header = () => {
   const [showLinks, setShowLinks] = useState(false);
   return (
     <>
-      <Wrapper backgroundColor={backgroundColor || 'white'}>
+      <Wrapper>
         <div className="logo">
           <h1>Logo</h1>
         </div>
-        <Links className="header-links" />
+        <Links />
         <button
           className="menu-button"
           onClick={() => setShowLinks(!showLinks)}
@@ -20,7 +20,7 @@ const Header = ({ backgroundColor }) => {
           <GiHamburgerMenu className="menu-button-icon" />
         </button>
       </Wrapper>
-      {showLinks && <Links mobile />}
+      {showLinks && <Links mobile setShowLinks={setShowLinks} />}
     </>
   );
 };
@@ -30,8 +30,12 @@ export default Header;
 const Wrapper = styled.header`
   ${flexCenterSpaceBetween};
   max-width: 1000px;
-  padding: 1rem 2rem;
-  background: ${({ backgroundColor }) => backgroundColor};
+  margin: 0 auto;
+  background: var(--primary8);
+  .header-links {
+    ${flexCenterSpaceBetween}
+    gap: 2rem;
+  }
   .menu-button {
     padding: 10px;
     background: transparent;
@@ -46,9 +50,6 @@ const Wrapper = styled.header`
     }
     .menu-button {
       display: block;
-    }
-    .header-links-mobile {
-      ${flexColumnCenter};
     }
   }
 `;

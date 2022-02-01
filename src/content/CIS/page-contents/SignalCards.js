@@ -4,7 +4,7 @@ import { CISSignalContext } from '../CISSignalContext';
 import { Signal, Description } from './inside-signal-cards-js/index';
 
 const SignalCards = () => {
-  const { zone, filterAspects } = useContext(CISSignalContext);
+  const { zone, signalType, filterAspects } = useContext(CISSignalContext);
   const newAspects = filterAspects(aspects);
 
   if (newAspects.length > 0) {

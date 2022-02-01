@@ -1,8 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const AboutPage = () => {
   return (
-    <main>
+    <Wrapper>
       <h1>About</h1>
       <p>Hello and Welcome! My name is Artem</p>
       <p>
@@ -20,8 +21,12 @@ const AboutPage = () => {
         <strong>Disclaimer:</strong> I know, that wikipedia exists, but I want
         to create something myself or, as they say, reinvent the wheel.
       </p>
-    </main>
+    </Wrapper>
   );
 };
 
 export default AboutPage;
+
+const Wrapper = styled.main`
+  margin-bottom: 5rem;
+`;

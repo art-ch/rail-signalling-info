@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { flexCenter, flexColumn } from '../styles/Mixins';
 
-export const Links = ({ mobile, footer }) => {
+export const Links = ({ mobile, footer, setShowLinks }) => {
   const links = [
     { id: 1, linkName: 'Home', href: '/' },
     { id: 2, linkName: 'Navigation', href: '/navigate' },
@@ -14,13 +14,16 @@ export const Links = ({ mobile, footer }) => {
   return (
     <Wrapper
       mobile={mobile}
-      footer={footer}
-      className={`${mobile ? 'header-links-mobile' : 'header-links'}`}
+      className={`${
+        (mobile && 'header-links-mobile') ||
+        (footer && 'footer-links') ||
+        'header-links'
+      }`}
     >
       {links.map(({ id, linkName, href }) => {
         return (
-          <li key={id}>
-            <Link to={href} className="link">
+          <li key={id} className="link">
+            <Link to={href} onClick={() => setShowLinks(false)}>
               {linkName}
             </Link>
           </li>
@@ -31,28 +34,17 @@ export const Links = ({ mobile, footer }) => {
 };
 
 const mobileCentering = `
-  ${flexColumn};
-  align-items: flex-end;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background: #CDCDCD;
-`;
-const footer = `
-  ${flexColumn};
-  align-items: flex-end;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background: #CDCDCD;
+${flexColumn};
+align-items: flex-end;
+background: #cdcdcd;
+margin-bottom: 1rem;
+padding: 1rem 0;
 `;
 
 const Wrapper = styled.ul`
-  ${({ mobile }) => (mobile ? mobileCentering : flexCenter)}
-  gap: ${({ mobile, footer }) => (mobile || footer ? '1rem' : '2rem')};
+  ${({ mobile }) => mobile && mobileCentering}
   .link {
     padding: 10px;
-  }
-  .link {
-    color: black;
     transition: var(--transition);
   }
 `;
