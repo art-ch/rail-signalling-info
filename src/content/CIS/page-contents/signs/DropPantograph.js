@@ -64,9 +64,10 @@ const Wrapper = styled.div`
         'rotate(-45deg) translate(-30%, 135%)'};
       background: ${({ raise }) => (raise && 'white') || 'grey'};
       border-radius: 50px;
-      ${({ turnedOn }) => turnedOn && 'animation: flickering 2s infinite'};
+      ${({ turnedOn }) =>
+        turnedOn && 'animation: drop-pantograph-active 2s infinite'};
 
-      @keyframes flickering {
+      @keyframes drop-pantograph-active {
         0% {
           background: grey;
         }

@@ -958,13 +958,13 @@ export const aspects = [
   },
 ];
 
-export const signalFilterButtons = [
+export const signalFilters = [
   [{ id: 1, name: 'all', displayName: 'All Signals' }],
   [
     {
       id: 2,
       name: 'atp',
-      displayName: 'ATP',
+      displayName: 'ATP Zone',
     },
     { id: 3, name: 'atp-4', displayName: '4 Aspect ATP Zone' },
     { id: 4, name: 'altp', displayName: 'ALTP Zone' },
@@ -1095,6 +1095,16 @@ export const locomotiveSignals = [
   },
 ];
 
+export const signFilters = [
+  [
+    { id: 1, name: 'all', displayName: 'All Signs' },
+    { id: 2, name: 'hand', displayName: 'Hand Signs' },
+    { id: 3, name: 'pointers', displayName: 'Signal Pointers' },
+    { id: 4, name: 'textless', displayName: 'Other Textless Signs' },
+    { id: 5, name: 'text-signs', displayName: 'Text Signs' },
+  ],
+];
+
 export const signs = [
   {
     id: 1,
@@ -1217,13 +1227,13 @@ export const signs = [
   },
   {
     id: 23,
-    sign: 'Sound The Horn',
-    description: `Permanently installed before tunnels, bridges, rail crossings. Temporarily installed before dangerous places where train is not required to slow down or stop, but have to notify maintenance crew of approaching`,
+    sign: 'Snow Plow signs',
+    description: `Readings from left to right. [Used when high speed plow train is used] Prepare to raise knife and close wings. [Before obstruction] Raise knife and close wings. Same meaning, but installed before multiple obstructions, where plowing is not possible in between them. Drop knife and open wings`,
   },
   {
     id: 24,
-    sign: 'Hot axle box detector',
-    description: `Installed in places where train axles condition is controlled automatically. This sign has no meaning while it is turned off. If signal is turned on it means some axles are overheating and in this case driver should use service brake and slow down to 20 km/h (~12 mph). Proceed with extra care watching train condition [and be ready to stop immediately in case of emergency]. Approach station switch with speed limit of 15 km/h (~9 mph). If there is no special instructions received - stop train on receiving track of the station, regardless of [route/exit] signal aspect`,
+    sign: 'Sound The Horn',
+    description: `Permanently installed before tunnels, bridges, rail crossings. Temporarily installed before dangerous places where train is not required to slow down or stop, but have to notify maintenance crew of approaching`,
   },
   {
     id: 25,
@@ -1237,68 +1247,68 @@ export const signs = [
   },
   {
     id: 27,
+    sign: 'Hot axle box detector',
+    description: `Installed in places where train axles condition is controlled automatically. This sign has no meaning while it is turned off. If signal is turned on it means some axles are overheating and in this case driver should use service brake and slow down to 20 km/h (~12 mph). Proceed with extra care watching train condition [and be ready to stop immediately in case of emergency]. Approach station switch with speed limit of 15 km/h (~9 mph). If there is no special instructions received - stop train on receiving track of the station, regardless of [route/exit] signal aspect`,
+  },
+  {
+    id: 28,
     sign: 'Drop Pantograph',
     description: `Temporarily installed in case of catenary maintenance. Permanently installed in direct current zone, before neutral section, where train is not allowed to proceed with raised pantograph in case of section blackout. If signal is turned off it doesn't care any meaning. If signal is flickering driver should drop pantograph to pass neutral section`,
   },
   {
-    id: 28,
+    id: 29,
     sign: 'Attention! Neutral Section',
     description: `Installed in places where "Drop Pantograph" sign is used, just before neutral section`,
   },
   {
-    id: 29,
+    id: 30,
     sign: 'Raise Pantograph',
     description: `Installed in places where "Drop Pantograph" sign is used, after neutral section. Singled sign is for locomotive and doubled sign is for multiple unit`,
   },
   {
-    id: 30,
+    id: 31,
     sign: 'Turn Off Current',
     description: `Installed before neutral section`,
   },
   {
-    id: 31,
+    id: 32,
     sign: 'Turn On Current',
     description: `Installed after neutral section. Singled sign is for locomotive and doubled sign is for multiple unit`,
   },
   {
-    id: 32,
+    id: 33,
     sign: 'Neutral Section',
     description: `These signs denote start (bigger) and end (smaller) of neutral section`,
   },
   {
-    id: 33,
-    sign: 'Oil Gas Karst',
-    description: `These signs denote places where railway track crosses oil or gas pipes or karst zones. Driver should proceed with extra care`,
-  },
-  {
     id: 34,
-    sign: 'Automatic brakes check',
-    description: `Denote zone where driver can test their automatic brakes. Start braking (left), end braking (right)`,
-  },
-  {
-    id: 35,
     sign: 'Boundary poles',
     description: `Denote point beyond which rolling stock should not be placed because of upcoming rail switch or diamond crossing. Left one is for main track and right one is for branch tracks`,
   },
   {
+    id: 35,
+    sign: 'Oil Gas Karst',
+    description: `These signs denote places where railway track crosses oil or gas pipes or karst zones. Driver should proceed with extra care`,
+  },
+  {
     id: 36,
+    sign: 'Automatic brakes check',
+    description: `Denote zone where driver can test their automatic brakes. Start braking (left), end braking (right)`,
+  },
+  {
+    id: 37,
     sign: 'Boundary signs',
     description: `Left - station boundary. Right - industrial spur boundary.`,
   },
   {
-    id: 37,
+    id: 38,
     sign: 'Stop Here signs',
     description: `Installed at the end of the platform. Left - stop locomotive here. Right - stop first car of multiple unit here.`,
   },
   {
-    id: 38,
+    id: 39,
     sign: 'Catenary signs',
     description: `Readings from left to right. Changing to branch catenary (means current is supplied by private company). Change to central catenary (means current is suplied by government company). End of catenary`,
-  },
-  {
-    id: 39,
-    sign: 'Snow Plow signs',
-    description: `Readings from left to right. [Used when high speed plow train is used] Prepare to raise knife and close wings. [Before obstruction] Raise knife and close wings. Same meaning, but installed before multiple obstructions, where plowing is not possible in between them. Drop knife and open wings`,
   },
   {
     id: 40,

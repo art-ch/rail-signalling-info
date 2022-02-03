@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CISSignalContext } from '../CISSignalContext';
-import { signalFilterButtons } from '../data';
+import { signalFilters } from '../data';
 import { flexCenterCenter } from '../../../styles/Mixins';
 
-const Buttons = () => {
-  const { zone, signalType, filterButtons } = useContext(CISSignalContext);
+const SignalFilterButtons = () => {
+  const { zone, signalType, filterSignals } = useContext(CISSignalContext);
 
   return (
     <Wrapper className="btn-wrapper">
-      {signalFilterButtons.map((buttonArray, index) => {
+      {signalFilters.map((buttonArray, index) => {
         return (
           <div className="btn-container" key={index}>
             {buttonArray.map((button) => {
@@ -20,7 +20,7 @@ const Buttons = () => {
                     (zone === name || signalType === name) && 'active'
                   }`}
                   id={id}
-                  onClick={() => filterButtons(id, name)}
+                  onClick={(e) => filterSignals(e, id, name)}
                   key={id}
                 >
                   {displayName}
@@ -34,7 +34,7 @@ const Buttons = () => {
   );
 };
 
-export default Buttons;
+export default SignalFilterButtons;
 
 const Wrapper = styled.section`
   margin-bottom: 0;

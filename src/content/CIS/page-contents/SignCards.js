@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { signs } from '../data';
+import { CISSignalContext } from '../CISSignalContext';
 import { setOfSigns } from './signs';
 import { CombinedSignsWrapper } from './signs/StyledComponentsForSigns';
 
 export const SignCards = () => {
+  const { filteredSigns } = useContext(CISSignalContext);
+  const newSignList = filteredSigns(signs);
+
   return (
     <section>
-      <h2>Signs</h2>
-      {signs.map(({ id, sign, description }) => {
+      <h2 className="section-title">Signs</h2>
+      {newSignList.map(({ id, sign, description }) => {
         return (
           <article key={id}>
             <Sign id={id} />
@@ -38,7 +42,7 @@ const Sign = ({ id }) => {
 const Description = ({ name, description }) => {
   return (
     <article>
-      <h3>{name}</h3>
+      <h3 className="entity-title">{name}</h3>
       <p>{description}</p>
     </article>
   );

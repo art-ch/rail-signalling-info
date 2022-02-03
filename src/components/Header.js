@@ -9,16 +9,18 @@ const Header = () => {
   return (
     <>
       <Wrapper>
-        <div className="logo">
-          <h1>Logo</h1>
+        <div className="inner-centering">
+          <div className="logo">
+            <h1>Logo</h1>
+          </div>
+          <Links />
+          <button
+            className="menu-button"
+            onClick={() => setShowLinks(!showLinks)}
+          >
+            <GiHamburgerMenu className="menu-button-icon" />
+          </button>
         </div>
-        <Links />
-        <button
-          className="menu-button"
-          onClick={() => setShowLinks(!showLinks)}
-        >
-          <GiHamburgerMenu className="menu-button-icon" />
-        </button>
       </Wrapper>
       {showLinks && <Links mobile setShowLinks={setShowLinks} />}
     </>
@@ -28,10 +30,12 @@ const Header = () => {
 export default Header;
 
 const Wrapper = styled.header`
-  ${flexCenterSpaceBetween};
-  max-width: 1000px;
-  margin: 0 auto;
-  background: var(--primary8);
+  background: var(--primary9);
+  .inner-centering {
+    ${flexCenterSpaceBetween};
+    max-width: 1170px;
+    margin: 0 auto;
+  }
   .header-links {
     ${flexCenterSpaceBetween}
     gap: 2rem;

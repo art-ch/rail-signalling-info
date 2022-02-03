@@ -8,10 +8,7 @@ const Footer = () => {
     <Wrapper>
       <Links footer />
       <p className="made-by">
-        Made by{' '}
-        <a className="madeBy-link" href="https://github.com/art-ch">
-          art-ch
-        </a>
+        Made by <a href="https://github.com/art-ch">art-ch</a>
       </p>
     </Wrapper>
   );
@@ -31,8 +28,5 @@ const Wrapper = styled.footer`
   .made-by {
     margin: 0;
     font-weight: bold;
-  }
-  .madeBy-link {
-    color: blue;
   }
 `;

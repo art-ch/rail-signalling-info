@@ -244,9 +244,10 @@ export const setOfSigns = [
     id: 23,
     components: (
       <>
-        <Horn tempSignPole />
-        <Horn />
-        <Horn catenaryPole />
+        <SnowPlowSign getReady />
+        <SnowPlowSign />
+        <SnowPlowSign doubled />
+        <SnowPlowSign cut />
       </>
     ),
   },
@@ -254,8 +255,9 @@ export const setOfSigns = [
     id: 24,
     components: (
       <>
-        <HotAxles />
-        <HotAxles turnedOn />
+        <Horn tempSignPole />
+        <Horn />
+        <Horn catenaryPole />
       </>
     ),
   },
@@ -279,6 +281,15 @@ export const setOfSigns = [
     id: 27,
     components: (
       <>
+        <HotAxles />
+        <HotAxles turnedOn />
+      </>
+    ),
+  },
+  {
+    id: 28,
+    components: (
+      <>
         <DropPantograph innerFrameColor="black" />
         <DropPantograph innerFrameColor="black" turnedOn />
         <DropPantograph innerFrameColor="#3c86c3" tempSignPoleSpecial />
@@ -291,7 +302,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 28,
+    id: 29,
     components: (
       <>
         <NeutralZoneAttention innerFrameColor="black" />
@@ -300,7 +311,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 29,
+    id: 30,
     components: (
       <>
         <DropPantograph raise innerFrameColor="black" />
@@ -316,7 +327,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 30,
+    id: 31,
     components: (
       <>
         <TurnOffCurrent innerFrameColor="#3c86c3" />
@@ -324,7 +335,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 31,
+    id: 32,
     components: (
       <>
         <TurnOnCurrent innerFrameColor="#3c86c3" />
@@ -333,7 +344,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 32,
+    id: 33,
     components: (
       <>
         <NeutralZone ending />
@@ -342,7 +353,16 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 33,
+    id: 34,
+    components: (
+      <>
+        <BoundaryPole />
+        <BoundaryPole branch />
+      </>
+    ),
+  },
+  {
+    id: 35,
     components: (
       <>
         <SignWithText
@@ -367,7 +387,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 34,
+    id: 36,
     components: (
       <>
         <SignWithText pole="catenary-pole" text="НТ" red />
@@ -376,16 +396,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 35,
-    components: (
-      <>
-        <BoundaryPole />
-        <BoundaryPole branch />
-      </>
-    ),
-  },
-  {
-    id: 36,
+    id: 37,
     components: (
       <>
         <SignWithText pole="pole" rectangular text="МЕЖА СТАНЦІЇ" />
@@ -394,7 +405,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 37,
+    id: 38,
     components: (
       <>
         <SignWithText pole="pole" rectangular text="ЗУПИНКА ЛОКОМОТИВА" />
@@ -403,7 +414,7 @@ export const setOfSigns = [
     ),
   },
   {
-    id: 38,
+    id: 39,
     components: (
       <>
         <SignWithText
@@ -417,17 +428,6 @@ export const setOfSigns = [
           text="ПЕРЕХОД НА ЦЕНТРАЛЬНУЮ КОНТАКТНУЮ СЕТЬ"
         />
         <SignWithText rectangular catenarySign text="КОНЕЦ КОНТАКТНОЙ СЕТИ" />
-      </>
-    ),
-  },
-  {
-    id: 39,
-    components: (
-      <>
-        <SnowPlowSign getReady />
-        <SnowPlowSign />
-        <SnowPlowSign doubled />
-        <SnowPlowSign cut />
       </>
     ),
   },

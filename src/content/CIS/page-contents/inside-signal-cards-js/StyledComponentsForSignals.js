@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const SignalWrapper = styled.div`
-  width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,19 +114,19 @@ const SignalWrapper = styled.div`
     border-radius: 50%;
   }
   .yellow {
-    background: #ffae42;
-  }
-  .red {
-    background: #fa0000;
+    background: var(--primary6);
   }
   .green {
-    background: #00b600;
+    background: var(--primary7);
+  }
+  .red {
+    background: var(--primary8);
   }
   .moonWhite {
-    background: #c2c5cc;
+    background: var(--primary9);
   }
   .blue {
-    background: #0060fb;
+    background: var(--primary10);
   }
   /* animations */
   .yellow-flickering {
@@ -138,7 +137,7 @@ const SignalWrapper = styled.div`
       background: #565656;
     }
     50% {
-      background: #ffae42;
+      background: var(--primary6);
     }
     100% {
       background: #565656;
@@ -289,6 +288,8 @@ const DwarfManeuveringSignalWrapper = styled.div`
 const CombinedSignalsWrapper = styled.div`
   display: flex;
   align-items: flex-end;
+  justify-content: center;
+  gap: 4rem;
 `;
 
 export {

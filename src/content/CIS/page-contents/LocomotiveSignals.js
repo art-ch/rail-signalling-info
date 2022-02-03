@@ -1,18 +1,24 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
+import {
+  flexCenter,
+  flexCenterCenter,
+  flexColumnCenter,
+  flexColumnCenterCenter,
+} from '../../../styles/Mixins';
 import { CISSignalContext } from '../CISSignalContext';
 import { locomotiveSignals } from '../data';
 
 export const LocomotiveSignals = () => {
   return (
     <section>
-      <h2>Locomotive Signals</h2>
+      <h2 className="section-title">Locomotive Signals</h2>
       {locomotiveSignals.map(({ id, name, info, lights }) => {
         return (
-          <article key={id}>
+          <ArticleWrapper key={id}>
             <Signal lights={lights} />
             <Description name={name} data={info} />
-          </article>
+          </ArticleWrapper>
         );
       })}
     </section>
@@ -66,12 +72,24 @@ const Description = ({ name, data }) => {
   return (
     <article>
       <h3>{name}</h3>
-      <p>
+      <p className="description-content">
         {(zone === 'altp' && Object.values(data)[1]) || Object.values(data)[0]}
       </p>
     </article>
   );
 };
+
+const ArticleWrapper = styled.article`
+  ${flexColumnCenterCenter}
+
+  @media (min-width: 668px) {
+    flex-direction: row;
+    gap: 4rem;
+    .description-content {
+      width: 550px;
+    }
+  }
+`;
 
 const SignalWrapper = styled.div`
   width: 100px;

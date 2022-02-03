@@ -5,8 +5,17 @@ const CISSignalContext = React.createContext();
 const CISSignalProvider = ({ children }) => {
   const [zone, setZone] = useState('all');
   const [signalType, setSignalType] = useState('all');
+  const [signType, setSignType] = useState('all');
 
-  const filterButtons = (id, name) => {
+  const filterSignals = (e, id, name) => {
+    const firstButton =
+      e.target.parentElement.parentElement.firstElementChild.firstElementChild;
+    if (id !== 1) {
+      firstButton.classList.remove('active');
+    } else {
+      firstButton.classList.add('active');
+    }
+
     if (id > 6) {
       setZone('all');
       setSignalType(`${name}`);
@@ -106,14 +115,43 @@ const CISSignalProvider = ({ children }) => {
     }
   };
 
+  const filterSigns = (name) => {
+    setSignType(name);
+  };
+
+  const filteredSigns = (signs) => {
+    let newSigns = [];
+
+    if (signType === 'all') {
+      newSigns = signs;
+    }
+    if (signType === 'hand') {
+      newSigns = [...signs.slice(0, 10)];
+    }
+    if (signType === 'pointers') {
+      newSigns = [...signs.slice(10, 18)];
+    }
+    if (signType === 'textless') {
+      newSigns = [...signs.slice(18, 34)];
+    }
+    if (signType === 'text-signs') {
+      newSigns = [...signs.slice(34)];
+    }
+
+    return newSigns;
+  };
+
   return (
     <CISSignalContext.Provider
       value={{
         zone,
         signalType,
+        signType,
         setZone,
-        filterButtons,
+        filterSignals,
         filterAspects,
+        filterSigns,
+        filteredSigns,
       }}
     >
       {children}

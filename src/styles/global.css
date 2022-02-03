@@ -10,10 +10,11 @@
   --primary3: #a48d6b;
   --primary4: #643e26;
 
-  --primary5: #ffae42;
-  --primary6: #00b600;
-  --primary7: #fa0000;
-  --primary8: #c2c5cc;
+  --primary6: #ffae42;
+  --primary7: #00b600;
+  --primary8: #fa0000;
+  --primary9: #c2c5cc;
+  --primary10: #0060fb;
 
   --primary-font: 'Roboto Slab', serif;
   --headings-font: 'Oswald', sans-serif;
@@ -85,4 +86,18 @@ p {
   border: 1px solid seagreen;
   background: white;
   color: seagreen;
+}
+
+.section-title,
+.entity-title {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 48px;
+  padding: 4rem;
+}
+.entity-title {
+  font-size: 24px;
+  padding: 2rem;
 }
