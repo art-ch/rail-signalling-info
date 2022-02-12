@@ -8,7 +8,11 @@ const Hand = ({ color, path, left }) => {
   return (
     <SignWrapper width="200px" color={color} path={path}>
       <Wrapper>
-        <img src={(left && leftHand) || rightHand} alt="" />
+        <img
+          style={{ width: '96px' }}
+          src={(left && leftHand) || rightHand}
+          alt=""
+        />
       </Wrapper>
     </SignWrapper>
   );

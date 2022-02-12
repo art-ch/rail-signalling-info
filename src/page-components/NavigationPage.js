@@ -17,7 +17,7 @@ const NavigationPage = () => {
           <Link className="zone-name" to="/CIS">
             CIS Zone
           </Link>
-          <p class="zone-info">
+          <p className="zone-info">
             These signals are used on the territories of the former USSR
             countries such as Russia, Belarus, Ukraine and so on
           </p>

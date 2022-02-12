@@ -6,7 +6,7 @@ import { CISSignalContext } from '../CISSignalContext';
 import { setOfSigns } from './signs';
 import { CombinedSignsWrapper } from './signs/StyledComponentsForSigns';
 
-export const SignCards = () => {
+const SignCards = () => {
   const { filteredSigns } = useContext(CISSignalContext);
   const newSignList = filteredSigns(signs);
 
@@ -24,6 +24,8 @@ export const SignCards = () => {
     </section>
   );
 };
+
+export default SignCards;
 
 const Sign = ({ id }) => {
   return (

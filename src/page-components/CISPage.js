@@ -2,9 +2,9 @@ import React from 'react';
 
 import SignalFilterButtons from '../content/CIS/page-contents/SignalFilterButtons';
 import SignalCards from '../content/CIS/page-contents/SignalCards';
-import { LocomotiveSignals } from '../content/CIS/page-contents/LocomotiveSignals';
+import LocomotiveSignals from '../content/CIS/page-contents/LocomotiveSignals';
 import SignFilterButtons from '../content/CIS/page-contents/SignFilterButtons';
-import { SignCards } from '../content/CIS/page-contents/SignCards';
+import SignCards from '../content/CIS/page-contents/SignCards';
 
 const CISPage = () => {
   return (

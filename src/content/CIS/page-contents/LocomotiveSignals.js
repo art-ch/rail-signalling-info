@@ -4,7 +4,7 @@ import { flexColumnCenterCenter } from '../../../styles/Mixins';
 import { CISSignalContext } from '../CISSignalContext';
 import { locomotiveSignals } from '../data';
 
-export const LocomotiveSignals = () => {
+const LocomotiveSignals = () => {
   return (
     <section>
       <h2 className="section-title">Locomotive Signals</h2>
@@ -19,6 +19,8 @@ export const LocomotiveSignals = () => {
     </section>
   );
 };
+
+export default LocomotiveSignals;
 
 const Signal = ({ lights }) => {
   const generateLights = () => {
