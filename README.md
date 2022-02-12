@@ -18,4 +18,4 @@ I also have an idea to create a quiz tool that would utilize all the info websit
 
 # State of development
 
-Stalled
+Slow and steady
