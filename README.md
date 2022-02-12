@@ -1,4 +1,4 @@
-# Rail Signalling Info (is not ready to be deployed yet)
+# [Rail Signalling Info](https://rail-signalling-info.netlify.app/)
 
 This is my first project using React.
 
@@ -18,4 +18,4 @@ I also have an idea to create a quiz tool that would utilize all the info websit
 
 # State of development
 
-Focus is on signals from CIS Region
+Stalled
