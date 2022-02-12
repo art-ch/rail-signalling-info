@@ -17,7 +17,7 @@ const BioHazardSign = ({ sideWays, fromBehind, front }) => {
               <div className="frame innermost-frame">
                 {!sideWays && (
                   <>
-                    <p className="text">
+                    <p className="text sign-text">
                       {fromBehind && <span>Здесь</span>} Заражено
                     </p>
                     {front && <FaSkullCrossbones />}

@@ -31,7 +31,7 @@ export const setOfSigns = [
         <HandheldDisc />
         <HandheldLight lightColor="green" gripColor="black" />
       </>
-    ),
+    )
   },
   {
     id: 2,
@@ -40,7 +40,7 @@ export const setOfSigns = [
         <HandheldFlag lightColor="yellow" folded />
         <HandheldLight lightColor="white" />
       </>
-    ),
+    )
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ export const setOfSigns = [
         <HandheldFlag lightColor="yellow" />
         <HandheldLight lightColor="yellow" />
       </>
-    ),
+    )
   },
   {
     id: 4,
@@ -61,7 +61,7 @@ export const setOfSigns = [
         <HandheldFlag lightColor="yellow" path="stop" />
         <HandheldLight lightColor="white" path="stop" />
       </>
-    ),
+    )
   },
   {
     id: 5,
@@ -70,7 +70,7 @@ export const setOfSigns = [
         <HandheldFlag lightColor="yellow" path="driveForward" />
         <HandheldLight lightColor="white" path="driveForward" />
       </>
-    ),
+    )
   },
   {
     id: 6,
@@ -79,7 +79,7 @@ export const setOfSigns = [
         <HandheldFlag lightColor="yellow" path="driveBackward" />
         <HandheldLight lightColor="white" path="driveBackward" />
       </>
-    ),
+    )
   },
   {
     id: 7,
@@ -89,7 +89,7 @@ export const setOfSigns = [
         <HandheldFlag lightColor="yellow" path="slowDown" />
         <HandheldLight lightColor="white" path="slowDown" />
       </>
-    ),
+    )
   },
   {
     id: 8,
@@ -98,7 +98,7 @@ export const setOfSigns = [
         <Hand path="startBreaking" />
         <HandheldLight lightColor="white" path="startBreaking" />
       </>
-    ),
+    )
   },
   {
     id: 9,
@@ -107,7 +107,7 @@ export const setOfSigns = [
         <Hand path="endBreaking" />
         <HandheldLight lightColor="white" path="endBreaking" />
       </>
-    ),
+    )
   },
   {
     id: 10,
@@ -117,7 +117,7 @@ export const setOfSigns = [
         <Hand left />
         <HandheldLight lightColor="white" path="damagedCatenary" />
       </>
-    ),
+    )
   },
   {
     id: 11,
@@ -127,7 +127,7 @@ export const setOfSigns = [
         <RailSwitchSign mode="straightNight" />
         <RailSwitchSign mode="straightAnalog" />
       </>
-    ),
+    )
   },
   {
     id: 12,
@@ -137,7 +137,7 @@ export const setOfSigns = [
         <RailSwitchSign lightColor="orange" mode="divert" />
         <RailSwitchSign divertAnalog mode="divertAnalog" />
       </>
-    ),
+    )
   },
   {
     id: 13,
@@ -148,7 +148,7 @@ export const setOfSigns = [
         <RailSwitchSign mode="straightNight" />
         <RailSwitchSign mode="straightNight" shrink />
       </>
-    ),
+    )
   },
   {
     id: 14,
@@ -159,7 +159,7 @@ export const setOfSigns = [
         <RailSwitchSign lightColor="orange" mode="divert" />
         <RailSwitchSign lightColor="orange" mode="divert" shrink />
       </>
-    ),
+    )
   },
   {
     id: 15,
@@ -170,7 +170,7 @@ export const setOfSigns = [
         <RailSwitchSign lightColor="orange" mode="divert" />
         <RailSwitchSign mode="straightNight" shrink />
       </>
-    ),
+    )
   },
   {
     id: 16,
@@ -181,7 +181,7 @@ export const setOfSigns = [
         <RailSwitchSign mode="straightNight" />
         <RailSwitchSign lightColor="orange" mode="divert" shrink />
       </>
-    ),
+    )
   },
   {
     id: 17,
@@ -190,7 +190,7 @@ export const setOfSigns = [
         <TrackObstruction />
         <TrackObstruction closed />
       </>
-    ),
+    )
   },
   {
     id: 18,
@@ -200,7 +200,7 @@ export const setOfSigns = [
         <RailSwitchSign lightColor="red" mode="divert" />
         <RailSwitchSign lightColor="white" mode="divert" />
       </>
-    ),
+    )
   },
   {
     id: 19,
@@ -209,7 +209,7 @@ export const setOfSigns = [
         <SlowDownPermanent color="yellow" />
         <SlowDownPermanent color="green" />
       </>
-    ),
+    )
   },
   {
     id: 20,
@@ -218,7 +218,7 @@ export const setOfSigns = [
         <SlowDownTemporary color="yellow" />
         <SlowDownTemporary color="green" />
       </>
-    ),
+    )
   },
   {
     id: 21,
@@ -229,7 +229,7 @@ export const setOfSigns = [
         <DangerousPlaceBoundaries tempPole ending />
         <DangerousPlaceBoundaries ending />
       </>
-    ),
+    )
   },
   {
     id: 22,
@@ -238,7 +238,7 @@ export const setOfSigns = [
         <Stop />
         <StopNightTime />
       </>
-    ),
+    )
   },
   {
     id: 23,
@@ -249,7 +249,7 @@ export const setOfSigns = [
         <SnowPlowSign doubled />
         <SnowPlowSign cut />
       </>
-    ),
+    )
   },
   {
     id: 24,
@@ -259,7 +259,7 @@ export const setOfSigns = [
         <Horn />
         <Horn catenaryPole />
       </>
-    ),
+    )
   },
   {
     id: 25,
@@ -267,7 +267,7 @@ export const setOfSigns = [
       <>
         <BlockBorderALTP />
       </>
-    ),
+    )
   },
   {
     id: 26,
@@ -275,7 +275,7 @@ export const setOfSigns = [
       <>
         <BlockBorderWWLTP />
       </>
-    ),
+    )
   },
   {
     id: 27,
@@ -284,7 +284,7 @@ export const setOfSigns = [
         <HotAxles />
         <HotAxles turnedOn />
       </>
-    ),
+    )
   },
   {
     id: 28,
@@ -299,7 +299,7 @@ export const setOfSigns = [
           turnedOn
         />
       </>
-    ),
+    )
   },
   {
     id: 29,
@@ -308,7 +308,7 @@ export const setOfSigns = [
         <NeutralZoneAttention innerFrameColor="black" />
         <NeutralZoneAttention innerFrameColor="#3c86c3" tempSignPoleSpecial />
       </>
-    ),
+    )
   },
   {
     id: 30,
@@ -324,7 +324,7 @@ export const setOfSigns = [
           doubled
         />
       </>
-    ),
+    )
   },
   {
     id: 31,
@@ -332,7 +332,7 @@ export const setOfSigns = [
       <>
         <TurnOffCurrent innerFrameColor="#3c86c3" />
       </>
-    ),
+    )
   },
   {
     id: 32,
@@ -341,7 +341,7 @@ export const setOfSigns = [
         <TurnOnCurrent innerFrameColor="#3c86c3" />
         <TurnOnCurrent innerFrameColor="#3c86c3" doubled />
       </>
-    ),
+    )
   },
   {
     id: 33,
@@ -350,7 +350,7 @@ export const setOfSigns = [
         <NeutralZone ending />
         <NeutralZone />
       </>
-    ),
+    )
   },
   {
     id: 34,
@@ -359,7 +359,7 @@ export const setOfSigns = [
         <BoundaryPole />
         <BoundaryPole branch />
       </>
-    ),
+    )
   },
   {
     id: 35,
@@ -384,7 +384,7 @@ export const setOfSigns = [
         />
         <SignWithText pole="catenary-pole" line="vertical-line" text="Карст" />
       </>
-    ),
+    )
   },
   {
     id: 36,
@@ -393,7 +393,7 @@ export const setOfSigns = [
         <SignWithText pole="catenary-pole" text="НТ" red />
         <SignWithText pole="catenary-pole" text="КТ" />
       </>
-    ),
+    )
   },
   {
     id: 37,
@@ -402,7 +402,7 @@ export const setOfSigns = [
         <SignWithText pole="pole" rectangular text="МЕЖА СТАНЦІЇ" />
         <SignWithText pole="pole" rectangular text="МЕЖА ПІД'ЇЗНОЇ КОЛІЇ" />
       </>
-    ),
+    )
   },
   {
     id: 38,
@@ -411,7 +411,7 @@ export const setOfSigns = [
         <SignWithText pole="pole" rectangular text="ЗУПИНКА ЛОКОМОТИВА" />
         <SignWithText pole="pole" rectangular text="ЗУПИНКА ПЕРШОГО ВАГОНА" />
       </>
-    ),
+    )
   },
   {
     id: 39,
@@ -429,7 +429,7 @@ export const setOfSigns = [
         />
         <SignWithText rectangular catenarySign text="КОНЕЦ КОНТАКТНОЙ СЕТИ" />
       </>
-    ),
+    )
   },
   {
     id: 40,
@@ -439,6 +439,6 @@ export const setOfSigns = [
         <BioHazardSign sideWays />
         <BioHazardSign fromBehind />
       </>
-    ),
-  },
+    )
+  }
 ];

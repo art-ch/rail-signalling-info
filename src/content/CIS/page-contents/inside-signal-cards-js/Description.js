@@ -36,7 +36,7 @@ const Wrapper = styled.div`
   .description-container {
     display: grid;
     justify-content: center;
-    @media (min-width: 992px) {
+    @media (min-width: 1200px) {
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }

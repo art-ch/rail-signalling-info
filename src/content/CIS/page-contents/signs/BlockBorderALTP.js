@@ -15,7 +15,7 @@ const BlockBorderALTP = () => {
             </div>
           </div>
           <div className="frame number-frame">
-            <p>7</p>
+            <p className="sign-symbol">7</p>
           </div>
           <div className="frame box-frame">
             <div className="handle"></div>

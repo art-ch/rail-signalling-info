@@ -13,7 +13,7 @@ export const aspects = [
       {
         type: 'main',
         description:
-          'Passing is allowed with initial speed restrictions. Next signal is open',
+          'Clear to pass with initial speed restrictions. Next signal is open',
       },
       {
         type: 'entry',
@@ -30,22 +30,22 @@ export const aspects = [
       {
         type: 'route',
         description:
-          'Passing is allowed with initial speed restrictions. Next [route or exit] signal is open',
+          'Clear to pass with initial speed restrictions. Next [route or exit] signal is open',
       },
       {
         type: 'block',
         description:
-          'Passing is allowed with initial speed restrictions. Two or more blocks ahead are clear',
+          'Clear to pass with initial speed restrictions. Two or more blocks ahead are clear',
         atp4Description:
-          'Passing is allowed with initial speed restrictions. Three or more blocks ahead are clear',
+          'Clear to pass with initial speed restrictions. Three or more blocks ahead are clear',
       },
       {
         type: 'cover',
-        description: 'Passing is allowed with initial speed restrictions',
+        description: 'Clear to pass with initial speed restrictions',
       },
       {
         type: 'warning',
-        description: 'Passing is allowed with initial speed restrictions',
+        description: 'Clear to pass with initial speed restrictions',
       },
       { type: 'repeating', description: 'Main signal is open' },
       {
@@ -68,7 +68,7 @@ export const aspects = [
       {
         type: 'main',
         description:
-          'Passing is allowed with initial speed restrictions. Slow down. Next signal is open and sets lowered speed limit',
+          'Clear to pass with initial speed restrictions. Slow down. Next signal is open and sets lowered speed limit',
       },
       {
         type: 'entry',
@@ -78,17 +78,17 @@ export const aspects = [
       {
         type: 'route',
         description:
-          'Passing is allowed with initial speed restrictions. Slow down. Next signal is open and sets lowered speed limit',
+          'Clear to pass with initial speed restrictions. Slow down. Next signal is open and sets lowered speed limit',
       },
       {
         type: 'block',
         description:
-          'Passing is allowed with initial speed restrictions. Entry signal is open and sets lowered speed limit. Train is accepted to the station through the branch track',
+          'Clear to pass with initial speed restrictions. Entry signal is open and sets lowered speed limit. Train is accepted to the station through the branch track',
       },
       {
         type: 'warning',
         description:
-          'Passing is allowed with initial speed restrictions. Entry signal is open and sets lowered speed limit. Train is accepted to the station through the branch track',
+          'Clear to pass with initial speed restrictions. Entry signal is open and sets lowered speed limit. Train is accepted to the station through the branch track',
       },
     ],
   },
@@ -105,8 +105,7 @@ export const aspects = [
     info: [
       {
         type: 'main',
-        description:
-          'Passing is allowed. Be ready to stop. Next signal is closed',
+        description: 'Clear to pass. Be ready to stop. Next signal is closed',
       },
       {
         type: 'entry',
@@ -120,19 +119,16 @@ export const aspects = [
       },
       {
         type: 'route',
-        description:
-          'Passing is allowed. Be ready to stop. Next signal is closed',
+        description: 'Clear to pass. Be ready to stop. Next signal is closed',
       },
       {
         type: 'block',
-        description:
-          'Passing is allowed. Be ready to stop. Next signal is closed',
+        description: 'Clear to pass. Be ready to stop. Next signal is closed',
         atp4Description: 'One block ahead is free',
       },
       {
         type: 'obstruction',
-        description:
-          'Passing is allowed. Be ready to stop. Main signal is closed',
+        description: 'Clear to pass. Be ready to stop. Main signal is closed',
       },
       { type: 'warning', description: 'warning signal description' },
       {
@@ -165,7 +161,7 @@ export const aspects = [
       {
         type: 'main',
         description:
-          'Passing is allowed with lowered speed. Train changes track on upcoming rail switch. Next signal is open',
+          'Clear to pass with lowered speed. Train changes track after passing upcoming rail switch. Next signal is open',
       },
       {
         type: 'entry',
@@ -175,8 +171,8 @@ export const aspects = [
       {
         type: 'exit',
         description:
-          'Train can leave the station with lowered speed. Train changes track on upcoming rail switch. Next signal is open',
-        semiatpDescription: `Train can leave the station with lowered speed. Train changes track on upcoming rail switch. Track is clear up to the next waypoint or station. Next station's entry signal is open and doesn't have preceding warning one`,
+          'Train can leave the station with lowered speed. Train changes track after passing upcoming rail switch. Next signal is open',
+        semiatpDescription: `Train can leave the station with lowered speed. Train changes track after passing upcoming rail switch. Track is clear up to the next waypoint or station. Next station's entry signal is open and doesn't have preceding warning one`,
       },
       {
         type: 'route',
@@ -199,7 +195,7 @@ export const aspects = [
       {
         type: 'main',
         description:
-          'Passing is allowed with lowered speed. Train changes track on upcoming rail switch. Be ready to stop before next signal',
+          'Clear to pass with lowered speed. Train changes track after passing upcoming rail switch. Be ready to stop before next signal',
       },
       {
         type: 'entry',
@@ -209,7 +205,7 @@ export const aspects = [
       {
         type: 'exit',
         description:
-          'Train can leave the station with lowered speed. Train changes track on upcoming rail switch. Next signal is closed',
+          'Train can leave the station with lowered speed. Train changes track after passing upcoming rail switch. Next signal is closed',
         semiatpDescription:
           'Train can leave the station with lowered speed. Track is clear up to the next waypoint or station',
       },
@@ -292,7 +288,7 @@ export const aspects = [
       {
         type: 'exit',
         description:
-          'Train can leave the station with speed limit of 80 km/h (50 mph). Train changes track on upcoming high-speed rail switch. Next signal is open',
+          'Train can leave the station with speed limit of 80 km/h (50 mph). Train changes track after passing upcoming high-speed rail switch. Next signal is open',
       },
       {
         type: 'route',
@@ -353,7 +349,7 @@ export const aspects = [
       {
         type: 'exit',
         description:
-          'Train can leave the station with speed limit of 60 km/h (~37 mph). Train changes track on upcoming high-speed rail switch. Next signal is closed',
+          'Train can leave the station with speed limit of 60 km/h (~37 mph). Train changes track after passing upcoming high-speed rail switch. Next signal is closed',
       },
       {
         type: 'route',
@@ -386,7 +382,7 @@ export const aspects = [
       {
         type: 'exit',
         description:
-          'Train can leave the station with speed limit of 120 km/h (75 mph). Train changes track on upcoming high-speed rail switch. Next signal is open',
+          'Train can leave the station with speed limit of 120 km/h (75 mph). Train changes track after passing upcoming high-speed rail switch. Next signal is open',
       },
       {
         type: 'route',
@@ -447,7 +443,7 @@ export const aspects = [
       {
         type: 'exit',
         description:
-          'Train can leave the station with speed limit of 60 km/h (~37 mph). Train changes track on upcoming high-speed rail switch. Next signal is closed',
+          'Train can leave the station with speed limit of 60 km/h (~37 mph). Train changes track after passing upcoming high-speed rail switch. Next signal is closed',
       },
       {
         type: 'route',
@@ -470,12 +466,12 @@ export const aspects = [
       {
         type: 'fast',
         description:
-          'Passing is allowed with initial speed restrictions. Next signal is open and signalizes that train will change track on upcoming high-speed switch',
+          'Clear to pass with initial speed restrictions. Next signal is open and signalizes that train will change track on upcoming high-speed switch',
       },
       {
         type: 'entry',
         description:
-          'High-Speed Switch Zone special. Passing is allowed with initial speed restrictions. Next [route or exit] signal is open and signalizes that train will change track on upcoming high-speed switch',
+          'High-Speed Switch Zone special. Clear to pass with initial speed restrictions. Next [route or exit] signal is open and signalizes that train will change track on upcoming high-speed switch',
       },
       {
         type: 'route',
@@ -485,7 +481,7 @@ export const aspects = [
       {
         type: 'block',
         description:
-          'Passing is allowed with initial speed restrictions. Entry signal is open and sets speed limit to 80 km/h (50 mph). Train is accepted to the station through the branch track',
+          'Clear to pass with initial speed restrictions. Entry signal is open and sets speed limit to 80 km/h (50 mph). Train is accepted to the station through the branch track',
       },
     ],
   },
@@ -605,8 +601,6 @@ export const aspects = [
       {
         type: 'exit',
         description:
-          'Train can leave the station with speed limit of 40 km/h (25 mph), pass onto the wrong-way track and proceed according to signalization inside locomotive',
-        altpDescription:
           'Train can leave the station. One or two blocks ahead are clear',
       },
     ],
@@ -625,7 +619,7 @@ export const aspects = [
       {
         type: 'exit',
         description:
-          'Train can leave the station with lowered speed. Train changes track on upcoming rail switch. Two or more blocks ahead are clear',
+          'Train can leave the station with lowered speed. Train changes track after passing upcoming rail switch. Two or more blocks ahead are clear',
       },
     ],
   },
@@ -643,7 +637,7 @@ export const aspects = [
       {
         type: 'exit',
         description:
-          'Train can leave the station with lowered speed. Train changes track on upcoming rail switch. One block ahead is clear',
+          'Train can leave the station with lowered speed. Train changes track after passing upcoming rail switch. One block ahead is clear',
       },
     ],
   },
@@ -661,7 +655,7 @@ export const aspects = [
       {
         type: 'exit',
         description:
-          'Train can leave the station with speed limit of 80 km/h (50 mph). Train changes track on upcoming high-speed rail switch. Two or more blocks ahead are clear',
+          'Train can leave the station with speed limit of 80 km/h (50 mph). Train changes track after passing upcoming high-speed rail switch. Two or more blocks ahead are clear',
       },
     ],
   },
@@ -679,7 +673,7 @@ export const aspects = [
       {
         type: 'exit',
         description:
-          'Train can leave the station with speed limit of 60 km/h (~37 mph). Train changes track on upcoming high-speed rail switch. One block ahead is clear',
+          'Train can leave the station with speed limit of 60 km/h (~37 mph). Train changes track after passing upcoming high-speed rail switch. One block ahead is clear',
       },
     ],
   },
@@ -697,7 +691,7 @@ export const aspects = [
       {
         type: 'exit',
         description:
-          'Train can leave the station with speed limit of 120 km/h (75 mph). Train changes track on upcoming high-speed rail switch. Two or more blocks ahead are clear',
+          'Train can leave the station with speed limit of 120 km/h (75 mph). Train changes track after passing upcoming high-speed rail switch. Two or more blocks ahead are clear',
       },
     ],
   },
@@ -715,7 +709,7 @@ export const aspects = [
       {
         type: 'exit',
         description:
-          'Train can leave the station with speed limit of 60 km/h (~37 mph). Train changes track on upcoming high-speed rail switch. One block ahead is clear',
+          'Train can leave the station with speed limit of 60 km/h (~37 mph). Train changes track after passing upcoming high-speed rail switch. One block ahead is clear',
       },
     ],
   },
@@ -765,8 +759,11 @@ export const aspects = [
       l5: 'moonWhite',
     },
     info: [
-      { type: 'entry', description: 'entry signal description' },
-      { type: 'exit', description: 'exit signal description' },
+      {
+        type: 'exit',
+        description:
+          'Train can leave the station with speed limit of 40 km/h (25 mph), pass onto the wrong-way track and proceed according to locomotive signalization.',
+      },
     ],
   },
   {
@@ -783,12 +780,12 @@ export const aspects = [
       {
         type: 'entry',
         description:
-          'Used only when block length is shorter than braking distance. Passing is allowed with lowered speed',
+          'Used only when block length is shorter than braking distance. Clear to pass with lowered speed',
       },
       {
         type: 'route',
         description:
-          'Used only when block length is shorter than braking distance. Passing is allowed with lowered speed',
+          'Used only when block length is shorter than braking distance. Clear to pass with lowered speed',
       },
       { type: 'block', description: 'Two blocks ahead are clear' },
       {

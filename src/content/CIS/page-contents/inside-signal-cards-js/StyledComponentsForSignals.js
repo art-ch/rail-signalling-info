@@ -290,6 +290,9 @@ const CombinedSignalsWrapper = styled.div`
   align-items: flex-end;
   justify-content: center;
   gap: 4rem;
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
 `;
 
 export {

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import {
   flexCenterSpaceBetween,
-  flexColumnCenter,
+  flexColumnCenter
 } from '../../../styles/Mixins';
 import { aspects } from '../data';
 import { CISSignalContext } from '../CISSignalContext';

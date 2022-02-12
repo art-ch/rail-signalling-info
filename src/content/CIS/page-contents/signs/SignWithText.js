@@ -24,12 +24,7 @@ export const SignWithText = ({
             {rectangular ? (
               <RectangularOne text={text} />
             ) : (
-              <SmallOne
-                exclamation={exclamation}
-                line={line}
-                text={text}
-                red={red}
-              />
+              <SmallOne exclamation={exclamation} line={line} text={text} />
             )}
           </div>
         </div>
@@ -43,14 +38,20 @@ const SmallOne = ({ exclamation, line, text }) => {
     <div>
       {exclamation && <h2 className="exclamation">!</h2>}
       <div className={line}></div>
-      <h3 className={exclamation && 'small-sign-small-text'}>{text}</h3>
+      <h3
+        className={`sign-text ${
+          exclamation ? 'small-sign-small-text' : 'small-sign-text'
+        }`}
+      >
+        {text}
+      </h3>
       {line === 'vertical-line' && <div className="vertical-line-bottom"></div>}
     </div>
   );
 };
 
 const RectangularOne = ({ text }) => {
-  return <h3 className="rectangular-sign-text">{text}</h3>;
+  return <h3 className="rectangular-sign-text sign-text">{text}</h3>;
 };
 
 const Wrapper = styled.div`
@@ -68,7 +69,7 @@ const Wrapper = styled.div`
     position: absolute;
   }
   .exclamation {
-    inset: -28px 0;
+    inset: -2px 4px;
   }
   .diagonal-line,
   .horizontal-line,
@@ -82,9 +83,13 @@ const Wrapper = styled.div`
     width: 70px;
     transform: rotate(-45deg);
   }
+  .small-sign-text {
+    text-align: center;
+    ${({ red }) => red && 'color: red'}
+  }
   .small-sign-small-text {
-    bottom: -12px;
-    right: 0;
+    bottom: 1px;
+    right: 3px;
     font-size: 12px;
   }
   .horizontal-line,
@@ -93,16 +98,16 @@ const Wrapper = styled.div`
     height: 10px;
   }
   .horizontal-line {
-    transform: translateY(200%);
+    transform: translateY(0%);
     width: 52px;
   }
   .vertical-line {
-    transform: rotate(90deg) translate(95%, -150%);
+    transform: rotate(90deg) translate(5%, -150%);
     width: 21px;
   }
   .vertical-line-bottom {
-    transform: rotate(90deg) translate(-150%, -200%);
-    width: 11px;
+    transform: rotate(90deg) translate(15%, -175%);
+    width: 16px;
   }
   .rectangular-sign-text {
     text-align: center;

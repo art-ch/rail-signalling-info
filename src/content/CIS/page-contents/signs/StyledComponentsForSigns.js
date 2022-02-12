@@ -209,7 +209,9 @@ const SignWrapper = styled.div`
 
 const CombinedSignsWrapper = styled.div`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  margin: 3rem 0;
 `;
 
 export { SignWrapper, CombinedSignsWrapper };

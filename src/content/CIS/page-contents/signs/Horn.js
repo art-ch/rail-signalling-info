@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { flexCenterCenter } from '../../../../styles/Mixins';
 import { SignWrapper } from './StyledComponentsForSigns';
 
 const Horn = ({ tempSignPole, catenaryPole }) => {
@@ -15,7 +16,7 @@ const Horn = ({ tempSignPole, catenaryPole }) => {
         >
           <div className="frame">
             <div className="upperPart">
-              <p>C</p>
+              <h4 className="sign-symbol">C</h4>
             </div>
             <div className="lowerPart"></div>
           </div>
@@ -36,9 +37,7 @@ const Wrapper = styled.div`
     border-top-right-radius: 50%;
     clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
     .upperPart {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      ${flexCenterCenter}
       height: 70%;
       font-weight: bold;
       font-size: 26px;

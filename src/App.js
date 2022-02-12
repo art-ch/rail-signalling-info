@@ -6,7 +6,7 @@ import {
   NavigationPage,
   ContactPage,
   AboutPage,
-  CISPage,
+  CISPage
 } from './page-components/index';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 

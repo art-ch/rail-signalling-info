@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import styled from 'styled-components';
+import { flexColumnCenterCenter } from '../../../styles/Mixins';
 import { signs } from '../data';
 import { CISSignalContext } from '../CISSignalContext';
 import { setOfSigns } from './signs';
@@ -41,9 +43,13 @@ const Sign = ({ id }) => {
 };
 const Description = ({ name, description }) => {
   return (
-    <article>
+    <DescriptionWrapper>
       <h3 className="entity-title">{name}</h3>
-      <p>{description}</p>
-    </article>
+      <p className="description-text">{description}</p>
+    </DescriptionWrapper>
   );
 };
+
+const DescriptionWrapper = styled.section`
+  ${flexColumnCenterCenter};
+`;
