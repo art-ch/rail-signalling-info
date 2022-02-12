@@ -1,9 +1,5 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import {
-  flexCenterSpaceBetween,
-  flexColumnCenter
-} from '../../../styles/Mixins';
 import { aspects } from '../data';
 import { CISSignalContext } from '../CISSignalContext';
 import { Signal, Description } from './inside-signal-cards-js/index';

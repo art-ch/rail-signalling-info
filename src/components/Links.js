@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { flexCenter, flexColumn } from '../styles/Mixins';
+import { flexColumn } from '../styles/Mixins';
 
 export const Links = ({ mobile, footer, setShowLinks }) => {
   const links = [
     { id: 1, linkName: 'Home', href: '/' },
     { id: 2, linkName: 'Navigation', href: '/navigate' },
     { id: 3, linkName: 'Contact', href: '/contact' },
-    { id: 4, linkName: 'About', href: '/about' },
+    { id: 4, linkName: 'About', href: '/about' }
   ];
 
   return (
