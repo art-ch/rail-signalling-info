@@ -6,9 +6,9 @@ import { flexColumn } from '../styles/Mixins';
 export const Links = ({ mobile, footer, setShowLinks }) => {
   const links = [
     { id: 1, linkName: 'Home', href: '/' },
-    { id: 2, linkName: 'Navigation', href: '/navigate' },
-    { id: 3, linkName: 'Contact', href: '/contact' },
-    { id: 4, linkName: 'About', href: '/about' }
+    { id: 2, linkName: 'Navigation', href: 'navigate' },
+    { id: 3, linkName: 'Contact', href: 'contact' },
+    { id: 4, linkName: 'About', href: 'about' }
   ];
 
   return (
