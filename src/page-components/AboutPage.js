@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const AboutPage = () => {
   return (
     <Wrapper>
-      <h1>About</h1>
+      <h1 className="page-title">About</h1>
       <p>Hello and Welcome! My name is Artem</p>
       <p>
         I'm a huge railway fan for as long as I can remember myself. My favorite
@@ -28,5 +28,7 @@ const AboutPage = () => {
 export default AboutPage;
 
 const Wrapper = styled.main`
+  justify-content: flex-start;
+  height: 60vh;
   margin-bottom: 5rem;
 `;

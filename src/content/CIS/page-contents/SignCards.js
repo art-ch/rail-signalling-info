@@ -15,10 +15,10 @@ const SignCards = () => {
       <h2 className="section-title">Signs</h2>
       {newSignList.map(({ id, sign, description }) => {
         return (
-          <article key={id}>
+          <ArticleWrapper key={id}>
             <Sign id={id} />
             <Description name={sign} description={description} />
-          </article>
+          </ArticleWrapper>
         );
       })}
     </section>
@@ -51,6 +51,11 @@ const Description = ({ name, description }) => {
     </DescriptionWrapper>
   );
 };
+
+const ArticleWrapper = styled.article`
+  background: #dbdbdb;
+  padding-top: 1rem;
+`;
 
 const DescriptionWrapper = styled.section`
   ${flexColumnCenterCenter};

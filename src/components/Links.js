@@ -23,7 +23,11 @@ export const Links = ({ mobile, footer, setShowLinks }) => {
       {links.map(({ id, linkName, href }) => {
         return (
           <li key={id} className="link">
-            <Link to={href} onClick={() => setShowLinks(false)}>
+            <Link
+              className="no-underline-a"
+              to={href}
+              onClick={() => setShowLinks(false)}
+            >
               {linkName}
             </Link>
           </li>

@@ -15,7 +15,7 @@ const HomePage = () => {
           around the world
         </p>
 
-        <Link to="/navigate" className="btn">
+        <Link to="/navigate" className="btn no-underline-a">
           Navigation Page
         </Link>
       </div>
@@ -27,13 +27,13 @@ export default HomePage;
 
 const Wrapper = styled.main`
   position: relative;
-  height: 85vh;
+  height: 100vh;
   background: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0.5) 100%
     ),
-    url(${HomePageTrain}) 50% 70% / cover no-repeat;
+    url(${HomePageTrain}) 50% 80% / cover no-repeat fixed;
   .text-container {
     ${flexColumnCenterCenter}
     text-align: center;

@@ -28,4 +28,6 @@ export default SignalCards;
 
 const Wrapper = styled.article`
   margin: 5rem 0;
+  padding-top: 2rem;
+  background: #dbdbdb;
 `;

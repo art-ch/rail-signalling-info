@@ -9,6 +9,7 @@
   --primary2: #8b939a;
   --primary3: #a48d6b;
   --primary4: #643e26;
+  --primary5: #0a0603;
 
   --primary6: #ffae42;
   --primary7: #00b600;
@@ -22,19 +23,16 @@
   --radius: 5px;
 }
 body {
-  position: relative;
-  min-height: 100vh;
   font-family: var(--primary-font);
-}
-#root {
-  padding-bottom: 2.5rem;
 }
 
 main {
+  min-height: 73.3vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
 }
 section {
   width: 100%;
@@ -43,8 +41,7 @@ section {
   margin-bottom: 5rem;
 }
 footer {
-  position: absolute;
-  bottom: 0;
+  position: relative;
   width: 100%;
   height: 2.5rem;
 }
@@ -66,6 +63,9 @@ ul {
 }
 a {
   color: black;
+}
+.no-underline-a{
+  text-decoration: none;
 }
 p {
   margin-bottom: 1.5rem;
@@ -93,6 +93,9 @@ p {
   text-align: center;
 }
 
+.page-title{
+  padding-top: 2rem;
+}
 .section-title {
   font-size: 48px;
   padding: 4rem;

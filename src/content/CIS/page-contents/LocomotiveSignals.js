@@ -78,6 +78,7 @@ const Description = ({ name, data }) => {
 
 const ArticleWrapper = styled.article`
   ${flexColumnCenterCenter}
+  background: #dbdbdb;
 
   @media (min-width: 668px) {
     flex-direction: row;
