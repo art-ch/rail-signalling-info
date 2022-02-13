@@ -29,6 +29,6 @@ export default AboutPage;
 
 const Wrapper = styled.main`
   justify-content: flex-start;
-  height: 64vh;
+  height: 70vh;
   margin-bottom: 5rem;
 `;
