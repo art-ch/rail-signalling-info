@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactPage = () => {
   return (
-    <main style={{ justifyContent: 'flex-start', height: '81.7vh' }}>
+    <main style={{ justifyContent: 'flex-start', height: '82vh' }}>
       <h1 className="page-title">Contact</h1>
       <p>
         You can contact me through email{' '}
