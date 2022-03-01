@@ -33,7 +33,6 @@ export default NavigationPage;
 
 const Wrapper = styled.main`
   justify-content: flex-start;
-  height: 82vh;
   .navigation-link {
     padding: 1rem;
     .zone-name {
