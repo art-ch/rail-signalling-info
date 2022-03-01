@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { flexCenterSpaceBetween } from '../styles/Mixins';
+import { flexCenterSpaceBetween } from '../styled/Mixins';
 import { Links } from './Links';
 import { GiHamburgerMenu } from 'react-icons/gi';
 

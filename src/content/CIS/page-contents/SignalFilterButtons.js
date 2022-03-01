@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CISSignalContext } from '../CISSignalContext';
 import { signalFilters } from '../data';
-import { flexCenterCenter } from '../../../styles/Mixins';
+import { flexCenterCenter } from '../../../styled/Mixins';
 
 const SignalFilterButtons = () => {
   const { zone, signalType, filterSignals } = useContext(CISSignalContext);

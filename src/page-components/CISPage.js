@@ -9,11 +9,13 @@ import SignCards from '../content/CIS/page-contents/SignCards';
 const CISPage = () => {
   return (
     <main>
-      <h1>Signals from CIS Region</h1>
-      <p>
-        These signals are used on the territories of the former USSR countries
-        such as Belarus, Russia, Ukraine and so on
-      </p>
+      <heading className="page-heading">
+        <h1>Signals from CIS Region</h1>
+        <p>
+          These signals are used on the territories of the former USSR countries
+          such as Belarus, Russia, Ukraine and so on
+        </p>
+      </heading>
       <SignalFilterButtons />
       <SignalCards />
       <LocomotiveSignals />

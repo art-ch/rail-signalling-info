@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import HomePageTrain from '../images/homepage-train.png';
-import { flexColumnCenterCenter } from '../styles/Mixins';
+import { flexColumnCenterCenter } from '../styled/Mixins';
 
 const HomePage = () => {
   return (

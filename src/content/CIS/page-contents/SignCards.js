@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { flexColumnCenterCenter } from '../../../styles/Mixins';
+import { flexColumnCenterCenter } from '../../../styled/Mixins';
 import { signs } from '../data';
 import { CISSignalContext } from '../CISSignalContext';
 import { setOfSigns } from './signs';

@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&family=Roboto+Slab&display=swap');
+import { createGlobalStyle } from 'styled-components';
 
+const GlobalStyle = createGlobalStyle`
 * {
   padding: 0;
   margin: 0;
@@ -82,6 +83,11 @@ p {
   color: seagreen;
 }
 
+.page-heading{
+  text-align: center;
+  margin: 2rem;
+}
+
 .section-title,
 .entity-title {
   text-align: center;
@@ -92,7 +98,6 @@ p {
 }
 .section-title {
   font-size: 48px;
-  padding: 4rem;
 }
 .entity-title {
   font-size: 24px;
@@ -106,3 +111,6 @@ p {
 .entity {
   background: red;
 }
+`;
+
+export default GlobalStyle;

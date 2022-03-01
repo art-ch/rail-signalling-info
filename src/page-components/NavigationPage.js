@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { flexColumnCenter } from '../styles/Mixins';
+import { flexColumnCenter } from '../styled/Mixins';
 import background from '../images/zone-navigation-images/cis.png';
 
 const NavigationPage = () => {

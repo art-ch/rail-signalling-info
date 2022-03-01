@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { flexColumn } from '../styles/Mixins';
+import { flexColumn } from '../styled/Mixins';
 
 export const Links = ({ mobile, footer, setShowLinks }) => {
   const links = [
