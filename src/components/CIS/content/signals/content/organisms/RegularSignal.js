@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { CISSignalContext } from '../../CISSignalContext';
-import { SignalWrapper } from '../inside-signal-cards-js/StyledComponentsForSignals';
+import { CISSignalContext } from '../../../../CISSignalContext';
+import { SignalWrapper } from '../ecosystems/StyledComponentsForSignals';
 import {
   ThreeAspectPlate,
   SpecialBlockSignalBoard,
   ConditionalSignalBoard,
-  SignalTypeSign,
-} from '../inside-single-signals';
+  SignalTypeSign
+} from '../molecules';
 
 const RegularSignal = ({ aspect, lights: { l1, l2, l3, l5 } }) => {
   const { zone, signalType } = useContext(CISSignalContext);

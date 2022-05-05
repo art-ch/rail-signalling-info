@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { aspects } from '../data';
-import { CISSignalContext } from '../CISSignalContext';
-import { Signal, Description } from './inside-signal-cards-js/index';
+import { aspects } from '../../data';
+import { CISSignalContext } from '../../CISSignalContext';
+import { Signal, Description } from './content/ecosystems/index';
 
 const SignalCards = () => {
   const { filterAspects } = useContext(CISSignalContext);

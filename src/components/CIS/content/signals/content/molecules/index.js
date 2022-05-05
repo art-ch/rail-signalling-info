@@ -17,5 +17,5 @@ export {
   RoutePointerBoard,
   SignalTypeSign,
   Stripes,
-  OutOfServicePlanks,
+  OutOfServicePlanks
 };

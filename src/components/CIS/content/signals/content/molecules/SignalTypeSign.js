@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { signalTypeSigns } from '../../data';
-import { CISSignalContext } from '../../CISSignalContext';
+import { signalTypeSigns } from '../../../../data';
+import { CISSignalContext } from '../../../../CISSignalContext';
 import styled from 'styled-components';
 
 const SignalTypeSign = ({ aspect, signalSize }) => {

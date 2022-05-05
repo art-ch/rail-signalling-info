@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { CISSignalContext } from '../../CISSignalContext';
-import { OneAspectPlate, SignalTypeSign } from '../inside-single-signals';
-import { SignalWrapper } from '../inside-signal-cards-js/StyledComponentsForSignals';
+import { CISSignalContext } from '../../../../CISSignalContext';
+import { OneAspectPlate, SignalTypeSign } from '../molecules';
+import { SignalWrapper } from '../ecosystems/StyledComponentsForSignals';
 
 const DiamondShapedSignal = ({ id, aspect, lights }) => {
   const { signalType } = useContext(CISSignalContext);

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import SignalFilterButtons from '../content/CIS/page-contents/SignalFilterButtons';
-import SignalCards from '../content/CIS/page-contents/SignalCards';
-import LocomotiveSignals from '../content/CIS/page-contents/LocomotiveSignals';
-import SignFilterButtons from '../content/CIS/page-contents/SignFilterButtons';
-import SignCards from '../content/CIS/page-contents/SignCards';
+import SignalFilterButtons from '../components/CIS/content/signals/SignalFilterButtons';
+import SignalCards from '../components/CIS/content/signals/SignalCards';
+import LocomotiveSignals from '../components/CIS/content/signals/LocomotiveSignals';
+import SignFilterButtons from '../components/CIS/content/signs/SignFilterButtons';
+import SignCards from '../components/CIS/content/signs/SignCards';
 
 const CISPage = () => {
   return (

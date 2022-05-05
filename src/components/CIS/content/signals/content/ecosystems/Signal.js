@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CISSignalContext } from '../../CISSignalContext';
+import { CISSignalContext } from '../../../../CISSignalContext';
 import {
   BiggestSignal,
   BigSignal,
@@ -8,8 +8,8 @@ import {
   InvitationalSignal,
   DwarfSignal,
   DwarfManeuveringSignal,
-  DiamondShapedSignal,
-} from '../single-signals/index';
+  DiamondShapedSignal
+} from '../organisms/index';
 import { CombinedSignalsWrapper } from './StyledComponentsForSignals';
 
 const Signal = ({ id, aspect, lights }) => {

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { CISSignalContext } from '../../CISSignalContext';
-import { TwoAspectPlate, SignalTypeSign } from '../inside-single-signals';
-import { SignalWrapper } from '../inside-signal-cards-js/StyledComponentsForSignals';
+import { CISSignalContext } from '../../../../CISSignalContext';
+import { TwoAspectPlate, SignalTypeSign } from '../molecules';
+import { SignalWrapper } from '../ecosystems/StyledComponentsForSignals';
 
 const SmallSignal = ({ aspect, lights: { l1, l2, l3, l5 } }) => {
   const { signalType } = useContext(CISSignalContext);

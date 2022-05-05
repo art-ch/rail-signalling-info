@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { flexColumnCenterCenter } from '../../../styled/Mixins';
-import { CISSignalContext } from '../CISSignalContext';
-import { locomotiveSignals } from '../data';
+import { flexColumnCenterCenter } from '../../../../styled/Mixins';
+import { CISSignalContext } from '../../CISSignalContext';
+import { locomotiveSignals } from '../../data';
 
 const LocomotiveSignals = () => {
   return (

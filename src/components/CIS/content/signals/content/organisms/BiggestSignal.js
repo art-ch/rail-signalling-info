@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { SignalWrapper } from '../inside-signal-cards-js/StyledComponentsForSignals';
-import { CISSignalContext } from '../../CISSignalContext';
+import { SignalWrapper } from '../ecosystems/StyledComponentsForSignals';
+import { CISSignalContext } from '../../../../CISSignalContext';
 import {
   ThreeAspectPlate,
   TwoAspectPlate,
@@ -9,8 +9,8 @@ import {
   ShortBlockSign,
   RoutePointerBoard,
   SignalTypeSign,
-  OutOfServicePlanks,
-} from '../inside-single-signals/';
+  OutOfServicePlanks
+} from '../molecules';
 
 const BiggestSignal = ({ id, aspect, lights: { l1, l2, l3, l4, l5 } }) => {
   const { signalType } = useContext(CISSignalContext);

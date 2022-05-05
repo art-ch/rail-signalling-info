@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CISSignalContext } from '../../CISSignalContext';
+import { CISSignalContext } from '../../../../CISSignalContext';
 import styled from 'styled-components';
 
 const RoutePointerBoard = ({ id, aspect }) => {

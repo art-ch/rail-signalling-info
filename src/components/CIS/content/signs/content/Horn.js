@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { flexCenterCenter } from '../../../../styled/Mixins';
+import { flexCenterCenter } from '../../../../../styled/Mixins';
 import { SignWrapper } from './StyledComponentsForSigns';
 
 const Horn = ({ tempSignPole, catenaryPole }) => {

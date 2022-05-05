@@ -1,5 +1,5 @@
 import React from 'react';
-import { SpecialBlockSignalBoard } from '../inside-single-signals/';
+import { SpecialBlockSignalBoard } from '../../signals/content/molecules';
 import { SignWrapper } from './StyledComponentsForSigns';
 
 const BlockBorderWWLTP = () => {

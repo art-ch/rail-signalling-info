@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CISSignalContext } from '../../CISSignalContext';
+import { CISSignalContext } from '../../../../CISSignalContext';
 
 const Description = ({ aspect, description }) => {
   const { zone } = useContext(CISSignalContext);

@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { CISSignalContext } from '../../CISSignalContext';
+import { CISSignalContext } from '../../../../CISSignalContext';
 import {
   SignalWrapper,
-  DwarfManeuveringSignalWrapper,
-} from '../inside-signal-cards-js/StyledComponentsForSignals';
-import { SignalTypeSign } from '../inside-single-signals/';
+  DwarfManeuveringSignalWrapper
+} from '../ecosystems/StyledComponentsForSignals';
+import { SignalTypeSign } from '../molecules';
 
 const DwarfManeuveringSignal = ({ aspect }) => {
   const { signalType } = useContext(CISSignalContext);

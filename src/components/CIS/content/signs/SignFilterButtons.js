@@ -1,26 +1,23 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CISSignalContext } from '../CISSignalContext';
-import { signalFilters } from '../data';
-import { flexCenterCenter } from '../../../styled/Mixins';
+import { CISSignalContext } from '../../CISSignalContext';
+import { signFilters } from '../../data';
+import { flexCenterCenter } from '../../../../styled/Mixins';
 
-const SignalFilterButtons = () => {
-  const { zone, signalType, filterSignals } = useContext(CISSignalContext);
-
+const SignFilterButtons = () => {
+  const { signType, filterSigns } = useContext(CISSignalContext);
   return (
-    <Wrapper className="btn-wrapper">
-      {signalFilters.map((buttonArray, index) => {
+    <Wrapper>
+      {signFilters.map((buttonArray, index) => {
         return (
           <div className="btn-container" key={index}>
             {buttonArray.map((button) => {
               const { id, name, displayName } = button;
               return (
                 <button
-                  className={`btn filter-btn ${
-                    (zone === name || signalType === name) && 'active'
-                  }`}
+                  className={`btn filter-btn ${signType === name && 'active'}`}
                   id={id}
-                  onClick={(e) => filterSignals(e, id, name)}
+                  onClick={() => filterSigns(name)}
                   key={id}
                 >
                   {displayName}
@@ -34,7 +31,7 @@ const SignalFilterButtons = () => {
   );
 };
 
-export default SignalFilterButtons;
+export default SignFilterButtons;
 
 const Wrapper = styled.section`
   margin-bottom: 0;

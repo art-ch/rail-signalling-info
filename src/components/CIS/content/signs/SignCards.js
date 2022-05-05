@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { flexColumnCenterCenter } from '../../../styled/Mixins';
-import { signs } from '../data';
-import { CISSignalContext } from '../CISSignalContext';
-import { setOfSigns } from './signs';
-import { CombinedSignsWrapper } from './signs/StyledComponentsForSigns';
+import { flexColumnCenterCenter } from '../../../../styled/Mixins';
+import { signs } from '../../data';
+import { CISSignalContext } from '../../CISSignalContext';
+import { setOfSigns } from './content';
+import { CombinedSignsWrapper } from './content/StyledComponentsForSigns';
 
 const SignCards = () => {
   const { filteredSigns } = useContext(CISSignalContext);

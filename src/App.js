@@ -1,12 +1,12 @@
 import { Header, Footer } from './components/';
-import { CISSignalProvider } from './content/CIS/CISSignalContext';
+import { CISSignalProvider } from './components/CIS/CISSignalContext';
 import {
   HomePage,
   NavigationPage,
   ContactPage,
   AboutPage,
   CISPage
-} from './page-components/index';
+} from './pages/index';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {

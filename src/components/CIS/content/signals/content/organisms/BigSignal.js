@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
-import { CISSignalContext } from '../../CISSignalContext';
-import { SignalWrapper } from '../inside-signal-cards-js/StyledComponentsForSignals';
+import { CISSignalContext } from '../../../../CISSignalContext';
+import { SignalWrapper } from '../ecosystems/StyledComponentsForSignals';
 import {
   TwoAspectPlate,
   OneAspectPlate,
   Stripes,
   RoutePointerBoard,
   ConditionalSignalBoard,
-  SignalTypeSign,
-} from '../inside-single-signals/';
+  SignalTypeSign
+} from '../molecules';
 
 const BigSignal = ({ aspect, lights: { l1, l2, l3, l4, l5 } }) => {
   const { zone, signalType } = useContext(CISSignalContext);
