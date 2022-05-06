@@ -1,15 +1,13 @@
-import React from 'react';
-
 const AboutPage = () => {
   return (
     <main>
       <h1 className="page-title">About</h1>
       <p>Hello and Welcome! My name is Artem</p>
       <p>
-        I'm a huge railway fan for as long as I can remember myself. My favorite
-        part about railway is signalling. When I was small I created pictures of
-        each aspect on a small piece of paper with the meaning on the back.
-        Sadly, with years passing by, I lost them all.
+        I&apos;m a huge railway fan for as long as I can remember myself. My
+        favorite part about railway is signalling. When I was small I created
+        pictures of each aspect on a small piece of paper with the meaning on
+        the back. Sadly, with years passing by, I lost them all.
       </p>
       <p>
         Now, that I started to learn web development, I decided to recreate what

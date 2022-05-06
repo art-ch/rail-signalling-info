@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { flexCenterSpaceBetween } from '../styled/Mixins';
+import { flexCenterSpaceBetween } from '../theme/Mixins';
 import { Links } from './Links';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
-const Header = () => {
+const Header = ({ background }) => {
   const [showLinks, setShowLinks] = useState(false);
   return (
     <>
-      <Wrapper>
+      <Wrapper background={background}>
         <div className="inner-centering">
           <div className="logo">
             <h1>Logo</h1>
@@ -30,7 +30,8 @@ const Header = () => {
 export default Header;
 
 const Wrapper = styled.header`
-  background: var(--primary9);
+  background: ${({ background }) => background};
+
   .inner-centering {
     ${flexCenterSpaceBetween};
     max-width: 1170px;

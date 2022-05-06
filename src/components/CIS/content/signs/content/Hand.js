@@ -1,14 +1,14 @@
-import React from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
-import rightHand from './img/right-hand.png';
-import leftHand from './img/left-hand.png';
+import rightHand from '../../../../../../public/images/hand-signs/right-hand.png';
+import leftHand from '../../../../../../public/images/hand-signs/left-hand.png';
 import { SignWrapper } from './StyledComponentsForSigns';
 
 const Hand = ({ color, path, left }) => {
   return (
     <SignWrapper width="200px" color={color} path={path}>
       <Wrapper>
-        <img
+        <Image
           style={{ width: '96px' }}
           src={(left && leftHand) || rightHand}
           alt=""
