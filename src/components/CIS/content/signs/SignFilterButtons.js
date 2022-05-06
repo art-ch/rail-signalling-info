@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CISSignalContext } from '../../CISSignalContext';
 import { signFilters } from '../../data';
-import { flexCenterCenter } from '../../../../styled/Mixins';
+import { flexCenterCenter } from '../../../../theme/Mixins';
 
 const SignFilterButtons = () => {
   const { signType, filterSigns } = useContext(CISSignalContext);

@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { flexColumnCenter } from '../styled/Mixins';
-import background from '../images/zone-navigation-images/cis.png';
+import Link from 'next/link';
+import { flexColumnCenter } from '../theme/Mixins';
+// import background from '../images/zone-navigation-images/cis.png';
 
+// background = { background };
 const NavigationPage = () => {
   return (
-    <Wrapper background={background}>
+    <Wrapper>
       <h1 className="page-title">Navigation</h1>
       <p>
         All signalling systems are divided by their respected country or area of
@@ -15,9 +16,11 @@ const NavigationPage = () => {
       </p>
       <div className="links-container">
         <div className="navigation-link">
-          <Link className="zone-name" to="/CIS">
-            <span className="link-is-loading">Please wait</span> CIS Zone{' '}
-            <span className="link-is-loading">is now loading...</span>
+          <Link href="/zones/cis">
+            <a className="zone-name">
+              <span className="link-is-loading">Please wait</span> CIS Zone{' '}
+              <span className="link-is-loading">is now loading...</span>
+            </a>
           </Link>
           <p className="zone-info">
             These signals are used on the territories of the former USSR
@@ -48,10 +51,10 @@ const Wrapper = styled.main`
     :hover {
       ${flexColumnCenter}
       background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.5) 100%
-    ), url(${background}) 50% 70%/cover no-repeat;
+          0deg,
+          rgba(0, 0, 0, 0.5) 0%,
+          rgba(0, 0, 0, 0.5) 100%
+        ), url('/images/zone-navigation-images/cis.png') 50% 70%/cover no-repeat;
       color: white;
       width: 300px;
       .zone-name {
