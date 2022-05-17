@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { flexColumnCenter } from '../theme/Mixins';
-// import background from '../images/zone-navigation-images/cis.png';
 
-// background = { background };
 const NavigationPage = () => {
   return (
     <Wrapper>
