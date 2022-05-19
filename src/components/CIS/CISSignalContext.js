@@ -36,9 +36,9 @@ const CISSignalProvider = ({ children }) => {
     if (zone === 'atp-4') {
       newAspects = [
         aspects[0],
+        aspects[29],
         aspects[14],
-        aspects[28],
-        ...aspects.slice(1, 8),
+        ...aspects.slice(1, 8)
       ];
     }
     if (zone === 'atp' || zone === 'atp-4') {
@@ -49,7 +49,7 @@ const CISSignalProvider = ({ children }) => {
         ) {
           return {
             ...aspect,
-            info: aspect.info.filter(({ type }) => type === 'block'),
+            info: aspect.info.filter(({ type }) => type === 'block')
           };
         }
         return aspect;
@@ -68,7 +68,7 @@ const CISSignalProvider = ({ children }) => {
         ...aspects.slice(4, 7),
         ...aspects.slice(15, 18),
         aspects[32],
-        aspects[29],
+        aspects[29]
       ];
     }
 
@@ -78,7 +78,7 @@ const CISSignalProvider = ({ children }) => {
           if (aspect.name !== 'red') {
             return {
               ...aspect,
-              info: aspect.info.filter(({ type }) => type !== 'main'),
+              info: aspect.info.filter(({ type }) => type !== 'main')
             };
           }
           return aspect;
@@ -92,7 +92,7 @@ const CISSignalProvider = ({ children }) => {
             ...aspect,
             info: aspect.info.filter(
               ({ type }) => type === 'main' || type === 'shunting'
-            ),
+            )
           };
         }
         return aspect;
@@ -108,7 +108,7 @@ const CISSignalProvider = ({ children }) => {
               signalType === 'other'
                 ? type === signalType
                 : type === signalType || aspect.name === 'red'
-            ),
+            )
           };
         })
         .filter(({ info }) => info.length > 0);
@@ -151,7 +151,7 @@ const CISSignalProvider = ({ children }) => {
         filterSignals,
         filterAspects,
         filterSigns,
-        filteredSigns,
+        filteredSigns
       }}
     >
       {children}
