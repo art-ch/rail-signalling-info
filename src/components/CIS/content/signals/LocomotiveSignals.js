@@ -23,15 +23,13 @@ const LocomotiveSignals = () => {
 export default LocomotiveSignals;
 
 const Signal = ({ lights }) => {
-  const generateLights = () => {
-    return Object.values(lights).map((value, id) => {
+  const generateLights = () =>
+    Object.values(lights).map((value, id) => {
       if (id === 2) {
         return <RedYellowLight active={value} key={id} />;
       }
       return <Light active={value} key={id} />;
     });
-  };
-
   return (
     <SignalWrapper>
       <div className="upper-frame"></div>

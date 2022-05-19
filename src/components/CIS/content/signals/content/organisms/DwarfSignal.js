@@ -8,6 +8,8 @@ import { SignalTypeSign } from '../molecules';
 
 export const DwarfSignal = ({ aspect, lights: { l1, l2, l3, l4, l5 } }) => {
   const { zone, signalType } = useContext(CISSignalContext);
+
+  const isAspectTwoYellowsSpecial = () => aspect === 'two-yellows-special';
   return (
     <SignalWrapper>
       <DwarfSignalWrapper>
@@ -15,9 +17,7 @@ export const DwarfSignal = ({ aspect, lights: { l1, l2, l3, l4, l5 } }) => {
           <div className="dwarf-signal-smaller-plate">
             <div className={`light ${l5}`}></div>
             <div
-              className={`light ${
-                aspect === 'two-yellows-special' ? null : l3
-              }`}
+              className={`light ${!isAspectTwoYellowsSpecial() && l3}`}
             ></div>
           </div>
           {zone === 'semi-atp' ? (
@@ -28,19 +28,13 @@ export const DwarfSignal = ({ aspect, lights: { l1, l2, l3, l4, l5 } }) => {
           ) : (
             <div className="dwarf-signal-plate">
               <div
-                className={`light ${
-                  aspect === 'two-yellows-special' ? l1 : l2
-                }`}
+                className={`light ${isAspectTwoYellowsSpecial() ? l1 : l2}`}
               ></div>
               <div
-                className={`light ${
-                  aspect === 'two-yellows-special' ? null : l1
-                }`}
+                className={`light ${!isAspectTwoYellowsSpecial() && l1}`}
               ></div>
               <div
-                className={`light ${
-                  aspect === 'two-yellows-special' ? l3 : l4
-                }`}
+                className={`light ${isAspectTwoYellowsSpecial() ? l3 : l4}`}
               ></div>
             </div>
           )}

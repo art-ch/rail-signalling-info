@@ -6,21 +6,31 @@ import styled from 'styled-components';
 const SignalTypeSign = ({ aspect, signalSize }) => {
   const { signalType } = useContext(CISSignalContext);
 
-  const conditions = ['all', 'main', 'fast', 'industrial', 'technological'];
+  const shouldRender = () => {
+    const conditions = ['all', 'main', 'fast', 'industrial', 'technological'];
 
-  if (conditions.every((condition) => signalType !== condition)) {
+    return conditions.every((condition) => signalType !== condition);
+  };
+
+  const isElementTypeCorrect = (el) => el.type === signalType;
+
+  const isAspectMoonWhite = () =>
+    aspect === 'moonWhite' &&
+    (signalSize === 'biggest' || signalSize === 'dwarf');
+
+  const isAspectYellow = () =>
+    aspect === 'yellow' && signalType === 'obstruction';
+
+  if (shouldRender()) {
     return (
       <Wrapper signalSize={signalSize}>
         {signalTypeSigns.map((el) => {
-          if (el.type === signalType) {
+          if (isElementTypeCorrect(el)) {
             return el.letters.map((letter, index) => {
-              if (
-                aspect === 'moonWhite' &&
-                (signalSize === 'biggest' || signalSize === 'dwarf')
-              ) {
+              if (isAspectMoonWhite()) {
                 return <p key={index}>{letter.replace('М', 'Ч')}</p>;
               }
-              if (aspect === 'yellow' && signalType === 'obstruction') {
+              if (isAspectYellow()) {
                 return (
                   <p key={index} style={{ fontSize: '10px' }}>
                     {letter.replace('З', 'ЗП')}

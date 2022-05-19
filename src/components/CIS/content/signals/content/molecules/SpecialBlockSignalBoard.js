@@ -3,17 +3,24 @@ import styled from 'styled-components';
 
 const SpecialBlockSignalBoard = ({ zone, aspect, signalType, signCase }) => {
   const divs = Array.from(Array(3));
-  if (
-    ((zone === 'atp' || zone === 'atp-4' || signalType === 'block') &&
-      (aspect === 'green-flickering' || aspect === 'yellow-flickering')) ||
-    signCase
-  ) {
+
+  const shouldRender = (signCase) => {
+    const isZoneAndSignalTypeCorrect = () =>
+      zone === 'atp' || zone === 'atp-4' || signalType === 'block';
+    const isAspectCorrect = () =>
+      aspect === 'green-flickering' || aspect === 'yellow-flickering';
+
+    const signalCase = () => isZoneAndSignalTypeCorrect() && isAspectCorrect();
+
+    return signalCase() || signCase;
+  };
+
+  if (shouldRender(signCase)) {
     return (
       <Wrapper
         style={{
           transform:
-            (signCase && 'scale(1.5) translate(10%, 35%)') ||
-            'translateX(-10%)',
+            (signCase && 'scale(1.5) translate(10%, 35%)') || 'translateX(-10%)'
         }}
       >
         {divs.map((_, index) => {

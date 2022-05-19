@@ -5,6 +5,25 @@ import { CISSignalContext } from '../../../../CISSignalContext';
 const Description = ({ aspect, description }) => {
   const { zone } = useContext(CISSignalContext);
 
+  const renderDescription = (descObj) => {
+    const standardDescription = descObj.description;
+
+    const isAtp4Description = () =>
+      zone === 'atp-4' && (descObj.atp4Description || standardDescription);
+    const isSemiAtpDescription = () =>
+      zone === 'semi-atp' &&
+      (descObj.semiatpDescription || standardDescription);
+    const isAltpDescription = () =>
+      zone === 'altp' && (descObj.altpDescription || standardDescription);
+
+    return (
+      isAtp4Description() ||
+      isSemiAtpDescription() ||
+      isAltpDescription() ||
+      standardDescription
+    );
+  };
+
   return (
     <Wrapper>
       <h3 className="entity-title">{aspect}</h3>
@@ -13,15 +32,7 @@ const Description = ({ aspect, description }) => {
           return (
             <div className="single-description" key={index}>
               <h3>{descObj.type}</h3>
-              <p>
-                {(zone === 'atp-4' &&
-                  (descObj.atp4Description || descObj.description)) ||
-                  (zone === 'semi-atp' &&
-                    (descObj.semiatpDescription || descObj.description)) ||
-                  (zone === 'altp' &&
-                    (descObj.altpDescription || descObj.description)) ||
-                  descObj.description}
-              </p>
+              <p>{renderDescription(descObj)}</p>
             </div>
           );
         })}

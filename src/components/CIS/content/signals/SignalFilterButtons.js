@@ -7,6 +7,8 @@ import { flexCenterCenter } from '../../../../theme/Mixins';
 const SignalFilterButtons = () => {
   const { zone, signalType, filterSignals } = useContext(CISSignalContext);
 
+  const isButtonNameCorrect = (name) => zone === name || signalType === name;
+
   return (
     <Wrapper className="btn-wrapper">
       {signalFilters.map((buttonArray, index) => {
@@ -17,7 +19,7 @@ const SignalFilterButtons = () => {
               return (
                 <button
                   className={`btn filter-btn ${
-                    (zone === name || signalType === name) && 'active'
+                    isButtonNameCorrect(name) && 'active'
                   }`}
                   id={id}
                   onClick={(e) => filterSignals(e, id, name)}

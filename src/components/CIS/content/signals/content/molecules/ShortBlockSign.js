@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import { ImArrowDown } from 'react-icons/im';
 
 const ShortBlockSign = ({ aspect, signalType }) => {
-  if (
+  const shouldRender = () =>
     (aspect === 'yellow-green' &&
       (signalType === 'entry' || signalType === 'route')) ||
-    (aspect === 'two-yellows-special' && signalType === 'special')
-  ) {
+    (aspect === 'two-yellows-special' && signalType === 'special');
+
+  if (shouldRender()) {
     return (
       <Wrapper>
         {Array.from({ length: 2 }).map((_, id) => {

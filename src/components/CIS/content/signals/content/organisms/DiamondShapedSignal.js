@@ -5,10 +5,14 @@ import { SignalWrapper } from '../ecosystems/StyledComponentsForSignals';
 
 const DiamondShapedSignal = ({ id, aspect, lights }) => {
   const { signalType } = useContext(CISSignalContext);
-  let l1 = null;
-  if (typeof lights === 'object') {
-    l1 = Object.values(lights).filter((light) => light !== null)[0];
-  }
+
+  const isSignalTurnedOn = () => {
+    let l1 = null;
+    if (typeof lights === 'object') {
+      return (l1 = Object.values(lights).filter((light) => light !== null)[0]);
+    }
+  };
+
   return (
     <SignalWrapper>
       <div
@@ -18,7 +22,10 @@ const DiamondShapedSignal = ({ id, aspect, lights }) => {
             : 'post'
         }`}
       >
-        <OneAspectPlate l1={l1} specialClass="diamond-shaped-plate" />
+        <OneAspectPlate
+          l1={isSignalTurnedOn()}
+          specialClass="diamond-shaped-plate"
+        />
         <SignalTypeSign aspect={aspect} signalType={signalType} />
       </div>
     </SignalWrapper>
