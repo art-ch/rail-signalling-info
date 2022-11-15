@@ -14,11 +14,9 @@ const NavigationPage = () => {
       </p>
       <div className="links-container">
         <div className="navigation-link">
-          <Link href="/zones/cis">
-            <a className="zone-name">
-              <span className="link-is-loading">Please wait</span> CIS Zone{' '}
-              <span className="link-is-loading">is now loading...</span>
-            </a>
+          <Link href="/zones/cis" className="zone-name">
+            <span className="link-is-loading">Please wait</span> CIS Zone{' '}
+            <span className="link-is-loading">is now loading...</span>
           </Link>
           <p className="zone-info">
             These signals are used on the territories of the former USSR

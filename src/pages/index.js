@@ -15,8 +15,8 @@ const HomePage = () => {
           around the world
         </p>
 
-        <Link href="/navigation">
-          <a className="btn">Navigation Page</a>
+        <Link href="/navigation" className="btn">
+          Navigation Page
         </Link>
       </div>
     </Wrapper>
