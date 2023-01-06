@@ -93,8 +93,13 @@ p {
   text-align: center;
 }
 
-.page-title{
+.page__title{
   padding-top: 2rem;
+}
+.page__description{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .section-title {
   font-size: 48px;
