@@ -14,14 +14,14 @@ export default function AboutPage({
   return (
     <main>
       <h1 className="page-title">{title}</h1>
-      <p>{subtitle}</p>
-      {description && <RichText description={description} />}
+      {subtitle && <RichText content={subtitle} />}
+      {description && <RichText content={description} />}
     </main>
   );
 }
 
 export async function getStaticProps() {
-  const aboutPage = await client.getEntry('QmafzdRbw4a3FHNYzzqBo');
+  const aboutPage = await client.getEntry('3h8F8XvjkUCNp6S5WMnc3P');
 
   return {
     props: aboutPage.fields

@@ -1,9 +1,9 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export type RichTextProps = {
-  description: any;
+  content: any;
 };
 
-export const RichText = ({ description }: RichTextProps) => {
-  return <div>{documentToReactComponents(description)}</div>;
+export const RichText = ({ content }: RichTextProps) => {
+  return <div>{documentToReactComponents(content)}</div>;
 };

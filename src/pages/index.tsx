@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-// import HomePageTrain from '../images/homepage-train.png';
 import { flexColumnCenterCenter } from '../theme/Mixins';
 
 const HomePage = () => {
