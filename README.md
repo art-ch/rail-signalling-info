@@ -15,4 +15,4 @@ All info will be taken from third party websites (including wikipedia) and all l
 I also have an idea to create a quiz tool that would utilize all the info website provides.
 
 ## State of development
-Stalled
+Slow and steady, when I have time and inspiration
