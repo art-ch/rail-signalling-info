@@ -1,22 +1,13 @@
-import { RichText } from '../components/cms/RichText';
+import { InfoPage, InfoPageProps } from '../containers/InfoPage';
 
-import { client } from '../api/cms';
+import api from '../api';
 
-import { InfoPageProps } from '../types/pageTypes';
+const ContactPage = (pageProps: InfoPageProps) => <InfoPage {...pageProps} />;
 
-export type ContactPageProps = InfoPageProps;
-
-export default function ContactPage({ title, subtitle }: ContactPageProps) {
-  return (
-    <main>
-      <h1 className="page-title">{title}</h1>
-      {subtitle && <RichText content={subtitle} />}
-    </main>
-  );
-}
+export default ContactPage;
 
 export async function getStaticProps() {
-  const contactPage = await client.getEntry('1KzbE3Ac40hh9UchBAGuDw');
+  const contactPage = await api.cms.getInfoPage('contact');
 
   return {
     props: contactPage.fields

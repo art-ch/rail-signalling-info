@@ -1,27 +1,15 @@
-import { RichText } from '../components/cms/RichText';
+import { InfoPage, InfoPageProps } from '../containers/InfoPage';
 
-import { client } from '../api/cms';
+import api from '../api';
 
-import { InfoPageProps } from '../types/pageTypes';
+const AboutPage = (pageProps: InfoPageProps) => (
+  <InfoPage {...pageProps} className="about-page" />
+);
 
-export type AboutPageProps = InfoPageProps;
-
-export default function AboutPage({
-  title,
-  subtitle,
-  description
-}: AboutPageProps) {
-  return (
-    <main>
-      <h1 className="page-title">{title}</h1>
-      {subtitle && <RichText content={subtitle} />}
-      {description && <RichText content={description} />}
-    </main>
-  );
-}
+export default AboutPage;
 
 export async function getStaticProps() {
-  const aboutPage = await client.getEntry('3h8F8XvjkUCNp6S5WMnc3P');
+  const aboutPage = await api.cms.getInfoPage('about');
 
   return {
     props: aboutPage.fields
