@@ -18,11 +18,17 @@ export const InfoPage = ({
   description,
   className
 }: InfoPageProps) => {
+  const isContentAvailable = subtitle || description;
+
   return (
     <StyledWrapper className={className}>
       <h1>{title}</h1>
-      {subtitle && <RichText content={subtitle} />}
-      {description && <RichText content={description} />}
+      {isContentAvailable && (
+        <section>
+          {subtitle && <RichText content={subtitle} className="subtitle" />}
+          {description && <RichText content={description} />}
+        </section>
+      )}
     </StyledWrapper>
   );
 };

@@ -2,9 +2,7 @@ import { InfoPage, InfoPageProps } from '../containers/InfoPage';
 
 import api from '../api';
 
-const AboutPage = (pageProps: InfoPageProps) => (
-  <InfoPage {...pageProps} className="about-page" />
-);
+const AboutPage = (pageProps: InfoPageProps) => <InfoPage {...pageProps} />;
 
 export default AboutPage;
 

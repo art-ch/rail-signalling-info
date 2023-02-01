@@ -1,1 +1,1 @@
-export type UIComponent = { className: string };
+export type UIComponent = { className?: string };
