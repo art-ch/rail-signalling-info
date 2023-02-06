@@ -1,8 +1,8 @@
 import { RichTextContent } from 'contentful';
 
-import { RichText } from '../../components/cms/RichText';
+import { RichText } from '../../atoms/RichText';
 
-import { UIComponent } from '../../types';
+import { UIComponent } from '../../../types';
 
 import StyledWrapper from './InfoPage.styled';
 

@@ -1,13 +1,14 @@
 import { createClient } from 'contentful';
+import { HomePageModel, InfoPageModel } from '../types/models';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
 });
 
-const getEntry = async (url: string, content_type: string) => {
+const getEntry = async <T>(url: string, content_type: string) => {
   return await client
-    .getEntries({
+    .getEntries<T>({
       content_type,
       'fields.url[match]': `/${url}`
     })
@@ -15,7 +16,10 @@ const getEntry = async (url: string, content_type: string) => {
 };
 
 export default {
+  async getHomePage(url: string) {
+    return await getEntry<HomePageModel>(url, 'homePage');
+  },
   async getInfoPage(url: string) {
-    return await getEntry(url, 'infoPage');
+    return await getEntry<InfoPageModel>(url, 'infoPage');
   }
 };

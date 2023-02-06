@@ -1,15 +1,21 @@
-import { InfoPage, InfoPageProps } from '../containers/InfoPage';
+import { InfoPage, InfoPageProps } from '../components/pages/InfoPage';
 
 import api from '../api';
 
-const AboutPage = (pageProps: InfoPageProps) => <InfoPage {...pageProps} />;
+export default function About(pageProps: InfoPageProps) {
+  return <InfoPage {...pageProps} />;
+}
 
-export default AboutPage;
-
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const aboutPage = await api.cms.getInfoPage('about');
 
+  const { title, subtitle, description } = aboutPage.fields;
+
   return {
-    props: aboutPage.fields
+    props: {
+      title,
+      subtitle,
+      description
+    }
   };
-}
+};

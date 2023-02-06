@@ -1,5 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { UIComponent } from '../../types';
+import { UIComponent } from '../../../types';
 
 export type RichTextProps = {
   content: any;
