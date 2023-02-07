@@ -13,10 +13,16 @@ export type HomePageProps = {
 } & UIComponent;
 
 export const HomePage = ({ background, hero, button }: HomePageProps) => {
+  const classNameList = {
+    h1_className: 'text gigantic-text',
+    h3_className: 'text',
+    p_className: 'text'
+  };
+
   return (
     <StyledWrapper background={background}>
       <div className="text-container">
-        <RichText content={hero} />
+        <RichText content={hero} classNameList={classNameList} />
         <Button {...button} className="btn" />
       </div>
     </StyledWrapper>
