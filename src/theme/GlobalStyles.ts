@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { flexColumnCenter } from './Mixins';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -28,16 +29,14 @@ body {
 }
 
 main {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
   min-height: calc(100vh - 11rem);
 }
 
 section {
-  width: 100%;
-  max-width: 1170px;
-  margin: 0 auto;
+  ${flexColumnCenter}
   margin-bottom: 5rem;
 }
 
@@ -64,7 +63,7 @@ a {
 }
 p {
   margin-bottom: 1.5rem;
-  max-width: 80vw;
+  max-width: 90vw;
 }
 
 .btn {
@@ -83,7 +82,12 @@ p {
   color: seagreen;
 }
 
+/* faze out page-heading */
 .page-heading{
+  text-align: center;
+  margin: 2rem;
+}
+.page__heading{
   text-align: center;
   margin: 2rem;
 }

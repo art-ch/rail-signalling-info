@@ -22,11 +22,13 @@ export const InfoPage = ({
 
   return (
     <StyledWrapper className={className}>
-      <h1>{title}</h1>
+      <h1 className="page-heading">{title}</h1>
       {isContentAvailable && (
         <section>
           {subtitle && <RichText content={subtitle} className="subtitle" />}
-          {description && <RichText content={description} />}
+          {description && (
+            <RichText content={description} className="description" />
+          )}
         </section>
       )}
     </StyledWrapper>

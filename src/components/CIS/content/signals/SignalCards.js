@@ -27,7 +27,8 @@ const SignalCards = () => {
 export default SignalCards;
 
 const Wrapper = styled.article`
-  margin: 5rem 0;
+  min-width: 100%;
+  margin: 0 0 5rem;
   padding-top: 2rem;
   background: #dbdbdb;
 `;

@@ -53,8 +53,10 @@ const Description = ({ name, description }) => {
 };
 
 const ArticleWrapper = styled.article`
+  min-width: 100%;
   background: #dbdbdb;
-  padding-top: 1rem;
+  padding: 1rem 0 0;
+  margin: 0 0 5rem;
 `;
 
 const DescriptionWrapper = styled.section`
