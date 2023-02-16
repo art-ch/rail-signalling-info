@@ -24,7 +24,7 @@ export const InfoPage = ({
     <StyledWrapper className={className}>
       <h1 className="page-heading">{title}</h1>
       {isContentAvailable && (
-        <section>
+        <section className="content">
           {subtitle && <RichText content={subtitle} className="subtitle" />}
           {description && (
             <RichText content={description} className="description" />

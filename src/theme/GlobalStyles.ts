@@ -29,15 +29,19 @@ body {
 }
 
 main {
-  width: 100%;
-  max-width: 1170px;
-  margin: 0 auto;
+  ${flexColumnCenter}
   min-height: calc(100vh - 11rem);
 }
 
 section {
-  ${flexColumnCenter}
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
   margin-bottom: 5rem;
+
+  &.full-width-section {
+    max-width: 100%;
+  }
 }
 
 h1,
@@ -82,12 +86,7 @@ p {
   color: seagreen;
 }
 
-/* faze out page-heading */
 .page-heading{
-  text-align: center;
-  margin: 2rem;
-}
-.page__heading{
   text-align: center;
   margin: 2rem;
 }

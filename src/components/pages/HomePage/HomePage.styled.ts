@@ -14,7 +14,7 @@ const StyledWrapper = styled.main<HomePageStyledWrapperProps>`
       rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0.5) 100%
     ),
-    url(${(props) => props.background}) 50% 80% / cover no-repeat fixed;
+    url(${({ background }) => background}) 50% 80% / cover no-repeat fixed;
 
   .text-container {
     ${flexColumnCenterCenter}

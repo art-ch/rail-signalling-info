@@ -1,5 +1,9 @@
 import { createClient } from 'contentful';
-import { HomePageModel, InfoPageModel } from '../types/models';
+import {
+  HomePageModel,
+  InfoPageModel,
+  NavigationPageModel
+} from '../types/models';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -19,7 +23,12 @@ export default {
   async getHomePage(url: string) {
     return await getEntry<HomePageModel>(url, 'homePage');
   },
+
   async getInfoPage(url: string) {
     return await getEntry<InfoPageModel>(url, 'infoPage');
+  },
+
+  async getNavigationPage(url: string) {
+    return await getEntry<NavigationPageModel>(url, 'navigationPage');
   }
 };
