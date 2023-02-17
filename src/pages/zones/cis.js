@@ -1,12 +1,12 @@
 import React from 'react';
 
-import SignalFilterButtons from '../../components/CIS/content/signals/SignalFilterButtons';
-import SignalCards from '../../components/CIS/content/signals/SignalCards';
-import LocomotiveSignals from '../../components/CIS/content/signals/LocomotiveSignals';
-import SignFilterButtons from '../../components/CIS/content/signs/SignFilterButtons';
-import SignCards from '../../components/CIS/content/signs/SignCards';
+import SignalFilterButtons from '../../containers/CIS/content/signals/SignalFilterButtons';
+import SignalCards from '../../containers/CIS/content/signals/SignalCards';
+import LocomotiveSignals from '../../containers/CIS/content/signals/LocomotiveSignals';
+import SignFilterButtons from '../../containers/CIS/content/signs/SignFilterButtons';
+import SignCards from '../../containers/CIS/content/signs/SignCards';
 
-import { CISSignalProvider } from '../../components/CIS/CISSignalContext';
+import { CISSignalProvider } from '../../containers/CIS/CISSignalContext';
 
 const CISPage = () => {
   return (

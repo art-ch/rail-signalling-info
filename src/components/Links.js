@@ -26,7 +26,7 @@ export const Links = ({ mobile, footer, setShowLinks }) => {
             <Link
               className="no-underline-a"
               href={href}
-              onClick={() => setShowLinks(false)}
+              onClick={() => mobile && setShowLinks(false)}
             >
               {linkName}
             </Link>
