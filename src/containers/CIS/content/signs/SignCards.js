@@ -1,19 +1,18 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { flexColumnCenterCenter } from '../../../../theme/Mixins';
-import { signs } from '../../data';
 import { CISSignalContext } from '../../CISSignalContext';
 import { setOfSigns } from './content';
 import { CombinedSignsWrapper } from './content/StyledComponentsForSigns';
 
-const SignCards = () => {
+const SignCards = ({ signs }) => {
   const { filteredSigns } = useContext(CISSignalContext);
-  const newSignList = filteredSigns(signs);
+  const filteredSignList = filteredSigns(signs);
 
   return (
     <section>
       <h2 className="section-title">Signs</h2>
-      {newSignList.map(({ id, sign, description }) => {
+      {filteredSignList.map(({ id, sign, description }) => {
         return (
           <ArticleWrapper key={id}>
             <Sign id={id} />

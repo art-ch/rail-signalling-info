@@ -2,6 +2,17 @@ import { Asset, Entry, RichTextContent } from 'contentful';
 
 import { ButtonProps } from '../components/atoms/Button';
 
+import { ZonePageContent } from '../components/pages/ZonePage';
+
+type NavigationLinkModel = Entry<{
+  title: string;
+  link: string;
+  description: string;
+  background: Asset;
+}>;
+
+type ZonePageContentModel = Entry<ZonePageContent>;
+
 export type HomePageModel = {
   background: Asset;
   hero: RichTextContent;
@@ -17,10 +28,12 @@ export type InfoPageModel = {
 export type NavigationPageModel = {
   title: string;
   description: string;
-  links: Entry<{
-    title: string;
-    link: string;
-    description: string;
-    background: Asset;
-  }>[];
+  links: NavigationLinkModel[];
+};
+
+export type ZonePageModel = {
+  title: string;
+  description: string;
+  content: ZonePageContentModel;
+  additionalInfo: RichTextContent;
 };

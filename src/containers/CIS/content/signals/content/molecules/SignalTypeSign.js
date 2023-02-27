@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
-import { signalTypeSigns } from '../../../../data';
 import { CISSignalContext } from '../../../../CISSignalContext';
 import styled from 'styled-components';
 
 const SignalTypeSign = ({ aspect, signalSize }) => {
-  const { signalType } = useContext(CISSignalContext);
+  const { signalType, signalTypeSigns } = useContext(CISSignalContext);
 
   const shouldRender = () => {
     const conditions = ['all', 'main', 'fast', 'industrial', 'technological'];

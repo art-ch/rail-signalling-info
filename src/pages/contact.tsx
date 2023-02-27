@@ -7,7 +7,7 @@ export default function Contact(pageProps: InfoPageProps) {
 }
 
 export const getStaticProps = async () => {
-  const contactPage = await api.cms.getInfoPage('contact');
+  const contactPage = await api.cms.getInfoPage('/contact');
 
   const { title, subtitle } = contactPage.fields;
 

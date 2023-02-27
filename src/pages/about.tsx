@@ -7,7 +7,7 @@ export default function About(pageProps: InfoPageProps) {
 }
 
 export const getStaticProps = async () => {
-  const aboutPage = await api.cms.getInfoPage('about');
+  const aboutPage = await api.cms.getInfoPage('/about');
 
   const { title, subtitle, description } = aboutPage.fields;
 

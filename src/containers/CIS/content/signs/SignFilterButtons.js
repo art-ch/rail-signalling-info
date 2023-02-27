@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CISSignalContext } from '../../CISSignalContext';
-import { signFilters } from '../../data';
 import { flexCenterCenter } from '../../../../theme/Mixins';
 
-const SignFilterButtons = () => {
+const SignFilterButtons = ({ signFilters }) => {
   const { signType, filterSigns } = useContext(CISSignalContext);
   return (
     <Wrapper>

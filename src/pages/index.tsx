@@ -9,7 +9,7 @@ export default function Home(pageProps: HomePageProps) {
 }
 
 export const getStaticProps = async () => {
-  const homePage = await api.cms.getHomePage('');
+  const homePage = await api.cms.getHomePage('/');
 
   const { background, hero, button } = homePage.fields;
 

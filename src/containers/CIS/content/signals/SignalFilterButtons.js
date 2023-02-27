@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CISSignalContext } from '../../CISSignalContext';
-import { signalFilters } from '../../data';
 import { flexCenterCenter } from '../../../../theme/Mixins';
 
-const SignalFilterButtons = () => {
+const SignalFilterButtons = ({ signalFilters }) => {
   const { zone, signalType, filterSignals } = useContext(CISSignalContext);
 
   const isButtonNameCorrect = (name) => zone === name || signalType === name;

@@ -2,7 +2,8 @@ import { createClient } from 'contentful';
 import {
   HomePageModel,
   InfoPageModel,
-  NavigationPageModel
+  NavigationPageModel,
+  ZonePageModel
 } from '../types/models';
 
 const client = createClient({
@@ -14,7 +15,7 @@ const getEntry = async <T>(url: string, content_type: string) => {
   return await client
     .getEntries<T>({
       content_type,
-      'fields.url[match]': `/${url}`
+      'fields.url[match]': `${url}`
     })
     .then((data) => data.items[0]);
 };
@@ -30,5 +31,9 @@ export default {
 
   async getNavigationPage(url: string) {
     return await getEntry<NavigationPageModel>(url, 'navigationPage');
+  },
+
+  async getZonePage(url: string) {
+    return await getEntry<ZonePageModel>(url, 'zonePage');
   }
 };

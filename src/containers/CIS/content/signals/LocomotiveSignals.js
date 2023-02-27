@@ -2,13 +2,12 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { flexColumnCenterCenter } from '../../../../theme/Mixins';
 import { CISSignalContext } from '../../CISSignalContext';
-import { locomotiveSignals } from '../../data';
 
-const LocomotiveSignals = () => {
+const LocomotiveSignals = ({ locomotiveSignalization }) => {
   return (
     <section>
       <h2 className="section-title">Locomotive Signals</h2>
-      {locomotiveSignals.map(({ id, name, info, lights }) => {
+      {locomotiveSignalization.map(({ id, name, info, lights }) => {
         return (
           <ArticleWrapper key={id}>
             <Signal lights={lights} />

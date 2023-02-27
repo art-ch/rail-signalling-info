@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
+import { SignalTypeSign } from '../../types';
 
-const CISSignalContext = React.createContext();
+const CISSignalContext = React.createContext(null);
 
-const CISSignalProvider = ({ children }) => {
+export type CISSignalProviderProps = {
+  children: React.ReactNode;
+  signalTypeSigns: SignalTypeSign[];
+};
+
+const CISSignalProvider = ({
+  children,
+  signalTypeSigns
+}: CISSignalProviderProps) => {
   const [zone, setZone] = useState('all');
   const [signalType, setSignalType] = useState('all');
   const [signType, setSignType] = useState('all');
@@ -146,6 +155,7 @@ const CISSignalProvider = ({ children }) => {
       value={{
         zone,
         signalType,
+        signalTypeSigns,
         signType,
         setZone,
         filterSignals,

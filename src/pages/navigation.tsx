@@ -12,7 +12,7 @@ export default function Navigation(pageProps: NavigationPageProps) {
 }
 
 export const getStaticProps = async () => {
-  const navigationPage = await api.cms.getNavigationPage('navigation');
+  const navigationPage = await api.cms.getNavigationPage('/navigation');
 
   const { title, description, links } = navigationPage.fields;
 

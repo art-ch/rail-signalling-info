@@ -1,17 +1,16 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { aspects } from '../../data';
 import { CISSignalContext } from '../../CISSignalContext';
 import { Signal, Description } from './content/ecosystems/index';
 
-const SignalCards = () => {
+const SignalCards = ({ signals }) => {
   const { filterAspects } = useContext(CISSignalContext);
-  const newAspects = filterAspects(aspects);
+  const filteredSignalList = filterAspects(signals);
 
   return (
     <section>
       <h2 className="section-title">Signals</h2>
-      {newAspects.map(
+      {filteredSignalList.map(
         ({ id, name, lights, info }) =>
           info.length > 0 && (
             <Wrapper key={id}>
