@@ -16,14 +16,14 @@ export type HomePageProps = {
 
 export const HomePage = ({ hero, button }: HomePageProps) => {
   const classNameList = {
-    h1_className: cx(css.text, css.giganticText),
-    h3_className: css.text,
+    h1_className: cx(css.text, css.title),
+    h3_className: cx(css.text, css.subtitle),
     p_className: css.text
   };
 
   return (
     <div className={css.container}>
-      <div className={css.textContainer}>
+      <div className={css.heroContainer}>
         <RichText content={hero} classNameList={classNameList} />
         <Button {...button} className="btn" />
       </div>

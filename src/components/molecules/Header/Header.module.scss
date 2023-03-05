@@ -12,11 +12,20 @@
 
   gap: 2rem;
 
-  &__mobile {
-    @include flexColumn;
+  @include mobile {
+    display: none;
+  }
+}
 
-    margin-bottom: 1rem;
-    padding: 1rem 0;
+.headerLinks__mobile {
+  @include flexColumn;
+
+  display: none;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+
+  @include mobile {
+    display: block;
   }
 }
 
@@ -26,13 +35,8 @@
   border: none;
   display: none;
   cursor: pointer;
-}
 
-@include mobile {
-  .headerLinks {
-    display: none;
-  }
-  .menuButton {
+  @include mobile {
     display: block;
   }
 }
