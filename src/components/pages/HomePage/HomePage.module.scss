@@ -1,0 +1,30 @@
+@use '../../../theme' as *;
+
+.container {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url('https://images.ctfassets.net/rwqkbzeong17/hsiQt5oOSUEcQ6TsHiAO3/e4411a4dc30a42dd18267a0a1e826c49/homepage-train.png')
+      50% 80% / cover no-repeat fixed;
+}
+
+.textContainer {
+  @include flexColumnCenterCenter;
+
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.giganticText {
+  text-align: center;
+  font-size: 48px;
+}

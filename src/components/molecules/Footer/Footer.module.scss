@@ -1,23 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { flexCenterCenter, flexColumnCenter } from '../theme/Mixins';
-import { Links } from './Links';
+@use '../../../theme/' as *;
 
-const Footer = () => {
-  return (
-    <Wrapper>
-      <Links footer />
-      <p className="made-by">
-        Made by <a href="https://github.com/art-ch">art-ch</a>
-      </p>
-    </Wrapper>
-  );
-};
+.container {
+  @include flexColumnCenter;
 
-export default Footer;
-
-const Wrapper = styled.footer`
-  ${flexColumnCenter};
   justify-content: space-around;
   background: var(--primary5);
   background: linear-gradient(
@@ -44,13 +29,16 @@ const Wrapper = styled.footer`
   );
   width: 100%;
   height: 7rem;
-  .footer-links {
-    ${flexCenterCenter}
-  }
-  .made-by,
-  a {
-    color: white;
-    margin: 0;
-    font-weight: bold;
-  }
-`;
+}
+
+.footerLinks {
+  @include flexCenterCenter;
+}
+
+.footerLinks__link,
+.madeBy,
+.madeBy__author {
+  color: white;
+  margin: 0;
+  font-weight: bold;
+}

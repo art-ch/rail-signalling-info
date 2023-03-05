@@ -1,0 +1,30 @@
+@use '../../../theme/' as *;
+
+.innerCentering {
+  @include flexCenterSpaceBetween;
+
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.headerLinks {
+  @include flexCenterSpaceBetween;
+
+  gap: 2rem;
+}
+
+.menuButton {
+  padding: 10px;
+  background: transparent;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 688px) {
+  .header-links {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
+}

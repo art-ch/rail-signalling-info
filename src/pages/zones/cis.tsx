@@ -1,5 +1,7 @@
 import api from '../../api';
 
+import GlobalStyle from '../../theme/GlobalStyles';
+
 import { ZonePage, ZonePageProps } from '../../components/pages/ZonePage';
 
 import { CISSignalProvider } from '../../containers/CIS/CISSignalContext';
@@ -7,9 +9,12 @@ import { getContent } from '../../utils/cmsUtils';
 
 export default function CISPage(pageProps: ZonePageProps) {
   return (
-    <CISSignalProvider signalTypeSigns={pageProps.content.signalTypeSigns}>
-      <ZonePage {...pageProps} />
-    </CISSignalProvider>
+    <>
+      <GlobalStyle />
+      <CISSignalProvider signalTypeSigns={pageProps.content.signalTypeSigns}>
+        <ZonePage {...pageProps} />
+      </CISSignalProvider>
+    </>
   );
 }
 

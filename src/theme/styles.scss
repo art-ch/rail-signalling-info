@@ -1,0 +1,109 @@
+@use './mixins';
+@use './variables';
+
+@import 'https://fonts.googleapis.com/css2?family=Oswald:wght@400&family=Roboto+Slab&display=swap';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: variables.$primary-font;
+}
+
+main {
+  @include mixins.flexColumnCenter;
+
+  min-height: calc(100vh - 11rem);
+}
+
+section {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+
+  &.full-width-section {
+    max-width: 100%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: 1.38rem;
+  font-family: variables.$headings-font;
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: black;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  max-width: 90vw;
+}
+
+.no-underline-a {
+  text-decoration: none;
+}
+
+.btn {
+  color: white;
+  background: seagreen;
+  padding: 1rem;
+  border: 1px solid transparent;
+  font-family: variables.$primary-font;
+  font-size: 16px;
+  border-radius: variables.$radius;
+  transition: variables.$transition;
+}
+
+.btn:hover {
+  border: 1px solid seagreen;
+  background: white;
+  color: seagreen;
+}
+
+.page-heading {
+  text-align: center;
+  margin: 2rem;
+}
+
+.section-title,
+.entity-title {
+  text-align: center;
+}
+
+.page-title {
+  padding-top: 2rem;
+}
+
+.section-title {
+  font-size: 48px;
+}
+
+.entity-title {
+  font-size: 24px;
+  padding: 2rem;
+}
+
+.sign-symbol,
+.sign-text {
+  margin-bottom: 0;
+}
+
+.entity {
+  background: red;
+}

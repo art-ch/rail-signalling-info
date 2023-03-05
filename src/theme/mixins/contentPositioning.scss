@@ -1,0 +1,50 @@
+@mixin gridCentering {
+    display: grid;
+    place-items: center;
+}
+
+@mixin flex {
+    display: flex;
+}
+
+@mixin flexColumn {
+    @include flex;
+
+    flex-direction: column;
+}
+
+@mixin flexCenter {
+    @include flex;
+
+    align-items: center;
+}
+
+@mixin flexCenterCenter {
+    @include flexCenter;
+
+    justify-content: center;
+}
+
+@mixin flexCenterSpaceBetween {
+    @include flexCenter;
+
+    justify-content: space-between;
+}
+
+@mixin flexColumnCenter {
+    @include flexColumn;
+
+    align-items: center;
+}
+
+@mixin flexColumnCenterCenter {
+    @include flexColumnCenter;
+
+    justify-content: center;
+}
+
+@mixin flexColumnCenterSpaceBetween {
+    @include flexColumnCenter;
+
+    justify-content: space-between;
+}

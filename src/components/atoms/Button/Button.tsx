@@ -3,13 +3,17 @@ import { UIComponent } from '../../../types';
 
 export type ButtonProps = {
   title: string;
-  link: string;
+  link?: string;
 } & UIComponent;
 
 export const Button = ({ title, link, className }: ButtonProps) => {
-  return (
-    <Link href={link} className={className}>
-      {title}
-    </Link>
-  );
+  if (link) {
+    return (
+      <Link href={link} className={className}>
+        {title}
+      </Link>
+    );
+  }
+
+  return <button className={className}>{title}</button>;
 };

@@ -14,7 +14,6 @@ type NavigationLinkModel = Entry<{
 type ZonePageContentModel = Entry<ZonePageContent>;
 
 export type HomePageModel = {
-  background: Asset;
   hero: RichTextContent;
   button: Entry<ButtonProps>;
 };
