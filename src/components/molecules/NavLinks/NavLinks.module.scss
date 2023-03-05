@@ -1,7 +1,7 @@
 @use '../../../theme/' as *;
 
 .container {
-  & .mobileLinks {
+  .mobileHeaderLinks {
     @include flexColumn;
 
     align-items: flex-end;

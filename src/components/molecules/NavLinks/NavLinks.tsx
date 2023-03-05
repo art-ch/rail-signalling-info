@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from 'react';
 import Link from 'next/link';
 
 import cx from 'classnames';
@@ -7,7 +6,7 @@ import { UIComponent } from '../../../types';
 
 import css from './NavLinks.module.scss';
 
-export type NavLinkProps = { title: string; href: string };
+export type NavLinkProps = { title: string; link: string };
 
 export type NavLinksProps = {
   links: NavLinkProps[];
@@ -16,23 +15,17 @@ export type NavLinksProps = {
 } & UIComponent;
 
 export const NavLinks = ({
+  links,
   showMobileLinks,
   className,
   linkClassName
 }: NavLinksProps) => {
-  const links = [
-    { title: 'Home', link: '/' },
-    { title: 'Navigation', link: '/navigation' },
-    { title: 'Contact', link: '/contact' },
-    { title: 'About', link: '/about' }
-  ];
-
   return (
     <ul className={cx(css.container, className)}>
       {links.map(({ title, link }, id) => (
         <li key={id} className={css.link}>
           <Link
-            className={cx(linkClassName, 'no-underline-a')}
+            className={cx(linkClassName)}
             href={link}
             onClick={() => (showMobileLinks ? showMobileLinks(false) : null)}
           >

@@ -1,7 +1,11 @@
 import { Header } from '../components/molecules/Header';
 import { Footer } from '../components/molecules/Footer';
 
+import api from '../api';
+
 import '../theme/styles.scss';
+import { fetchReferences, getContent } from '../utils/cmsUtils';
+import { NavLinkProps } from '../components/molecules/NavLinks';
 
 export const metadata = {
   title: 'Next.js',
@@ -13,12 +17,37 @@ export type RootLayoutProps = {
 };
 
 export default async function RootLayout({ children }: RootLayoutProps) {
+  const rootLayoutData = await api.cms.getRootLayout();
+
+  const [header, footer] = rootLayoutData.fields.content;
+
+  const headerProps = getContent(header);
+
+  const parsedHeaderLinks = await fetchReferences<NavLinkProps>(
+    headerProps.links
+  );
+
+  const formattedHeaderProps = {
+    links: parsedHeaderLinks
+  };
+
+  const footerProps = getContent(footer);
+
+  const parsedFooterLinks = await fetchReferences<NavLinkProps>(
+    footerProps.links
+  );
+
+  const formattedFooterProps = {
+    links: parsedFooterLinks,
+    copyright: footerProps.copyright
+  };
+
   return (
     <html lang="en">
       <body>
-        <Header links={[]} />
+        <Header {...formattedHeaderProps} />
         {children}
-        <Footer links={[]} />
+        <Footer {...formattedFooterProps} />
       </body>
     </html>
   );

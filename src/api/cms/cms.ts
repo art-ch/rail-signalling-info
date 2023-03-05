@@ -1,5 +1,6 @@
 import { createClient } from 'contentful';
 import {
+  WebsiteModel,
   HomePageModel,
   InfoPageModel,
   NavigationPageModel,
@@ -11,6 +12,15 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || ''
 });
 
+const getLayout = async <T>(title: string) => {
+  return await client
+    .getEntries<T>({
+      content_type: 'layout',
+      'fields.title[match]': `${title}`
+    })
+    .then((data) => data.items[0]);
+};
+
 const getPage = async <T>(url: string, content_type: string) => {
   return await client
     .getEntries<T>({
@@ -21,6 +31,14 @@ const getPage = async <T>(url: string, content_type: string) => {
 };
 
 export default {
+  async getEntry(id: string) {
+    return await client.getEntry(id);
+  },
+
+  async getRootLayout() {
+    return await getLayout<WebsiteModel>('Website');
+  },
+
   async getHomePage(url: string) {
     return await getPage<HomePageModel>(url, 'homePage');
   },

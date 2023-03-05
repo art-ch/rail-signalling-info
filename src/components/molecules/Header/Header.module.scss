@@ -6,10 +6,18 @@
   max-width: 1170px;
   margin: 0 auto;
 }
+
 .headerLinks {
   @include flexCenterSpaceBetween;
 
   gap: 2rem;
+
+  &__mobile {
+    @include flexColumn;
+
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+  }
 }
 
 .menuButton {
@@ -20,11 +28,11 @@
   cursor: pointer;
 }
 
-@media (max-width: 688px) {
-  .header-links {
+@include mobile {
+  .headerLinks {
     display: none;
   }
-  .menu-button {
+  .menuButton {
     display: block;
   }
 }

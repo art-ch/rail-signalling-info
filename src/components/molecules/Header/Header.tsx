@@ -8,7 +8,7 @@ export type HeaderProps = {
   links: NavLinkProps[];
 };
 
-export const Header = ({ links }) => {
+export const Header = ({ links }: HeaderProps) => {
   const [showLinks, setShowLinks] = useState(false);
 
   return (
@@ -16,6 +16,7 @@ export const Header = ({ links }) => {
       <div className={css.container}>
         <div className={css.innerCentering}>
           <div className={css.logo}>
+            {/* Think up of logo */}
             <h1>Logo</h1>
           </div>
           <NavLinks className={css.headerLinks} links={links} />
@@ -27,7 +28,13 @@ export const Header = ({ links }) => {
           </button>
         </div>
       </div>
-      {showLinks && <NavLinks showMobileLinks={setShowLinks} links={links} />}
+      {showLinks && (
+        <NavLinks
+          className={css.headerLinks__mobile}
+          showMobileLinks={setShowLinks}
+          links={links}
+        />
+      )}
     </>
   );
 };

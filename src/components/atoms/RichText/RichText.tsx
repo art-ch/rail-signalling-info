@@ -20,7 +20,7 @@ export const RichText = ({
   classNameList,
   className
 }: RichTextProps) => {
-  let options: Options;
+  let options: Options = {};
 
   if (classNameList) {
     options = applyClassListToRichText(classNameList);
