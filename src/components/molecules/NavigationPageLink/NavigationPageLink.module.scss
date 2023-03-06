@@ -1,0 +1,47 @@
+@use '../../../theme/' as *;
+
+.container {
+  padding: 1rem;
+
+  &:hover {
+    @include flexColumnCenter;
+
+    width: 300px;
+    color: white;
+    cursor: pointer;
+
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      ),
+      url('https://images.ctfassets.net/rwqkbzeong17/4EqehsowkcN1J9MpGm7Ant/3c2b91a7eb7186ee205f203822b894ae/cis.png')
+        50% 80% / cover no-repeat;
+
+    .zoneName {
+      color: white;
+    }
+
+    .zoneInfo {
+      display: block;
+    }
+  }
+}
+
+.zoneName {
+  font-weight: bold;
+
+  .loadingText {
+    display: none;
+  }
+
+  .showLoadingText {
+    display: inline-flex;
+    gap: 1rem;
+  }
+}
+
+.zoneInfo {
+  margin-top: 1rem;
+  display: none;
+}

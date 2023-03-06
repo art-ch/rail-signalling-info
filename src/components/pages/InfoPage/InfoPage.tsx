@@ -1,10 +1,11 @@
 import { RichTextContent } from 'contentful';
+import cx from 'classnames';
 
 import { RichText } from '../../atoms/RichText';
 
-import { UIComponent } from '../../../types';
+import css from './InfoPage.module.scss';
 
-import StyledWrapper from './InfoPage.styled';
+import { UIComponent } from '../../../types';
 
 export type InfoPageProps = {
   title: string;
@@ -21,16 +22,16 @@ export const InfoPage = ({
   const isContentAvailable = subtitle || description;
 
   return (
-    <StyledWrapper className={className}>
-      <h1 className="page-heading">{title}</h1>
+    <main className={cx(css.container, className)}>
+      <h1 className="pageHeading">{title}</h1>
       {isContentAvailable && (
-        <section className="content">
-          {subtitle && <RichText content={subtitle} className="subtitle" />}
+        <section className={css.content}>
+          {subtitle && <RichText content={subtitle} className={css.subtitle} />}
           {description && (
-            <RichText content={description} className="description" />
+            <RichText content={description} className={css.description} />
           )}
         </section>
       )}
-    </StyledWrapper>
+    </main>
   );
 };

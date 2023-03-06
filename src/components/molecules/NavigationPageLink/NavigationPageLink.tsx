@@ -1,33 +1,33 @@
 import Link from 'next/link';
 
-import { StyledWrapper } from './NavigationPageLink.styled';
+import css from './NavigationPageLink.module.scss';
 
 export type NavigationPageLinkProps = {
   title: string;
   link: string;
   description: string;
-  handleLinkClick: (event: MouseEvent) => void;
-  background?: string;
+  handleLinkClick: (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => void;
 };
 
 export const NavigationPageLink = ({
   title,
   link,
-  background,
   description,
   handleLinkClick
 }: NavigationPageLinkProps) => {
   return (
-    <StyledWrapper background={background}>
+    <div className={css.container}>
       <Link
         href={link}
-        className="zone-name"
+        className={css.zoneName}
         onClick={(e) => handleLinkClick(e)}
       >
-        <span className="loading-text">Please wait</span> {title}{' '}
-        <span className="loading-text">is now loading...</span>
+        <span className={css.loadingText}>Please wait</span> {title}{' '}
+        <span className={css.loadingText}>is now loading...</span>
       </Link>
-      <p className="zone-info">{description}</p>
-    </StyledWrapper>
+      <p className={css.zoneInfo}>{description}</p>
+    </div>
   );
 };

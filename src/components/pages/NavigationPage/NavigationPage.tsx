@@ -3,9 +3,9 @@ import {
   NavigationPageLinkProps
 } from '../../molecules/NavigationPageLink';
 
-import { showLoadingText } from './NavigationPage.utils';
+import { showNavigationPageLinkLoadingText } from './NavigationPage.utils';
 
-import { StyledWrapper } from './NavigationPage.styled';
+import css from './NavigationPage.module.scss';
 
 export type NavigationPageProps = {
   title: string;
@@ -19,18 +19,18 @@ export const NavigationPage = ({
   links
 }: NavigationPageProps) => {
   return (
-    <StyledWrapper>
-      <h1 className="page-title">{title}</h1>
+    <main className={css.container}>
+      <h1 className="pageHeading">{title}</h1>
       <p>{description}</p>
-      <div className="links-container">
+      <div className={css.linksContainer}>
         {links.map((link, index) => (
           <NavigationPageLink
             {...link}
             key={index}
-            handleLinkClick={showLoadingText}
+            handleLinkClick={showNavigationPageLinkLoadingText}
           />
         ))}
       </div>
-    </StyledWrapper>
+    </main>
   );
 };

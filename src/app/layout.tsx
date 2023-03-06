@@ -1,5 +1,5 @@
-import { Header } from '../components/molecules/Header';
-import { Footer } from '../components/molecules/Footer';
+import { Header, HeaderProps } from '../components/molecules/Header';
+import { Footer, FooterProps } from '../components/molecules/Footer';
 
 import api from '../api';
 
@@ -27,7 +27,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     headerProps.links
   );
 
-  const formattedHeaderProps = {
+  const formattedHeaderProps: HeaderProps = {
     links: parsedHeaderLinks
   };
 
@@ -37,7 +37,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     footerProps.links
   );
 
-  const formattedFooterProps = {
+  const formattedFooterProps: FooterProps = {
     links: parsedFooterLinks,
     copyright: footerProps.copyright
   };

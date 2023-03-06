@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
-import { SignalTypeSign } from '../../types';
 
 const CISSignalContext = React.createContext(null);
 
-export type CISSignalProviderProps = {
-  children: React.ReactNode;
-  signalTypeSigns: SignalTypeSign[];
-};
-
-const CISSignalProvider = ({
-  children,
-  signalTypeSigns
-}: CISSignalProviderProps) => {
+const CISSignalProvider = ({ children, signalTypeSigns }) => {
   const [zone, setZone] = useState('all');
   const [signalType, setSignalType] = useState('all');
   const [signType, setSignType] = useState('all');

@@ -1,0 +1,9 @@
+@use '../../../theme/' as *;
+
+.content {
+  @include flexColumnCenter;
+}
+
+.subtitle {
+  text-align: center;
+}

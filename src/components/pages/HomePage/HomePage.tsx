@@ -22,13 +22,13 @@ export const HomePage = ({ hero, button }: HomePageProps) => {
   };
 
   return (
-    <div className={css.container}>
+    <main className={css.container}>
       <div className={css.heroContainer}>
         <RichText content={hero} classNameList={classNameList} />
         <Button {...button} className="btn">
           {button.title}
         </Button>
       </div>
-    </div>
+    </main>
   );
 };

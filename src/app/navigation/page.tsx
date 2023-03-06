@@ -1,17 +1,13 @@
 import {
   NavigationPage,
   NavigationPageProps
-} from '../components/pages/NavigationPage';
+} from '../../components/pages/NavigationPage';
 
-import api from '../api';
+import api from '../../api';
 
-import { getContent, getImage } from '../utils/cmsUtils';
+import { getContent, getImage } from '../../utils/cmsUtils';
 
-export default function Navigation(pageProps: NavigationPageProps) {
-  return <NavigationPage {...pageProps} />;
-}
-
-export const getStaticProps = async () => {
+export default async function Navigation() {
   const navigationPage = await api.cms.getNavigationPage('/navigation');
 
   const { title, description, links } = navigationPage.fields;
@@ -24,11 +20,11 @@ export const getStaticProps = async () => {
     return { title, link: linkedTo, description, background: parsedBackground };
   });
 
-  return {
-    props: {
-      title,
-      description,
-      links: parsedLinks
-    }
+  const pageProps: NavigationPageProps = {
+    title,
+    description,
+    links: parsedLinks
   };
-};
+
+  return <NavigationPage {...pageProps} />;
+}
