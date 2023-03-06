@@ -33,6 +33,13 @@
 
 .footerLinks {
   @include flexCenterCenter;
+
+  gap: 2rem;
+
+  @include mobile {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 }
 
 .footerLinks__link,

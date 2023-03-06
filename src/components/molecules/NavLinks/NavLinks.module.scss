@@ -1,17 +1,5 @@
 @use '../../../theme/' as *;
 
-.container {
-  .mobileHeaderLinks {
-    @include flexColumn;
-
-    align-items: flex-end;
-    background: #cdcdcd;
-    margin-bottom: 1rem;
-    padding: 1rem 0;
-  }
-}
-
 .link {
-  padding: 10px;
-  transition: var(--transition);
+  transition: $transition;
 }

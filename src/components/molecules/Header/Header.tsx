@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { NavLinks, NavLinkProps } from '../NavLinks';
 import { GiHamburgerMenu } from 'react-icons/gi';
+
+import { NavLinks, NavLinkProps } from '../NavLinks';
+import { Button } from '../../atoms/Button';
 
 import css from './Header.module.scss';
 
@@ -19,20 +21,26 @@ export const Header = ({ links }: HeaderProps) => {
             {/* Think up of logo */}
             <h1>Logo</h1>
           </div>
-          <NavLinks className={css.headerLinks} links={links} />
-          <button
+          <NavLinks
+            links={links}
+            className={css.headerLinks}
+            linkClassName={css.headerLinks__link}
+          />
+          <Button
             className={css.menuButton}
             onClick={() => setShowLinks(!showLinks)}
           >
             <GiHamburgerMenu className={css.menuButton__icon} />
-          </button>
+          </Button>
         </div>
       </div>
       {showLinks && (
         <NavLinks
-          className={css.headerLinks__mobile}
-          showMobileLinks={setShowLinks}
           links={links}
+          className={css.headerLinks_mobile}
+          linkContainerClassName={css.headerLinks_mobile__linkContainer}
+          linkClassName={css.headerLinks_mobile__linkContainer__link}
+          showMobileLinks={setShowLinks}
         />
       )}
     </>
