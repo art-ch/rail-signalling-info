@@ -1,11 +1,47 @@
+'use client';
+
 import React, { useState, useContext } from 'react';
+import { ZonePageContent } from '../components/pages/ZonePage';
+import { SignalTypeSign } from '../types';
 
-const CISSignalContext = React.createContext(null);
+export type SignalContextProps = {
+  zone: string;
+  signalType: string;
+  signalTypeSigns: SignalTypeSign[];
+  signType: string;
+  setZone: React.Dispatch<React.SetStateAction<string>>;
+  filterSignals: (e: any, id: any, name: any) => void;
+  filterAspects: (aspects: any) => any[];
+  filterSigns: (name: any) => void;
+  filteredSigns: (signs: any) => never[];
+};
 
-export const CISSignalProvider = ({ children, signalTypeSigns }) => {
+const SignalContext = React.createContext<SignalContextProps>({
+  zone: '',
+  signalType: '',
+  signalTypeSigns: [],
+  signType: '',
+  setZone: () => '',
+  filterSignals: (e: any, id: any, name: any) => [],
+  filterAspects: (aspects: any) => [],
+  filterSigns: (name: any) => [],
+  filteredSigns: (signs: any) => []
+});
+
+export type SignalProviderProps = {
+  children: React.ReactNode;
+  zonePageContent: ZonePageContent;
+};
+
+export const SignalProvider = ({
+  children,
+  zonePageContent
+}: SignalProviderProps) => {
   const [zone, setZone] = useState('all');
   const [signalType, setSignalType] = useState('all');
   const [signType, setSignType] = useState('all');
+
+  const { signalTypeSigns } = zonePageContent;
 
   const filterSignals = (e, id, name) => {
     const firstButton =
@@ -141,25 +177,23 @@ export const CISSignalProvider = ({ children, signalTypeSigns }) => {
     return newSigns;
   };
 
+  const value = {
+    zone,
+    signalType,
+    signalTypeSigns,
+    signType,
+    setZone,
+    filterSignals,
+    filterAspects,
+    filterSigns,
+    filteredSigns
+  };
+
   return (
-    <CISSignalContext.Provider
-      value={{
-        zone,
-        signalType,
-        signalTypeSigns,
-        signType,
-        setZone,
-        filterSignals,
-        filterAspects,
-        filterSigns,
-        filteredSigns
-      }}
-    >
-      {children}
-    </CISSignalContext.Provider>
+    <SignalContext.Provider value={value}>{children}</SignalContext.Provider>
   );
 };
 
-export const useCISSignalContext = () => useContext(CISSignalContext);
+export const useSignalContext = () => useContext(SignalContext);
 
-export { CISSignalContext };
+export { SignalContext };

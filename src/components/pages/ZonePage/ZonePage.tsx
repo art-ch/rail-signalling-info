@@ -6,14 +6,11 @@ import SignFilterButtons from '../../../containers/CIS/content/signs/SignFilterB
 import SignCards from '../../../containers/CIS/content/signs/SignCards';
 // -----------
 
-import { useRouter } from 'next/router';
-
 import { RichTextContent } from 'contentful';
 
 import { RichText } from '../../atoms/RichText';
 
 import { Signal, Filters, SignalTypeSign, Sign } from '../../../types';
-import { usePageContext } from './ZonePage.utils';
 
 export type ZonePageContent = {
   signals: Signal[];
@@ -37,12 +34,6 @@ export const ZonePage = ({
   content,
   additionalInfo
 }: ZonePageProps) => {
-  const { route } = useRouter();
-
-  const zoneName = route.replace('/zones/', '');
-
-  const Context = usePageContext(zoneName);
-
   const {
     signals,
     signalFilters,
