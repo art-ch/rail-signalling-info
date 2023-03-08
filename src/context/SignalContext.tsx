@@ -5,10 +5,12 @@ import { ZonePageContent } from '../components/pages/ZonePage';
 import { SignalTypeSign } from '../types';
 
 export type SignalContextProps = {
+  shownContent: string;
   zone: string;
   signalType: string;
   signalTypeSigns: SignalTypeSign[];
   signType: string;
+  setShownContent: React.Dispatch<React.SetStateAction<string>>;
   setZone: React.Dispatch<React.SetStateAction<string>>;
   filterSignals: (e: any, id: any, name: any) => void;
   filterAspects: (aspects: any) => any[];
@@ -17,10 +19,12 @@ export type SignalContextProps = {
 };
 
 const SignalContext = React.createContext<SignalContextProps>({
+  shownContent: '',
   zone: '',
   signalType: '',
   signalTypeSigns: [],
   signType: '',
+  setShownContent: () => '',
   setZone: () => '',
   filterSignals: (e: any, id: any, name: any) => [],
   filterAspects: (aspects: any) => [],
@@ -30,18 +34,16 @@ const SignalContext = React.createContext<SignalContextProps>({
 
 export type SignalProviderProps = {
   children: React.ReactNode;
-  zonePageContent: ZonePageContent;
+  content: ZonePageContent;
 };
 
-export const SignalProvider = ({
-  children,
-  zonePageContent
-}: SignalProviderProps) => {
+export const SignalProvider = ({ children, content }: SignalProviderProps) => {
+  const [shownContent, setShownContent] = useState('signals');
   const [zone, setZone] = useState('all');
   const [signalType, setSignalType] = useState('all');
   const [signType, setSignType] = useState('all');
 
-  const { signalTypeSigns } = zonePageContent;
+  const { signalTypeSigns } = content;
 
   const filterSignals = (e, id, name) => {
     const firstButton =
@@ -178,10 +180,12 @@ export const SignalProvider = ({
   };
 
   const value = {
+    shownContent,
     zone,
     signalType,
     signalTypeSigns,
     signType,
+    setShownContent,
     setZone,
     filterSignals,
     filterAspects,

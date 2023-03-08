@@ -1,0 +1,24 @@
+@use '../../../theme/' as *;
+
+.buttonContainer {
+  @include flexCenterCenter;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  border: 1px solid seagreen;
+}
+
+.filterButton {
+  background: white;
+  color: seagreen;
+  border-radius: 0;
+  border: 1px solid transparent;
+  cursor: pointer;
+  :hover {
+    border-color: seagreen;
+  }
+}
+
+.active {
+  background: seagreen;
+  color: white;
+}

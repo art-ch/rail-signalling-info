@@ -10,12 +10,12 @@ export default async function CISZone() {
 
   const { title, description, content, additionalInfo } = cisPage.fields;
 
-  const cisZonePageProps: ZonePageProps = {
+  const pageProps: ZonePageProps = {
     title,
     description,
     content: getContent(content),
     additionalInfo
   };
 
-  return <CISZonePage {...cisZonePageProps} />;
+  return <CISZonePage {...pageProps} />;
 }

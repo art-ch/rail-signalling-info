@@ -25,9 +25,7 @@ export const HomePage = ({ hero, button }: HomePageProps) => {
     <main className={css.container}>
       <div className={css.heroContainer}>
         <RichText content={hero} classNameList={classNameList} />
-        <Button {...button} className="btn">
-          {button.title}
-        </Button>
+        <Button {...button}>{button.title}</Button>
       </div>
     </main>
   );

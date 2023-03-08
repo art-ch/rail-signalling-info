@@ -11,6 +11,9 @@ import { RichTextContent } from 'contentful';
 import { RichText } from '../../atoms/RichText';
 
 import { Signal, Filters, SignalTypeSign, Sign } from '../../../types';
+import { useContext } from 'react';
+import { CISSignalContext } from '../../../containers/CIS/CISSignalContext';
+import { FilterPanel } from '../../molecules/FilterPanel';
 
 export type ZonePageContent = {
   signals: Signal[];
@@ -42,6 +45,8 @@ export const ZonePage = ({
     locomotiveSignalization
   } = content;
 
+  const { shownContent, setShownContent } = useContext(CISSignalContext);
+
   return (
     <>
       <aside className="filter-panel">
@@ -56,6 +61,10 @@ export const ZonePage = ({
           <h1>{title}</h1>
           <p>{description}</p>
         </div>
+        <FilterPanel
+          options={['Signals', 'Locomotive Signals', 'Signs']}
+          state={{ shownContent, setShownContent }}
+        />
         {/* transform into separate renderer to make ZonePage abstract */}
         <SignalCards signals={signals} />
         <LocomotiveSignals locomotiveSignalization={locomotiveSignalization} />

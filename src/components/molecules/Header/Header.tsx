@@ -4,14 +4,22 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { NavLinks, NavLinkProps } from '../NavLinks';
 import { Button } from '../../atoms/Button';
 
-import css from './Header.module.scss';
+import defaultCss from './Header.module.scss';
+import { getCss } from '../../../utils/themeUtils';
+import { UIComponent } from '../../../types';
 
 export type HeaderProps = {
   links: NavLinkProps[];
-};
+} & UIComponent;
 
-export const Header = ({ links }: HeaderProps) => {
+export const Header = ({
+  links,
+  customCss,
+  disableDefaultCss
+}: HeaderProps) => {
   const [showLinks, setShowLinks] = useState(false);
+
+  const css = getCss(defaultCss, customCss, disableDefaultCss);
 
   return (
     <>
@@ -28,6 +36,7 @@ export const Header = ({ links }: HeaderProps) => {
           />
           <Button
             className={css.menuButton}
+            disableDefaultCss
             onClick={() => setShowLinks(!showLinks)}
           >
             <GiHamburgerMenu className={css.menuButton__icon} />

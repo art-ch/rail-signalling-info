@@ -3,6 +3,7 @@ import React, { useState, useContext } from 'react';
 const CISSignalContext = React.createContext(null);
 
 export const CISSignalProvider = ({ children, signalTypeSigns }) => {
+  const [shownContent, setShownContent] = useState('Signals');
   const [zone, setZone] = useState('all');
   const [signalType, setSignalType] = useState('all');
   const [signType, setSignType] = useState('all');
@@ -144,10 +145,12 @@ export const CISSignalProvider = ({ children, signalTypeSigns }) => {
   return (
     <CISSignalContext.Provider
       value={{
+        shownContent,
         zone,
         signalType,
         signalTypeSigns,
         signType,
+        setShownContent,
         setZone,
         filterSignals,
         filterAspects,
