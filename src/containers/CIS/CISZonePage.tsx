@@ -1,7 +1,10 @@
 'use client';
 
 import { ZonePage, ZonePageProps } from '../../components/pages/ZonePage';
+import { SignalProvider } from '../../context/SignalContext';
 import GlobalStyle from '../../theme/GlobalStyles';
+
+// remove after refactoring CIS container
 import { CISSignalProvider } from './CISSignalContext';
 
 export const CISZonePage = (cisZonePageProps: ZonePageProps) => {
@@ -11,7 +14,9 @@ export const CISZonePage = (cisZonePageProps: ZonePageProps) => {
       <CISSignalProvider
         signalTypeSigns={cisZonePageProps.content.signalTypeSigns}
       >
-        <ZonePage {...cisZonePageProps} />
+        <SignalProvider content={cisZonePageProps.content}>
+          <ZonePage {...cisZonePageProps} />
+        </SignalProvider>
       </CISSignalProvider>
     </>
   );

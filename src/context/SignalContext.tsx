@@ -2,15 +2,16 @@
 
 import React, { useState, useContext } from 'react';
 import { ZonePageContent } from '../components/pages/ZonePage';
+import { ZonePageContentTypes } from '../components/pages/ZonePage/ZonePageContentRenderer';
 import { SignalTypeSign } from '../types';
 
 export type SignalContextProps = {
-  shownContent: string;
+  shownContent: ZonePageContentTypes;
   zone: string;
   signalType: string;
   signalTypeSigns: SignalTypeSign[];
   signType: string;
-  setShownContent: React.Dispatch<React.SetStateAction<string>>;
+  setShownContent: React.Dispatch<React.SetStateAction<ZonePageContentTypes>>;
   setZone: React.Dispatch<React.SetStateAction<string>>;
   filterSignals: (e: any, id: any, name: any) => void;
   filterAspects: (aspects: any) => any[];
@@ -18,19 +19,7 @@ export type SignalContextProps = {
   filteredSigns: (signs: any) => never[];
 };
 
-const SignalContext = React.createContext<SignalContextProps>({
-  shownContent: '',
-  zone: '',
-  signalType: '',
-  signalTypeSigns: [],
-  signType: '',
-  setShownContent: () => '',
-  setZone: () => '',
-  filterSignals: (e: any, id: any, name: any) => [],
-  filterAspects: (aspects: any) => [],
-  filterSigns: (name: any) => [],
-  filteredSigns: (signs: any) => []
-});
+const SignalContext = React.createContext<SignalContextProps | null>(null);
 
 export type SignalProviderProps = {
   children: React.ReactNode;
@@ -38,7 +27,7 @@ export type SignalProviderProps = {
 };
 
 export const SignalProvider = ({ children, content }: SignalProviderProps) => {
-  const [shownContent, setShownContent] = useState('signals');
+  const [shownContent, setShownContent] = useState('Signals');
   const [zone, setZone] = useState('all');
   const [signalType, setSignalType] = useState('all');
   const [signType, setSignType] = useState('all');
@@ -198,6 +187,12 @@ export const SignalProvider = ({ children, content }: SignalProviderProps) => {
   );
 };
 
-export const useSignalContext = () => useContext(SignalContext);
+export const useSignalContext = () => {
+  const context = useContext(SignalContext);
 
-export { SignalContext };
+  if (!context) {
+    throw new Error('useSignalContext must be used within SignalProvider');
+  }
+
+  return context;
+};

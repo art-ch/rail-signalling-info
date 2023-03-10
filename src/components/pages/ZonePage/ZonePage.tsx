@@ -1,9 +1,6 @@
 // move in scope of reworking of signal renderer
 import SignalFilterButtons from '../../../containers/CIS/content/signals/SignalFilterButtons';
-import SignalCards from '../../../containers/CIS/content/signals/SignalCards';
-import LocomotiveSignals from '../../../containers/CIS/content/signals/LocomotiveSignals';
 import SignFilterButtons from '../../../containers/CIS/content/signs/SignFilterButtons';
-import SignCards from '../../../containers/CIS/content/signs/SignCards';
 // -----------
 
 import { RichTextContent } from 'contentful';
@@ -11,9 +8,10 @@ import { RichTextContent } from 'contentful';
 import { RichText } from '../../atoms/RichText';
 
 import { Signal, Filters, SignalTypeSign, Sign } from '../../../types';
-import { useContext } from 'react';
-import { CISSignalContext } from '../../../containers/CIS/CISSignalContext';
 import { FilterPanel } from '../../molecules/FilterPanel';
+import { useSignalContext } from '../../../context/SignalContext';
+import { getContentFilterOptions } from './ZonePageUtils';
+import { ZonePageContentRenderer } from './ZonePageContentRenderer';
 
 export type ZonePageContent = {
   signals: Signal[];
@@ -45,7 +43,13 @@ export const ZonePage = ({
     locomotiveSignalization
   } = content;
 
-  const { shownContent, setShownContent } = useContext(CISSignalContext);
+  const { shownContent, setShownContent } = useSignalContext();
+
+  const contentFilterOptions = getContentFilterOptions({
+    signals,
+    locomotiveSignalization,
+    signs
+  });
 
   return (
     <>
@@ -62,14 +66,13 @@ export const ZonePage = ({
           <p>{description}</p>
         </div>
         <FilterPanel
-          options={['Signals', 'Locomotive Signals', 'Signs']}
-          state={{ shownContent, setShownContent }}
+          options={contentFilterOptions}
+          filterState={[shownContent, setShownContent]}
         />
-        {/* transform into separate renderer to make ZonePage abstract */}
-        <SignalCards signals={signals} />
-        <LocomotiveSignals locomotiveSignalization={locomotiveSignalization} />
-        <SignCards signs={signs} />
-        {/* ----------- */}
+        <ZonePageContentRenderer
+          content={content}
+          shownContent={shownContent}
+        />
         <RichText content={additionalInfo} />
       </main>
     </>
