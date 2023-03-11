@@ -8,6 +8,16 @@
   padding: 0 2rem;
 }
 
+.logo {
+  position: relative;
+  width: 150px;
+  height: 80px;
+
+  @include mobile {
+    width: 120px;
+  }
+}
+
 .headerLinks {
   @include flexCenterSpaceBetween;
 

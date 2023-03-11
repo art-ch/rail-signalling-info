@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
-import { NavLinks, NavLinkProps } from '../NavLinks';
+import { NavLinks, NavLinkProps } from '../../molecules/NavLinks';
 import { Button } from '../../atoms/Button';
 
 import defaultCss from './Header.module.scss';
 import { getCss } from '../../../utils/themeUtils';
 import { UIComponent } from '../../../types';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export type HeaderProps = {
+  logo: string;
   links: NavLinkProps[];
 } & UIComponent;
 
 export const Header = ({
+  logo,
   links,
   customCss,
   disableDefaultCss
@@ -25,10 +29,9 @@ export const Header = ({
     <>
       <div className={css.container}>
         <div className={css.innerCentering}>
-          <div className={css.logo}>
-            {/* Think up of logo */}
-            <h1>Logo</h1>
-          </div>
+          <Link href="/" className={css.logo}>
+            <Image src={logo} alt="logo" fill />
+          </Link>
           <NavLinks
             links={links}
             className={css.headerLinks}

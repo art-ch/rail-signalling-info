@@ -1,4 +1,5 @@
 import { createClient } from 'contentful';
+
 import {
   WebsiteModel,
   HomePageModel,

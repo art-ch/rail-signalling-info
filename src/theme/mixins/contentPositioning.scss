@@ -1,50 +1,64 @@
-@mixin gridCentering {
-    display: grid;
-    place-items: center;
-}
+// flex
 
 @mixin flex {
-    display: flex;
+  display: flex;
 }
 
 @mixin flexColumn {
-    @include flex;
+  @include flex;
 
-    flex-direction: column;
+  flex-direction: column;
 }
 
 @mixin flexCenter {
-    @include flex;
+  @include flex;
 
-    align-items: center;
+  align-items: center;
 }
 
 @mixin flexCenterCenter {
-    @include flexCenter;
+  @include flexCenter;
 
-    justify-content: center;
+  justify-content: center;
 }
 
 @mixin flexCenterSpaceBetween {
-    @include flexCenter;
+  @include flexCenter;
 
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 @mixin flexColumnCenter {
-    @include flexColumn;
+  @include flexColumn;
 
-    align-items: center;
+  align-items: center;
 }
 
 @mixin flexColumnCenterCenter {
-    @include flexColumnCenter;
+  @include flexColumnCenter;
 
-    justify-content: center;
+  justify-content: center;
 }
 
 @mixin flexColumnCenterSpaceBetween {
-    @include flexColumnCenter;
+  @include flexColumnCenter;
 
-    justify-content: space-between;
+  justify-content: space-between;
+}
+
+// grid
+
+@mixin gridCentering {
+  display: grid;
+  place-items: center;
+}
+
+// other
+
+@mixin positionTransformCentering {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

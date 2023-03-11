@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import api from '../api';
 
 import { HomePage, HomePageProps } from '../components/pages/HomePage';

@@ -1,7 +1,7 @@
 import { RichTextContent } from 'contentful';
 
 import { RichText } from '../../atoms/RichText';
-import { NavLinks, NavLinkProps } from '../NavLinks';
+import { NavLinks, NavLinkProps } from '../../molecules/NavLinks';
 
 import css from './Footer.module.scss';
 
