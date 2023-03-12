@@ -6,8 +6,8 @@ import { Button } from '../../atoms/Button';
 import { UIComponent } from '../../../types';
 
 type FilterState = [
-  string,
-  React.Dispatch<React.SetStateAction<React.ReactNode>>
+  state: string,
+  setState: React.Dispatch<React.SetStateAction<React.ReactNode>>
 ];
 
 export type FilterPanelProps = {

@@ -6,11 +6,9 @@ import { HeaderModel, FooterModel } from './organisms';
 
 type LayoutModel<Content> = {
   title: string;
-  content: Content;
+  content: { [ContentItem in keyof Content]: Entry<Content[ContentItem]> };
 };
 
 export type ZonePageContentModel = Entry<ZonePageContent>;
 
-export type WebsiteModel = LayoutModel<
-  [Entry<HeaderModel>, Entry<FooterModel>]
->;
+export type WebsiteModel = LayoutModel<[HeaderModel, FooterModel]>;
