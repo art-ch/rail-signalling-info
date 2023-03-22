@@ -1,0 +1,17 @@
+@use '../variables' as variables;
+
+@use './breakpoints' as breakpoints;
+
+@mixin fixedSidebar {
+  transition: variables.$transition;
+
+  @include breakpoints.desktopSmall {
+    z-index: 1;
+    transform: translate(-100%);
+    position: fixed;
+  }
+
+  &_shown {
+    transform: translate(0);
+  }
+}

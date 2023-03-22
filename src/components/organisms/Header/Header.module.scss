@@ -1,5 +1,13 @@
 @use '../../../theme/' as *;
 
+.container {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background: white;
+  z-index: 1;
+}
+
 .innerCentering {
   @include flexCenterSpaceBetween;
 
@@ -13,7 +21,7 @@
   width: 150px;
   height: 80px;
 
-  @include mobile {
+  @include tablet {
     width: 120px;
   }
 }
@@ -23,7 +31,7 @@
 
   gap: 3rem;
 
-  @include mobile {
+  @include tablet {
     display: none;
   }
 
@@ -35,12 +43,16 @@
 }
 
 .headerLinks_mobile {
+  top: 80px;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
   display: none;
-  margin: 1rem 0;
-  padding: 0 2rem;
+  padding: 0 0 1rem;
   text-align: center;
+  background: white;
 
-  @include mobile {
+  @include tablet {
     @include flexColumn;
   }
 
@@ -66,7 +78,7 @@
   font-size: 22px;
   cursor: pointer;
 
-  @include mobile {
+  @include tablet {
     display: block;
   }
 }

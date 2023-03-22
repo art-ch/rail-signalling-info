@@ -21,9 +21,12 @@ export type SignalTypeSign = {
 };
 
 export type Filters = {
-  id: number;
-  name: string;
-  displayName: string;
+  title: string;
+  filters: {
+    id: number;
+    name: string;
+    displayName: string;
+  }[];
 };
 
 export type Sign = {

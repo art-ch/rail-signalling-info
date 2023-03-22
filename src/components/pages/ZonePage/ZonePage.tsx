@@ -1,17 +1,19 @@
-// move in scope of reworking of signal renderer
-import SignalFilterButtons from '../../../containers/CIS/content/signals/SignalFilterButtons';
-import SignFilterButtons from '../../../containers/CIS/content/signs/SignFilterButtons';
-// -----------
+import { useState } from 'react';
+
+import cx from 'classnames';
 
 import { RichTextContent } from 'contentful';
 
 import { RichText } from '../../atoms/RichText';
 
-import { Signal, Filters, SignalTypeSign, Sign } from '../../../types';
-import { FilterPanel } from '../../molecules/FilterPanel';
 import { useSignalContext } from '../../../context/SignalContext';
-import { getContentFilterOptions } from './ZonePageUtils';
 import { ZonePageContentRenderer } from './ZonePageContentRenderer';
+
+import { Signal, Filters, SignalTypeSign, Sign } from '../../../types';
+
+import css from './ZonePage.module.scss';
+import { Button, ButtonProps } from '../../atoms/Button';
+import { ZonePageFilters } from './ZonePageFilters';
 
 export type ZonePageContent = {
   signals: Signal[];
@@ -25,6 +27,7 @@ export type ZonePageContent = {
 export type ZonePageProps = {
   title: string;
   description: string;
+  filterToggler: ButtonProps;
   content: ZonePageContent;
   additionalInfo: RichTextContent;
 };
@@ -32,49 +35,45 @@ export type ZonePageProps = {
 export const ZonePage = ({
   title,
   description,
+  filterToggler,
   content,
   additionalInfo
 }: ZonePageProps) => {
-  const {
-    signals,
-    signalFilters,
-    signs,
-    signFilters,
-    locomotiveSignalization
-  } = content;
+  const [showFilters, setShowFilters] = useState(false);
 
-  const { shownContent, setShownContent } = useSignalContext();
+  const { shownContent } = useSignalContext();
 
-  const contentFilterOptions = getContentFilterOptions({
-    signals,
-    locomotiveSignalization,
-    signs
-  });
+  const filterSectionClickHandlers = () => {
+    setShowFilters(false);
+  };
 
   return (
-    <>
-      <aside className="filter-panel">
-        <nav>
-          {/* rework filters */}
-          <SignalFilterButtons signalFilters={signalFilters} />
-          <SignFilterButtons signFilters={signFilters} />
-        </nav>
+    <div className={css.container}>
+      <aside className={cx(css.sidebar, { [css.sidebar_shown]: showFilters })}>
+        <ZonePageFilters
+          isFilterSectionVisible={showFilters}
+          filterSectionClickHandlers={filterSectionClickHandlers}
+          className={css.contentFilters}
+        />
       </aside>
-      <main className="content">
-        <div className="page-heading">
+      <main className={css.content}>
+        <div className="pageHeading">
           <h1>{title}</h1>
           <p>{description}</p>
         </div>
-        <FilterPanel
-          options={contentFilterOptions}
-          filterState={[shownContent, setShownContent]}
-        />
+        <Button
+          {...filterToggler}
+          className={css.filterToggler}
+          onClick={() => setShowFilters(!showFilters)}
+        >
+          {filterToggler.title}
+        </Button>
         <ZonePageContentRenderer
           content={content}
           shownContent={shownContent}
         />
         <RichText content={additionalInfo} />
       </main>
-    </>
+    </div>
   );
 };

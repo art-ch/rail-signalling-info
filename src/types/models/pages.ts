@@ -6,7 +6,7 @@ import { ZonePageContentModel } from './templates';
 
 export type HomePageModel = {
   hero: RichTextContent;
-  button: ButtonModel;
+  heroButton: ButtonModel;
 };
 
 export type InfoPageModel = {
@@ -24,6 +24,7 @@ export type NavigationPageModel = {
 export type ZonePageModel = {
   title: string;
   description: string;
+  filterToggler: ButtonModel;
   content: ZonePageContentModel;
   additionalInfo: RichTextContent;
 };

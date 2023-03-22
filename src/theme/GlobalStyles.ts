@@ -24,9 +24,6 @@ const GlobalStyle = createGlobalStyle`
   --transition: 0.3s;
   --radius: 5px;
 }
-body {
-  font-family: var(--primary-font);
-}
 
 main {
   ${flexColumnCenter}

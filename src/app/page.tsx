@@ -9,11 +9,11 @@ import { getContent } from '../utils/cmsUtils';
 export default async function Home() {
   const homePage = await api.cms.getHomePage('/');
 
-  const { hero, button } = homePage.fields;
+  const { hero, heroButton } = homePage.fields;
 
   const pageProps: HomePageProps = {
     hero,
-    button: getContent(button)
+    heroButton: getContent(heroButton)
   };
 
   return <HomePage {...pageProps} />;

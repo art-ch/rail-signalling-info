@@ -1,0 +1,38 @@
+@use '../../../theme/' as *;
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  @include fixedSidebar;
+}
+
+.contentFilters {
+  top: 80px;
+  position: sticky;
+  align-self: flex-start;
+  max-width: 350px;
+  background: white;
+  overflow-y: scroll;
+  max-height: calc(100vh - 80px);
+}
+
+.filterToggler {
+  display: none;
+  margin: 0 0 2rem;
+
+  @include desktopSmall {
+    display: block;
+  }
+
+  @include mobile {
+    width: 85vw;
+  }
+}
+
+.content {
+  @include desktopSmall {
+    margin: 0 auto;
+  }
+}

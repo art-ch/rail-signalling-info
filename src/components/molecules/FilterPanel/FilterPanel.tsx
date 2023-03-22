@@ -5,21 +5,23 @@ import css from './FilterPanel.module.scss';
 import { Button } from '../../atoms/Button';
 import { UIComponent } from '../../../types';
 
-type FilterState = [
+export type FilterState = [
   state: string,
   setState: React.Dispatch<React.SetStateAction<React.ReactNode>>
 ];
 
 export type FilterPanelProps = {
   title?: string;
-  filterState: FilterState;
   options: React.ReactNode[];
+  filterState: FilterState;
+  additionalClickHandler?: () => void;
 } & UIComponent;
 
 export const FilterPanel = ({
   title,
   filterState,
   options,
+  additionalClickHandler,
   className
 }: FilterPanelProps) => {
   const [state, setState] = filterState;
@@ -34,7 +36,10 @@ export const FilterPanel = ({
             className={cx(css.filterButton, {
               [css.active]: option === state
             })}
-            onClick={() => setState(option)}
+            onClick={() => {
+              setState(option);
+              additionalClickHandler?.();
+            }}
           >
             {option}
           </Button>

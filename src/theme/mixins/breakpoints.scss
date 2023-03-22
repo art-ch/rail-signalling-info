@@ -30,8 +30,8 @@
   }
 }
 
-@mixin desktop {
-  @media (max-width: #{$desktop}) {
+@mixin desktopSmall {
+  @media (max-width: #{$desktopSmall}) {
     @content;
   }
 }
