@@ -29,7 +29,7 @@ export const getContentFilterOptions = (
   return contentFilterOptions as ZonePageContentTypes[];
 };
 
-export const getMainFilterContent = ({
+export const getMainFilters = ({
   filters,
   additionalClickHandler
 }: getMainFiltersProps): Omit<FilterPanelProps, 'filterState'>[] =>
