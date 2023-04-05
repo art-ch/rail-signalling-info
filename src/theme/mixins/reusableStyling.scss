@@ -4,6 +4,11 @@
 
 @mixin fixedSidebar {
   transition: variables.$transition;
+  scrollbar-width: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
   @include breakpoints.desktopSmall {
     z-index: 1;

@@ -4,16 +4,17 @@ import cx from 'classnames';
 
 import { RichTextContent } from 'contentful';
 
-import { RichText } from '../../atoms/RichText';
+import { RichText } from 'src/components/atoms/RichText';
+import { Button, ButtonProps } from 'src/components/atoms/Button';
 
-import { useSignalContext } from '../../../context/SignalContext';
+import { useSignalContext } from 'src/context/SignalContext';
+
 import { ZonePageContentRenderer } from './ZonePageContentRenderer';
+import { ZonePageFilters } from './ZonePageFilters';
 
-import { Signal, Filters, SignalTypeSign, Sign } from '../../../types';
+import { Signal, Filters, SignalTypeSign, Sign } from 'src/types';
 
 import css from './ZonePage.module.scss';
-import { Button, ButtonProps } from '../../atoms/Button';
-import { ZonePageFilters } from './ZonePageFilters';
 
 export type ZonePageContent = {
   signals: Signal[];

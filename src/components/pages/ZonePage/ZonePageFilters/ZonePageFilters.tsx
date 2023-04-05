@@ -1,10 +1,14 @@
-import { FilterList, FilterSection } from '../../../organisms/FilterSection';
+import {
+  FilterList,
+  FilterSection
+} from 'src/components/organisms/FilterSection';
+import { FilterPanelProps } from 'src/components/molecules/FilterPanel';
+
+import { useSignalContext } from 'src/context/SignalContext';
 
 import { getContentFilterOptions } from './ZonePageFilters.utils';
 
-import { UIComponent } from '../../../../types';
-import { FilterPanelProps } from '../../../molecules/FilterPanel';
-import { useSignalContext } from '../../../../context/SignalContext';
+import { UIComponent } from 'src/types';
 
 export type ZonePageFiltersProps = {
   isFilterSectionVisible: boolean;
