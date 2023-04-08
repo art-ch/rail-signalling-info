@@ -1,13 +1,67 @@
+'use client';
+
 import React, { useState, useContext } from 'react';
+import { SignalProviderProps } from 'src/types/context';
+import {
+  CISSignalContextProps,
+  CISSignalState,
+  CISSignalType,
+  CISSignType,
+  CISTrainProtectionZone
+} from './CISSignalContext.types';
 
-const CISSignalContext = React.createContext(null);
+const CISSignalContext = React.createContext<CISSignalContextProps | null>(
+  null
+);
 
-export const CISSignalProvider = ({ children, signalTypeSigns }) => {
-  const [shownContent, setShownContent] = useState('Signals');
+export const CISSignalProvider = ({
+  children,
+  content
+}: SignalProviderProps) => {
+  // remove after refactoring CIS Container
   const [zone, setZone] = useState('all');
-  const [signalType, setSignalType] = useState('all');
-  const [signType, setSignType] = useState('all');
+  // ---------------------------------------
+  const [signalType, setSignalType] = useState<CISSignalType>(
+    CISSignalType.All
+  );
+  const [signType, setSignType] = useState<CISSignType>(CISSignType.All);
+  const [trainProtectionZone, setTrainProtectionZone] =
+    useState<CISTrainProtectionZone>(CISTrainProtectionZone.All);
 
+  const { signalTypeSigns } = content;
+
+  const resetSignalState = () => {
+    setTrainProtectionZone(CISTrainProtectionZone.All);
+    setSignalType(CISSignalType.All);
+  };
+  const setTrainProtectionZoneState = (option: CISTrainProtectionZone) => {
+    setTrainProtectionZone(option);
+    setSignalType(CISSignalType.All);
+  };
+  const setSignalTypeState = (option: CISSignalType) => {
+    setTrainProtectionZone(CISTrainProtectionZone.All);
+    setSignalType(option);
+  };
+  const setSignTypeState = (option: CISSignType) => {
+    setSignType(option);
+  };
+
+  const allSignalsState =
+    trainProtectionZone === CISTrainProtectionZone.All &&
+    signalType === CISSignalType.All &&
+    CISSignalType.All;
+
+  const state: CISSignalState = {
+    allSignalsState: [allSignalsState, resetSignalState],
+    trainProtectionZoneState: [
+      trainProtectionZone,
+      setTrainProtectionZoneState
+    ],
+    signalState: [signalType, setSignalTypeState],
+    signState: [signType, setSignTypeState]
+  };
+
+  // remove legacy functions after cis container refactor
   const filterSignals = (e, id, name) => {
     const firstButton =
       e.target.parentElement.parentElement.firstElementChild.firstElementChild;
@@ -142,20 +196,25 @@ export const CISSignalProvider = ({ children, signalTypeSigns }) => {
     return newSigns;
   };
 
+  // --------------------------------------------------------------------------------------
+
   return (
     <CISSignalContext.Provider
       value={{
-        shownContent,
+        content,
+        state,
+
+        // remove after refactoring CIS Container
+        signalTypeSigns,
         zone,
         signalType,
-        signalTypeSigns,
         signType,
-        setShownContent,
-        setZone,
+        trainProtectionZone,
         filterSignals,
         filterAspects,
         filterSigns,
         filteredSigns
+        // --------------------------------------
       }}
     >
       {children}
@@ -163,6 +222,16 @@ export const CISSignalProvider = ({ children, signalTypeSigns }) => {
   );
 };
 
-export const useCISSignalContext = () => useContext(CISSignalContext);
+export const useCISSignalContext = () => {
+  const context = useContext(CISSignalContext);
+
+  if (!context) {
+    throw new Error(
+      'useCISSignalContext must be used within CISSignalProvider'
+    );
+  }
+
+  return context;
+};
 
 export { CISSignalContext };

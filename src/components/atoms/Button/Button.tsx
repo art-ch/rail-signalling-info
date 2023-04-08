@@ -9,7 +9,7 @@ import { getCss } from '../../../utils/themeUtils';
 export type ButtonProps = {
   title?: string;
   link?: string;
-  onClick?: () => void;
+  onClick?: (event?: React.MouseEvent, props?: unknown) => void;
   children: React.ReactNode;
 } & UIComponent;
 

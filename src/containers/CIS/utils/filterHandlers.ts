@@ -1,54 +1,28 @@
+import { Sign, Signal } from 'src/types';
 import {
-  FilterSignalsProps,
-  GetFilteredSignalsProps,
-  FilterSignsProps,
-  GetFilteredSignsProps
-} from '../../../context/SignalContext/SignalContext.types';
+  CISSignalType,
+  CISSignType,
+  CISTrainProtectionZone
+} from '../context/CISSignalContext.types';
 
-import { Sign, Signal } from '../../../types';
-
-export const filterSignals = ({
-  event,
-  id,
-  name,
-  stateSetters
-}: FilterSignalsProps) => {
-  const [setZone, setSignalType] = stateSetters;
-
-  const firstButton = (event.target as HTMLButtonElement)?.parentElement
-    ?.parentElement?.firstElementChild?.firstElementChild;
-
-  if (id === 1) {
-    firstButton?.classList.add('active');
-  } else {
-    firstButton?.classList.remove('active');
-  }
-
-  if (id > 6) {
-    setZone('all');
-    setSignalType(`${name}`);
-  } else {
-    setZone(`${name}`);
-    setSignalType('all');
-  }
+export type GetFilteredSignalsProps = {
+  signals: Signal[];
 };
 
-export const getFilteredSignals = ({
-  signals,
-  zone,
-  signalType
-}: GetFilteredSignalsProps) => {
+export type GetFilteredSignsProps = { signs: Sign[] };
+
+export const getFilteredSignals = ({ signals }: GetFilteredSignalsProps) => {
   let filteredSignals: Signal[] = [];
 
-  if (zone === 'all') {
+  if (CISTrainProtectionZone.All) {
     filteredSignals = signals;
   }
 
-  if (zone === 'atp') {
+  if (CISTrainProtectionZone.ATP) {
     filteredSignals = [signals[0], signals[14], ...signals.slice(1, 14)];
   }
 
-  if (zone === 'atp-4') {
+  if (CISTrainProtectionZone.ATP4) {
     filteredSignals = [
       signals[0],
       signals[29],
@@ -57,7 +31,7 @@ export const getFilteredSignals = ({
     ];
   }
 
-  if (zone === 'atp' || zone === 'atp-4') {
+  if (CISTrainProtectionZone.ATP || CISTrainProtectionZone.ATP4) {
     filteredSignals = filteredSignals.map((aspect) => {
       if (
         aspect.name === 'green-flickering' ||
@@ -72,15 +46,15 @@ export const getFilteredSignals = ({
     });
   }
 
-  if (zone === 'altp') {
+  if (CISTrainProtectionZone.ALTP) {
     filteredSignals = [...signals.slice(18, 26), signals[5]];
   }
 
-  if (zone === 'semi-atp') {
+  if (CISTrainProtectionZone.SemiATP) {
     filteredSignals = [signals[0], ...signals.slice(3, 8)];
   }
 
-  if (zone === 'private') {
+  if (CISTrainProtectionZone.PrivateTP) {
     filteredSignals = [
       signals[0],
       signals[2],
@@ -91,8 +65,8 @@ export const getFilteredSignals = ({
     ];
   }
 
-  if (signalType === 'all') {
-    if (zone !== 'all') {
+  if (CISSignalType.All) {
+    if (!CISTrainProtectionZone.All) {
       return filteredSignals.map((aspect) => {
         if (aspect.name !== 'red') {
           return {
@@ -104,13 +78,14 @@ export const getFilteredSignals = ({
       });
     }
     return filteredSignals;
-  } else if (signalType === 'main') {
+  } else if (CISSignalType.Main) {
     return filteredSignals.map((aspect) => {
       if (aspect.name !== 'red') {
         return {
           ...aspect,
           info: aspect.info.filter(
-            ({ type }) => type === 'main' || type === 'shunting'
+            ({ type }) =>
+              type === CISSignalType.Main || type === CISSignalType.Shunting
           )
         };
       }
@@ -122,11 +97,11 @@ export const getFilteredSignals = ({
         return {
           ...aspect,
           info: aspect.info.filter(({ type }) =>
-            signalType === 'shunting' ||
-            signalType === 'warning' ||
-            signalType === 'other'
-              ? type === signalType
-              : type === signalType || aspect.name === 'red'
+            CISSignalType.Shunting ||
+            CISSignalType.Warning ||
+            CISSignalType.Other
+              ? type === CISSignalType
+              : type === CISSignalType || aspect.name === 'red'
           )
         };
       })
@@ -134,35 +109,26 @@ export const getFilteredSignals = ({
   }
 };
 
-export const filterSigns = ({ name, stateSetters }: FilterSignsProps) => {
-  const [setSignType] = stateSetters;
-
-  setSignType(name);
-};
-
-export const getFilteredSigns = ({
-  signs,
-  signType
-}: GetFilteredSignsProps) => {
+export const getFilteredSigns = ({ signs }: GetFilteredSignsProps) => {
   let filteredSigns: Sign[] = [];
 
-  if (signType === 'all') {
+  if (CISSignType.All) {
     filteredSigns = signs;
   }
 
-  if (signType === 'hand') {
+  if (CISSignType.Hand) {
     filteredSigns = [...signs.slice(0, 10)];
   }
 
-  if (signType === 'pointers') {
+  if (CISSignType.Pointers) {
     filteredSigns = [...signs.slice(10, 18)];
   }
 
-  if (signType === 'textless') {
+  if (CISSignType.OtherTextless) {
     filteredSigns = [...signs.slice(18, 34)];
   }
 
-  if (signType === 'text-signs') {
+  if (CISSignType.Text) {
     filteredSigns = [...signs.slice(34)];
   }
 

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CISSignalContext } from '../../CISSignalContext';
+import { CISSignalContext } from '../../context/CISSignalContext';
 import { Signal, Description } from './content/ecosystems/index';
 
 const SignalCards = ({ signals }) => {

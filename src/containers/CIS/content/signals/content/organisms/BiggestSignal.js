@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { SignalWrapper } from '../ecosystems/StyledComponentsForSignals';
-import { CISSignalContext } from '../../../../CISSignalContext';
+import { CISSignalContext } from '../../../../context/CISSignalContext';
 import {
   ThreeAspectPlate,
   TwoAspectPlate,

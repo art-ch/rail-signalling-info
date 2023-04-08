@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { flexColumnCenterCenter } from '../../../../theme/Mixins';
-import { CISSignalContext } from '../../CISSignalContext';
+import { CISSignalContext } from '../../context/CISSignalContext';
 
 const LocomotiveSignals = ({ locomotiveSignalization }) => {
   return (

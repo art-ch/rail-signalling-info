@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 
 import cx from 'classnames';
 
@@ -7,14 +7,28 @@ import { RichTextContent } from 'contentful';
 import { RichText } from 'src/components/atoms/RichText';
 import { Button, ButtonProps } from 'src/components/atoms/Button';
 
-import { useSignalContext } from 'src/context/SignalContext';
-
-import { ZonePageContentRenderer } from './ZonePageContentRenderer';
-import { ZonePageFilters } from './ZonePageFilters';
-
-import { Signal, Filters, SignalTypeSign, Sign } from 'src/types';
+import { Signal, Filters, SignalTypeSign, Sign, UIComponent } from 'src/types';
 
 import css from './ZonePage.module.scss';
+import { FilterPanelProps } from 'src/components/molecules/FilterPanel';
+import { getContentFilterOptions } from './ZonePage.utils';
+
+export type ZonePageContentTypes =
+  | 'Signals'
+  | 'Locomotive Signalization'
+  | 'Signs';
+
+export type ZonePageFiltersProps = {
+  shownContent: ZonePageContentTypes;
+  contentFilter: FilterPanelProps;
+  isFilterSectionVisible: boolean;
+  filterSectionClickHandlers: () => void;
+} & UIComponent;
+
+export type ZonePageContentRendererProps = {
+  content: ZonePageContent;
+  shownContent: ZonePageContentTypes;
+};
 
 export type ZonePageContent = {
   signals: Signal[];
@@ -22,10 +36,10 @@ export type ZonePageContent = {
   signalFilters: Filters[];
   signs: Sign[];
   signFilters: Filters[];
-  locomotiveSignalization: Record<string, unknown>[];
+  locomotiveSignalization?: Record<string, unknown>[];
 };
 
-export type ZonePageProps = {
+export type ZonePageMainProps = {
   title: string;
   description: string;
   filterToggler: ButtonProps;
@@ -33,26 +47,51 @@ export type ZonePageProps = {
   additionalInfo: RichTextContent;
 };
 
+export type ZonePageCustomComponents = {
+  Filters: FunctionComponent<ZonePageFiltersProps>;
+  ContentRenderer: FunctionComponent<ZonePageContentRendererProps>;
+};
+
+export type ZonePageProps = ZonePageMainProps & ZonePageCustomComponents;
+
 export const ZonePage = ({
   title,
   description,
   filterToggler,
   content,
-  additionalInfo
+  additionalInfo,
+  Filters,
+  ContentRenderer
 }: ZonePageProps) => {
-  const [showFilters, setShowFilters] = useState(false);
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
+  const [shownContent, setShownContent] =
+    useState<ZonePageContentTypes>('Signals');
 
-  const { shownContent } = useSignalContext();
+  const { signals, signs, locomotiveSignalization } = content;
+
+  const contentFilterOptions = getContentFilterOptions({
+    signals,
+    signs,
+    locomotiveSignalization
+  });
+
+  const contentFilter: FilterPanelProps = {
+    title: 'Content Filters',
+    options: contentFilterOptions,
+    filterState: [shownContent, setShownContent]
+  };
 
   const filterSectionClickHandlers = () => {
-    setShowFilters(false);
+    setShowSidebar(false);
   };
 
   return (
     <div className={css.container}>
-      <aside className={cx(css.sidebar, { [css.sidebar_shown]: showFilters })}>
-        <ZonePageFilters
-          isFilterSectionVisible={showFilters}
+      <aside className={cx(css.sidebar, { [css.sidebar_shown]: showSidebar })}>
+        <Filters
+          isFilterSectionVisible={showSidebar}
+          shownContent={shownContent}
+          contentFilter={contentFilter}
           filterSectionClickHandlers={filterSectionClickHandlers}
           className={css.contentFilters}
         />
@@ -65,14 +104,11 @@ export const ZonePage = ({
         <Button
           {...filterToggler}
           className={css.filterToggler}
-          onClick={() => setShowFilters(!showFilters)}
+          onClick={() => setShowSidebar(!showSidebar)}
         >
           {filterToggler.title}
         </Button>
-        <ZonePageContentRenderer
-          content={content}
-          shownContent={shownContent}
-        />
+        <ContentRenderer content={content} shownContent={shownContent} />
         <RichText content={additionalInfo} />
       </main>
     </div>

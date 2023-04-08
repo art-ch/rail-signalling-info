@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CISSignalContext } from '../../../../CISSignalContext';
+import { CISSignalContext } from '../../../../context/CISSignalContext';
 import { TwoAspectPlate, SignalTypeSign } from '../molecules';
 import { SignalWrapper } from '../ecosystems/StyledComponentsForSignals';
 

@@ -3,11 +3,11 @@ import cx from 'classnames';
 
 import css from './FilterPanel.module.scss';
 import { Button } from '../../atoms/Button';
-import { UIComponent } from '../../../types';
+import { SetState, UIComponent } from '../../../types';
 
 export type FilterState = [
-  state: string,
-  setState: React.Dispatch<React.SetStateAction<React.ReactNode>>
+  state: React.ReactNode,
+  setState: SetState<React.ReactNode> | ((option: React.ReactNode) => void)
 ];
 
 export type FilterPanelProps = {
@@ -26,25 +26,30 @@ export const FilterPanel = ({
 }: FilterPanelProps) => {
   const [state, setState] = filterState;
 
+  const renderButtons = () =>
+    options.map((option, idx) => {
+      const activeOption = option === state;
+
+      return (
+        <Button
+          key={idx}
+          className={cx(css.filterButton, {
+            [css.active]: activeOption
+          })}
+          onClick={() => {
+            setState(option);
+            additionalClickHandler?.();
+          }}
+        >
+          {option}
+        </Button>
+      );
+    });
+
   return (
     <div className={cx(css.container, className)}>
       {title && <h3 className="sectionTitle">{title}</h3>}
-      <div className={css.buttonContainer}>
-        {options.map((option, idx) => (
-          <Button
-            key={idx}
-            className={cx(css.filterButton, {
-              [css.active]: option === state
-            })}
-            onClick={() => {
-              setState(option);
-              additionalClickHandler?.();
-            }}
-          >
-            {option}
-          </Button>
-        ))}
-      </div>
+      <div className={css.buttonContainer}>{renderButtons()}</div>
     </div>
   );
 };

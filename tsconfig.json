@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "baseUrl": ".",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
@@ -15,8 +16,8 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
-      "src/*": [
-        "./src/*"
+      "*": [
+        "./*"
       ]
     },
     "plugins": [
@@ -38,6 +39,5 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/containers/CIS/CISSignalContext.js"
   ],
 }

@@ -13,11 +13,9 @@ export default async function Navigation() {
   const { title, description, links } = navigationPage.fields;
 
   const parsedLinks = links.map((link) => {
-    const { title, link: linkedTo, description, background } = getContent(link);
+    const { title, link: linkedTo, description } = getContent(link);
 
-    const parsedBackground = getImage(background);
-
-    return { title, link: linkedTo, description, background: parsedBackground };
+    return { title, link: linkedTo, description };
   });
 
   const pageProps: NavigationPageProps = {
