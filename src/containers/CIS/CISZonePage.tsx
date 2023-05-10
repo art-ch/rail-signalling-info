@@ -8,15 +8,13 @@ import { ZonePage, ZonePageMainProps } from 'src/components/pages/ZonePage';
 import { CISZonePageFilters } from 'src/containers/CIS/components/organisms/CISZonePageFilters';
 import { CISZonePageContentRenderer } from 'src/containers/CIS/components/organisms/CISZonePageContentRenderer';
 
-export const CISZonePage = (cisZonePageProps: ZonePageMainProps) => {
-  return (
-    <>
-      <GlobalStyle />
-      <ZonePage
-        {...cisZonePageProps}
-        Filters={CISZonePageFilters}
-        ContentRenderer={CISZonePageContentRenderer}
-      />
-    </>
-  );
-};
+export const CISZonePage = (cisZonePageProps: ZonePageMainProps) => (
+  <>
+    <GlobalStyle />
+    <ZonePage
+      {...cisZonePageProps}
+      Filters={CISZonePageFilters}
+      ContentRenderer={CISZonePageContentRenderer}
+    />
+  </>
+);

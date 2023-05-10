@@ -45,10 +45,20 @@ export enum CISSignType {
 }
 
 export type CISSignalState = {
-  allSignalsState: [CISSignalType.All | false, () => void];
-  trainProtectionZoneState: TrainProtectionZoneState<CISTrainProtectionZone>;
-  signalState: SignalTypeState<CISSignalType>;
-  signState: SignTypeState<CISSignType>;
+  allSignals: CISSignalType | false;
+  trainProtectionZone: CISTrainProtectionZone;
+  signalType: CISSignalType;
+  signType: CISSignType;
 };
 
-export type CISSignalContextProps = SignalContextProps<CISSignalState>;
+export type CISSignalStateWithHandlers = {
+  allSignalsState: [CISSignalType.All | false, () => void];
+  trainProtectionZoneState: TrainProtectionZoneState<CISTrainProtectionZone>;
+  signalTypeState: SignalTypeState<CISSignalType>;
+  signTypeState: SignTypeState<CISSignType>;
+};
+
+export type CISSignalContextProps = SignalContextProps<
+  CISSignalState,
+  CISSignalStateWithHandlers
+>;

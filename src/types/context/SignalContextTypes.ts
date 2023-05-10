@@ -19,7 +19,11 @@ export type SignalProviderProps = {
   content: ZonePageContent;
 };
 
-export type SignalContextProps<ZoneSpecificState> = {
+export type SignalContextProps<
+  ZoneSpecificState,
+  ZoneSpecificStateWithHandlers
+> = {
   content: ZonePageContent;
   state: ZoneSpecificState;
+  stateWithHandlers: ZoneSpecificStateWithHandlers;
 };

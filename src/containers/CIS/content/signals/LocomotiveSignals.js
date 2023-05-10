@@ -1,27 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { flexColumnCenterCenter } from '../../../../theme/Mixins';
-import { CISSignalContext } from '../../context/CISSignalContext';
 
-const LocomotiveSignals = ({ locomotiveSignalization }) => {
-  return (
-    <section>
-      <h2 className="section-title">Locomotive Signals</h2>
-      {locomotiveSignalization.map(({ id, name, info, lights }) => {
-        return (
-          <ArticleWrapper key={id}>
-            <Signal lights={lights} />
-            <Description name={name} data={info} />
-          </ArticleWrapper>
-        );
-      })}
-    </section>
-  );
-};
-
-export default LocomotiveSignals;
-
-const Signal = ({ lights }) => {
+export const Signal = ({ lights }) => {
   const generateLights = () =>
     Object.values(lights).map((value, id) => {
       if (id === 2) {
@@ -60,31 +40,18 @@ const RedYellowLight = ({ active }) => {
   );
 };
 
-const Description = ({ name, data }) => {
-  const { zone } = useContext(CISSignalContext);
+// const ArticleWrapper = styled.article`
+//   ${flexColumnCenterCenter}
+//   background: #dbdbdb;
 
-  return (
-    <article>
-      <h3>{name}</h3>
-      <p className="description-content">
-        {(zone === 'altp' && Object.values(data)[1]) || Object.values(data)[0]}
-      </p>
-    </article>
-  );
-};
-
-const ArticleWrapper = styled.article`
-  ${flexColumnCenterCenter}
-  background: #dbdbdb;
-
-  @media (min-width: 668px) {
-    flex-direction: row;
-    gap: 4rem;
-    .description-content {
-      width: 550px;
-    }
-  }
-`;
+//   @media (min-width: 668px) {
+//     flex-direction: row;
+//     gap: 4rem;
+//     .description-content {
+//       width: 550px;
+//     }
+//   }
+// `;
 
 const SignalWrapper = styled.div`
   width: 100px;

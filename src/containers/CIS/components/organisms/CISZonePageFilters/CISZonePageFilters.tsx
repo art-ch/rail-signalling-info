@@ -14,19 +14,23 @@ export const CISZonePageFilters = ({
   filterSectionClickHandlers,
   className
 }: ZonePageFiltersProps) => {
-  const { content, state } = useCISSignalContext();
+  const { content, stateWithHandlers } = useCISSignalContext();
 
   const { signalFilters, signFilters } = content;
-  const { allSignalsState, trainProtectionZoneState, signalState, signState } =
-    state;
+  const {
+    allSignalsState,
+    trainProtectionZoneState,
+    signalTypeState,
+    signTypeState
+  } = stateWithHandlers;
 
   const signalFilterList: FilterList = getMainFilters({
     filters: signalFilters,
-    state: [allSignalsState, trainProtectionZoneState, signalState]
+    state: [allSignalsState, trainProtectionZoneState, signalTypeState]
   });
   const signFilterList: FilterList = getMainFilters({
     filters: signFilters,
-    state: [signState]
+    state: [signTypeState]
   });
 
   let filters: FilterList = [];

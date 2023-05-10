@@ -1,3 +1,14 @@
+type Filter = {
+  id: number;
+  name: string;
+  displayName: string;
+};
+
+export type Filters = {
+  title: string;
+  filters: Filter[];
+};
+
 export type SignalLights = {
   [key: `l${number}`]: string;
 };
@@ -15,18 +26,11 @@ export type Signal = {
   lights: SignalLights;
 };
 
+export type LocomotiveSignalization = Record<string, unknown>;
+
 export type SignalTypeSign = {
   type: string;
   letters: string[];
-};
-
-export type Filters = {
-  title: string;
-  filters: {
-    id: number;
-    name: string;
-    displayName: string;
-  }[];
 };
 
 export type Sign = {

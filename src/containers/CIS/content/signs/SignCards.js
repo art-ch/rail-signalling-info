@@ -26,7 +26,7 @@ const SignCards = ({ signs }) => {
 
 export default SignCards;
 
-const Sign = ({ id }) => {
+export const Sign = ({ id }) => {
   return (
     <>
       {setOfSigns.map(({ id: componentID, components }) => {

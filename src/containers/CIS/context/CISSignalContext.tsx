@@ -5,6 +5,7 @@ import { SignalProviderProps } from 'src/types/context';
 import {
   CISSignalContextProps,
   CISSignalState,
+  CISSignalStateWithHandlers,
   CISSignalType,
   CISSignType,
   CISTrainProtectionZone
@@ -46,19 +47,26 @@ export const CISSignalProvider = ({
     setSignType(option);
   };
 
-  const allSignalsState =
+  const allSignals =
     trainProtectionZone === CISTrainProtectionZone.All &&
     signalType === CISSignalType.All &&
     CISSignalType.All;
 
   const state: CISSignalState = {
-    allSignalsState: [allSignalsState, resetSignalState],
+    allSignals: allSignals,
+    trainProtectionZone,
+    signalType,
+    signType
+  };
+
+  const stateWithHandlers: CISSignalStateWithHandlers = {
+    allSignalsState: [allSignals, resetSignalState],
     trainProtectionZoneState: [
       trainProtectionZone,
       setTrainProtectionZoneState
     ],
-    signalState: [signalType, setSignalTypeState],
-    signState: [signType, setSignTypeState]
+    signalTypeState: [signalType, setSignalTypeState],
+    signTypeState: [signType, setSignTypeState]
   };
 
   // remove legacy functions after cis container refactor
@@ -203,6 +211,7 @@ export const CISSignalProvider = ({
       value={{
         content,
         state,
+        stateWithHandlers,
 
         // remove after refactoring CIS Container
         signalTypeSigns,

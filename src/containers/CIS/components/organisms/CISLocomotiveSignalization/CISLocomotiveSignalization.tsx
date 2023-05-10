@@ -1,0 +1,52 @@
+import { ContentCard } from 'src/components/molecules/ContentCard';
+import { Description } from 'src/components/atoms/Description';
+
+import { Signal as CISLocomotiveSignalRenderer } from 'src/containers/CIS/content/signals/LocomotiveSignals';
+
+import { useCISSignalContext } from '../../../context/CISSignalContext';
+
+import { CISTrainProtectionZone } from 'src/containers/CIS/context/CISSignalContext.types';
+
+import { SignalLights } from 'src/types';
+
+export type CISLocomotiveSignal = {
+  id: number;
+  name: string;
+  info: { description: string; altpDescription?: string };
+  lights: SignalLights;
+};
+
+export type CISLocomotiveSignalizationProps = {
+  title: string;
+  locomotiveSignalization: CISLocomotiveSignal[];
+};
+
+export const CISLocomotiveSignalization = ({
+  title,
+  locomotiveSignalization
+}: CISLocomotiveSignalizationProps) => {
+  const {
+    state: { trainProtectionZone }
+  } = useCISSignalContext();
+
+  return (
+    <section>
+      <h2 className="section-title">{title}</h2>
+      {locomotiveSignalization.map((locomotiveSignal) => {
+        const { id, name, info, lights } = locomotiveSignal;
+
+        const mainText =
+          trainProtectionZone === CISTrainProtectionZone.ALTP
+            ? info.altpDescription
+            : info.description;
+
+        return (
+          <ContentCard key={id}>
+            <CISLocomotiveSignalRenderer lights={lights} />
+            <Description title={name} mainText={mainText} />
+          </ContentCard>
+        );
+      })}
+    </section>
+  );
+};
