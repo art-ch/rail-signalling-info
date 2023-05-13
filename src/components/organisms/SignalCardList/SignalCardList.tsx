@@ -23,9 +23,11 @@ export const SignalCardList = ({
   SignalRenderer
 }: SignalCardListProps) => (
   <section>
-    <h2 className="section-title">{title}</h2>
-    {signalList.map((signal, id) => (
-      <SignalCard key={id} signal={signal} SignalRenderer={SignalRenderer} />
-    ))}
+    <h2 className="sectionTitle large">{title}</h2>
+    <div className="cardList">
+      {signalList.map((signal, id) => (
+        <SignalCard key={id} signal={signal} SignalRenderer={SignalRenderer} />
+      ))}
+    </div>
   </section>
 );

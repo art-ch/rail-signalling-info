@@ -31,22 +31,24 @@ export const CISLocomotiveSignalization = ({
 
   return (
     <section>
-      <h2 className="section-title">{title}</h2>
-      {locomotiveSignalization.map((locomotiveSignal) => {
-        const { id, name, info, lights } = locomotiveSignal;
+      <h2 className="sectionTitle large">{title}</h2>
+      <div className="cardList">
+        {locomotiveSignalization.map((locomotiveSignal) => {
+          const { id, name, info, lights } = locomotiveSignal;
 
-        const mainText =
-          trainProtectionZone === CISTrainProtectionZone.ALTP
-            ? info.altpDescription
-            : info.description;
+          const mainText =
+            trainProtectionZone === CISTrainProtectionZone.ALTP
+              ? info.altpDescription
+              : info.description;
 
-        return (
-          <ContentCard key={id}>
-            <CISLocomotiveSignalRenderer lights={lights} />
-            <Description title={name} mainText={mainText} />
-          </ContentCard>
-        );
-      })}
+          return (
+            <ContentCard key={id}>
+              <CISLocomotiveSignalRenderer lights={lights} />
+              <Description title={name} mainText={mainText} />
+            </ContentCard>
+          );
+        })}
+      </div>
     </section>
   );
 };

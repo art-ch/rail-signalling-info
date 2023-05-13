@@ -19,9 +19,11 @@ export const SignCardList = ({
   SignRenderer
 }: SignCardListProps) => (
   <section>
-    <h2 className="section-title">{title}</h2>
-    {signList.map((sign, id) => (
-      <SignCard key={id} sign={sign} SignRenderer={SignRenderer} />
-    ))}
+    <h2 className="sectionTitle large">{title}</h2>
+    <div className="cardList">
+      {signList.map((sign, id) => (
+        <SignCard key={id} sign={sign} SignRenderer={SignRenderer} />
+      ))}
+    </div>
   </section>
 );

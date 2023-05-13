@@ -16,8 +16,8 @@ export type HomePageProps = {
 
 export const HomePage = ({ hero, heroButton }: HomePageProps) => {
   const classNameList = {
-    h1_className: cx(css.text, css.title),
-    h3_className: cx(css.text, css.subtitle),
+    h1_className: cx(css.text, 'pageTitle large'),
+    h3_className: cx(css.text, 'sectionTitle'),
     p_className: css.text
   };
 

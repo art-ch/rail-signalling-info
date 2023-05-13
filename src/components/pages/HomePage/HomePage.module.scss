@@ -24,21 +24,3 @@
   transform: translate(-50%, -50%);
   color: white;
 }
-
-.title {
-  text-align: center;
-  font-size: 48px;
-
-  @include mobile {
-    font-size: 32px;
-  }
-}
-
-.subtitle {
-  text-align: center;
-  font-size: 24px;
-
-  @include mobile {
-    font-size: 18px;
-  }
-}

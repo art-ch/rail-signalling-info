@@ -20,8 +20,10 @@ export const NavigationPage = ({
 }: NavigationPageProps) => {
   return (
     <main className={css.container}>
-      <h1 className="pageHeading">{title}</h1>
-      <p>{description}</p>
+      <div className="pageHeading">
+        <h1 className="pageTitle medium">{title}</h1>
+        <p>{description}</p>
+      </div>
       <div className={css.linksContainer}>
         {links.map((link, index) => (
           <NavigationPageLink

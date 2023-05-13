@@ -1,0 +1,16 @@
+@use '../../../theme/' as *;
+
+.container {
+  display: grid;
+  gap: 32px 0;
+  padding: 32px;
+  background: #ebe5de;
+
+  @include tablet {
+    padding: 24px;
+  }
+
+  @include mobile {
+    padding: 16px;
+  }
+}

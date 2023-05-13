@@ -2,6 +2,11 @@
 
 .container {
   display: flex;
+  justify-content: center;
+
+  @include desktopSmall {
+    justify-content: flex-start;
+  }
 }
 
 .sidebar {
@@ -16,6 +21,10 @@
   background: white;
   overflow-y: scroll;
   max-height: calc(100vh - 80px);
+
+  @include desktopSmall {
+    top: 0;
+  }
 }
 
 .filterToggler {

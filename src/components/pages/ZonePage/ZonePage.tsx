@@ -98,7 +98,7 @@ export const ZonePage = ({
       </aside>
       <main className={css.content}>
         <div className="pageHeading">
-          <h1>{title}</h1>
+          <h1 className="pageTitle medium">{title}</h1>
           <p>{description}</p>
         </div>
         <Button

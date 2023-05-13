@@ -23,7 +23,9 @@ export const InfoPage = ({
 
   return (
     <main className={cx(css.container, className)}>
-      <h1 className="pageHeading">{title}</h1>
+      <div className="pageHeading">
+        <h1 className="pageTitle medium">{title}</h1>
+      </div>
       {isContentAvailable && (
         <section className={css.content}>
           {subtitle && <RichText content={subtitle} className={css.subtitle} />}
