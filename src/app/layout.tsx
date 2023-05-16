@@ -1,17 +1,34 @@
+import { Roboto_Slab, Oswald } from 'next/font/google';
+
+import cx from 'classnames';
+
+import { NavLinkProps } from '../components/molecules/NavLinks';
 import { Header, HeaderProps } from '../components/organisms/Header';
 import { Footer, FooterProps } from '../components/organisms/Footer';
 
 import api from '../api';
+import { fetchReferences, getContent, getImage } from '../utils/cmsUtils';
 
 import '../theme/styles.scss';
-import { fetchReferences, getContent, getImage } from '../utils/cmsUtils';
-import { NavLinkProps } from '../components/molecules/NavLinks';
 
 export const metadata = {
   title: 'Rail Signalling Info',
   description:
     'A unified place for information about railway signalling systems around the world'
 };
+
+const roboto_slab = Roboto_Slab({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--primary-font',
+  display: 'swap'
+});
+const oswald = Oswald({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--headings-font',
+  display: 'swap'
+});
 
 export type RootLayoutProps = {
   children: React.ReactNode;
@@ -45,7 +62,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={cx(roboto_slab.variable, oswald.variable)}>
       <head>
         <link
           rel="shortcut icon"

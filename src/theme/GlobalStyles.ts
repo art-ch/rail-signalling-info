@@ -19,8 +19,6 @@ const GlobalStyle = createGlobalStyle`
   --primary9: #c2c5cc;
   --primary10: #0060fb;
 
-  --primary-font: 'Roboto Slab', serif;
-  --headings-font: 'Oswald', sans-serif;
   --transition: 0.3s;
   --radius: 5px;
 }
@@ -49,7 +47,6 @@ h5,
 h6 {
   margin: 0;
   margin-bottom: 1.38rem;
-  font-family: var(--headings-font);
   line-height: 1.3;
   text-transform: capitalize;
 }
@@ -72,7 +69,6 @@ p {
   background: seagreen;
   padding: 1rem;
   border: 1px solid transparent;
-  font-family: var(--primary-font);
   font-size: 16px;
   border-radius: var(--radius);
   transition: var(--transition);
