@@ -2,4 +2,6 @@
 
 .filterSection {
   @include fixedSidebar;
+
+  border: 1px solid $interactiveElementColor;
 }

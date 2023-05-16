@@ -1,24 +1,27 @@
 @use '../../../theme/' as *;
 
+.container {
+  padding: 1rem;
+  border-bottom: 1px solid $interactiveElementColor;
+}
+
 .buttonContainer {
   @include flexCenterCenter;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
-  border: 1px solid seagreen;
 }
 
 .filterButton {
   background: white;
-  color: seagreen;
+  color: $interactiveElementColor;
   border-radius: 0;
   border: 1px solid transparent;
   cursor: pointer;
   :hover {
-    border-color: seagreen;
+    border-color: $interactiveElementColor;
   }
 }
 
 .active {
-  background: seagreen;
+  background: $interactiveElementColor;
   color: white;
 }
