@@ -18,11 +18,7 @@
   }
 
   @include breakpoints.tablet {
-    min-width: 70%;
-  }
-
-  @include breakpoints.tabletSmall {
-    min-width: 80%;
+    min-width: 85%;
   }
 
   @include breakpoints.mobile {

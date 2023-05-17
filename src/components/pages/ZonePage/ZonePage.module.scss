@@ -11,20 +11,21 @@
 
 .sidebar {
   @include fixedSidebar;
-}
 
-.contentFilters {
-  top: 80px;
-  position: sticky;
-  align-self: flex-start;
-  max-width: 350px;
-  background: white;
-  overflow-y: scroll;
-  max-height: calc(100vh - 80px);
+  z-index: 2;
 
   @include desktopSmall {
     top: 0;
   }
+}
+
+.contentFilters {
+  top: 0;
+  position: sticky;
+  max-width: 350px;
+  background: white;
+  overflow-y: scroll;
+  max-height: 99.5vh;
 }
 
 .filterToggler {

@@ -1,8 +1,6 @@
 @use '../../../theme/' as *;
 
 .container {
-  top: 0;
-  position: fixed;
   width: 100%;
   background: white;
   z-index: 1;
@@ -43,8 +41,8 @@
 }
 
 .headerLinks_mobile {
+  position: absolute;
   top: 80px;
-  position: fixed;
   z-index: 1;
   width: 100%;
   display: none;
