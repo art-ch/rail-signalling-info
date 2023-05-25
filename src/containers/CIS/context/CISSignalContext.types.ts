@@ -36,6 +36,28 @@ export enum CISSignalType {
   Other = 'Other Signal Aspects'
 }
 
+export const CISSignalTypeSimplified = {
+  [CISSignalType.All]: 'all',
+  [CISSignalType.Main]: 'main',
+  [CISSignalType.HighSpeedSwitch]: 'fast',
+  [CISSignalType.Entry]: 'entry',
+  [CISSignalType.Exit]: 'exit',
+  [CISSignalType.Invitational]: 'invitational',
+  [CISSignalType.Route]: 'route',
+  [CISSignalType.Block]: 'block',
+  [CISSignalType.Conditional]: 'conditional',
+  [CISSignalType.Cover]: 'cover',
+  [CISSignalType.Obstruction]: 'obstruction',
+  [CISSignalType.Warning]: 'warning',
+  [CISSignalType.Repeating]: 'repeating',
+  [CISSignalType.Industrial]: 'industrial',
+  [CISSignalType.Technological]: 'technological',
+  [CISSignalType.Shunting]: 'shunting',
+  [CISSignalType.Humping]: 'humping',
+  [CISSignalType.Special]: 'special',
+  [CISSignalType.Other]: 'other'
+};
+
 export enum CISSignType {
   All = 'All Signs',
   Hand = 'Hand Signs',

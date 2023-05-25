@@ -1,28 +1,41 @@
 import { Sign, Signal } from 'src/types';
 import {
   CISSignalType,
+  CISSignalTypeSimplified,
   CISSignType,
   CISTrainProtectionZone
 } from '../context/CISSignalContext.types';
 
 export type GetFilteredSignalsProps = {
   signals: Signal[];
+  trainProtectionZone: CISTrainProtectionZone;
+  signalType: CISSignalType;
 };
 
-export type GetFilteredSignsProps = { signs: Sign[] };
+export type GetFilteredSignsProps = { signs: Sign[]; signType: CISSignType };
 
-export const getFilteredSignals = ({ signals }: GetFilteredSignalsProps) => {
+export const getFilteredSignalList = ({
+  signals,
+  trainProtectionZone,
+  signalType
+}: GetFilteredSignalsProps) => {
+  const signalTypeSimplified = CISSignalTypeSimplified[signalType];
+
+  const anyOfATPZones =
+    trainProtectionZone === CISTrainProtectionZone.ATP ||
+    trainProtectionZone === CISTrainProtectionZone.ATP4;
+
   let filteredSignals: Signal[] = [];
 
-  if (CISTrainProtectionZone.All) {
+  if (trainProtectionZone === CISTrainProtectionZone.All) {
     filteredSignals = signals;
   }
 
-  if (CISTrainProtectionZone.ATP) {
+  if (trainProtectionZone === CISTrainProtectionZone.ATP) {
     filteredSignals = [signals[0], signals[14], ...signals.slice(1, 14)];
   }
 
-  if (CISTrainProtectionZone.ATP4) {
+  if (trainProtectionZone === CISTrainProtectionZone.ATP4) {
     filteredSignals = [
       signals[0],
       signals[29],
@@ -31,30 +44,32 @@ export const getFilteredSignals = ({ signals }: GetFilteredSignalsProps) => {
     ];
   }
 
-  if (CISTrainProtectionZone.ATP || CISTrainProtectionZone.ATP4) {
+  if (anyOfATPZones) {
     filteredSignals = filteredSignals.map((aspect) => {
-      if (
+      const anyOfFlickeringSignals =
         aspect.name === 'green-flickering' ||
-        aspect.name === 'yellow-flickering'
-      ) {
+        aspect.name === 'yellow-flickering';
+
+      if (anyOfFlickeringSignals) {
         return {
           ...aspect,
           info: aspect.info.filter(({ type }) => type === 'block')
         };
       }
+
       return aspect;
     });
   }
 
-  if (CISTrainProtectionZone.ALTP) {
+  if (trainProtectionZone === CISTrainProtectionZone.ALTP) {
     filteredSignals = [...signals.slice(18, 26), signals[5]];
   }
 
-  if (CISTrainProtectionZone.SemiATP) {
+  if (trainProtectionZone === CISTrainProtectionZone.SemiATP) {
     filteredSignals = [signals[0], ...signals.slice(3, 8)];
   }
 
-  if (CISTrainProtectionZone.PrivateTP) {
+  if (trainProtectionZone === CISTrainProtectionZone.PrivateTP) {
     filteredSignals = [
       signals[0],
       signals[2],
@@ -65,8 +80,8 @@ export const getFilteredSignals = ({ signals }: GetFilteredSignalsProps) => {
     ];
   }
 
-  if (CISSignalType.All) {
-    if (!CISTrainProtectionZone.All) {
+  if (signalType === CISSignalType.All) {
+    if (trainProtectionZone !== CISTrainProtectionZone.All) {
       return filteredSignals.map((aspect) => {
         if (aspect.name !== 'red') {
           return {
@@ -78,14 +93,13 @@ export const getFilteredSignals = ({ signals }: GetFilteredSignalsProps) => {
       });
     }
     return filteredSignals;
-  } else if (CISSignalType.Main) {
+  } else if (signalType === CISSignalType.Main) {
     return filteredSignals.map((aspect) => {
       if (aspect.name !== 'red') {
         return {
           ...aspect,
           info: aspect.info.filter(
-            ({ type }) =>
-              type === CISSignalType.Main || type === CISSignalType.Shunting
+            ({ type }) => type === 'main' || type === 'shunting'
           )
         };
       }
@@ -100,36 +114,37 @@ export const getFilteredSignals = ({ signals }: GetFilteredSignalsProps) => {
             CISSignalType.Shunting ||
             CISSignalType.Warning ||
             CISSignalType.Other
-              ? type === CISSignalType
-              : type === CISSignalType || aspect.name === 'red'
+              ? type === signalTypeSimplified
+              : type === signalTypeSimplified || aspect.name === 'red'
           )
         };
       })
-      .filter(({ info }) => info.length > 0);
+      .filter(({ info }) => info.length);
   }
 };
 
-export const getFilteredSigns = ({ signs }: GetFilteredSignsProps) => {
+export const getFilteredSignList = ({
+  signs,
+  signType
+}: GetFilteredSignsProps) => {
   let filteredSigns: Sign[] = [];
 
-  if (CISSignType.All) {
-    filteredSigns = signs;
-  }
-
-  if (CISSignType.Hand) {
-    filteredSigns = [...signs.slice(0, 10)];
-  }
-
-  if (CISSignType.Pointers) {
-    filteredSigns = [...signs.slice(10, 18)];
-  }
-
-  if (CISSignType.OtherTextless) {
-    filteredSigns = [...signs.slice(18, 34)];
-  }
-
-  if (CISSignType.Text) {
-    filteredSigns = [...signs.slice(34)];
+  switch (signType) {
+    case CISSignType.Hand:
+      filteredSigns = [...signs.slice(0, 10)];
+      break;
+    case CISSignType.Pointers:
+      filteredSigns = [...signs.slice(10, 18)];
+      break;
+    case CISSignType.OtherTextless:
+      filteredSigns = [...signs.slice(18, 34)];
+      break;
+    case CISSignType.Text:
+      filteredSigns = [...signs.slice(34)];
+      break;
+    default:
+      filteredSigns = signs;
+      break;
   }
 
   return filteredSigns;
