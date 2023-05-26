@@ -1,15 +1,21 @@
-import { Plate } from '../../molecules/Plate';
+import cx from 'classnames';
+
+import { Plate, PlateProps } from '../../molecules/Plate';
 
 import { UIComponent } from '../../../types';
 
-import { StyledWrapper } from './Signal.styled';
-
-type SignalChild = React.ReactElement<typeof Plate>;
+import css from './Signal.module.scss';
 
 export type SignalProps = {
-  children: SignalChild | SignalChild[];
+  plates: PlateProps[];
 } & UIComponent;
 
-export const Signal = ({ children, className }: SignalProps) => {
-  return <StyledWrapper className={className}>{children}</StyledWrapper>;
+export const Signal = ({ plates, className }: SignalProps) => {
+  return (
+    <div className={cx(css.signal, className)}>
+      {plates.map((plate, idx) => (
+        <Plate key={idx} {...plate} />
+      ))}
+    </div>
+  );
 };

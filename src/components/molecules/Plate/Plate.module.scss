@@ -1,0 +1,13 @@
+@use '../../../theme/' as *;
+
+.plate {
+  @include flexColumnCenterCenter;
+
+  //   width: 50px;
+  //   height: 105px;
+  //   transform: translate(-32%);
+  //   border-radius: 50px;
+
+  margin: 0.5rem 0 15px;
+  background: black;
+}

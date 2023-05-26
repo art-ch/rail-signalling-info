@@ -1,14 +1,19 @@
+import cx from 'classnames';
+
+import { Light, LightProps } from '../../atoms/Light';
+
 import { UIComponent } from '../../../types';
-import { Light } from '../../atoms/Light';
 
-import { StyledWrapper } from './Plate.styled';
-
-type PlateChild = React.ReactElement<typeof Light>;
+import css from './Plate.module.scss';
 
 export type PlateProps = {
-  children: PlateChild | PlateChild[];
+  lights: LightProps[];
 } & UIComponent;
 
-export const Plate = ({ children }: PlateProps) => {
-  return <StyledWrapper>{children}</StyledWrapper>;
-};
+export const Plate = ({ lights, className }: PlateProps) => (
+  <div className={cx(css.plate, className)}>
+    {lights.map((light, idx) => (
+      <Light key={idx} {...light} />
+    ))}
+  </div>
+);

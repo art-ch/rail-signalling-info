@@ -1,11 +1,11 @@
 import cx from 'classnames';
 
-import { StyledWrapper } from './Light.styled';
-
 import { UIComponent } from '../../../types';
 
+import css from './Light.module.scss';
+
 type LightSize = 'small' | 'default';
-type LightColor =
+export type LightColor =
   | 'turnedOff'
   | 'red'
   | 'yellow'
@@ -25,7 +25,7 @@ export const Light = ({
   color = 'turnedOff',
   className
 }: LightProps) => {
-  return <StyledWrapper className={cx('light', size, color, className)} />;
+  return <div className={cx(css.light, css[size], css[color], className)} />;
 };
 
 export default Light;

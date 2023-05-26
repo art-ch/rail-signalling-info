@@ -1,0 +1,57 @@
+@use '../../../theme/' as *;
+
+.light {
+  margin: 3px;
+  border-radius: 50%;
+
+  /* sizes */
+  &.default {
+    width: 20px;
+    height: 20px;
+  }
+  &.small {
+    width: 13px;
+    height: 13px;
+  }
+
+  /* colors */
+  &.turnedOff {
+    background: $turnedOffAspect;
+  }
+  &.green {
+    background: $greenAspect;
+  }
+  &.green-flickering {
+    --color: #{$greenAspect};
+    animation: flickering 2s infinite;
+  }
+  &.yellow {
+    background: $yellowAspect;
+  }
+  &.yellow-flickering {
+    --color: #{$yellowAspect};
+    animation: flickering 2s infinite;
+  }
+  &.red {
+    background: $redAspect;
+  }
+  &.moonWhite {
+    background: $moonWhiteAspect;
+  }
+  &.blue {
+    background: $blueAspect;
+  }
+}
+
+/* animation */
+@keyframes flickering {
+  0% {
+    background: $turnedOffAspect;
+  }
+  50% {
+    background: var(--color);
+  }
+  100% {
+    background: $turnedOffAspect;
+  }
+}

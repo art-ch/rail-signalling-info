@@ -1,3 +1,5 @@
+import { LightColor } from 'src/components/atoms/Light';
+
 type Filter = {
   id: number;
   name: string;
@@ -10,7 +12,7 @@ export type Filters = {
 };
 
 export type SignalLights = {
-  [key: `l${number}`]: string;
+  [key: `l${number}`]: LightColor;
 };
 
 export type SignalInfo = {
