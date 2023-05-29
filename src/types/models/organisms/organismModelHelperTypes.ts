@@ -1,14 +1,9 @@
 import { LightColor } from 'src/components/atoms/Light';
 
-type Filter = {
+export type SignalizationFilterModel = {
   id: number;
   name: string;
   displayName: string;
-};
-
-export type Filters = {
-  title: string;
-  filters: Filter[];
 };
 
 export type SignalLights = {
@@ -21,22 +16,7 @@ export type SignalInfo = {
   [key: `${string}Description`]: string;
 };
 
-export type Signal = {
-  id: number;
-  info: SignalInfo[];
-  name: string;
-  lights: SignalLights;
-};
-
-export type LocomotiveSignalization = Record<string, unknown>;
-
 export type SignalTypeSign = {
   type: string;
   letters: string[];
-};
-
-export type Sign = {
-  id: number;
-  sign: string;
-  description: string;
 };

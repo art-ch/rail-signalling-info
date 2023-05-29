@@ -1,0 +1,19 @@
+@use '../../../../../../theme/' as *;
+
+.diamondShapedPlate {
+  border-radius: initial;
+  margin: 0.7rem 0 0;
+  padding: 1.3rem 1.9rem;
+  transform: translate(-35%, -15%) rotate(45deg);
+}
+
+.obstructionPole {
+  border: 1px solid $black;
+  background: repeating-linear-gradient(
+    45deg,
+    $black,
+    $black 10px,
+    $white 10px,
+    $white 20px
+  );
+}

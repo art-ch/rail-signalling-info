@@ -5,10 +5,10 @@ import { DescriptionBlock } from 'src/components/molecules/DescriptionBlock';
 
 import { getFormattedSignalInfo } from './SignalCard.utils';
 
-import { Signal, SignalLights } from 'src/types';
+import { SignalModel, SignalLights } from 'src/types';
 
 export type SignalCardProps = {
-  signal: Signal;
+  signal: SignalModel;
   SignalRenderer: FunctionComponent<{
     id: number;
     aspect: string;

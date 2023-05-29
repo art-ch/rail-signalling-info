@@ -1,15 +1,11 @@
 import { FunctionComponent } from 'react';
 
-import { Sign as SignRenderer } from 'src/containers/CIS/content/signs/SignCards';
-import { ContentCard } from '../../molecules/ContentCard';
-
-import { Sign } from 'src/types';
-import { Description } from 'src/components/atoms/Description';
+import { SignModel } from 'src/types';
 import { SignCard } from 'src/components/molecules/SignCard';
 
 export type SignCardListProps = {
   title: string;
-  signList: Sign[];
+  signList: SignModel[];
   SignRenderer: FunctionComponent<{ id: number }>;
 };
 

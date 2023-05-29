@@ -1,0 +1,11 @@
+@use '../../../../../../../theme/' as *;
+
+.regularSignalPole {
+  height: 400px;
+}
+
+.plate {
+  padding: 17px 27px;
+  transform: translate(-33%);
+  border-radius: 50px;
+}

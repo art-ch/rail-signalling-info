@@ -1,0 +1,13 @@
+@use '../../../theme/' as *;
+
+.signalWrapper {
+  @include flex;
+
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4rem;
+
+  @include tabletSmall {
+    gap: 3rem;
+  }
+}

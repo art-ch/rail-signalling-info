@@ -1,15 +1,11 @@
 import { FunctionComponent } from 'react';
 
-import { ContentCard } from '../../molecules/ContentCard';
-import { Signal as SignalRenderer } from 'src/containers/CIS/content/signals/content/ecosystems';
-
-import { Signal, SignalLights } from 'src/types';
-import { DescriptionBlock } from 'src/components/molecules/DescriptionBlock';
+import { SignalModel, SignalLights } from 'src/types';
 import { SignalCard } from 'src/components/molecules/SignalCard';
 
 export type SignalCardListProps = {
   title: string;
-  signalList: Signal[];
+  signalList: SignalModel[];
   SignalRenderer: FunctionComponent<{
     id: number;
     aspect: string;

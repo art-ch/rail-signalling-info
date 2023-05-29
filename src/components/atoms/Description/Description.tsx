@@ -8,7 +8,11 @@ export type DescriptionProps = {
   mainText: string;
 } & UIComponent;
 
-export const Description = ({ title, mainText, className }) => (
+export const Description = ({
+  title,
+  mainText,
+  className
+}: DescriptionProps) => (
   <div className={cx(css.container, className)}>
     <h3 className={css.title}>{title}</h3>
     <p className={css.mainText}>{mainText}</p>

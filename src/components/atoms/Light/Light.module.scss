@@ -1,7 +1,6 @@
 @use '../../../theme/' as *;
 
 .light {
-  margin: 3px;
   border-radius: 50%;
 
   /* sizes */
@@ -37,6 +36,10 @@
   }
   &.moonWhite {
     background: $moonWhiteAspect;
+  }
+  &.moonWhite-flickering {
+    --color: #{$moonWhiteAspect};
+    animation: flickering 2s infinite;
   }
   &.blue {
     background: $blueAspect;

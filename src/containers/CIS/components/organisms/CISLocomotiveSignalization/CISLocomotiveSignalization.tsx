@@ -36,10 +36,10 @@ export const CISLocomotiveSignalization = ({
         {locomotiveSignalization.map((locomotiveSignal) => {
           const { id, name, info, lights } = locomotiveSignal;
 
+          const altpZone = trainProtectionZone === CISTrainProtectionZone.ALTP;
+
           const mainText =
-            trainProtectionZone === CISTrainProtectionZone.ALTP
-              ? info.altpDescription
-              : info.description;
+            (altpZone && info.altpDescription) || info.description;
 
           return (
             <ContentCard key={id}>

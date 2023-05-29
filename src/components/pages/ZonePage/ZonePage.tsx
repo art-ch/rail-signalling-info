@@ -7,7 +7,14 @@ import { RichTextContent } from 'contentful';
 import { RichText } from 'src/components/atoms/RichText';
 import { Button, ButtonProps } from 'src/components/atoms/Button';
 
-import { Signal, Filters, SignalTypeSign, Sign, UIComponent } from 'src/types';
+import {
+  SignalModel,
+  SignalizationFilterListModel,
+  SignalTypeSignModel,
+  SignModel,
+  UIComponent,
+  LocomotiveSignalizationModel
+} from 'src/types';
 
 import css from './ZonePage.module.scss';
 import { FilterPanelProps } from 'src/components/molecules/FilterPanel';
@@ -31,12 +38,12 @@ export type ZonePageContentRendererProps = {
 };
 
 export type ZonePageContent = {
-  signals: Signal[];
-  signalTypeSigns: SignalTypeSign[];
-  signalFilters: Filters[];
-  signs: Sign[];
-  signFilters: Filters[];
-  locomotiveSignalization?: Record<string, unknown>[];
+  signals: SignalModel[];
+  signalTypeSigns: SignalTypeSignModel[];
+  signalFilters: SignalizationFilterListModel[];
+  signs: SignModel[];
+  signFilters: SignalizationFilterListModel[];
+  locomotiveSignalization?: LocomotiveSignalizationModel[];
 };
 
 export type ZonePageMainProps = {

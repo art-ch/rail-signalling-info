@@ -1,18 +1,14 @@
-// remove ts comment after refactoring signals
-// @ts-nocheck (lights are in fact compatible)
-
-import { CombinedSignalsWrapper } from 'src/containers/CIS/content/signals/content/ecosystems/StyledComponentsForSignals';
-import {
-  BigSignal,
-  SmallSignal,
-  DwarfManeuveringSignal,
-  RegularSignal,
-  InvitationalSignal,
-  BiggestSignal,
-  DiamondShapedSignal,
-  DwarfSignal
-} from 'src/containers/CIS/content/signals/content/organisms';
 import { useCISSignalContext } from 'src/containers/CIS/context';
+
+import { CISBiggestSignal } from '../CISSignals/CISBiggestSignal';
+import { CISBigSignal } from '../CISSignals/CISBigSignal';
+import { CISRegularSignal } from '../CISSignals/CISRegularSignal';
+import { CISSmallSignal } from '../CISSignals/CISSmallSignal';
+import { CISInvitationalSignal } from '../CISSignals/CISInvitationalSignal';
+import { CISDiamondShapedSignal } from '../CISSignals/CISDiamondShapedSignal';
+import { CISBigDwarfSignal } from '../CISSignals/CISBigDwarfSignal';
+import { CISRegularDwarfSignal } from '../CISSignals/CISRegularDwarfSignal';
+import { CISDwarfManeuveringSignal } from '../CISSignals/CISDwarfManeuveringSignal';
 
 import {
   CISTrainProtectionZone,
@@ -20,6 +16,8 @@ import {
 } from 'src/containers/CIS/context/CISSignalContext.types';
 
 import { SignalLights } from 'src/types';
+
+import { SignalWrapper } from 'src/components/molecules/SignalWrapper';
 
 export type CISSignalRendererProps = {
   id: number;
@@ -76,7 +74,7 @@ export const CISSignalRenderer = ({
   const moonWhiteSignal = aspect === 'moonWhite';
 
   const showWithBlockSignal =
-    Object.values(lights).filter((light) => light !== null).length === 1;
+    Object.values(lights).filter((light) => light !== 'turnedOff').length === 1;
 
   const showAsBiggestAndDwarfSignal =
     id === 1 || id === 3 || id === 6 || id === 27 || id === 28;
@@ -93,26 +91,42 @@ export const CISSignalRenderer = ({
   switch (true) {
     // when sorted by signal type
     case regularSignal:
-      return <RegularSignal aspect={aspect} lights={lights} />;
+      return (
+        <SignalWrapper>
+          <CISRegularSignal aspect={aspect} lights={lights} />
+        </SignalWrapper>
+      );
     case smallSignal:
-      return <SmallSignal aspect={aspect} lights={lights} />;
+      return (
+        <SignalWrapper>
+          <CISSmallSignal aspect={aspect} lights={lights} />
+        </SignalWrapper>
+      );
     case diamondShapedSignal:
-      return <DiamondShapedSignal id={id} aspect={aspect} lights={lights} />;
+      return (
+        <SignalWrapper>
+          <CISDiamondShapedSignal id={id} aspect={aspect} lights={lights} />
+        </SignalWrapper>
+      );
     case humpingSignal:
-      return <BigSignal aspect={aspect} lights={lights} />;
+      return (
+        <SignalWrapper>
+          <CISBigSignal aspect={aspect} lights={lights} />
+        </SignalWrapper>
+      );
     case invitationalSignal:
       return (
-        <CombinedSignalsWrapper className="combined-signals">
-          <InvitationalSignal aspect={aspect} lights={lights} />
-          <BiggestSignal aspect={aspect} lights={lights} />
-        </CombinedSignalsWrapper>
+        <SignalWrapper>
+          <CISInvitationalSignal lights={lights} />
+          <CISBiggestSignal id={id} aspect={aspect} lights={lights} />
+        </SignalWrapper>
       );
     case blueSignal:
       return (
-        <CombinedSignalsWrapper className="combined-signals">
-          <SmallSignal aspect={aspect} lights={lights} />
-          <DwarfManeuveringSignal aspect={aspect} />
-        </CombinedSignalsWrapper>
+        <SignalWrapper>
+          <CISSmallSignal aspect={aspect} lights={lights} />
+          <CISDwarfManeuveringSignal aspect={aspect} />
+        </SignalWrapper>
       );
 
     // when sorted by train protection zone
@@ -120,82 +134,112 @@ export const CISSignalRenderer = ({
       switch (true) {
         case moonWhiteSignal:
           return (
-            <CombinedSignalsWrapper className="combined-signals">
-              <BiggestSignal aspect={aspect} lights={lights} />
-              <DwarfSignal aspect={aspect} lights={lights} />
-              <SmallSignal aspect={aspect} lights={lights} />
-              <DwarfManeuveringSignal aspect={aspect} />
-            </CombinedSignalsWrapper>
+            <SignalWrapper>
+              <CISBiggestSignal id={id} aspect={aspect} lights={lights} />
+              <CISBigDwarfSignal aspect={aspect} lights={lights} />
+              <CISSmallSignal aspect={aspect} lights={lights} />
+              <CISDwarfManeuveringSignal aspect={aspect} />
+            </SignalWrapper>
           );
         case showAsBiggestAndDwarfSignal:
           return (
-            <CombinedSignalsWrapper className="combined-signals">
-              <BiggestSignal aspect={aspect} lights={lights} />
-              <DwarfSignal aspect={aspect} lights={lights} />
-            </CombinedSignalsWrapper>
+            <SignalWrapper>
+              <CISBiggestSignal id={id} aspect={aspect} lights={lights} />
+              <CISBigDwarfSignal aspect={aspect} lights={lights} />
+            </SignalWrapper>
           );
         case showAsBigSignal:
-          return <BigSignal aspect={aspect} lights={lights} />;
+          return (
+            <SignalWrapper>
+              <CISBigSignal aspect={aspect} lights={lights} />
+            </SignalWrapper>
+          );
         case showAsDiamondShapedSignal:
           return (
-            <DiamondShapedSignal id={id} aspect={aspect} lights={lights} />
+            <SignalWrapper>
+              <CISDiamondShapedSignal id={id} aspect={aspect} lights={lights} />
+            </SignalWrapper>
           );
         default:
-          return <BiggestSignal id={id} aspect={aspect} lights={lights} />;
+          return (
+            <SignalWrapper>
+              <CISBiggestSignal id={id} aspect={aspect} lights={lights} />
+            </SignalWrapper>
+          );
       }
 
     case atpSignalsShown:
       switch (true) {
         case moonWhiteSignal:
           return (
-            <CombinedSignalsWrapper className="combined-signals">
-              <BigSignal aspect={aspect} lights={lights} />
-              <DwarfSignal aspect={aspect} lights={lights} />
-              <SmallSignal aspect={aspect} lights={lights} />
-              <DwarfManeuveringSignal aspect={aspect} />
-            </CombinedSignalsWrapper>
+            <SignalWrapper>
+              <CISBigSignal aspect={aspect} lights={lights} />
+              <CISBigDwarfSignal aspect={aspect} lights={lights} />
+              <CISSmallSignal aspect={aspect} lights={lights} />
+              <CISDwarfManeuveringSignal aspect={aspect} />
+            </SignalWrapper>
           );
         case showAsRegularFlickeringSignal:
-          return <RegularSignal aspect={aspect} lights={lights} />;
+          return (
+            <SignalWrapper>
+              <CISRegularSignal aspect={aspect} lights={lights} />
+            </SignalWrapper>
+          );
         case showAsCommonATPSignal:
           return (
-            <CombinedSignalsWrapper className="combined-signals">
-              <RegularSignal aspect={aspect} lights={lights} />
-              <BigSignal aspect={aspect} lights={lights} />
-            </CombinedSignalsWrapper>
+            <SignalWrapper>
+              <CISRegularSignal aspect={aspect} lights={lights} />
+              <CISBigSignal aspect={aspect} lights={lights} />
+            </SignalWrapper>
           );
         default:
-          return <BigSignal aspect={aspect} lights={lights} />;
+          return (
+            <SignalWrapper>
+              <CISBigSignal aspect={aspect} lights={lights} />
+            </SignalWrapper>
+          );
       }
 
     case semiATPSignalsShown:
       switch (true) {
         case moonWhiteSignal:
           return (
-            <CombinedSignalsWrapper className="combined-signals">
-              <BigSignal aspect={aspect} lights={lights} />
-              <DwarfSignal aspect={aspect} lights={lights} />
-              <SmallSignal aspect={aspect} lights={lights} />
-              <DwarfManeuveringSignal aspect={aspect} />
-            </CombinedSignalsWrapper>
+            <SignalWrapper>
+              <CISBigSignal aspect={aspect} lights={lights} />
+              <CISRegularDwarfSignal aspect={aspect} lights={lights} />
+              <CISSmallSignal aspect={aspect} lights={lights} />
+              <CISDwarfManeuveringSignal aspect={aspect} />
+            </SignalWrapper>
           );
         case showWithBlockSignal:
           return (
-            <CombinedSignalsWrapper className="combined-signals">
-              <BigSignal aspect={aspect} lights={lights} />
-              <SmallSignal aspect={aspect} lights={lights} />
-              <DwarfSignal aspect={aspect} lights={lights} />
-            </CombinedSignalsWrapper>
+            <SignalWrapper>
+              <CISBigSignal aspect={aspect} lights={lights} />
+              <CISSmallSignal aspect={aspect} lights={lights} />
+              <CISRegularDwarfSignal aspect={aspect} lights={lights} />
+            </SignalWrapper>
           );
         default:
-          return <BigSignal aspect={aspect} lights={lights} />;
+          return (
+            <SignalWrapper>
+              <CISBigSignal aspect={aspect} lights={lights} />
+            </SignalWrapper>
+          );
       }
 
     case altpSignalsShown:
-      return <BigSignal aspect={aspect} lights={lights} />;
+      return (
+        <SignalWrapper>
+          <CISBigSignal aspect={aspect} lights={lights} />
+        </SignalWrapper>
+      );
 
     case privateSignalsShown:
-      return <BiggestSignal aspect={aspect} lights={lights} />;
+      return (
+        <SignalWrapper>
+          <CISBiggestSignal id={id} aspect={aspect} lights={lights} />
+        </SignalWrapper>
+      );
 
     default:
       throw new Error(

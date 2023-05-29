@@ -1,4 +1,4 @@
-import { Filters } from '../../../types';
+import { SignalizationFilterListModel } from '../../../types';
 import { convertCamelCaseToTextCase } from '../../../utils/miscelaneousUtils';
 import { FilterPanelProps, FilterState } from '../../molecules/FilterPanel';
 import { ZonePageContentTypes } from 'src/components/pages/ZonePage';
@@ -10,7 +10,7 @@ type getContentFilterOptionsProps = Omit<
 >;
 
 type getMainFiltersProps = {
-  filters: Filters[];
+  filters: SignalizationFilterListModel[];
   state: FilterState[];
   additionalClickHandler?: () => void;
 };

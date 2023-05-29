@@ -1,0 +1,14 @@
+@use '../../../../../../../theme/' as *;
+
+.plate {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 6px;
+}
+
+.platesContainer {
+  @include flex;
+
+  align-items: flex-end;
+  gap: 7px;
+}

@@ -1,4 +1,4 @@
-import { Sign, Signal } from 'src/types';
+import { SignModel, SignalModel } from 'src/types';
 import {
   CISSignalType,
   CISSignalTypeSimplified,
@@ -7,12 +7,15 @@ import {
 } from '../context/CISSignalContext.types';
 
 export type GetFilteredSignalsProps = {
-  signals: Signal[];
+  signals: SignalModel[];
   trainProtectionZone: CISTrainProtectionZone;
   signalType: CISSignalType;
 };
 
-export type GetFilteredSignsProps = { signs: Sign[]; signType: CISSignType };
+export type GetFilteredSignsProps = {
+  signs: SignModel[];
+  signType: CISSignType;
+};
 
 export const getFilteredSignalList = ({
   signals,
@@ -25,7 +28,7 @@ export const getFilteredSignalList = ({
     trainProtectionZone === CISTrainProtectionZone.ATP ||
     trainProtectionZone === CISTrainProtectionZone.ATP4;
 
-  let filteredSignals: Signal[] = [];
+  let filteredSignals: SignalModel[] = [];
 
   if (trainProtectionZone === CISTrainProtectionZone.All) {
     filteredSignals = signals;
@@ -108,15 +111,24 @@ export const getFilteredSignalList = ({
   } else {
     return filteredSignals
       .map((aspect) => {
+        const signalTypeWithoutRedLight =
+          signalType === CISSignalType.Shunting ||
+          signalType === CISSignalType.Warning ||
+          signalType === CISSignalType.Other;
+
         return {
           ...aspect,
-          info: aspect.info.filter(({ type }) =>
-            CISSignalType.Shunting ||
-            CISSignalType.Warning ||
-            CISSignalType.Other
-              ? type === signalTypeSimplified
-              : type === signalTypeSimplified || aspect.name === 'red'
-          )
+          info: aspect.info.filter(({ type }) => {
+            const requiredInfoOmittingRedSignal = type === signalTypeSimplified;
+            const requiredInfo =
+              requiredInfoOmittingRedSignal || aspect.name === 'red';
+
+            const info = signalTypeWithoutRedLight
+              ? requiredInfoOmittingRedSignal
+              : requiredInfo;
+
+            return info;
+          })
         };
       })
       .filter(({ info }) => info.length);
@@ -127,7 +139,7 @@ export const getFilteredSignList = ({
   signs,
   signType
 }: GetFilteredSignsProps) => {
-  let filteredSigns: Sign[] = [];
+  let filteredSigns: SignModel[] = [];
 
   switch (signType) {
     case CISSignType.Hand:

@@ -2,7 +2,7 @@ import { Entry } from 'contentful';
 
 import { ZonePageContent } from '../../components/pages/ZonePage';
 
-import { HeaderModel, FooterModel } from './organisms';
+import { HeaderModel, FooterModel } from './organisms/organisms';
 
 type LayoutModel<Content> = {
   title: string;

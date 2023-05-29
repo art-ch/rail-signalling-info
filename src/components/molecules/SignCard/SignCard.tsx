@@ -3,10 +3,10 @@ import { FunctionComponent } from 'react';
 import { ContentCard } from '../ContentCard';
 import { Description } from 'src/components/atoms/Description';
 
-import { Sign } from 'src/types';
+import { SignModel } from 'src/types';
 
 export type SignCardProps = {
-  sign: Sign;
+  sign: SignModel;
   SignRenderer: FunctionComponent<{ id: number }>;
 };
 

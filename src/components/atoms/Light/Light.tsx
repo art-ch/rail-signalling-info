@@ -12,8 +12,9 @@ export type LightColor =
   | 'yellow-flickering'
   | 'green'
   | 'green-flickering'
-  | 'blue'
-  | 'moonWhite';
+  | 'moonWhite'
+  | 'moonWhite-flickering'
+  | 'blue';
 
 export type LightProps = {
   size?: LightSize;
@@ -24,8 +25,6 @@ export const Light = ({
   size = 'default',
   color = 'turnedOff',
   className
-}: LightProps) => {
-  return <div className={cx(css.light, css[size], css[color], className)} />;
-};
-
-export default Light;
+}: LightProps) => (
+  <div className={cx(css.light, css[size], css[color], className)} />
+);
