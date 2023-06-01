@@ -1,0 +1,10 @@
+@use '../../../../../theme/' as *;
+
+.plate {
+  width: max-content;
+  flex-direction: row;
+  gap: 3px;
+  padding: 3px;
+  background: $black;
+  transform: translate(-33%);
+}

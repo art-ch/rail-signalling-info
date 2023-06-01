@@ -43,12 +43,12 @@ export const CISDiamondShapedSignal = ({
     className: css.obstructionPole
   };
 
-  const signalProps = {
+  const mainSignalProps = {
     plates: [
       { lights: [{ color: signalLight }], className: css.diamondShapedPlate }
     ],
     ...obstructionPoleClassName
   };
 
-  return <CISSignal {...signalProps} />;
+  return <CISSignal mainSignalProps={mainSignalProps} />;
 };

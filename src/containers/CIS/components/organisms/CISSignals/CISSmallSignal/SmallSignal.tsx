@@ -33,10 +33,10 @@ export const CISSmallSignal = ({ aspect, lights }: CISSmallSignalProps) => {
     (signalType === CISSignalType.Warning && anyOfYellowAspects && l1) ||
     'turnedOff';
 
-  const signalProps = {
+  const mainSignalProps = {
     plates: [{ lights: [{ color: upperLight }, { color: lowerLight }] }],
     className: CISSignalCSS.regularSignalPole
   };
 
-  return <CISSignal {...signalProps} />;
+  return <CISSignal mainSignalProps={mainSignalProps} />;
 };

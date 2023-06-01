@@ -1,0 +1,12 @@
+@use '../../../../../theme/' as *;
+
+.container {
+  @include flexColumn;
+
+  gap: 4px;
+}
+
+.board {
+  width: 16.5px;
+  height: 18px;
+}

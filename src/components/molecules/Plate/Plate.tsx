@@ -11,7 +11,12 @@ export type PlateProps = {
   lights: LightProps[];
 } & UIComponent;
 
-export const Plate = ({ dwarfSignal, lights, className }: PlateProps) => {
+export const Plate = ({
+  dwarfSignal,
+  lights,
+
+  className
+}: PlateProps) => {
   const coreClassName = {
     [css.plate]: !dwarfSignal,
     [css.dwarfSignalPlate]: dwarfSignal

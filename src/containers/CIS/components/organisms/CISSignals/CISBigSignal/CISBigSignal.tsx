@@ -7,6 +7,9 @@ import {
 } from 'src/containers/CIS/context/CISSignalContext.types';
 
 import { SignalLights } from 'src/types';
+import { ConditionalSignalBoard } from '../../../atoms/ConditionalSignalBoard';
+import { CISSignalSignWrapper } from '../../../molecules/CISSignalSignWrapper';
+import { Stripes } from '../../Stripes';
 import { CISSignal } from '../CISSignalRoot/CISSignal';
 
 import css from './CISBigSignal.module.scss';
@@ -30,7 +33,7 @@ export const CISBigSignal = ({ aspect, lights }: CISBigSignalProps) => {
   const light4 = l4;
   const light5 = l5;
 
-  const signalProps = {
+  const mainSignalProps = {
     plates: [
       {
         lights: [{ color: light1 }, { color: light2 }]
@@ -45,5 +48,17 @@ export const CISBigSignal = ({ aspect, lights }: CISBigSignalProps) => {
     ]
   };
 
-  return <CISSignal {...signalProps} />;
+  const SignalElementsUnderPlates = () => (
+    <CISSignalSignWrapper>
+      <Stripes aspect={aspect} />
+      <ConditionalSignalBoard aspect={aspect} />
+    </CISSignalSignWrapper>
+  );
+
+  return (
+    <CISSignal
+      mainSignalProps={mainSignalProps}
+      SignalElementsUnderPlates={SignalElementsUnderPlates}
+    />
+  );
 };

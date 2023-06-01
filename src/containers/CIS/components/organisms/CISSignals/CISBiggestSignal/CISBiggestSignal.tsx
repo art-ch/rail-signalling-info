@@ -1,7 +1,13 @@
 import React from 'react';
+import { useCISSignalContext } from 'src/containers/CIS/context';
 
 import { SignalLights } from 'src/types';
+import { ConditionalSignalBoard } from '../../../atoms/ConditionalSignalBoard';
+import { ShortBlockSign } from '../../../molecules/ShortBlockSign';
+import { CISSignalSignWrapper } from '../../../molecules/CISSignalSignWrapper';
+import { Stripes } from '../../Stripes';
 import { CISSignal } from '../CISSignalRoot/CISSignal';
+import { OutOfServicePlanks } from 'src/components/molecules/OutOfServicePlanks';
 
 export type CISBiggestSignalProps = {
   id: number;
@@ -14,6 +20,10 @@ export const CISBiggestSignal = ({
   aspect,
   lights
 }: CISBiggestSignalProps) => {
+  const {
+    state: { signalType }
+  } = useCISSignalContext();
+
   const { l1, l2, l3, l4, l5 } = lights;
 
   const yellowGreenSignal = aspect === 'yellow-green';
@@ -24,7 +34,7 @@ export const CISBiggestSignal = ({
   const light4 = l4;
   const light5 = l5;
 
-  const signalProps = {
+  const mainSignalProps = {
     plates: [
       {
         lights: [{ color: light1 }, { color: light2 }, { color: light3 }]
@@ -35,5 +45,25 @@ export const CISBiggestSignal = ({
     ]
   };
 
-  return <CISSignal {...signalProps} />;
+  const OUT_OF_SERVICE_SIGNAL_ID = 39;
+
+  const outOfServiceSignal = id === OUT_OF_SERVICE_SIGNAL_ID;
+
+  const SignalElementsUnderPlates = () => (
+    <CISSignalSignWrapper>
+      <Stripes aspect={aspect} />
+      <ConditionalSignalBoard aspect={aspect} />
+      <ShortBlockSign aspect={aspect} signalType={signalType} />
+      {outOfServiceSignal && <OutOfServicePlanks />}
+    </CISSignalSignWrapper>
+  );
+
+  return (
+    <>
+      <CISSignal
+        mainSignalProps={mainSignalProps}
+        SignalElementsUnderPlates={SignalElementsUnderPlates}
+      />
+    </>
+  );
 };

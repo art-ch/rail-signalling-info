@@ -11,10 +11,10 @@ export const CISInvitationalSignal = ({
 }: CISInvitationalSignalProps) => {
   const { l3, l5 } = lights;
 
-  const signalProps = {
+  const mainSignalProps = {
     plates: [{ lights: [{ color: l3 }] }, { lights: [{ color: l5 }] }],
     className: CISSignalCSS.regularSignalPole
   };
 
-  return <CISSignal {...signalProps} />;
+  return <CISSignal mainSignalProps={mainSignalProps} />;
 };

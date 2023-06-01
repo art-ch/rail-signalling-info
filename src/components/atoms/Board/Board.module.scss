@@ -1,0 +1,6 @@
+@use '../../../theme/' as *;
+
+.board {
+  background: $white;
+  border: 1px solid $black;
+}
