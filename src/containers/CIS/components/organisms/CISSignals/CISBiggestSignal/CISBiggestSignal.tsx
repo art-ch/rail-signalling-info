@@ -8,6 +8,7 @@ import { CISSignalSignWrapper } from '../../../molecules/CISSignalSignWrapper';
 import { Stripes } from '../../Stripes';
 import { CISSignal } from '../CISSignalRoot/CISSignal';
 import { OutOfServicePlanks } from 'src/components/molecules/OutOfServicePlanks';
+import { CISSignalTypeSign } from '../../../molecules/CISSignalTypeSign';
 
 export type CISBiggestSignalProps = {
   id: number;
@@ -55,6 +56,7 @@ export const CISBiggestSignal = ({
       <ConditionalSignalBoard aspect={aspect} />
       <ShortBlockSign aspect={aspect} signalType={signalType} />
       {outOfServiceSignal && <OutOfServicePlanks />}
+      <CISSignalTypeSign aspect={aspect} nonShuntingMoonWhiteTypeSign />
     </CISSignalSignWrapper>
   );
 

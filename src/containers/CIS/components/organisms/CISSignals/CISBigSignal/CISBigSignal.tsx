@@ -9,6 +9,7 @@ import {
 import { SignalLights } from 'src/types';
 import { ConditionalSignalBoard } from '../../../atoms/ConditionalSignalBoard';
 import { CISSignalSignWrapper } from '../../../molecules/CISSignalSignWrapper';
+import { CISSignalTypeSign } from '../../../molecules/CISSignalTypeSign';
 import { Stripes } from '../../Stripes';
 import { CISSignal } from '../CISSignalRoot/CISSignal';
 
@@ -52,6 +53,7 @@ export const CISBigSignal = ({ aspect, lights }: CISBigSignalProps) => {
     <CISSignalSignWrapper>
       <Stripes aspect={aspect} />
       <ConditionalSignalBoard aspect={aspect} />
+      <CISSignalTypeSign aspect={aspect} />
     </CISSignalSignWrapper>
   );
 

@@ -34,6 +34,7 @@ export const injectZoneSpecificSignalStyles = ({
   const { className: additionalSignalClassName } = signalProps;
 
   return {
+    ...signalProps,
     plates: signalProps.plates.map((plate) => {
       const { lights, className: additionalPlateClassName } = plate;
 

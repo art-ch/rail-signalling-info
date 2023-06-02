@@ -10,6 +10,8 @@ import { SignalLights } from 'src/types';
 import { CISSignalType } from 'src/containers/CIS/context/CISSignalContext.types';
 
 import css from './CISDiamondShapedSignal.module.scss';
+import { CISSignalSignWrapper } from '../../../molecules/CISSignalSignWrapper';
+import { CISSignalTypeSign } from '../../../molecules/CISSignalTypeSign';
 
 export type CISDiamondShapedSignalProps = {
   id: number;
@@ -50,5 +52,16 @@ export const CISDiamondShapedSignal = ({
     ...obstructionPoleClassName
   };
 
-  return <CISSignal mainSignalProps={mainSignalProps} />;
+  const SignalElementsUnderPlates = () => (
+    <CISSignalSignWrapper>
+      <CISSignalTypeSign aspect={aspect} />
+    </CISSignalSignWrapper>
+  );
+
+  return (
+    <CISSignal
+      mainSignalProps={mainSignalProps}
+      SignalElementsUnderPlates={SignalElementsUnderPlates}
+    />
+  );
 };
