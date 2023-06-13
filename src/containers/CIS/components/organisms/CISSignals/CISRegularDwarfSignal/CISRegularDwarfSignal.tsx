@@ -21,18 +21,23 @@ export const CISRegularDwarfSignal = ({
   const light3 = l1;
   const light4 = l2;
 
-  const dwarfSignalProps = {
+  const mainDwarfSignalProps = {
     plates: [
       { lights: [{ color: light1 }, { color: light2 }] },
       { lights: [{ color: light3 }, { color: light4 }] }
     ]
   };
 
-  const SignalElementsUnderPlates = () => (
+  const SignalElementsOnHorizontalSupport = () => (
     <CISSignalSignWrapper>
-      <CISSignalTypeSign aspect={aspect} />
+      <CISSignalTypeSign aspect={aspect} placeElementsHorizontally />
     </CISSignalSignWrapper>
   );
 
-  return <CISDwarfSignal {...dwarfSignalProps} />;
+  return (
+    <CISDwarfSignal
+      mainDwarfSignalProps={mainDwarfSignalProps}
+      SignalElementsOnHorizontalSupport={SignalElementsOnHorizontalSupport}
+    />
+  );
 };

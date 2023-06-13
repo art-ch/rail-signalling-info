@@ -47,9 +47,13 @@
 }
 
 // grid
-
-@mixin gridCentering {
+@mixin grid {
   display: grid;
+}
+
+@mixin gridCenter {
+  @include grid;
+
   place-items: center;
 }
 

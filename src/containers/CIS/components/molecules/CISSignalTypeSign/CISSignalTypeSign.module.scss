@@ -1,0 +1,11 @@
+@use '../../../../../theme/' as *;
+
+.container {
+  &.horizontalPlacement {
+    padding: 2px 0 0;
+
+    & > div {
+      padding: 0 0.3rem;
+    }
+  }
+}

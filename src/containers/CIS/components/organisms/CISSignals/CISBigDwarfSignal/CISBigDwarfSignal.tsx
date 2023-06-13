@@ -24,18 +24,27 @@ export const CISBigDwarfSignal = ({
   const light4 = (!twoYellowsSpecialAspect && l1) || 'turnedOff';
   const light5 = (twoYellowsSpecialAspect && l3) || l4;
 
-  const dwarfSignalProps = {
+  const mainDwarfSignalProps = {
     plates: [
       { lights: [{ color: light1 }, { color: light2 }] },
       { lights: [{ color: light3 }, { color: light4 }, { color: light5 }] }
     ]
   };
 
-  const SignalElementsUnderPlates = () => (
+  const SignalElementsOnHorizontalSupport = () => (
     <CISSignalSignWrapper>
-      <CISSignalTypeSign aspect={aspect} nonShuntingMoonWhiteTypeSign />
+      <CISSignalTypeSign
+        aspect={aspect}
+        placeElementsHorizontally
+        nonShuntingMoonWhiteTypeSign
+      />
     </CISSignalSignWrapper>
   );
 
-  return <CISDwarfSignal {...dwarfSignalProps} />;
+  return (
+    <CISDwarfSignal
+      mainDwarfSignalProps={mainDwarfSignalProps}
+      SignalElementsOnHorizontalSupport={SignalElementsOnHorizontalSupport}
+    />
+  );
 };

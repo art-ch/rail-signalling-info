@@ -6,6 +6,8 @@ import { CISSignalSignWrapper } from '../../../molecules/CISSignalSignWrapper';
 import { CISSignalTypeSign } from '../../../molecules/CISSignalTypeSign';
 import { CISDwarfSignal } from '../CISSignalRoot/CISDwarfSignal';
 
+import css from './CISDwarfManeuveringSignal.module.scss';
+
 export type CISDwarfManeuveringSignalProps = { aspect: string };
 
 export const CISDwarfManeuveringSignal = ({
@@ -23,16 +25,26 @@ export const CISDwarfManeuveringSignal = ({
 
   const lowerLight: LightColor = (blueAspect && 'blue') || 'turnedOff';
 
-  const dwarfSignalProps = {
-    plates: [{ lights: [{ color: upperLight }, { color: lowerLight }] }],
+  const mainDwarfSignalProps = {
+    plates: [
+      {
+        lights: [{ color: upperLight }, { color: lowerLight }]
+      }
+    ],
     amountOfVerticalSupports: 1
   };
 
-  const SignalElementsUnderPlates = () => (
+  const SignalElementsOnHorizontalSupport = () => (
     <CISSignalSignWrapper>
-      <CISSignalTypeSign aspect={aspect} />
+      <CISSignalTypeSign aspect={aspect} placeElementsHorizontally />
     </CISSignalSignWrapper>
   );
 
-  return <CISDwarfSignal {...dwarfSignalProps} />;
+  return (
+    <CISDwarfSignal
+      mainDwarfSignalProps={mainDwarfSignalProps}
+      additionalPlatesContainerClassName={css.container}
+      SignalElementsOnHorizontalSupport={SignalElementsOnHorizontalSupport}
+    />
+  );
 };
