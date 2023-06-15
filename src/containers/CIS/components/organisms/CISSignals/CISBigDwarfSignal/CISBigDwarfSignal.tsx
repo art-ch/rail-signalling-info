@@ -1,9 +1,8 @@
 import React from 'react';
 
-import { SignalLights } from 'src/types';
-import { CISSignalSignWrapper } from '../../../molecules/CISSignalSignWrapper';
-import { CISSignalTypeSign } from '../../../molecules/CISSignalTypeSign';
 import { CISDwarfSignal } from '../CISSignalRoot/CISDwarfSignal';
+
+import { SignalLights } from 'src/types';
 
 export type CISBigDwarfSignalProps = {
   aspect: string;
@@ -31,20 +30,19 @@ export const CISBigDwarfSignal = ({
     ]
   };
 
-  const SignalElementsOnHorizontalSupport = () => (
-    <CISSignalSignWrapper>
-      <CISSignalTypeSign
-        aspect={aspect}
-        placeElementsHorizontally
-        nonShuntingMoonWhiteTypeSign
-      />
-    </CISSignalSignWrapper>
-  );
+  const signalElementsOnHorizontalSupportProps = {
+    signalTypeSign: {
+      aspect,
+      nonShuntingMoonWhiteTypeSign: true
+    }
+  };
 
   return (
     <CISDwarfSignal
       mainDwarfSignalProps={mainDwarfSignalProps}
-      SignalElementsOnHorizontalSupport={SignalElementsOnHorizontalSupport}
+      signalElementsOnHorizontalSupportProps={
+        signalElementsOnHorizontalSupportProps
+      }
     />
   );
 };

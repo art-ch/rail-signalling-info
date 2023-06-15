@@ -7,5 +7,5 @@ export type SignalWrapperProps = {
 };
 
 export const SignalWrapper = ({ children }: SignalWrapperProps) => {
-  return <div className={css.signalWrapper}>{children}</div>;
+  return <div className={css.container}>{children}</div>;
 };

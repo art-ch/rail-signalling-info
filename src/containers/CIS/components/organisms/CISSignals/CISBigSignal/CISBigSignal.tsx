@@ -6,12 +6,9 @@ import {
   CISTrainProtectionZone
 } from 'src/containers/CIS/context/CISSignalContext.types';
 
-import { SignalLights } from 'src/types';
-import { ConditionalSignalBoard } from '../../../atoms/ConditionalSignalBoard';
-import { CISSignalSignWrapper } from '../../../molecules/CISSignalSignWrapper';
-import { CISSignalTypeSign } from '../../../molecules/CISSignalTypeSign';
-import { Stripes } from '../../Stripes';
 import { CISSignal } from '../CISSignalRoot/CISSignal';
+
+import { SignalLights } from 'src/types';
 
 import css from './CISBigSignal.module.scss';
 
@@ -49,18 +46,16 @@ export const CISBigSignal = ({ aspect, lights }: CISBigSignalProps) => {
     ]
   };
 
-  const SignalElementsUnderPlates = () => (
-    <CISSignalSignWrapper>
-      <Stripes aspect={aspect} />
-      <ConditionalSignalBoard aspect={aspect} />
-      <CISSignalTypeSign aspect={aspect} />
-    </CISSignalSignWrapper>
-  );
+  const signalElementsUnderPlatesProps = {
+    stripes: { aspect },
+    conditionalSignalBoard: { aspect },
+    signalTypeSign: { aspect }
+  };
 
   return (
     <CISSignal
       mainSignalProps={mainSignalProps}
-      SignalElementsUnderPlates={SignalElementsUnderPlates}
+      signalElementsUnderPlatesProps={signalElementsUnderPlatesProps}
     />
   );
 };

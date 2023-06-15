@@ -12,13 +12,13 @@ import { CISSignalTypeSimplified } from 'src/containers/CIS/context/CISSignalCon
 import css from './CISSignalTypeSign.module.scss';
 
 export type CISSignalTypeSignProps = {
-  aspect: string;
+  aspect?: string;
   placeElementsHorizontally?: boolean;
   nonShuntingMoonWhiteTypeSign?: boolean;
 };
 
 export const CISSignalTypeSign = ({
-  aspect,
+  aspect = 'turnedOff',
   nonShuntingMoonWhiteTypeSign = false,
   placeElementsHorizontally = false
 }: CISSignalTypeSignProps) => {

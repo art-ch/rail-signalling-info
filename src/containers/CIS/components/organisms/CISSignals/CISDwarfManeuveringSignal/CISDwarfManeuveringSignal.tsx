@@ -2,8 +2,7 @@ import React from 'react';
 import { LightColor } from 'src/components/atoms/Light';
 
 import { useCISSignalContext } from 'src/containers/CIS/context';
-import { CISSignalSignWrapper } from '../../../molecules/CISSignalSignWrapper';
-import { CISSignalTypeSign } from '../../../molecules/CISSignalTypeSign';
+
 import { CISDwarfSignal } from '../CISSignalRoot/CISDwarfSignal';
 
 import css from './CISDwarfManeuveringSignal.module.scss';
@@ -34,17 +33,17 @@ export const CISDwarfManeuveringSignal = ({
     amountOfVerticalSupports: 1
   };
 
-  const SignalElementsOnHorizontalSupport = () => (
-    <CISSignalSignWrapper>
-      <CISSignalTypeSign aspect={aspect} placeElementsHorizontally />
-    </CISSignalSignWrapper>
-  );
+  const signalElementsOnHorizontalSupportProps = {
+    signalTypeSign: { aspect }
+  };
 
   return (
     <CISDwarfSignal
       mainDwarfSignalProps={mainDwarfSignalProps}
       additionalPlatesContainerClassName={css.container}
-      SignalElementsOnHorizontalSupport={SignalElementsOnHorizontalSupport}
+      signalElementsOnHorizontalSupportProps={
+        signalElementsOnHorizontalSupportProps
+      }
     />
   );
 };

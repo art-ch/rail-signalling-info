@@ -1,6 +1,6 @@
 @use '../../../theme/' as *;
 
-.signalWrapper {
+.container {
   @include flex;
 
   justify-content: center;

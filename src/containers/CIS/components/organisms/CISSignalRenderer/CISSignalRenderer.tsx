@@ -117,7 +117,7 @@ export const CISSignalRenderer = ({
     case invitationalSignal:
       return (
         <SignalWrapper>
-          <CISInvitationalSignal lights={lights} />
+          <CISInvitationalSignal aspect={aspect} lights={lights} />
           <CISBiggestSignal id={id} aspect={aspect} lights={lights} />
         </SignalWrapper>
       );

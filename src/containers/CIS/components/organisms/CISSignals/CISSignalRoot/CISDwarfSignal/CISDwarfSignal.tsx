@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 
 import cx from 'classnames';
 
@@ -11,16 +11,21 @@ import { UIComponent } from 'src/types';
 import { injectZoneSpecificSignalStyles } from 'src/utils/themeUtils';
 
 import css from './CISDwarfSignal.module.scss';
+import {
+  CISSignalSignRenderer,
+  CISSignalSignRendererProps
+} from '../../../CISSignalSignRenderer';
+import { formatCISDwarfSignalSignRendererProps } from './CISDwarfSignal.utils';
 
 export type CISDwarfSignalProps = {
   mainDwarfSignalProps: DwarfSignalProps;
-  SignalElementsOnHorizontalSupport?: FunctionComponent;
+  signalElementsOnHorizontalSupportProps?: CISSignalSignRendererProps;
 } & UIComponent<{ additionalPlatesContainerClassName?: string }>;
 
 export const CISDwarfSignal = ({
   mainDwarfSignalProps,
   additionalPlatesContainerClassName,
-  SignalElementsOnHorizontalSupport
+  signalElementsOnHorizontalSupportProps
 }: CISDwarfSignalProps) => {
   const DEFAULT_AMOUNT_OF_VERTICAL_SUPPORTS = 2;
 
@@ -32,6 +37,14 @@ export const CISDwarfSignal = ({
     signalProps: mainDwarfSignalProps,
     css
   });
+
+  const cisSignalSignRendererProps = formatCISDwarfSignalSignRendererProps(
+    signalElementsOnHorizontalSupportProps
+  );
+
+  const SignalElementsOnHorizontalSupport = () => (
+    <CISSignalSignRenderer {...cisSignalSignRendererProps} />
+  );
 
   return (
     <DwarfSignal

@@ -8,8 +8,6 @@ export type CISInvitationalSignalProps = {
 };
 
 import CISSignalCSS from '../CISSignalRoot/CISSignal/CISSignal.module.scss';
-import { CISSignalSignWrapper } from '../../../molecules/CISSignalSignWrapper';
-import { CISSignalTypeSign } from '../../../molecules/CISSignalTypeSign';
 
 export const CISInvitationalSignal = ({
   aspect,
@@ -22,16 +20,14 @@ export const CISInvitationalSignal = ({
     className: CISSignalCSS.regularSignalPole
   };
 
-  const SignalElementsUnderPlates = () => (
-    <CISSignalSignWrapper>
-      <CISSignalTypeSign aspect={aspect} />
-    </CISSignalSignWrapper>
-  );
+  const signalElementsUnderPlatesProps = {
+    signalTypeSign: { aspect }
+  };
 
   return (
     <CISSignal
       mainSignalProps={mainSignalProps}
-      SignalElementsUnderPlates={SignalElementsUnderPlates}
+      signalElementsUnderPlatesProps={signalElementsUnderPlatesProps}
     />
   );
 };

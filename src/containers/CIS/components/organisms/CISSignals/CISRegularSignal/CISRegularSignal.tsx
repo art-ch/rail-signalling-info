@@ -11,9 +11,6 @@ import {
 import { SignalLights } from 'src/types';
 
 import CISSignalCSS from '../CISSignalRoot/CISSignal/CISSignal.module.scss';
-import { ConditionalSignalBoard } from '../../../atoms/ConditionalSignalBoard';
-import { CISSignalSignWrapper } from '../../../molecules/CISSignalSignWrapper';
-import { SpecialBlockSignalBoard } from '../../../atoms/SpecialBlockSignalBoard';
 
 export type CISRegularSignalProps = { aspect: string; lights: SignalLights };
 
@@ -57,17 +54,15 @@ export const CISRegularSignal = ({ aspect, lights }: CISRegularSignalProps) => {
 
   const signalProperties = { aspect, trainProtectionZone, signalType };
 
-  const SignalElementsUnderPlates = () => (
-    <CISSignalSignWrapper>
-      <ConditionalSignalBoard aspect={aspect} />
-      <SpecialBlockSignalBoard signalProperties={signalProperties} />
-    </CISSignalSignWrapper>
-  );
+  const signalElementsUnderPlatesProps = {
+    conditionalSignalBoard: { aspect },
+    specialBlockSignalBoard: { signalProperties }
+  };
 
   return (
     <CISSignal
       mainSignalProps={mainSignalProps}
-      SignalElementsUnderPlates={SignalElementsUnderPlates}
+      signalElementsUnderPlatesProps={signalElementsUnderPlatesProps}
     />
   );
 };

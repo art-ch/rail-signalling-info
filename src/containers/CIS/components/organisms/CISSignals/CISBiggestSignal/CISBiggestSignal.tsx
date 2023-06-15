@@ -1,14 +1,10 @@
 import React from 'react';
+
 import { useCISSignalContext } from 'src/containers/CIS/context';
 
-import { SignalLights } from 'src/types';
-import { ConditionalSignalBoard } from '../../../atoms/ConditionalSignalBoard';
-import { ShortBlockSign } from '../../../molecules/ShortBlockSign';
-import { CISSignalSignWrapper } from '../../../molecules/CISSignalSignWrapper';
-import { Stripes } from '../../Stripes';
 import { CISSignal } from '../CISSignalRoot/CISSignal';
-import { OutOfServicePlanks } from 'src/components/molecules/OutOfServicePlanks';
-import { CISSignalTypeSign } from '../../../molecules/CISSignalTypeSign';
+
+import { SignalLights } from 'src/types';
 
 export type CISBiggestSignalProps = {
   id: number;
@@ -50,21 +46,19 @@ export const CISBiggestSignal = ({
 
   const outOfServiceSignal = id === OUT_OF_SERVICE_SIGNAL_ID;
 
-  const SignalElementsUnderPlates = () => (
-    <CISSignalSignWrapper>
-      <Stripes aspect={aspect} />
-      <ConditionalSignalBoard aspect={aspect} />
-      <ShortBlockSign aspect={aspect} signalType={signalType} />
-      {outOfServiceSignal && <OutOfServicePlanks />}
-      <CISSignalTypeSign aspect={aspect} nonShuntingMoonWhiteTypeSign />
-    </CISSignalSignWrapper>
-  );
+  const signalElementsUnderPlatesProps = {
+    stripes: { aspect },
+    conditionalSignalBoard: { aspect },
+    shortBlockSign: { aspect, signalType },
+    signalTypeSign: { aspect, nonShuntingMoonWhiteTypeSign: true },
+    outOfServiceSignal
+  };
 
   return (
     <>
       <CISSignal
         mainSignalProps={mainSignalProps}
-        SignalElementsUnderPlates={SignalElementsUnderPlates}
+        signalElementsUnderPlatesProps={signalElementsUnderPlatesProps}
       />
     </>
   );
