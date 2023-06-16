@@ -14,13 +14,9 @@
 
 .heroContainer {
   @include flexColumnCenterCenter;
+  @include positionTransformCentering;
 
   min-width: 90vw;
   text-align: center;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+  color: $white;
 }
