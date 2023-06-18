@@ -1,0 +1,14 @@
+@use '../../../theme/' as *;
+
+.container {
+  width: max-content;
+  background: $black;
+}
+
+.frame {
+  margin: 0 auto;
+}
+
+.line {
+  @include flex;
+}

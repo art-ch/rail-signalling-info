@@ -22,7 +22,7 @@ export default async function CISZone() {
 
   return (
     <CISSignalProvider content={pageProps.content}>
-      <CISZonePage {...pageProps} />;
+      <CISZonePage {...pageProps} />
     </CISSignalProvider>
   );
 }

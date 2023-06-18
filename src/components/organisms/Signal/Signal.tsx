@@ -9,12 +9,12 @@ import { FunctionComponent } from 'react';
 
 export type SignalProps = {
   plates: PlateProps[];
-  ZoneSpecificSignalElementsUnderPlates?: FunctionComponent;
+  ElementsUnderPlates?: FunctionComponent;
 } & UIComponent;
 
 export const Signal = ({
   plates,
-  ZoneSpecificSignalElementsUnderPlates,
+  ElementsUnderPlates,
   className
 }: SignalProps) => {
   return (
@@ -22,9 +22,7 @@ export const Signal = ({
       {plates.map((plate, idx) => (
         <Plate key={idx} {...plate} />
       ))}
-      {ZoneSpecificSignalElementsUnderPlates && (
-        <ZoneSpecificSignalElementsUnderPlates />
-      )}
+      {ElementsUnderPlates && <ElementsUnderPlates />}
     </div>
   );
 };

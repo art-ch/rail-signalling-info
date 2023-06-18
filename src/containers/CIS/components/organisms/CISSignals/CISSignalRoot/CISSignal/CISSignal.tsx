@@ -31,7 +31,7 @@ export const CISSignal = ({
   return (
     <Signal
       {...mainSignalPropsWithStyles}
-      ZoneSpecificSignalElementsUnderPlates={SignalElementsUnderPlates}
+      ElementsUnderPlates={SignalElementsUnderPlates}
     />
   );
 };

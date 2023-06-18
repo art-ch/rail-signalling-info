@@ -111,7 +111,7 @@ export const CISSignalRenderer = ({
     case humpingSignal:
       return (
         <SignalWrapper>
-          <CISBigSignal aspect={aspect} lights={lights} />
+          <CISBigSignal id={id} aspect={aspect} lights={lights} />
         </SignalWrapper>
       );
     case invitationalSignal:
@@ -151,7 +151,7 @@ export const CISSignalRenderer = ({
         case showAsBigSignal:
           return (
             <SignalWrapper>
-              <CISBigSignal aspect={aspect} lights={lights} />
+              <CISBigSignal id={id} aspect={aspect} lights={lights} />
             </SignalWrapper>
           );
         case showAsDiamondShapedSignal:
@@ -173,7 +173,7 @@ export const CISSignalRenderer = ({
         case moonWhiteSignal:
           return (
             <SignalWrapper>
-              <CISBigSignal aspect={aspect} lights={lights} />
+              <CISBigSignal id={id} aspect={aspect} lights={lights} />
               <CISBigDwarfSignal aspect={aspect} lights={lights} />
               <CISSmallSignal aspect={aspect} lights={lights} />
               <CISDwarfManeuveringSignal aspect={aspect} />
@@ -189,13 +189,13 @@ export const CISSignalRenderer = ({
           return (
             <SignalWrapper>
               <CISRegularSignal aspect={aspect} lights={lights} />
-              <CISBigSignal aspect={aspect} lights={lights} />
+              <CISBigSignal id={id} aspect={aspect} lights={lights} />
             </SignalWrapper>
           );
         default:
           return (
             <SignalWrapper>
-              <CISBigSignal aspect={aspect} lights={lights} />
+              <CISBigSignal id={id} aspect={aspect} lights={lights} />
             </SignalWrapper>
           );
       }
@@ -205,7 +205,7 @@ export const CISSignalRenderer = ({
         case moonWhiteSignal:
           return (
             <SignalWrapper>
-              <CISBigSignal aspect={aspect} lights={lights} />
+              <CISBigSignal id={id} aspect={aspect} lights={lights} />
               <CISRegularDwarfSignal aspect={aspect} lights={lights} />
               <CISSmallSignal aspect={aspect} lights={lights} />
               <CISDwarfManeuveringSignal aspect={aspect} />
@@ -214,7 +214,7 @@ export const CISSignalRenderer = ({
         case showWithBlockSignal:
           return (
             <SignalWrapper>
-              <CISBigSignal aspect={aspect} lights={lights} />
+              <CISBigSignal id={id} aspect={aspect} lights={lights} />
               <CISSmallSignal aspect={aspect} lights={lights} />
               <CISRegularDwarfSignal aspect={aspect} lights={lights} />
             </SignalWrapper>
@@ -222,7 +222,7 @@ export const CISSignalRenderer = ({
         default:
           return (
             <SignalWrapper>
-              <CISBigSignal aspect={aspect} lights={lights} />
+              <CISBigSignal id={id} aspect={aspect} lights={lights} />
             </SignalWrapper>
           );
       }
@@ -230,7 +230,7 @@ export const CISSignalRenderer = ({
     case altpSignalsShown:
       return (
         <SignalWrapper>
-          <CISBigSignal aspect={aspect} lights={lights} />
+          <CISBigSignal id={id} aspect={aspect} lights={lights} />
         </SignalWrapper>
       );
 

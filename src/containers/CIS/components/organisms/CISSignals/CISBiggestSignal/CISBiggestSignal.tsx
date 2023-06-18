@@ -48,10 +48,11 @@ export const CISBiggestSignal = ({
 
   const signalElementsUnderPlatesProps = {
     stripes: { aspect },
+    routeIndicator: { id, aspect },
     conditionalSignalBoard: { aspect },
     shortBlockSign: { aspect, signalType },
     signalTypeSign: { aspect, nonShuntingMoonWhiteTypeSign: true },
-    outOfServiceSignal
+    outOfServicePlanks: outOfServiceSignal
   };
 
   return (

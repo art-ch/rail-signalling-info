@@ -112,6 +112,7 @@ export const getFilteredSignalList = ({
     return filteredSignals
       .map((aspect) => {
         const signalTypeWithoutRedLight =
+          signalType === CISSignalType.Conditional ||
           signalType === CISSignalType.Shunting ||
           signalType === CISSignalType.Warning ||
           signalType === CISSignalType.Other;

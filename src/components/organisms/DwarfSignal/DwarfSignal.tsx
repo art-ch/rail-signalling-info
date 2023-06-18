@@ -11,7 +11,7 @@ import css from './DwarfSignal.module.scss';
 export type DwarfSignalProps = {
   plates: PlateProps[];
   horizontalSupport?: boolean;
-  ZoneSpecificSignalElementsOnHorizontalSupport?: FunctionComponent;
+  ElementsOnHorizontalSupport?: FunctionComponent;
   amountOfVerticalSupports?: number;
 } & UIComponent<{
   platesContainerClassName?: string;
@@ -24,7 +24,7 @@ export type DwarfSignalProps = {
 export const DwarfSignal = ({
   plates,
   horizontalSupport = true,
-  ZoneSpecificSignalElementsOnHorizontalSupport,
+  ElementsOnHorizontalSupport,
   amountOfVerticalSupports = 1,
   className,
   platesContainerClassName,
@@ -45,9 +45,7 @@ export const DwarfSignal = ({
           <div
             className={cx(css.horizontalSupport, horizontalSupportClassName)}
           >
-            {ZoneSpecificSignalElementsOnHorizontalSupport && (
-              <ZoneSpecificSignalElementsOnHorizontalSupport />
-            )}
+            {ElementsOnHorizontalSupport && <ElementsOnHorizontalSupport />}
           </div>
         )}
         <div

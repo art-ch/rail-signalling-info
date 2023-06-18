@@ -4,7 +4,7 @@ import { UIComponent } from '../../../types';
 
 import css from './Light.module.scss';
 
-export type LightSize = 'small' | 'default';
+export type LightSize = 'routePointer' | 'small' | 'default';
 export type LightColor =
   | 'turnedOff'
   | 'red'

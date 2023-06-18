@@ -12,9 +12,13 @@ import { SignalLights } from 'src/types';
 
 import css from './CISBigSignal.module.scss';
 
-export type CISBigSignalProps = { aspect: string; lights: SignalLights };
+export type CISBigSignalProps = {
+  id: number;
+  aspect: string;
+  lights: SignalLights;
+};
 
-export const CISBigSignal = ({ aspect, lights }: CISBigSignalProps) => {
+export const CISBigSignal = ({ id, aspect, lights }: CISBigSignalProps) => {
   const {
     state: { trainProtectionZone, signalType }
   } = useCISSignalContext();
@@ -49,6 +53,7 @@ export const CISBigSignal = ({ aspect, lights }: CISBigSignalProps) => {
   const signalElementsUnderPlatesProps = {
     stripes: { aspect },
     conditionalSignalBoard: { aspect },
+    routeIndicator: { id, aspect },
     signalTypeSign: { aspect }
   };
 

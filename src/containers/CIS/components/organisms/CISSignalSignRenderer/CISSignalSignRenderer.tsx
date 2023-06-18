@@ -3,6 +3,10 @@ import React from 'react';
 import { OutOfServicePlanks } from 'src/components/molecules/OutOfServicePlanks';
 import { Stripes, StripesProps } from '../Stripes';
 import {
+  CISRouteIndicator,
+  CISRouteIndicatorProps
+} from '../CISRouteIndicator';
+import {
   ConditionalSignalBoard,
   ConditionalSignalBoardProps
 } from '../../atoms/ConditionalSignalBoard';
@@ -23,6 +27,7 @@ import css from './CISSignalSignRenderer.module.scss';
 
 export type CISSignalSignRendererProps = {
   stripes?: StripesProps;
+  routeIndicator?: CISRouteIndicatorProps;
   conditionalSignalBoard?: ConditionalSignalBoardProps;
   shortBlockSign?: ShortBlockSignProps;
   signalTypeSign?: CISSignalTypeSignProps;
@@ -35,6 +40,7 @@ export const CISSignalSignRenderer = (props: CISSignalSignRendererProps) => {
 
   const {
     stripes,
+    routeIndicator,
     conditionalSignalBoard,
     shortBlockSign,
     signalTypeSign,
@@ -44,7 +50,11 @@ export const CISSignalSignRenderer = (props: CISSignalSignRendererProps) => {
 
   return (
     <div className={css.container}>
+      {outOfServicePlanks && <OutOfServicePlanks />}
       {stripes && <Stripes {...(stripes as StripesProps)} />}
+      {routeIndicator && (
+        <CISRouteIndicator {...(routeIndicator as CISRouteIndicatorProps)} />
+      )}
       {conditionalSignalBoard && (
         <ConditionalSignalBoard
           {...(conditionalSignalBoard as ConditionalSignalBoardProps)}
@@ -61,7 +71,6 @@ export const CISSignalSignRenderer = (props: CISSignalSignRendererProps) => {
       {signalTypeSign && (
         <CISSignalTypeSign {...(signalTypeSign as CISSignalTypeSignProps)} />
       )}
-      {outOfServicePlanks && <OutOfServicePlanks />}
     </div>
   );
 };

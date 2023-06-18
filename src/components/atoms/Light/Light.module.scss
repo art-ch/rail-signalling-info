@@ -4,6 +4,10 @@
   border-radius: 50%;
 
   /* sizes */
+  &.routePointer {
+    width: 5px;
+    height: 5px;
+  }
   &.default {
     width: 20px;
     height: 20px;

@@ -42,16 +42,14 @@ export const CISDwarfSignal = ({
     signalElementsOnHorizontalSupportProps
   );
 
-  const SignalElementsOnHorizontalSupport = () => (
+  const ElementsOnHorizontalSupport = () => (
     <CISSignalSignRenderer {...cisSignalSignRendererProps} />
   );
 
   return (
     <DwarfSignal
       {...dwarfSignalPropsWithStyles}
-      ZoneSpecificSignalElementsOnHorizontalSupport={
-        SignalElementsOnHorizontalSupport
-      }
+      ElementsOnHorizontalSupport={ElementsOnHorizontalSupport}
       platesContainerClassName={cx(
         css.platesContainer,
         additionalPlatesContainerClassName

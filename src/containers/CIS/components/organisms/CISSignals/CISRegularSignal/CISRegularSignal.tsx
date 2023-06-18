@@ -55,6 +55,7 @@ export const CISRegularSignal = ({ aspect, lights }: CISRegularSignalProps) => {
   const signalProperties = { aspect, trainProtectionZone, signalType };
 
   const signalElementsUnderPlatesProps = {
+    signalTypeSign: { aspect },
     conditionalSignalBoard: { aspect },
     specialBlockSignalBoard: { signalProperties }
   };
