@@ -1,5 +1,5 @@
 import { CISSignalRenderer } from '../CISSignalRenderer';
-import { Sign as SignRenderer } from 'src/containers/CIS/content/signs/SignCards';
+import { CISSignRenderer } from '../CISSignRenderer';
 import {
   CISLocomotiveSignalModel,
   CISLocomotiveSignalization
@@ -47,7 +47,7 @@ export const CISZonePageContentRenderer = ({
         <SignCardList
           title={'Signs'}
           signList={filteredSignList}
-          SignRenderer={SignRenderer}
+          SignRenderer={CISSignRenderer}
         />
       );
     case 'Locomotive Signalization':

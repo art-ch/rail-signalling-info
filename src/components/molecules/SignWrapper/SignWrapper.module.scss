@@ -1,0 +1,8 @@
+@use '../../../theme/' as *;
+
+.container {
+  @include flex;
+
+  justify-content: center;
+  align-items: flex-end;
+}
