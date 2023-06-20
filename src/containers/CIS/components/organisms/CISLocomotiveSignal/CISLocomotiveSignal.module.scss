@@ -1,0 +1,46 @@
+@use '../../../../../theme/' as *;
+
+.container {
+  @include flexColumnCenterCenter;
+
+  width: 100px;
+}
+
+.upperFrame {
+  width: 60px;
+  height: 20px;
+  transform: translateY(25%);
+  background: $primary1;
+}
+
+.box {
+  @include flex;
+}
+
+.plate {
+  @include gridCenter;
+
+  background: $primary2;
+  width: 25px;
+  height: 100px;
+}
+
+.plate1 {
+  transform: translateY(-7%) skewY(30deg);
+}
+
+.middleFrame {
+  width: 10px;
+  background: $primary1;
+}
+
+.plate2 {
+  transform: translateY(-7%) skewY(-30deg);
+}
+
+.yellow {
+  background: orange !important;
+}
+.moonWhite {
+  background: white !important;
+}

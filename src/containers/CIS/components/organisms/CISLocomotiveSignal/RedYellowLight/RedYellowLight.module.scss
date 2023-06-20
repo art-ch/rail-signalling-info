@@ -1,0 +1,37 @@
+@use '../../../../../../theme/' as *;
+
+.light {
+  width: 13px;
+  height: 13px;
+  background: #565656;
+  border-radius: 50%;
+}
+
+.piece {
+  height: 7px;
+}
+
+.upperPiece {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  transform: translate(-10%, -15%) rotate(-20deg);
+}
+
+.lowerPiece {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  transform: translate(13%, -13%) rotate(-20deg);
+}
+
+.divider {
+  background: $white;
+  height: 2px;
+  transform: translate(1%, -53%) rotate(-20deg);
+}
+
+.yellow {
+  background: orange;
+}
+.red {
+  background: $redAspect;
+}

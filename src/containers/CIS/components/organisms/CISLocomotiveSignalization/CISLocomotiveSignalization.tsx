@@ -1,24 +1,27 @@
+import React from 'react';
+
+import cx from 'classnames';
+
 import { ContentCard } from 'src/components/molecules/ContentCard';
 import { Description } from 'src/components/atoms/Description';
 
-import { Signal as CISLocomotiveSignalRenderer } from 'src/containers/CIS/content/signals/LocomotiveSignals';
+import { CISLocomotiveSignal } from '../CISLocomotiveSignal';
 
 import { useCISSignalContext } from '../../../context/CISSignalContext';
 
+import css from './CISLocomotiveSignalization.module.scss';
+
 import { CISTrainProtectionZone } from 'src/containers/CIS/context/CISSignalContext.types';
+import { SignalInfo, SignalLights, SignalModel } from 'src/types';
 
-import { SignalLights } from 'src/types';
-
-export type CISLocomotiveSignal = {
-  id: number;
-  name: string;
-  info: { description: string; altpDescription?: string };
-  lights: SignalLights;
+export type CISLocomotiveSignalModel = Omit<SignalModel, 'info' | 'lights'> & {
+  info: Omit<SignalInfo, 'type'>;
+  lights: SignalLights | 'active';
 };
 
 export type CISLocomotiveSignalizationProps = {
   title: string;
-  locomotiveSignalization: CISLocomotiveSignal[];
+  locomotiveSignalization: CISLocomotiveSignalModel[];
 };
 
 export const CISLocomotiveSignalization = ({
@@ -32,7 +35,7 @@ export const CISLocomotiveSignalization = ({
   return (
     <section>
       <h2 className="sectionTitle large">{title}</h2>
-      <div className="cardList">
+      <div className={cx(css.cardList, 'cardList')}>
         {locomotiveSignalization.map((locomotiveSignal) => {
           const { id, name, info, lights } = locomotiveSignal;
 
@@ -42,8 +45,11 @@ export const CISLocomotiveSignalization = ({
             (altpZone && info.altpDescription) || info.description;
 
           return (
-            <ContentCard key={id}>
-              <CISLocomotiveSignalRenderer lights={lights} />
+            <ContentCard key={id} className={css.contentCard}>
+              <CISLocomotiveSignal
+                lights={lights}
+                className={css.locomotiveSignal}
+              />
               <Description title={name} mainText={mainText} />
             </ContentCard>
           );

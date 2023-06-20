@@ -1,0 +1,21 @@
+@use '../../../../../theme/' as *;
+
+.cardList {
+  gap: 2rem;
+}
+
+.contentCard {
+  grid-template-columns: 100px auto;
+  gap: 4rem;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.locomotiveSignal {
+  @include mobile {
+    margin: 0 auto;
+  }
+}
