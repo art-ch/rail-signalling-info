@@ -13,11 +13,11 @@ import {
 import {
   CISSignalTypeSign,
   CISSignalTypeSignProps
-} from 'src/containers/CIS/components/molecules/CISSignalTypeSign';
+} from 'src/containers/CIS/components/molecules/CISSignalSigns/CISSignalTypeSign';
 import {
   ShortBlockSign,
   ShortBlockSignProps
-} from 'src/containers/CIS/components/molecules/ShortBlockSign';
+} from 'src/containers/CIS/components/molecules/CISSignalSigns/ShortBlockSign';
 import {
   SpecialBlockSignalBoard,
   SpecialBlockSignalBoardProps
