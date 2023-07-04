@@ -1,0 +1,17 @@
+@use '../../../../../../theme/' as *;
+
+.board {
+  @include gridCenter;
+
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translate(-40%);
+}
+
+.innerFrame {
+  border: 3px solid $black;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+}

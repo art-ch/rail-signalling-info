@@ -1,0 +1,31 @@
+@use '../../../theme/' as *;
+
+.sign {
+  background: $primary2;
+  border: 1px solid $black;
+
+  // types
+  &.standalone {
+    width: 5px;
+    height: 170px;
+  }
+
+  &.onCatenaryPole {
+    width: 30px;
+    height: 200px;
+  }
+
+  &.handheld {
+    width: 5px;
+    height: 70px;
+  }
+
+  // rotation
+  &.deg90 {
+    transform: rotate(90deg);
+  }
+
+  &.deg315 {
+    transform: rotate(-45deg);
+  }
+}

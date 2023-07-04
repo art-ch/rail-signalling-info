@@ -6,7 +6,6 @@ import {
 import { showNavigationPageLinkLoadingText } from './NavigationPage.utils';
 
 import css from './NavigationPage.module.scss';
-import { CISSignalTypeSign } from 'src/containers/CIS/components/molecules/CISSignalTypeSign';
 
 export type NavigationPageProps = {
   title: string;

@@ -11,7 +11,7 @@ import Horn from '../../../content/signs/content/Horn';
 import Hand from '../../../content/signs/content/Hand';
 import HandheldLight from '../../../content/signs/content/HandheldLight';
 import HandheldFlag from '../../../content/signs/content/HandheldFlag';
-import HandheldDisc from '../../../content/signs/content/HandheldDisc';
+// import HandheldDisc from '../../../content/signs/content/HandheldDisc';
 import RailSwitchSign from '../../../content/signs/content/RailSwitchSign';
 import TrackObstruction from '../../../content/signs/content/TrackObstruction';
 import HotAxles from '../../../content/signs/content/HotAxles';
@@ -26,6 +26,9 @@ import BoundaryPole from '../../../content/signs/content/BoundaryPole';
 import { SignWithText } from '../../../content/signs/content/SignWithText';
 import { SnowPlowSign } from '../../../content/signs/content/SnowPlowSign';
 import BioHazardSign from '../../../content/signs/content/BioHazardSign';
+
+// new imports
+import { HandheldDisc } from '../../molecules/CISSigns/HandheldDisc';
 
 export type CISSignRendererProps = { id: number };
 
