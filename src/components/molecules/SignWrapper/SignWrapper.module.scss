@@ -3,6 +3,7 @@
 .container {
   @include flex;
 
+  gap: 100px;
   justify-content: center;
   align-items: flex-end;
 }

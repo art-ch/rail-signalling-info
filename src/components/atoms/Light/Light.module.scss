@@ -3,7 +3,7 @@
 .light {
   border-radius: 50%;
 
-  /* sizes */
+  // sizes
   &.routePointer {
     width: 5px;
     height: 5px;
@@ -17,7 +17,7 @@
     height: 13px;
   }
 
-  /* colors */
+  // standard colors
   &.turnedOff {
     background: $turnedOffAspect;
   }
@@ -48,9 +48,14 @@
   &.blue {
     background: $blueAspect;
   }
+
+  // specific use case colors
+  &.white {
+    background: $white;
+  }
 }
 
-/* animation */
+// animation
 @keyframes flickering {
   0% {
     background: $turnedOffAspect;

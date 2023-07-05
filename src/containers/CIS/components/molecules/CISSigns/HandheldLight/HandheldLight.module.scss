@@ -1,0 +1,8 @@
+@use '../../../../../../theme/' as *;
+
+.plate {
+  height: 32px;
+  width: 26px;
+  transform: translate(-42%, 95%);
+  background: $black;
+}
