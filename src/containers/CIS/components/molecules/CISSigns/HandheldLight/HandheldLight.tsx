@@ -2,24 +2,35 @@ import React from 'react';
 
 import { LightColor } from 'src/components/atoms/Light/Light.types';
 import { Plate } from 'src/components/molecules/Plate';
+import { SignProps } from 'src/components/molecules/Sign/Sign.types';
 
 import { CISSign } from '../CISSignRoot';
-import { CISSignGripColor } from '../CISSignRoot/CISSign.types';
 
 import css from './HandheldLight.module.scss';
 
 export type HandheldLightProps = {
   lightColor?: LightColor;
-  gripColor?: CISSignGripColor;
-};
+} & Pick<SignProps, 'animatedSignPath'>;
 
 export const HandheldLight = ({
   lightColor = 'turnedOff',
-  gripColor = 'black'
+  animatedSignPath
 }: HandheldLightProps) => {
   return (
-    <CISSign type="handheld" gripColor={gripColor}>
-      <Plate lights={[{ color: lightColor }]} className={css.plate} />
+    <CISSign
+      type="handheld"
+      gripColor="black"
+      animatedSignPath={animatedSignPath}
+    >
+      <Plate
+        lights={[
+          {
+            color: lightColor,
+            customCss: { moonWhite: css.moonWhite, yellow: css.yellow }
+          }
+        ]}
+        className={css.plate}
+      />
     </CISSign>
   );
 };

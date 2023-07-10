@@ -5,4 +5,4 @@ export type CISSignGripColor = 'default' | 'black';
 export type CISSignProps = {
   children: React.ReactNode | React.ReactNode[];
   gripColor?: CISSignGripColor;
-} & Pick<SignProps, 'type' | 'rotation'>;
+} & Pick<SignProps, 'type' | 'rotation' | 'animatedSignPath'>;

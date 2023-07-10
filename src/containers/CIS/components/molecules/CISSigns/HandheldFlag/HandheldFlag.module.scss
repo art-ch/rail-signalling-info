@@ -1,0 +1,28 @@
+@use '../../../../../../theme/' as *;
+
+.fabric {
+  @include gridCenter;
+
+  border: 1px solid $black;
+  height: 32px;
+
+  // folded/unfolded
+  &.folded {
+    width: 10px;
+    transform: translateX(-29%);
+  }
+
+  &.unfolded {
+    width: 50px;
+    transform: translateX(-84%);
+  }
+
+  // colors
+  &.red {
+    background: red;
+  }
+
+  &.yellow {
+    background: yellow;
+  }
+}

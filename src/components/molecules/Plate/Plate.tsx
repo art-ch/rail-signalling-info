@@ -1,8 +1,9 @@
 import cx from 'classnames';
 
-import { Light, LightProps } from '../../atoms/Light';
+import { Light } from 'src/components/atoms/Light';
+import { LightProps } from 'src/components/atoms/Light/Light.types';
 
-import { UIComponent } from '../../../types';
+import { UIComponent } from 'src/types';
 
 import css from './Plate.module.scss';
 

@@ -11,8 +11,7 @@ export type LightColor =
   | 'green-flickering'
   | 'moonWhite'
   | 'moonWhite-flickering'
-  | 'blue'
-  | 'white';
+  | 'blue';
 
 export type LightProps = {
   size?: LightSize;
