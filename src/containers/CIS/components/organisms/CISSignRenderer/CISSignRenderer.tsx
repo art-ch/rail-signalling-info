@@ -8,7 +8,7 @@ import DangerousPlaceBoundaries from '../../../content/signs/content/DangerousPl
 import Stop from '../../../content/signs/content/Stop';
 import StopNightTime from '../../../content/signs/content/StopNightTime';
 import Horn from '../../../content/signs/content/Horn';
-import Hand from '../../../content/signs/content/Hand';
+// import Hand from '../../../content/signs/content/Hand';
 // import HandheldLightOld from '../../../content/signs/content/HandheldLight';
 // import HandheldFlag from '../../../content/signs/content/HandheldFlag';
 // import HandheldDisc from '../../../content/signs/content/HandheldDisc';
@@ -31,6 +31,7 @@ import BioHazardSign from '../../../content/signs/content/BioHazardSign';
 import { HandheldDisc } from '../../molecules/CISSigns/HandheldDisc';
 import { HandheldLight } from '../../molecules/CISSigns/HandheldLight';
 import { HandheldFlag } from '../../molecules/CISSigns/HandheldFlag';
+import { Hand } from '../../molecules/CISSigns/Hand';
 
 export type CISSignRendererProps = { id: number };
 
@@ -65,7 +66,7 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
         <SignWrapper>
           <HandheldFlag color="red" />
           <HandheldLight lightColor="red" />
-          <Hand path="stop" />
+          <Hand animatedSignPath="stop" />
           <HandheldFlag color="yellow" animatedSignPath="stop" />
           <HandheldLight lightColor="moonWhite" animatedSignPath="stop" />
         </SignWrapper>
@@ -96,7 +97,7 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 7:
       return (
         <SignWrapper>
-          <Hand path="slowDown" />
+          <Hand animatedSignPath="slowDown" />
           <HandheldFlag color="yellow" animatedSignPath="slowDown" />
           <HandheldLight lightColor="moonWhite" animatedSignPath="slowDown" />
         </SignWrapper>
@@ -105,7 +106,7 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 8:
       return (
         <SignWrapper>
-          <Hand path="startBreaking" />
+          <Hand animatedSignPath="startBreaking" />
           <HandheldLight
             lightColor="moonWhite"
             animatedSignPath="startBreaking"
@@ -116,7 +117,7 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 9:
       return (
         <SignWrapper>
-          <Hand path="endBreaking" />
+          <Hand animatedSignPath="endBreaking" />
           <HandheldLight
             lightColor="moonWhite"
             animatedSignPath="endBreaking"
@@ -127,7 +128,7 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 10:
       return (
         <SignWrapper>
-          <Hand path="endBreaking" />
+          <Hand animatedSignPath="endBreaking" />
           <Hand left />
           <HandheldLight
             lightColor="moonWhite"

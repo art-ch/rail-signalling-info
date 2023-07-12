@@ -1,3 +1,4 @@
+import { ImageProps } from 'next/image';
 import { UIComponent } from 'src/types';
 
 export type SignType = 'standalone' | 'handheld' | 'onCatenaryPole';
@@ -11,10 +12,14 @@ export type AnimatedSignPath =
   | 'endBreaking'
   | 'damagedCatenary';
 
+export type ImageSignProps = {
+  animatedSignPath?: AnimatedSignPath;
+} & ImageProps &
+  UIComponent;
+
 export type SignProps = {
   children: React.ReactNode | React.ReactNode[];
   type?: SignType;
   rotation?: SignRotation;
   animatedSignPath?: AnimatedSignPath;
-  imageSign?: boolean;
 } & UIComponent;
