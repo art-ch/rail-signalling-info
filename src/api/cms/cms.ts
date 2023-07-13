@@ -31,7 +31,7 @@ const getPage = async <T>(url: string, content_type: string) => {
     .then((data) => data.items[0]);
 };
 
-export default {
+const cms = {
   async getEntry(id: string) {
     return await client.getEntry(id);
   },
@@ -56,3 +56,5 @@ export default {
     return await getPage<ZonePageModel>(url, 'zonePage');
   }
 };
+
+export default cms;
