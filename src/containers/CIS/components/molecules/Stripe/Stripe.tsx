@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LightProps } from 'src/components/atoms/Light';
+import { LightProps } from 'src/components/atoms/Light/Light.types';
 import { Plate } from 'src/components/molecules/Plate';
 
 import css from './Stripe.module.scss';

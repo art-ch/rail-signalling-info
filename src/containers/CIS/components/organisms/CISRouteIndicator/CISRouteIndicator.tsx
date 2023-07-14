@@ -2,7 +2,7 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import { LightColor } from 'src/components/atoms/Light';
+import { LightColor } from 'src/components/atoms/Light/Light.types';
 import {
   RouteIndicator,
   RouteIndicatorLightMatrix

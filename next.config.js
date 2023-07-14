@@ -21,10 +21,6 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'src/theme')]
   },
 
-  experimental: {
-    appDir: true
-  },
-
   compiler: {
     styledComponents: true
   },

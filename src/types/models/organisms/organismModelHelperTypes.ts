@@ -1,4 +1,4 @@
-import { LightColor } from 'src/components/atoms/Light';
+import { LightColor } from 'src/components/atoms/Light/Light.types';
 
 export type SignalizationFilterModel = {
   id: number;

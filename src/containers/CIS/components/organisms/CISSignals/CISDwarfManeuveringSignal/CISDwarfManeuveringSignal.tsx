@@ -1,5 +1,5 @@
 import React from 'react';
-import { LightColor } from 'src/components/atoms/Light';
+import { LightColor } from 'src/components/atoms/Light/Light.types';
 
 import { useCISSignalContext } from 'src/containers/CIS/context';
 
