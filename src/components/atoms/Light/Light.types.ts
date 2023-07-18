@@ -3,6 +3,7 @@ import { UIComponent } from 'src/types';
 export type LightSize = 'routePointer' | 'small' | 'default';
 
 export type LightColor =
+  // standard colors
   | 'turnedOff'
   | 'red'
   | 'yellow'
@@ -11,7 +12,10 @@ export type LightColor =
   | 'green-flickering'
   | 'moonWhite'
   | 'moonWhite-flickering'
-  | 'blue';
+  | 'blue'
+
+  // specific case colors
+  | 'white';
 
 export type LightProps = {
   size?: LightSize;

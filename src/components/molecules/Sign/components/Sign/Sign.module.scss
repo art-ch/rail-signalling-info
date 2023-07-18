@@ -10,6 +10,11 @@
     height: 170px;
   }
 
+  &.dwarfStandalone {
+    width: 5px;
+    height: 80px;
+  }
+
   &.onCatenaryPole {
     width: 30px;
     height: 200px;
@@ -27,5 +32,10 @@
 
   &.deg315 {
     transform: rotate(-45deg);
+  }
+
+  // at distance
+  &.atDistance {
+    transform: scale(0.7);
   }
 }

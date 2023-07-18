@@ -10,3 +10,58 @@
     background: $black;
   }
 }
+
+// common cis sign css
+.cap {
+  padding: 5px;
+  background: $black;
+  transform: translate(-25%);
+}
+
+.frame,
+.lightFrame {
+  transform: translate(-42%, 5%);
+
+  &.catenaryPoleSign {
+    transform: translate(-23%, 50%);
+  }
+}
+
+.frame {
+  @include flexColumnCenterCenter;
+
+  width: 50px;
+  height: 50px;
+  background: $white;
+
+  &.roundedFrame {
+    border-radius: 50%;
+  }
+
+  &.diamondFrame {
+    transform: rotate(45deg) translate(20%, 50%);
+  }
+}
+
+.lightFrame {
+  @include gridCenter;
+
+  height: 32px;
+  width: 26px;
+  background: $black;
+}
+
+.coloredFrame {
+  height: 38px;
+  width: 38px;
+  border: 5px solid $black;
+
+  &.roundedFrame {
+    border-radius: 50%;
+  }
+  // background: ${({ innerFrameColor }) => innerFrameColor};
+}
+
+.light {
+  border: 1px solid $black;
+}

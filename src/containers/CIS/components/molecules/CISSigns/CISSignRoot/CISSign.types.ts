@@ -9,7 +9,7 @@ export type CISSignProps = {
   imageSign?: false;
   children: React.ReactNode | React.ReactNode[];
   gripColor?: CISSignGripColor;
-} & Pick<SignProps, 'type' | 'rotation' | 'animatedSignPath'>;
+} & Pick<SignProps, 'type' | 'rotation' | 'animatedSignPath' | 'atDistance'>;
 
 export type CISSignDiscriminantProps =
   | CISSignProps

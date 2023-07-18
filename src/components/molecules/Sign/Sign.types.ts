@@ -1,7 +1,12 @@
 import { ImageProps } from 'next/image';
 import { UIComponent } from 'src/types';
 
-export type SignType = 'standalone' | 'handheld' | 'onCatenaryPole';
+export type SignType =
+  | 'standalone'
+  | 'dwarfStandalone'
+  | 'handheld'
+  | 'onCatenaryPole';
+
 export type SignRotation = 'default' | 'deg315' | 'deg90';
 export type AnimatedSignPath =
   | 'stop'
@@ -22,4 +27,7 @@ export type SignProps = {
   type?: SignType;
   rotation?: SignRotation;
   animatedSignPath?: AnimatedSignPath;
+
+  // meaning sign is placed futher from user's point of view
+  atDistance?: boolean;
 } & UIComponent;

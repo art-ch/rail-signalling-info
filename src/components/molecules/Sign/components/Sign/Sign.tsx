@@ -10,9 +10,18 @@ export const Sign = ({
   children,
   type = 'standalone',
   rotation = 'default',
+  atDistance = false,
   className
 }: SignProps) => (
-  <div className={cx(css.sign, css[type], css[rotation], className)}>
+  <div
+    className={cx(
+      css.sign,
+      css[type],
+      css[rotation],
+      { [css.atDistance]: atDistance },
+      className
+    )}
+  >
     {children}
   </div>
 );

@@ -48,6 +48,11 @@
   &.blue {
     background: $blueAspect;
   }
+
+  // specific case colors
+  &.white {
+    background: $white;
+  }
 }
 
 // animation
