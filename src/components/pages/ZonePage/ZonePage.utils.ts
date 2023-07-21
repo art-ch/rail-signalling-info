@@ -1,22 +1,15 @@
-import { SignalizationFilterListModel } from '../../../types';
 import { convertCamelCaseToTextCase } from '../../../utils/miscelaneousUtils';
-import { FilterPanelProps, FilterState } from '../../molecules/FilterPanel';
-import { ZonePageContentTypes } from 'src/components/pages/ZonePage';
-import { ZonePageContent } from 'src/components/pages/ZonePage';
+import { FilterPanelProps } from '../../molecules/FilterPanel';
 
-type getContentFilterOptionsProps = Omit<
-  ZonePageContent,
-  'signalTypeSigns' | `${string}Filters`
->;
+import {
+  GetContentFilterOptionsProps,
+  GetMainFiltersProps
+} from './ZonePage.types';
 
-type getMainFiltersProps = {
-  filters: SignalizationFilterListModel[];
-  state: FilterState[];
-  additionalClickHandler?: () => void;
-};
+import { ZonePageContentTypes } from './ZonePage.types';
 
 export const getContentFilterOptions = (
-  content: getContentFilterOptionsProps
+  content: GetContentFilterOptionsProps
 ): ZonePageContentTypes[] => {
   const filteredContent = Object.entries(content).filter(
     ([_, contentItemValue]) => contentItemValue.length > 0
@@ -33,7 +26,7 @@ export const getMainFilters = ({
   filters,
   state,
   additionalClickHandler
-}: getMainFiltersProps): FilterPanelProps[] =>
+}: GetMainFiltersProps): FilterPanelProps[] =>
   filters.map((singleFilter, idx) => {
     const title = singleFilter.title;
     const options = singleFilter.filters.map((filter) => filter.displayName);

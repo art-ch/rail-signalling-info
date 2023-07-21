@@ -1,65 +1,14 @@
-import { FunctionComponent, useState } from 'react';
+import { useState } from 'react';
 
 import cx from 'classnames';
 
-import { RichTextContent } from 'contentful';
-
 import { RichText } from 'src/components/atoms/RichText';
-import { Button, ButtonProps } from 'src/components/atoms/Button';
-
-import {
-  SignalModel,
-  SignalizationFilterListModel,
-  SignalTypeSignModel,
-  SignModel,
-  UIComponent,
-  LocomotiveSignalizationModel
-} from 'src/types';
+import { Button } from 'src/components/atoms/Button';
 
 import css from './ZonePage.module.scss';
 import { FilterPanelProps } from 'src/components/molecules/FilterPanel';
 import { getContentFilterOptions } from './ZonePage.utils';
-
-export type ZonePageContentTypes =
-  | 'Signals'
-  | 'Locomotive Signalization'
-  | 'Signs';
-
-export type ZonePageFiltersProps = {
-  shownContent: ZonePageContentTypes;
-  contentFilter: FilterPanelProps;
-  isFilterSectionVisible: boolean;
-  filterSectionClickHandlers: () => void;
-} & UIComponent;
-
-export type ZonePageContentRendererProps = {
-  content: ZonePageContent;
-  shownContent: ZonePageContentTypes;
-};
-
-export type ZonePageContent = {
-  signals: SignalModel[];
-  signalTypeSigns: SignalTypeSignModel[];
-  signalFilters: SignalizationFilterListModel[];
-  signs: SignModel[];
-  signFilters: SignalizationFilterListModel[];
-  locomotiveSignalization?: LocomotiveSignalizationModel[];
-};
-
-export type ZonePageMainProps = {
-  title: string;
-  description: string;
-  filterToggler: ButtonProps;
-  content: ZonePageContent;
-  additionalInfo: RichTextContent;
-};
-
-export type ZonePageCustomComponents = {
-  Filters: FunctionComponent<ZonePageFiltersProps>;
-  ContentRenderer: FunctionComponent<ZonePageContentRendererProps>;
-};
-
-export type ZonePageProps = ZonePageMainProps & ZonePageCustomComponents;
+import { ZonePageContentTypes, ZonePageProps } from './ZonePage.types';
 
 export const ZonePage = ({
   title,

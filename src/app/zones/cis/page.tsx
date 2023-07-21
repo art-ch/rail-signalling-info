@@ -1,9 +1,9 @@
 import api from 'src/api';
 
-import { getContent } from 'src/utils/cmsUtils';
+import { getContent, getZonePageContent } from 'src/utils/cmsUtils';
 
 import { CISZonePage } from 'src/containers/CIS/CISZonePage';
-import { ZonePageMainProps } from 'src/components/pages/ZonePage';
+import { ZonePageMainProps } from 'src/components/pages/ZonePage/ZonePage.types';
 import { CISSignalProvider } from 'src/containers/CIS/context/CISSignalContext';
 
 export default async function CISZone() {
@@ -16,7 +16,7 @@ export default async function CISZone() {
     title,
     description,
     filterToggler: getContent(filterToggler),
-    content: getContent(content),
+    content: getZonePageContent(content),
     additionalInfo
   };
 

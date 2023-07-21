@@ -20,7 +20,7 @@ export type AnimatedSignPath =
 export type ImageSignProps = {
   animatedSignPath?: AnimatedSignPath;
 } & ImageProps &
-  UIComponent;
+  UIComponent<{ imageClassName?: string }>;
 
 export type SignProps = {
   children: React.ReactNode | React.ReactNode[];
