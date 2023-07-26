@@ -12,6 +12,24 @@
 }
 
 // common cis sign css
+.pole {
+  height: 170px;
+  width: 5px;
+  border: 1px solid $black;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 1) 36%,
+    rgba(0, 0, 0, 1) 36%,
+    rgba(0, 0, 0, 1) 42%,
+    rgba(255, 255, 255, 1) 36%,
+    rgba(255, 255, 255, 1) 76%,
+    rgba(0, 0, 0, 1) 76%
+  );
+}
+
 .cap {
   padding: 5px;
   background: $black;

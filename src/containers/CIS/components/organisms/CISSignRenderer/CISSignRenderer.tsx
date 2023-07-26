@@ -12,8 +12,8 @@ import Horn from '../../../content/signs/content/Horn';
 // import HandheldLightOld from '../../../content/signs/content/HandheldLight';
 // import HandheldFlag from '../../../content/signs/content/HandheldFlag';
 // import HandheldDisc from '../../../content/signs/content/HandheldDisc';
-import RailSwitchSign from '../../../content/signs/content/RailSwitchSign';
-import TrackObstruction from '../../../content/signs/content/TrackObstruction';
+// import RailSwitchSign from '../../../content/signs/content/RailSwitchSign';
+// import TrackObstruction from '../../../content/signs/content/TrackObstruction';
 import HotAxles from '../../../content/signs/content/HotAxles';
 import BlockBorderALTP from '../../../content/signs/content/BlockBorderALTP';
 import BlockBorderWWLTP from '../../../content/signs/content/BlockBorderWWLTP';
@@ -33,6 +33,7 @@ import { HandheldLight } from '../../molecules/CISSigns/HandheldLight';
 import { HandheldFlag } from '../../molecules/CISSigns/HandheldFlag';
 import { Hand } from '../../molecules/CISSigns/Hand';
 import { CISRailSwitchSign } from '../../molecules/CISSigns/CISRailSwitchSign';
+import { TrackObstruction } from '../../molecules/CISSigns/TrackObstruction';
 
 export type CISSignRendererProps = { id: number };
 

@@ -1,0 +1,24 @@
+@use '../../../../../../theme/' as *;
+
+.frame {
+  background: $black !important;
+}
+
+.innerFrame {
+  @include flexCenter;
+
+  width: 45px;
+  height: 45px;
+  background: $white;
+  border-radius: 50%;
+}
+
+.signifyingLine {
+  height: 10px;
+  width: 45px;
+  background: $black;
+
+  &.closed {
+    transform: rotate(90deg);
+  }
+}
