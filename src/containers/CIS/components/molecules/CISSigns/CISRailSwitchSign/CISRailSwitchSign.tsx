@@ -11,31 +11,27 @@ import { CISRailSwitchSignProps } from './CISRailSwitchSign.types';
 import css from './CISRailSwitchSign.module.scss';
 import commonCISSignCSS from '../CISSignRoot/CISSign.module.scss';
 import { useCISSignalContext } from 'src/containers/CIS/context';
+import { getImageFromList } from 'src/utils/miscelaneousUtils';
 
 export const CISRailSwitchSign = ({
   mode,
   lightColor = 'turnedOff',
   atDistance = false
 }: CISRailSwitchSignProps) => {
-  const { content } = useCISSignalContext();
+  const {
+    content: { imageSigns }
+  } = useCISSignalContext();
 
   const isDivertSign = mode === 'divert';
   const isDivertAnalogSign = mode === 'divertAnalog';
 
   if (isDivertAnalogSign) {
-    const divertAnalogSign = content.imageSigns.find((imageSign) =>
-      imageSign.title.includes('Divert Analog Sign')
-    );
+    const divertAnalogSign = getImageFromList({
+      imageList: imageSigns,
+      imageTitle: 'Divert Analog Sign'
+    });
 
-    return (
-      <CISSign
-        imageSign
-        src={divertAnalogSign?.file.url || ''}
-        alt={'divert analog sign'}
-        width={divertAnalogSign?.file.details.image?.width}
-        height={divertAnalogSign?.file.details.image?.height}
-      />
-    );
+    return <CISSign imageSign {...divertAnalogSign} />;
   }
 
   return (

@@ -7,7 +7,7 @@ import {
 
 import { useCISSignalContext } from 'src/containers/CIS/context';
 
-import { ZonePageContentRendererProps } from 'src/components/pages/ZonePage';
+import { ZonePageContentRendererProps } from 'src/components/pages/ZonePage/ZonePage.types';
 import { SignalCardList } from 'src/components/organisms/SignalCardList';
 import { SignCardList } from 'src/components/organisms/SignCardList';
 import {
