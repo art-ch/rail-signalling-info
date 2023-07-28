@@ -14,14 +14,12 @@ export const Hand = ({ left, animatedSignPath }: HandProps) => {
 
   const leftHand = getImageFromList({
     imageList: imageSigns,
-    imageTitle: 'Left Hand',
-    customDimensions: { width: 120, height: 120 }
+    imageTitle: 'Left Hand'
   });
 
   const rightHand = getImageFromList({
     imageList: imageSigns,
-    imageTitle: 'Right Hand',
-    customDimensions: { width: 130, height: 130 }
+    imageTitle: 'Right Hand'
   });
 
   const handSign = (left && leftHand) || rightHand;
