@@ -2,8 +2,8 @@ import React from 'react';
 
 import { SignWrapper } from 'src/components/molecules/SignWrapper';
 
-import SlowDownPermanent from '../../../content/signs/content/SlowDownPermanent';
-import SlowDownTemporary from '../../../content/signs/content/SlowDownTemporary';
+// import SlowDownPermanent from '../../../content/signs/content/SlowDownPermanent';
+// import SlowDownTemporary from '../../../content/signs/content/SlowDownTemporary';
 import DangerousPlaceBoundaries from '../../../content/signs/content/DangerousPlaceBoundaries';
 import Stop from '../../../content/signs/content/Stop';
 import StopNightTime from '../../../content/signs/content/StopNightTime';
@@ -34,6 +34,7 @@ import { HandheldFlag } from '../../molecules/CISSigns/HandheldFlag';
 import { Hand } from '../../molecules/CISSigns/Hand';
 import { CISRailSwitchSign } from '../../molecules/CISSigns/CISRailSwitchSign';
 import { TrackObstruction } from '../../molecules/CISSigns/TrackObstruction';
+import { SlowDown } from '../../molecules/CISSigns/SlowDown';
 
 export type CISSignRendererProps = { id: number };
 
@@ -205,16 +206,24 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 19:
       return (
         <SignWrapper>
-          <SlowDownPermanent color="yellow" />
-          <SlowDownPermanent color="green" />
+          <SlowDown innerFrameColor="yellow" />
+          <SlowDown innerFrameColor="green" />
         </SignWrapper>
       );
 
     case 20:
       return (
         <SignWrapper>
-          <SlowDownTemporary color="yellow" />
-          <SlowDownTemporary color="green" />
+          <SlowDown
+            temporary
+            poleGradientColor="yellow"
+            innerFrameColor="yellow"
+          />
+          <SlowDown
+            temporary
+            poleGradientColor="green"
+            innerFrameColor="green"
+          />
         </SignWrapper>
       );
 

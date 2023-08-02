@@ -1,0 +1,18 @@
+@use '../variables';
+
+@mixin tempSignPoleMixin(
+  $tempSignPoleGradientColor: 'black',
+  $tempSignPoleSpecial: false
+) {
+  @if $tempSignPoleSpecial {
+    background: $primary1;
+  } @else {
+    background: repeating-linear-gradient(
+      $tempSignPoleGradientColor,
+      $tempSignPoleGradientColor,
+      15px,
+      variables.$white 15px,
+      variables.$white 30px
+    );
+  }
+}

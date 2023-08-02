@@ -2,16 +2,19 @@ import React from 'react';
 
 import cx from 'classnames';
 
+import { CISSign } from '../CISSignRoot';
+
 import { Board } from 'src/components/atoms/Board';
 import { Light } from 'src/components/atoms/Light';
-import { CISSign } from '../CISSignRoot';
+
+import { useCISSignalContext } from 'src/containers/CIS/context';
+
+import { getImageFromList } from 'src/utils/miscelaneousUtils';
 
 import { CISRailSwitchSignProps } from './CISRailSwitchSign.types';
 
 import css from './CISRailSwitchSign.module.scss';
 import commonCISSignCSS from '../CISSignRoot/CISSign.module.scss';
-import { useCISSignalContext } from 'src/containers/CIS/context';
-import { getImageFromList } from 'src/utils/miscelaneousUtils';
 
 export const CISRailSwitchSign = ({
   mode,
@@ -36,14 +39,12 @@ export const CISRailSwitchSign = ({
 
   return (
     <CISSign gripColor="black" type="dwarfStandalone" atDistance={atDistance}>
-      <>
-        <div className={commonCISSignCSS.cap} />
-        <Board className={cx(commonCISSignCSS.frame, css.frame, css[mode])}>
-          {isDivertSign && (
-            <Light color={lightColor} className={commonCISSignCSS.light} />
-          )}
-        </Board>
-      </>
+      <div className={commonCISSignCSS.cap} />
+      <Board className={cx(commonCISSignCSS.frame, css.frame, css[mode])}>
+        {isDivertSign && (
+          <Light color={lightColor} className={commonCISSignCSS.light} />
+        )}
+      </Board>
     </CISSign>
   );
 };

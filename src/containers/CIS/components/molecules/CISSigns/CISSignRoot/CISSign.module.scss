@@ -30,6 +30,22 @@
   );
 }
 
+.tempSignPole {
+  @include tempSignPoleMixin();
+
+  &.green {
+    @include tempSignPoleMixin(green);
+  }
+
+  &.yellow {
+    @include tempSignPoleMixin(yellow);
+  }
+
+  &.red {
+    @include tempSignPoleMixin(red);
+  }
+}
+
 .cap {
   padding: 5px;
   background: $black;
@@ -74,10 +90,13 @@
   width: 38px;
   border: 5px solid $black;
 
-  &.roundedFrame {
-    border-radius: 50%;
+  &.yellow {
+    background: yellow;
   }
-  // background: ${({ innerFrameColor }) => innerFrameColor};
+
+  &.green {
+    background: green;
+  }
 }
 
 .light {

@@ -7,4 +7,8 @@
 .border,
 .innerBorder {
   border: 1px solid $black;
+
+  &.rounded {
+    border-radius: 50%;
+  }
 }
