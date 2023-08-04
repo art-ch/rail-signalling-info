@@ -11,16 +11,16 @@ import { useCISSignalContext } from 'src/containers/CIS/context';
 
 import { getImageFromList } from 'src/utils/miscelaneousUtils';
 
-import { CISRailSwitchSignProps } from './CISRailSwitchSign.types';
+import { RailSwitchSignProps } from './RailSwitchSign.types';
 
-import css from './CISRailSwitchSign.module.scss';
+import css from './RailSwitchSign.module.scss';
 import commonCISSignCSS from '../CISSignRoot/CISSign.module.scss';
 
-export const CISRailSwitchSign = ({
+export const RailSwitchSign = ({
   mode,
   lightColor = 'turnedOff',
   atDistance = false
-}: CISRailSwitchSignProps) => {
+}: RailSwitchSignProps) => {
   const {
     content: { imageSigns }
   } = useCISSignalContext();

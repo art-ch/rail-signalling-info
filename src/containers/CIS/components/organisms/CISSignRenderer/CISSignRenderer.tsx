@@ -32,7 +32,7 @@ import { HandheldDisc } from '../../molecules/CISSigns/HandheldDisc';
 import { HandheldLight } from '../../molecules/CISSigns/HandheldLight';
 import { HandheldFlag } from '../../molecules/CISSigns/HandheldFlag';
 import { Hand } from '../../molecules/CISSigns/Hand';
-import { CISRailSwitchSign } from '../../molecules/CISSigns/CISRailSwitchSign';
+import { RailSwitchSign } from '../../molecules/CISSigns/RailSwitchSign';
 import { TrackObstruction } from '../../molecules/CISSigns/TrackObstruction';
 import { SlowDown } from '../../molecules/CISSigns/SlowDown';
 
@@ -131,58 +131,58 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 11:
       return (
         <SignWrapper>
-          <CISRailSwitchSign mode="straightDay" />
-          <CISRailSwitchSign mode="straightNight" />
-          <CISRailSwitchSign mode="straightAnalog" />
+          <RailSwitchSign mode="straightDay" />
+          <RailSwitchSign mode="straightNight" />
+          <RailSwitchSign mode="straightAnalog" />
         </SignWrapper>
       );
 
     case 12:
       return (
         <SignWrapper>
-          <CISRailSwitchSign lightColor="turnedOff" mode="divert" />
-          <CISRailSwitchSign lightColor="yellow" mode="divert" />
-          <CISRailSwitchSign mode="divertAnalog" />
+          <RailSwitchSign lightColor="turnedOff" mode="divert" />
+          <RailSwitchSign lightColor="yellow" mode="divert" />
+          <RailSwitchSign mode="divertAnalog" />
         </SignWrapper>
       );
 
     case 13:
       return (
         <SignWrapper>
-          <CISRailSwitchSign mode="straightDay" />
-          <CISRailSwitchSign mode="straightDay" atDistance />
-          <CISRailSwitchSign mode="straightNight" />
-          <CISRailSwitchSign mode="straightNight" atDistance />
+          <RailSwitchSign mode="straightDay" />
+          <RailSwitchSign mode="straightDay" atDistance />
+          <RailSwitchSign mode="straightNight" />
+          <RailSwitchSign mode="straightNight" atDistance />
         </SignWrapper>
       );
 
     case 14:
       return (
         <SignWrapper>
-          <CISRailSwitchSign lightColor="turnedOff" mode="divert" />
-          <CISRailSwitchSign lightColor="turnedOff" mode="divert" atDistance />
-          <CISRailSwitchSign lightColor="yellow" mode="divert" />
-          <CISRailSwitchSign lightColor="yellow" mode="divert" atDistance />
+          <RailSwitchSign lightColor="turnedOff" mode="divert" />
+          <RailSwitchSign lightColor="turnedOff" mode="divert" atDistance />
+          <RailSwitchSign lightColor="yellow" mode="divert" />
+          <RailSwitchSign lightColor="yellow" mode="divert" atDistance />
         </SignWrapper>
       );
 
     case 15:
       return (
         <SignWrapper>
-          <CISRailSwitchSign lightColor="turnedOff" mode="divert" />
-          <CISRailSwitchSign mode="straightDay" atDistance />
-          <CISRailSwitchSign lightColor="yellow" mode="divert" />
-          <CISRailSwitchSign mode="straightNight" atDistance />
+          <RailSwitchSign lightColor="turnedOff" mode="divert" />
+          <RailSwitchSign mode="straightDay" atDistance />
+          <RailSwitchSign lightColor="yellow" mode="divert" />
+          <RailSwitchSign mode="straightNight" atDistance />
         </SignWrapper>
       );
 
     case 16:
       return (
         <SignWrapper>
-          <CISRailSwitchSign mode="straightDay" />
-          <CISRailSwitchSign lightColor="turnedOff" mode="divert" atDistance />
-          <CISRailSwitchSign mode="straightNight" />
-          <CISRailSwitchSign lightColor="yellow" mode="divert" atDistance />
+          <RailSwitchSign mode="straightDay" />
+          <RailSwitchSign lightColor="turnedOff" mode="divert" atDistance />
+          <RailSwitchSign mode="straightNight" />
+          <RailSwitchSign lightColor="yellow" mode="divert" atDistance />
         </SignWrapper>
       );
 
@@ -197,9 +197,9 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 18:
       return (
         <SignWrapper>
-          <CISRailSwitchSign lightColor="turnedOff" mode="divert" />
-          <CISRailSwitchSign lightColor="red" mode="divert" />
-          <CISRailSwitchSign lightColor="white" mode="divert" />
+          <RailSwitchSign lightColor="turnedOff" mode="divert" />
+          <RailSwitchSign lightColor="red" mode="divert" />
+          <RailSwitchSign lightColor="white" mode="divert" />
         </SignWrapper>
       );
 
