@@ -1,0 +1,16 @@
+@use '../../../../../../theme/' as *;
+
+.board {
+  height: 32px;
+  width: 66px;
+  transform: translate(-45%, 5%);
+  background: $white;
+  display: grid;
+  place-items: center;
+}
+.innerFrame {
+  height: 20px;
+  width: 54px;
+  border: 5px solid $black;
+  background: red;
+}

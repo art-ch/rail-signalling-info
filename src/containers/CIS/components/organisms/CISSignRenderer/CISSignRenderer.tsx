@@ -5,8 +5,8 @@ import { SignWrapper } from 'src/components/molecules/SignWrapper';
 // import SlowDownPermanent from '../../../content/signs/content/SlowDownPermanent';
 // import SlowDownTemporary from '../../../content/signs/content/SlowDownTemporary';
 // import DangerousPlaceBoundaries from '../../../content/signs/content/DangerousPlaceBoundaries';
-import Stop from '../../../content/signs/content/Stop';
-import StopNightTime from '../../../content/signs/content/StopNightTime';
+// import Stop from '../../../content/signs/content/Stop';
+// import StopNightTime from '../../../content/signs/content/StopNightTime';
 import Horn from '../../../content/signs/content/Horn';
 // import Hand from '../../../content/signs/content/Hand';
 // import HandheldLightOld from '../../../content/signs/content/HandheldLight';
@@ -36,6 +36,7 @@ import { RailSwitchSign } from '../../molecules/CISSigns/RailSwitchSign';
 import { TrackObstruction } from '../../molecules/CISSigns/TrackObstruction';
 import { SlowDown } from '../../molecules/CISSigns/SlowDown';
 import { DangerousPlaceBoundaries } from '../../molecules/CISSigns/DangerousPlaceBoundaries';
+import { Stop } from '../../molecules/CISSigns/Stop';
 
 export type CISSignRendererProps = { id: number };
 
@@ -242,7 +243,7 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
       return (
         <SignWrapper>
           <Stop />
-          <StopNightTime />
+          <Stop nightTime />
         </SignWrapper>
       );
 

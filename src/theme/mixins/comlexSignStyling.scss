@@ -1,11 +1,11 @@
 @use '../variables';
 
 @mixin tempSignPoleMixin(
-  $tempSignPoleGradientColor: variables.$black,
-  $tempSignPoleSpecial: false
+  $tempSignPoleSpecial: false,
+  $tempSignPoleGradientColor: variables.$black
 ) {
   @if $tempSignPoleSpecial {
-    background: $primary1;
+    background: variables.$primary1;
   } @else {
     background: repeating-linear-gradient(
       $tempSignPoleGradientColor,

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import cx from 'classnames';
+
 import { LightColor } from 'src/components/atoms/Light/Light.types';
 import { Plate } from 'src/components/molecules/Plate';
 import { SignProps } from 'src/components/molecules/Sign/Sign.types';
@@ -7,6 +9,7 @@ import { SignProps } from 'src/components/molecules/Sign/Sign.types';
 import { CISSign } from '../CISSignRoot';
 
 import css from './HandheldLight.module.scss';
+import commonCISSignCSS from '../CISSignRoot/CISSign.module.scss';
 
 export type HandheldLightProps = {
   lightColor?: LightColor;
@@ -25,11 +28,10 @@ export const HandheldLight = ({
       <Plate
         lights={[
           {
-            color: lightColor,
-            customCss: { moonWhite: css.moonWhite, yellow: css.yellow }
+            color: lightColor
           }
         ]}
-        className={css.plate}
+        className={cx(css.plate, commonCISSignCSS.plate)}
       />
     </CISSign>
   );

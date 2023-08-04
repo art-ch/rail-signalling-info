@@ -33,16 +33,20 @@
 .tempSignPole {
   @include tempSignPoleMixin();
 
+  &.special {
+    @include tempSignPoleMixin(true);
+  }
+
   &.green {
-    @include tempSignPoleMixin(green);
+    @include tempSignPoleMixin(false, green);
   }
 
   &.yellow {
-    @include tempSignPoleMixin(yellow);
+    @include tempSignPoleMixin(false, yellow);
   }
 
   &.red {
-    @include tempSignPoleMixin(red);
+    @include tempSignPoleMixin(false, red);
   }
 }
 
@@ -97,6 +101,13 @@
   &.green {
     background: green;
   }
+}
+
+.plate {
+  height: 32px;
+  width: 26px;
+  transform: translate(-42%, 5%);
+  background: $black;
 }
 
 .light {
