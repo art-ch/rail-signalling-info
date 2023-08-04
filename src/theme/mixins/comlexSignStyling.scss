@@ -1,7 +1,7 @@
 @use '../variables';
 
 @mixin tempSignPoleMixin(
-  $tempSignPoleGradientColor: 'black',
+  $tempSignPoleGradientColor: variables.$black,
   $tempSignPoleSpecial: false
 ) {
   @if $tempSignPoleSpecial {

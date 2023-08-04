@@ -1,0 +1,43 @@
+@use '../../../../../../theme/' as *;
+
+.outerPolkaDot,
+.innerPolkaDotContainer,
+.dot {
+  border-radius: 50%;
+}
+
+.outerPolkaDot {
+  width: 35px;
+  height: 35px;
+  transform: translate(-45%, 5%);
+  border: 8px dotted $white;
+  background: $black;
+  display: grid;
+  place-items: center;
+}
+
+.innerPolkaDotContainer {
+  background: $white;
+  width: 33px;
+  height: 33px;
+}
+
+.innerPolkaDot {
+  background: $black;
+  width: 33px;
+  height: 10px;
+  transform: translateY(110%);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  &.ending {
+    transform: translateY(110%) rotate(90deg);
+  }
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: $white;
+}

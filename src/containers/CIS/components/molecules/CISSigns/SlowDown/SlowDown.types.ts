@@ -1,31 +1,20 @@
-import { PropsWithChildren, UIComponent } from 'src/types';
+import { UIComponent } from 'src/types';
+import {
+  PermanentGradientPoleProps,
+  TemporaryGradientPoleProps
+} from '../CISSignRoot/components/GradientPole/GradientPole.types';
 
 export type SlowDownSignMutualProps = {
   innerFrameColor: string;
 };
 
-export type SlowDownPermanentProps = {
-  temporary?: false;
-};
-export type SlowDownTemporaryProps = {
-  temporary?: true;
-  poleGradientColor: string;
-};
+export type SlowDownPermanentProps = SlowDownSignMutualProps &
+  PermanentGradientPoleProps;
+export type SlowDownTemporaryProps = SlowDownSignMutualProps &
+  TemporaryGradientPoleProps;
 
-export type SlowDownPermanentSignProps = SlowDownSignMutualProps &
-  SlowDownPermanentProps;
-export type SlowDownTemporarySignProps = SlowDownSignMutualProps &
-  SlowDownTemporaryProps;
-
-export type SlowDownPoleDiscriminantProps =
+export type SlowDownDiscriminantProps =
   | SlowDownPermanentProps
   | SlowDownTemporaryProps;
 
-export type SlowDownSignDiscriminantProps =
-  | SlowDownPermanentSignProps
-  | SlowDownTemporarySignProps;
-
-export type SlowDownProps = SlowDownSignDiscriminantProps & UIComponent;
-
-export type SlowDownPoleProps =
-  PropsWithChildren<SlowDownPoleDiscriminantProps>;
+export type SlowDownProps = SlowDownDiscriminantProps & UIComponent;

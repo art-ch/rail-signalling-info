@@ -4,17 +4,18 @@ import cx from 'classnames';
 
 import { Board } from 'src/components/atoms/Board';
 
+import { GradientPole } from '../CISSignRoot/components/GradientPole/GradientPole';
+
 import { SlowDownProps } from './SlowDown.types';
 
 import css from './SlowDown.module.scss';
 import commonCISSignCSS from '../CISSignRoot/CISSign.module.scss';
-import { SlowDownPole } from './SlowDownPole';
 
 export const SlowDown = (props: SlowDownProps) => {
   const { temporary = false, innerFrameColor } = props;
 
   return (
-    <SlowDownPole {...props}>
+    <GradientPole {...props}>
       <Board
         border="edgeThickStaggered"
         rounded={!temporary}
@@ -25,6 +26,6 @@ export const SlowDown = (props: SlowDownProps) => {
           commonCISSignCSS[innerFrameColor]
         )}
       />
-    </SlowDownPole>
+    </GradientPole>
   );
 };
