@@ -1,0 +1,51 @@
+@use '../../../../../../../../theme/' as *;
+
+.frame {
+  border: 1px solid $black;
+  width: 17px;
+  margin-top: 5px;
+}
+
+.signFrame {
+  height: 27px;
+}
+
+.signContent {
+  height: 17px;
+  background: orange;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.line {
+  height: 1px;
+  width: 17px;
+  background: $black;
+
+  &.straightLine {
+    transform: translateY(850%);
+  }
+
+  &.leftLine {
+    transform: translateY(700%) rotate(60deg);
+  }
+
+  &.rightLine {
+    transform: translateY(650%) rotate(-60deg);
+  }
+}
+
+.numberFrame {
+  height: 20px;
+}
+
+.boxFrame {
+  height: 25px;
+  background: grey;
+
+  .handle {
+    width: 2px;
+    height: 2px;
+    background: $black;
+    transform: translateX(-200%);
+  }
+}

@@ -30,6 +30,12 @@
   );
 }
 
+.catenaryPole {
+  background: $primary1;
+  width: 30px;
+  height: 200px;
+}
+
 .tempSignPole {
   @include tempSignPoleMixin();
 

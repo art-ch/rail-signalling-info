@@ -15,8 +15,8 @@ import Horn from '../../../content/signs/content/Horn';
 // import RailSwitchSign from '../../../content/signs/content/RailSwitchSign';
 // import TrackObstruction from '../../../content/signs/content/TrackObstruction';
 import HotAxles from '../../../content/signs/content/HotAxles';
-import BlockBorderALTP from '../../../content/signs/content/BlockBorderALTP';
-import BlockBorderWWLTP from '../../../content/signs/content/BlockBorderWWLTP';
+// import BlockBorderALTP from '../../../content/signs/content/BlockBorderALTP';
+// import BlockBorderWWLTP from '../../../content/signs/content/BlockBorderWWLTP';
 import DropPantograph from '../../../content/signs/content/DropPantograph';
 import NeutralZoneAttention from '../../../content/signs/content/NeutralZoneAttention';
 import TurnOffCurrent from '../../../content/signs/content/TurnOffCurrent';
@@ -37,6 +37,7 @@ import { TrackObstruction } from '../../molecules/CISSigns/TrackObstruction';
 import { SlowDown } from '../../molecules/CISSigns/SlowDown';
 import { DangerousPlaceBoundaries } from '../../molecules/CISSigns/DangerousPlaceBoundaries';
 import { Stop } from '../../molecules/CISSigns/Stop';
+import { BlockBorder } from '../../molecules/CISSigns/BlockBorder';
 
 export type CISSignRendererProps = { id: number };
 
@@ -269,14 +270,14 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 25:
       return (
         <SignWrapper>
-          <BlockBorderALTP />
+          <BlockBorder type="altp" />
         </SignWrapper>
       );
 
     case 26:
       return (
         <SignWrapper>
-          <BlockBorderWWLTP />
+          <BlockBorder type="wwltp" />
         </SignWrapper>
       );
 
