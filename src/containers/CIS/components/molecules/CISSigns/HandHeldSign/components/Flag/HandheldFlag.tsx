@@ -2,19 +2,11 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import { CISSign } from '../CISSignRoot';
+import { CISSign } from '../../../CISSignRoot';
 
-import { AnimatedSignPath } from 'src/components/molecules/Sign/Sign.types';
+import { HandheldFlagProps } from '../../HandHeldSign.types';
 
 import css from './HandheldFlag.module.scss';
-
-type HandheldFlagColor = 'red' | 'yellow';
-
-export type HandheldFlagProps = {
-  color: HandheldFlagColor;
-  folded?: boolean;
-  animatedSignPath?: AnimatedSignPath;
-};
 
 export const HandheldFlag = ({
   color,
@@ -24,6 +16,7 @@ export const HandheldFlag = ({
   return (
     <CISSign
       type="handheld"
+      grip="default"
       rotation="deg315"
       animatedSignPath={animatedSignPath}
     >

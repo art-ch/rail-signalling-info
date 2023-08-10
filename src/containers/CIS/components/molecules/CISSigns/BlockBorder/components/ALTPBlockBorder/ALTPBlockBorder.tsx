@@ -2,11 +2,13 @@ import React from 'react';
 
 import cx from 'classnames';
 
+import { CISSign } from '../../../CISSignRoot';
+
 import css from './ALTPBlockBorder.module.scss';
 import commonCISSignCSS from '../../../CISSignRoot/CISSign.module.scss';
 
 export const ALTPBlockBorder = () => (
-  <div className={commonCISSignCSS.pole}>
+  <CISSign pole="permanent">
     <div className={cx(commonCISSignCSS.frame, css.frame, css.signFrame)}>
       <div className={css.signContent}>
         <div className={cx(css.line, css.straightLine)} />
@@ -20,5 +22,5 @@ export const ALTPBlockBorder = () => (
     <div className={cx(commonCISSignCSS.frame, css.frame, css.boxFrame)}>
       <div className={css.handle} />
     </div>
-  </div>
+  </CISSign>
 );

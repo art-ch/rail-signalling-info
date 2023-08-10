@@ -28,9 +28,9 @@ import { SnowPlowSign } from '../../../content/signs/content/SnowPlowSign';
 import BioHazardSign from '../../../content/signs/content/BioHazardSign';
 
 // new imports
-import { HandheldDisc } from '../../molecules/CISSigns/HandheldDisc';
-import { HandheldLight } from '../../molecules/CISSigns/HandheldLight';
-import { HandheldFlag } from '../../molecules/CISSigns/HandheldFlag';
+// import { HandheldDisc } from '../../molecules/CISSigns/HandHeldSign/components/Disc';
+// import { HandheldLight } from '../../molecules/CISSigns/HandheldLight';
+// import { HandheldFlag } from '../../molecules/CISSigns/HandheldFlag';
 import { Hand } from '../../molecules/CISSigns/Hand';
 import { RailSwitchSign } from '../../molecules/CISSigns/RailSwitchSign';
 import { TrackObstruction } from '../../molecules/CISSigns/TrackObstruction';
@@ -38,6 +38,7 @@ import { SlowDown } from '../../molecules/CISSigns/SlowDown';
 import { DangerousPlaceBoundaries } from '../../molecules/CISSigns/DangerousPlaceBoundaries';
 import { Stop } from '../../molecules/CISSigns/Stop';
 import { BlockBorder } from '../../molecules/CISSigns/BlockBorder';
+import { HandHeldSign } from '../../molecules/CISSigns/HandHeldSign';
 
 export type CISSignRendererProps = { id: number };
 
@@ -46,51 +47,69 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 1:
       return (
         <SignWrapper>
-          <HandheldDisc />
-          <HandheldLight lightColor="green" />
+          <HandHeldSign type="disc" />
+          <HandHeldSign type="light" props={{ lightColor: 'green' }} />
         </SignWrapper>
       );
 
     case 2:
       return (
         <SignWrapper>
-          <HandheldFlag color="yellow" folded />
-          <HandheldLight lightColor="white" />
+          <HandHeldSign type="flag" props={{ color: 'yellow', folded: true }} />
+          <HandHeldSign type="light" props={{ lightColor: 'white' }} />
         </SignWrapper>
       );
 
     case 3:
       return (
         <SignWrapper>
-          <HandheldFlag color="yellow" />
-          <HandheldLight lightColor="yellow" />
+          <HandHeldSign type="flag" props={{ color: 'yellow' }} />
+          <HandHeldSign type="light" props={{ lightColor: 'yellow' }} />
         </SignWrapper>
       );
 
     case 4:
       return (
         <SignWrapper>
-          <HandheldFlag color="red" />
-          <HandheldLight lightColor="red" />
+          <HandHeldSign type="flag" props={{ color: 'red' }} />
+          <HandHeldSign type="light" props={{ lightColor: 'red' }} />
           <Hand animatedSignPath="stop" />
-          <HandheldFlag color="yellow" animatedSignPath="stop" />
-          <HandheldLight lightColor="white" animatedSignPath="stop" />
+          <HandHeldSign
+            type="flag"
+            props={{ color: 'yellow', animatedSignPath: 'stop' }}
+          />
+          <HandHeldSign
+            type="light"
+            props={{ lightColor: 'white', animatedSignPath: 'stop' }}
+          />
         </SignWrapper>
       );
 
     case 5:
       return (
         <SignWrapper>
-          <HandheldFlag color="yellow" animatedSignPath="driveForward" />
-          <HandheldLight lightColor="white" animatedSignPath="driveForward" />
+          <HandHeldSign
+            type="flag"
+            props={{ color: 'yellow', animatedSignPath: 'driveForward' }}
+          />
+          <HandHeldSign
+            type="light"
+            props={{ lightColor: 'white', animatedSignPath: 'driveForward' }}
+          />
         </SignWrapper>
       );
 
     case 6:
       return (
         <SignWrapper>
-          <HandheldFlag color="yellow" animatedSignPath="driveBackward" />
-          <HandheldLight lightColor="white" animatedSignPath="driveBackward" />
+          <HandHeldSign
+            type="flag"
+            props={{ color: 'yellow', animatedSignPath: 'driveBackward' }}
+          />
+          <HandHeldSign
+            type="light"
+            props={{ lightColor: 'white', animatedSignPath: 'driveBackward' }}
+          />
         </SignWrapper>
       );
 
@@ -98,8 +117,14 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
       return (
         <SignWrapper>
           <Hand animatedSignPath="slowDown" />
-          <HandheldFlag color="yellow" animatedSignPath="slowDown" />
-          <HandheldLight lightColor="white" animatedSignPath="slowDown" />
+          <HandHeldSign
+            type="flag"
+            props={{ color: 'yellow', animatedSignPath: 'slowDown' }}
+          />
+          <HandHeldSign
+            type="light"
+            props={{ lightColor: 'white', animatedSignPath: 'slowDown' }}
+          />
         </SignWrapper>
       );
 
@@ -107,7 +132,10 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
       return (
         <SignWrapper>
           <Hand animatedSignPath="startBreaking" />
-          <HandheldLight lightColor="white" animatedSignPath="startBreaking" />
+          <HandHeldSign
+            type="light"
+            props={{ lightColor: 'white', animatedSignPath: 'startBreaking' }}
+          />
         </SignWrapper>
       );
 
@@ -115,7 +143,10 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
       return (
         <SignWrapper>
           <Hand animatedSignPath="endBreaking" />
-          <HandheldLight lightColor="white" animatedSignPath="endBreaking" />
+          <HandHeldSign
+            type="light"
+            props={{ lightColor: 'white', animatedSignPath: 'endBreaking' }}
+          />
         </SignWrapper>
       );
 
@@ -124,9 +155,9 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
         <SignWrapper>
           <Hand animatedSignPath="endBreaking" />
           <Hand left />
-          <HandheldLight
-            lightColor="white"
-            animatedSignPath="damagedCatenary"
+          <HandHeldSign
+            type="light"
+            props={{ lightColor: 'white', animatedSignPath: 'damagedCatenary' }}
           />
         </SignWrapper>
       );
@@ -209,24 +240,16 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 19:
       return (
         <SignWrapper>
-          <SlowDown innerFrameColor="yellow" />
-          <SlowDown innerFrameColor="green" />
+          <SlowDown mainColor="yellow" />
+          <SlowDown mainColor="green" />
         </SignWrapper>
       );
 
     case 20:
       return (
         <SignWrapper>
-          <SlowDown
-            temporary
-            poleGradientColor="yellow"
-            innerFrameColor="yellow"
-          />
-          <SlowDown
-            temporary
-            poleGradientColor="green"
-            innerFrameColor="green"
-          />
+          <SlowDown temporary mainColor="yellow" />
+          <SlowDown temporary mainColor="green" />
         </SignWrapper>
       );
 

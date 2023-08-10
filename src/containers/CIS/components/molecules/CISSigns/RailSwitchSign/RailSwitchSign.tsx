@@ -38,7 +38,7 @@ export const RailSwitchSign = ({
   }
 
   return (
-    <CISSign gripColor="black" type="dwarfStandalone" atDistance={atDistance}>
+    <CISSign type="dwarfStandalone" grip="black" atDistance={atDistance}>
       <div className={commonCISSignCSS.cap} />
       <Board className={cx(commonCISSignCSS.frame, css.frame, css[mode])}>
         {isDivertSign && (

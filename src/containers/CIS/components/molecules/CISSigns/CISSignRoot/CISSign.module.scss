@@ -9,52 +9,54 @@
   &.blackGrip {
     background: $black;
   }
+
+  // poles
+  &.pole {
+    height: 170px;
+    width: 5px;
+    border: 1px solid $black;
+
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(255, 255, 255, 1) 10%,
+      rgba(255, 255, 255, 1) 36%,
+      rgba(0, 0, 0, 1) 36%,
+      rgba(0, 0, 0, 1) 42%,
+      rgba(255, 255, 255, 1) 36%,
+      rgba(255, 255, 255, 1) 76%,
+      rgba(0, 0, 0, 1) 76%
+    );
+  }
+
+  &.catenaryPole {
+    background: $primary1;
+    width: 30px;
+    height: 200px;
+  }
+
+  &.tempSignPole {
+    @include tempSignPoleMixin();
+
+    &.special {
+      @include tempSignPoleMixin(true);
+    }
+
+    &.green {
+      @include tempSignPoleMixin(false, green);
+    }
+
+    &.yellow {
+      @include tempSignPoleMixin(false, yellow);
+    }
+
+    &.red {
+      @include tempSignPoleMixin(false, red);
+    }
+  }
 }
 
 // common cis sign css
-.pole {
-  height: 170px;
-  width: 5px;
-  border: 1px solid $black;
-
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 10%,
-    rgba(255, 255, 255, 1) 10%,
-    rgba(255, 255, 255, 1) 36%,
-    rgba(0, 0, 0, 1) 36%,
-    rgba(0, 0, 0, 1) 42%,
-    rgba(255, 255, 255, 1) 36%,
-    rgba(255, 255, 255, 1) 76%,
-    rgba(0, 0, 0, 1) 76%
-  );
-}
-
-.catenaryPole {
-  background: $primary1;
-  width: 30px;
-  height: 200px;
-}
-
-.tempSignPole {
-  @include tempSignPoleMixin();
-
-  &.special {
-    @include tempSignPoleMixin(true);
-  }
-
-  &.green {
-    @include tempSignPoleMixin(false, green);
-  }
-
-  &.yellow {
-    @include tempSignPoleMixin(false, yellow);
-  }
-
-  &.red {
-    @include tempSignPoleMixin(false, red);
-  }
-}
 
 .cap {
   padding: 5px;

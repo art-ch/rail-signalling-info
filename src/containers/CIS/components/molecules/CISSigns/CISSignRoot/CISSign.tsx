@@ -18,10 +18,25 @@ export const CISSign = ({
     return <ImageSign {...(props as ImageSignProps)} />;
   }
 
-  const { children, gripColor = 'default' } = props as CISSignProps;
+  const { grip, pole, poleGradientColor, children } = props as CISSignProps;
+
+  const gripClassNameList = grip && css[`${grip}Grip`];
+
+  const permanentPoleClassList = pole === 'permanent' && css.pole;
+
+  const tempPoleClassList =
+    pole === 'temporary' &&
+    poleGradientColor &&
+    cx(css.tempSignPole, css[poleGradientColor ?? 'black']);
+
+  const poleClassNameList =
+    pole && (permanentPoleClassList || tempPoleClassList);
 
   return (
-    <Sign className={cx(css.sign, css[`${gripColor}Grip`])} {...props}>
+    <Sign
+      className={cx(css.sign, gripClassNameList, poleClassNameList)}
+      {...props}
+    >
       {children}
     </Sign>
   );

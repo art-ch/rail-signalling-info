@@ -2,9 +2,8 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import { GradientPole } from '../CISSignRoot/components/GradientPole/GradientPole';
-
 import css from './DangerousPlaceBoundaries.module.scss';
+import { CISSign } from '../CISSignRoot';
 
 export type DangerousPlaceBoundariesProps = {
   temporary?: boolean;
@@ -15,8 +14,11 @@ export const DangerousPlaceBoundaries = ({
   temporary = false,
   ending = false
 }: DangerousPlaceBoundariesProps) => {
+  const pole = temporary ? 'temporary' : 'permanent';
+  const poleGradientColor = temporary ? 'black' : undefined;
+
   return (
-    <GradientPole temporary={temporary}>
+    <CISSign pole={pole} poleGradientColor={poleGradientColor}>
       <div className={css.outerPolkaDot}>
         <div className={css.innerPolkaDotContainer}>
           <div className={cx(css.innerPolkaDot, { [css.ending]: ending })}>
@@ -26,6 +28,6 @@ export const DangerousPlaceBoundaries = ({
           </div>
         </div>
       </div>
-    </GradientPole>
+    </CISSign>
   );
 };

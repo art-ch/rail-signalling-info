@@ -1,11 +1,10 @@
 import React from 'react';
 
 import { SpecialBlockSignalBoard } from 'src/containers/CIS/components/atoms/SpecialBlockSignalBoard';
-
-import commonCISSignCSS from '../../../CISSignRoot/CISSign.module.scss';
+import { CISSign } from '../../../CISSignRoot';
 
 export const WWLTPBlockBorder = () => (
-  <div className={commonCISSignCSS.catenaryPole}>
+  <CISSign type="onCatenaryPole">
     <SpecialBlockSignalBoard renderAsStandaloneSign />
-  </div>
+  </CISSign>
 );
