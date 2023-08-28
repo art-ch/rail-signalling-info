@@ -7,7 +7,7 @@ import { SignWrapper } from 'src/components/molecules/SignWrapper';
 // import DangerousPlaceBoundaries from '../../../content/signs/content/DangerousPlaceBoundaries';
 // import Stop from '../../../content/signs/content/Stop';
 // import StopNightTime from '../../../content/signs/content/StopNightTime';
-import Horn from '../../../content/signs/content/Horn';
+// import Horn from '../../../content/signs/content/Horn';
 // import Hand from '../../../content/signs/content/Hand';
 // import HandheldLightOld from '../../../content/signs/content/HandheldLight';
 // import HandheldFlag from '../../../content/signs/content/HandheldFlag';
@@ -28,9 +28,6 @@ import { SnowPlowSign } from '../../../content/signs/content/SnowPlowSign';
 import BioHazardSign from '../../../content/signs/content/BioHazardSign';
 
 // new imports
-// import { HandheldDisc } from '../../molecules/CISSigns/HandHeldSign/components/Disc';
-// import { HandheldLight } from '../../molecules/CISSigns/HandheldLight';
-// import { HandheldFlag } from '../../molecules/CISSigns/HandheldFlag';
 import { Hand } from '../../molecules/CISSigns/Hand';
 import { RailSwitchSign } from '../../molecules/CISSigns/RailSwitchSign';
 import { TrackObstruction } from '../../molecules/CISSigns/TrackObstruction';
@@ -39,6 +36,7 @@ import { DangerousPlaceBoundaries } from '../../molecules/CISSigns/DangerousPlac
 import { Stop } from '../../molecules/CISSigns/Stop';
 import { BlockBorder } from '../../molecules/CISSigns/BlockBorder';
 import { HandHeldSign } from '../../molecules/CISSigns/HandHeldSign';
+import { CISHorn } from '../../molecules/CISSigns/CISHorn';
 
 export type CISSignRendererProps = { id: number };
 
@@ -284,9 +282,9 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 24:
       return (
         <SignWrapper>
-          <Horn tempSignPole />
-          <Horn />
-          <Horn catenaryPole />
+          <CISHorn pole="temporary" />
+          <CISHorn pole="permanent" />
+          <CISHorn type="onCatenaryPole" />
         </SignWrapper>
       );
 
