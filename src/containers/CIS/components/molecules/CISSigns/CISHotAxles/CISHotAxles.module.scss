@@ -1,0 +1,43 @@
+@use '../../../../../../theme/' as *;
+
+.frame,
+.coloredFrame,
+.vLetterLeg_bottom {
+  clip-path: polygon(100% 0, 0 0, 50% 100%);
+}
+
+.frame,
+.coloredFrame {
+  background: $black;
+}
+
+.frame {
+  transform: translate(-20%, 50%);
+}
+
+.coloredFrame > * {
+  background: $turnedOffAspect;
+
+  &.turnedOnSign {
+    background: $white;
+  }
+}
+
+.vLetterLeg {
+  width: 40px;
+  height: 8px;
+}
+
+.vLetterLeg_left {
+  transform: translate(-31%, 50%) rotate(62deg);
+}
+
+.vLetterLeg_right {
+  transform: translate(21%, -15%) rotate(-62deg);
+}
+
+.vLetterLeg_bottom {
+  width: 15px;
+  height: 15px;
+  transform: translate(75%, 45%);
+}

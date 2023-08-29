@@ -12,19 +12,17 @@ import commonCISSignCSS from '../CISSignRoot/CISSign.module.scss';
 
 export type CISHornProps = { pole?: CISSignPole; type?: SignType };
 
-export const CISHorn = ({ pole, type = 'standalone' }: CISHornProps) => {
-  return (
-    <CISSign type={type} pole={pole}>
-      <Board
-        className={cx(css.frame, commonCISSignCSS.frame, {
-          [css.catenaryPoleSign]: type === 'onCatenaryPole'
-        })}
-      >
-        <div className={css.upperPart}>
-          <h4 className={css.signSymbol}>C</h4>
-        </div>
-        <div className={css.lowerPart} />
-      </Board>
-    </CISSign>
-  );
-};
+export const CISHorn = ({ pole, type = 'standalone' }: CISHornProps) => (
+  <CISSign type={type} pole={pole}>
+    <Board
+      className={cx(css.frame, commonCISSignCSS.frame, {
+        [css.catenaryPoleSign]: type === 'onCatenaryPole'
+      })}
+    >
+      <div className={css.upperPart}>
+        <h4 className={css.signSymbol}>C</h4>
+      </div>
+      <div className={css.lowerPart} />
+    </Board>
+  </CISSign>
+);

@@ -37,6 +37,7 @@ import { Stop } from '../../molecules/CISSigns/Stop';
 import { BlockBorder } from '../../molecules/CISSigns/BlockBorder';
 import { HandHeldSign } from '../../molecules/CISSigns/HandHeldSign';
 import { CISHorn } from '../../molecules/CISSigns/CISHorn';
+import { CISHotAxles } from '../../molecules/CISSigns/CISHotAxles';
 
 export type CISSignRendererProps = { id: number };
 
@@ -305,8 +306,8 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 27:
       return (
         <SignWrapper>
-          <HotAxles />
-          <HotAxles turnedOn />
+          <CISHotAxles />
+          <CISHotAxles turnedOn />
         </SignWrapper>
       );
 
