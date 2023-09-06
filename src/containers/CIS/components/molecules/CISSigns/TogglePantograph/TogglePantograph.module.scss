@@ -1,0 +1,49 @@
+@use '../../../../../../theme/' as *;
+
+.frame {
+  margin-bottom: 20px;
+
+  &.temporary {
+    transform: rotate(45deg) translate(-50%, 10%);
+  }
+}
+
+.innerFrame {
+  width: 39px;
+  height: 39px;
+  border: 4px solid $black;
+  background: $black;
+
+  &.temporary {
+    background: #3c86c3;
+  }
+}
+
+.signContent {
+  height: 8px;
+  width: 37px;
+  transform: rotate(-45deg) translate(-30%, 135%);
+  background: $primary1;
+  border-radius: 50px;
+
+  &.raise {
+    transform: rotate(-135deg) translate(-30%, -125%);
+    background: $white;
+  }
+
+  &.turnedOn {
+    animation: dropPantographActive 2s infinite;
+  }
+}
+
+@keyframes dropPantographActive {
+  0% {
+    background: grey;
+  }
+  50% {
+    background: white;
+  }
+  100% {
+    background: grey;
+  }
+}

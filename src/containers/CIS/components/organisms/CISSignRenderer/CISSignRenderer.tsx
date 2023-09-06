@@ -14,10 +14,10 @@ import { SignWrapper } from 'src/components/molecules/SignWrapper';
 // import HandheldDisc from '../../../content/signs/content/HandheldDisc';
 // import RailSwitchSign from '../../../content/signs/content/RailSwitchSign';
 // import TrackObstruction from '../../../content/signs/content/TrackObstruction';
-import HotAxles from '../../../content/signs/content/HotAxles';
+// import HotAxles from '../../../content/signs/content/HotAxles';
 // import BlockBorderALTP from '../../../content/signs/content/BlockBorderALTP';
 // import BlockBorderWWLTP from '../../../content/signs/content/BlockBorderWWLTP';
-import DropPantograph from '../../../content/signs/content/DropPantograph';
+// import DropPantographOld from '../../../content/signs/content/DropPantograph';
 import NeutralZoneAttention from '../../../content/signs/content/NeutralZoneAttention';
 import TurnOffCurrent from '../../../content/signs/content/TurnOffCurrent';
 import TurnOnCurrent from '../../../content/signs/content/TurnOnCurrent';
@@ -38,6 +38,7 @@ import { BlockBorder } from '../../molecules/CISSigns/BlockBorder';
 import { HandHeldSign } from '../../molecules/CISSigns/HandHeldSign';
 import { CISHorn } from '../../molecules/CISSigns/CISHorn';
 import { CISHotAxles } from '../../molecules/CISSigns/CISHotAxles';
+import { TogglePantograph } from '../../molecules/CISSigns/TogglePantograph';
 
 export type CISSignRendererProps = { id: number };
 
@@ -314,14 +315,10 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 28:
       return (
         <SignWrapper>
-          <DropPantograph innerFrameColor="black" />
-          <DropPantograph innerFrameColor="black" turnedOn />
-          <DropPantograph innerFrameColor="#3c86c3" tempSignPoleSpecial />
-          <DropPantograph
-            innerFrameColor="#3c86c3"
-            tempSignPoleSpecial
-            turnedOn
-          />
+          <TogglePantograph />
+          <TogglePantograph turnedOn />
+          <TogglePantograph type="standalone" />
+          <TogglePantograph type="standalone" turnedOn />
         </SignWrapper>
       );
 
@@ -336,15 +333,10 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 30:
       return (
         <SignWrapper>
-          <DropPantograph raise innerFrameColor="black" />
-          <DropPantograph raise innerFrameColor="#3c86c3" tempSignPoleSpecial />
-          <DropPantograph raise innerFrameColor="black" doubled />
-          <DropPantograph
-            raise
-            innerFrameColor="#3c86c3"
-            tempSignPoleSpecial
-            doubled
-          />
+          <TogglePantograph raise />
+          <TogglePantograph type="standalone" raise />
+          <TogglePantograph raise doubled />
+          <TogglePantograph type="standalone" raise doubled />
         </SignWrapper>
       );
 
