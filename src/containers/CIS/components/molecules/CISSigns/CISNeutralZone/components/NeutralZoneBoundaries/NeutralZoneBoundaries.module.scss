@@ -1,0 +1,27 @@
+@use '../../../../../../../../theme/' as *;
+
+.frame,
+.verticalLine {
+  height: 90px;
+}
+
+.frame {
+  width: 28px;
+  transform: translateY(50%);
+  background: repeating-linear-gradient(
+    $black,
+    $black 15px,
+    $white 15px,
+    $white 25px
+  );
+}
+
+.verticalLine {
+  width: 12px;
+  background: $black;
+  margin: 0 auto;
+
+  &.ending {
+    display: none;
+  }
+}

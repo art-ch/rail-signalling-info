@@ -18,10 +18,10 @@ import { SignWrapper } from 'src/components/molecules/SignWrapper';
 // import BlockBorderALTP from '../../../content/signs/content/BlockBorderALTP';
 // import BlockBorderWWLTP from '../../../content/signs/content/BlockBorderWWLTP';
 // import DropPantographOld from '../../../content/signs/content/DropPantograph';
-import NeutralZoneAttention from '../../../content/signs/content/NeutralZoneAttention';
+// import NeutralZoneAttention from '../../../content/signs/content/NeutralZoneAttention';
 import TurnOffCurrent from '../../../content/signs/content/TurnOffCurrent';
 import TurnOnCurrent from '../../../content/signs/content/TurnOnCurrent';
-import NeutralZone from '../../../content/signs/content/NeutralZone';
+import NeutralZoneOld from '../../../content/signs/content/NeutralZone';
 import BoundaryPole from '../../../content/signs/content/BoundaryPole';
 import { SignWithText } from '../../../content/signs/content/SignWithText';
 import { SnowPlowSign } from '../../../content/signs/content/SnowPlowSign';
@@ -39,6 +39,7 @@ import { HandHeldSign } from '../../molecules/CISSigns/HandHeldSign';
 import { CISHorn } from '../../molecules/CISSigns/CISHorn';
 import { CISHotAxles } from '../../molecules/CISSigns/CISHotAxles';
 import { TogglePantograph } from '../../molecules/CISSigns/TogglePantograph';
+import { CISNeutralZone } from '../../molecules/CISSigns/CISNeutralZone';
 
 export type CISSignRendererProps = { id: number };
 
@@ -325,8 +326,8 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 29:
       return (
         <SignWrapper>
-          <NeutralZoneAttention innerFrameColor="black" />
-          <NeutralZoneAttention innerFrameColor="#3c86c3" tempSignPoleSpecial />
+          <CISNeutralZone neutralZoneSignType="approach" />
+          <CISNeutralZone neutralZoneSignType="approach" type="standalone" />
         </SignWrapper>
       );
 
@@ -358,8 +359,8 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 33:
       return (
         <SignWrapper>
-          <NeutralZone ending />
-          <NeutralZone />
+          <CISNeutralZone neutralZoneSignType="boundaries" ending />
+          <CISNeutralZone neutralZoneSignType="boundaries" />
         </SignWrapper>
       );
 
