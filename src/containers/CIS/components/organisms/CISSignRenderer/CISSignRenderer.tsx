@@ -19,9 +19,9 @@ import { SignWrapper } from 'src/components/molecules/SignWrapper';
 // import BlockBorderWWLTP from '../../../content/signs/content/BlockBorderWWLTP';
 // import DropPantographOld from '../../../content/signs/content/DropPantograph';
 // import NeutralZoneAttention from '../../../content/signs/content/NeutralZoneAttention';
-import TurnOffCurrent from '../../../content/signs/content/TurnOffCurrent';
-import TurnOnCurrent from '../../../content/signs/content/TurnOnCurrent';
-import NeutralZoneOld from '../../../content/signs/content/NeutralZone';
+// import TurnOffCurrent from '../../../content/signs/content/TurnOffCurrent';
+// import TurnOnCurrent from '../../../content/signs/content/TurnOnCurrent';
+// import NeutralZoneOld from '../../../content/signs/content/NeutralZone';
 import BoundaryPole from '../../../content/signs/content/BoundaryPole';
 import { SignWithText } from '../../../content/signs/content/SignWithText';
 import { SnowPlowSign } from '../../../content/signs/content/SnowPlowSign';
@@ -40,6 +40,7 @@ import { CISHorn } from '../../molecules/CISSigns/CISHorn';
 import { CISHotAxles } from '../../molecules/CISSigns/CISHotAxles';
 import { TogglePantograph } from '../../molecules/CISSigns/TogglePantograph';
 import { CISNeutralZone } from '../../molecules/CISSigns/CISNeutralZone';
+import { ToggleCurrent } from '../../molecules/CISSigns/ToggleCurrent';
 
 export type CISSignRendererProps = { id: number };
 
@@ -344,15 +345,15 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 31:
       return (
         <SignWrapper>
-          <TurnOffCurrent innerFrameColor="#3c86c3" />
+          <ToggleCurrent />
         </SignWrapper>
       );
 
     case 32:
       return (
         <SignWrapper>
-          <TurnOnCurrent innerFrameColor="#3c86c3" />
-          <TurnOnCurrent innerFrameColor="#3c86c3" doubled />
+          <ToggleCurrent turnOn />
+          <ToggleCurrent turnOn doubled />
         </SignWrapper>
       );
 

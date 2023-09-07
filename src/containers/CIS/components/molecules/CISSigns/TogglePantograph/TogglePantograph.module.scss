@@ -1,7 +1,7 @@
 @use '../../../../../../theme/' as *;
 
 .frame {
-  margin-bottom: 20px;
+  margin: 0 0 20px;
 
   &.temporary {
     transform: rotate(45deg) translate(-50%, 10%);

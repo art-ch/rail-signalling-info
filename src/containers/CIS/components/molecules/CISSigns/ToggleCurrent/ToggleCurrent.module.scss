@@ -1,0 +1,48 @@
+@use '../../../../../../theme/' as *;
+
+.frame {
+  margin: 0 0 20px;
+}
+
+.innerFrame {
+  width: 39px;
+  height: 39px;
+  border: 4px solid $black;
+  background: #3c86c3;
+}
+
+.signContent {
+  @include flexColumn;
+
+  width: 25px;
+  transform: rotate(-45deg) translate(-5%, 45%);
+}
+
+.upperElement,
+.lowerElement {
+  border-radius: 50px;
+  height: 8px;
+  background: $white;
+}
+
+.upperElements {
+  @include flex;
+
+  justify-content: space-between;
+}
+
+.upperElement {
+  width: 8px;
+
+  &.turnOn {
+    height: 20px;
+  }
+}
+
+.lowerElement {
+  margin: 7px 0 0;
+
+  &.turnOn {
+    margin: -7px 0 0;
+  }
+}
