@@ -22,7 +22,7 @@ import { SignWrapper } from 'src/components/molecules/SignWrapper';
 // import TurnOffCurrent from '../../../content/signs/content/TurnOffCurrent';
 // import TurnOnCurrent from '../../../content/signs/content/TurnOnCurrent';
 // import NeutralZoneOld from '../../../content/signs/content/NeutralZone';
-import BoundaryPole from '../../../content/signs/content/BoundaryPole';
+// import BoundaryPole from '../../../content/signs/content/BoundaryPole';
 import { SignWithText } from '../../../content/signs/content/SignWithText';
 import { SnowPlowSign } from '../../../content/signs/content/SnowPlowSign';
 import BioHazardSign from '../../../content/signs/content/BioHazardSign';
@@ -41,6 +41,7 @@ import { CISHotAxles } from '../../molecules/CISSigns/CISHotAxles';
 import { TogglePantograph } from '../../molecules/CISSigns/TogglePantograph';
 import { CISNeutralZone } from '../../molecules/CISSigns/CISNeutralZone';
 import { ToggleCurrent } from '../../molecules/CISSigns/ToggleCurrent';
+import { CISBoundaryPole } from '../../molecules/CISSigns/CISBoundaryPole';
 
 export type CISSignRendererProps = { id: number };
 
@@ -368,8 +369,8 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 34:
       return (
         <SignWrapper>
-          <BoundaryPole />
-          <BoundaryPole branch />
+          <CISBoundaryPole />
+          <CISBoundaryPole branchPole />
         </SignWrapper>
       );
 

@@ -1,0 +1,40 @@
+@use '../../../../../../theme/' as *;
+
+.pole,
+.whiteLine,
+.blackLine {
+  width: 20px;
+}
+
+.pole,
+.blackLine {
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.pole {
+  border: 1px solid $black;
+  height: 60px;
+  background: repeating-linear-gradient(
+    25deg,
+    $black,
+    $black 8px,
+    $white 8px,
+    $white 15px
+  );
+
+  &.branchPole {
+    background: $black;
+  }
+}
+
+.whiteLine {
+  height: 15px;
+  background: $white;
+  transform: translateY(100%);
+}
+
+.blackLine {
+  height: 10px;
+  background: $black;
+}
