@@ -25,7 +25,7 @@ import { SignWrapper } from 'src/components/molecules/SignWrapper';
 // import BoundaryPole from '../../../content/signs/content/BoundaryPole';
 import { SignWithText } from '../../../content/signs/content/SignWithText';
 import { SnowPlowSign } from '../../../content/signs/content/SnowPlowSign';
-import BioHazardSign from '../../../content/signs/content/BioHazardSign';
+// import BioHazardSign from '../../../content/signs/content/BioHazardSign';
 
 // new imports
 import { Hand } from '../../molecules/CISSigns/Hand';
@@ -42,6 +42,7 @@ import { TogglePantograph } from '../../molecules/CISSigns/TogglePantograph';
 import { CISNeutralZone } from '../../molecules/CISSigns/CISNeutralZone';
 import { ToggleCurrent } from '../../molecules/CISSigns/ToggleCurrent';
 import { CISBoundaryPole } from '../../molecules/CISSigns/CISBoundaryPole';
+import { BioHazardSign } from '../../molecules/CISSigns/BioHazardSign';
 
 export type CISSignRendererProps = { id: number };
 
@@ -446,9 +447,9 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 40:
       return (
         <SignWrapper>
-          <BioHazardSign front />
-          <BioHazardSign sideWays />
-          <BioHazardSign fromBehind />
+          <BioHazardSign pointOfView="front" />
+          <BioHazardSign pointOfView="sideways" />
+          <BioHazardSign pointOfView="fromBehind" />
         </SignWrapper>
       );
 

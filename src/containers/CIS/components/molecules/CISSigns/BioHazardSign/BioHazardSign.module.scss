@@ -1,0 +1,71 @@
+@use '../../../../../../theme/' as *;
+
+.capContainer {
+  @include flexColumnCenter;
+
+  margin-bottom: 2px;
+}
+
+.cap {
+  border: 1px solid $black;
+  background: $white;
+  width: 12px;
+  height: 3px;
+
+  &_small {
+    width: 8px;
+  }
+}
+
+.innerFrame,
+.innermostFrame {
+  transform: translate(0);
+}
+
+.frame {
+  border: 1px solid $black;
+
+  &.sideWays {
+    width: 26px;
+  }
+}
+
+.outerFrame {
+  &.sideways {
+    width: 27px;
+  }
+}
+
+.innerFrame {
+  width: 44px;
+  height: 44px;
+
+  &.sideways {
+    width: 20px;
+  }
+}
+
+.innermostFrame {
+  width: 38px;
+  height: 38px;
+
+  &.sideways {
+    width: 14px;
+  }
+}
+
+.content {
+  @include flexColumnCenter;
+
+  gap: 3px;
+  text-align: center;
+}
+
+.text {
+  font-size: 6px;
+  font-weight: bold;
+
+  &.fromBehind {
+    transform: rotate(-45deg);
+  }
+}
