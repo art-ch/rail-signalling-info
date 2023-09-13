@@ -15,15 +15,22 @@
     height: 80px;
   }
 
+  &.handheld {
+    width: 5px;
+    height: 70px;
+  }
+
   &.onCatenaryPole {
     width: 30px;
     height: 200px;
     border: none;
   }
 
-  &.handheld {
-    width: 5px;
-    height: 70px;
+  &.onCatenaryWire {
+    width: 2px;
+    height: 90px;
+    background: $black;
+    border: none;
   }
 
   // rotation

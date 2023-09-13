@@ -23,7 +23,7 @@ import { SignWrapper } from 'src/components/molecules/SignWrapper';
 // import TurnOnCurrent from '../../../content/signs/content/TurnOnCurrent';
 // import NeutralZoneOld from '../../../content/signs/content/NeutralZone';
 // import BoundaryPole from '../../../content/signs/content/BoundaryPole';
-import { SignWithText } from '../../../content/signs/content/SignWithText';
+// import { SignWithText } from '../../../content/signs/content/SignWithText';
 import { SnowPlowSign } from '../../../content/signs/content/SnowPlowSign';
 // import BioHazardSign from '../../../content/signs/content/BioHazardSign';
 
@@ -43,6 +43,7 @@ import { CISNeutralZone } from '../../molecules/CISSigns/CISNeutralZone';
 import { ToggleCurrent } from '../../molecules/CISSigns/ToggleCurrent';
 import { CISBoundaryPole } from '../../molecules/CISSigns/CISBoundaryPole';
 import { BioHazardSign } from '../../molecules/CISSigns/BioHazardSign';
+import { TextSign } from '../../molecules/CISSigns/TextSign';
 
 export type CISSignRendererProps = { id: number };
 
@@ -378,69 +379,75 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 35:
       return (
         <SignWrapper>
-          <SignWithText
-            pole="catenary-pole"
-            exclamation
-            line="diagonal-line"
-            text="Газ"
-          />
-          <SignWithText
-            pole="catenary-pole"
-            exclamation
-            line="diagonal-line"
-            text="Нафта"
-          />
-          <SignWithText
-            pole="catenary-pole"
-            line="horizontal-line"
-            text="Карст"
-          />
-          <SignWithText
-            pole="catenary-pole"
-            line="vertical-line"
-            text="Карст"
-          />
+          <TextSign exclamation line="diagonal" text="Газ" />
+          <TextSign exclamation line="diagonal" text="Нафта" />
+          <TextSign line="horizontal" text="Карст" />
+          <TextSign line="vertical" text="Карст" />
         </SignWrapper>
       );
 
     case 36:
       return (
         <SignWrapper>
-          <SignWithText pole="catenary-pole" text="НТ" red />
-          <SignWithText pole="catenary-pole" text="КТ" />
+          <TextSign text="ПГ" red />
+          <TextSign text="КГ" />
         </SignWrapper>
       );
 
     case 37:
       return (
         <SignWrapper>
-          <SignWithText pole="pole" rectangular text="МЕЖА СТАНЦІЇ" />
-          <SignWithText pole="pole" rectangular text="МЕЖА ПІД'ЇЗНОЇ КОЛІЇ" />
+          <TextSign
+            type="standalone"
+            pole="permanent"
+            textSignType="rectangular"
+            text="МЕЖА СТАНЦІЇ"
+          />
+          <TextSign
+            type="standalone"
+            pole="permanent"
+            textSignType="rectangular"
+            text="МЕЖА ПІД'ЇЗНОЇ КОЛІЇ"
+          />
         </SignWrapper>
       );
 
     case 38:
       return (
         <SignWrapper>
-          <SignWithText pole="pole" rectangular text="ЗУПИНКА ЛОКОМОТИВА" />
-          <SignWithText pole="pole" rectangular text="ЗУПИНКА ПЕРШОГО ВАГОНА" />
+          <TextSign
+            type="standalone"
+            pole="permanent"
+            textSignType="rectangular"
+            text="ЗУПИНКА ЛОКОМОТИВА"
+          />
+          <TextSign
+            type="standalone"
+            pole="permanent"
+            textSignType="rectangular"
+            text="ЗУПИНКА ПЕРШОГО ВАГОНА"
+          />
         </SignWrapper>
       );
 
     case 39:
       return (
         <SignWrapper>
-          <SignWithText
-            rectangular
-            catenarySign
-            text="ПЕРЕХОД НА БОКОВУЮ КОНТАКТНУЮ СЕТЬ"
+          <TextSign
+            type="onCatenaryWire"
+            textSignType="rectangular"
+            text="ПЕРЕХІД НА БОКОВУ КОНТАКТНУ МЕРЕЖУ"
           />
-          <SignWithText
-            rectangular
-            catenarySign
-            text="ПЕРЕХОД НА ЦЕНТРАЛЬНУЮ КОНТАКТНУЮ СЕТЬ"
+          <TextSign
+            type="onCatenaryWire"
+            textSignType="rectangular"
+            text="ПЕРЕХІД НА ЦЕНТРАЛЬНУ КОНТАКТНУ МЕРЕЖУ"
           />
-          <SignWithText rectangular catenarySign text="КОНЕЦ КОНТАКТНОЙ СЕТИ" />
+          <TextSign
+            type="onCatenaryWire"
+            textSignType="rectangular"
+            text="КІНЕЦЬ КОНТАКТНОЇ ПІДВІСКИ"
+          />
         </SignWrapper>
       );
 

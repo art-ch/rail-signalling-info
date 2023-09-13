@@ -1,0 +1,93 @@
+@use '../../../../../../theme/' as *;
+
+.frame {
+  position: relative;
+  border: 3px solid $black;
+
+  &.red {
+    border: 3px solid red;
+  }
+
+  &.rectangular {
+    width: 5rem;
+  }
+
+  &.rectangularOnPole {
+    transform: translate(-45%, 5%);
+  }
+}
+
+.exclamation,
+.diagonalLine,
+.signText_small {
+  position: absolute;
+}
+
+.exclamation {
+  inset: -2px 4px;
+}
+
+.diagonalLine,
+.horizontalLine,
+.verticalLine,
+.verticalLineBottom {
+  background: $black;
+}
+
+.diagonalLine {
+  inset: 25px -10px;
+  height: 2px;
+  width: 70px;
+  transform: rotate(-45deg);
+}
+
+.horizontalLine,
+.verticalLine,
+.verticalLineBottom {
+  height: 10px;
+}
+
+.horizontalLine {
+  transform: translateY(0%);
+  width: 52px;
+}
+
+.verticalLine {
+  transform: rotate(90deg) translate(5%, -150%);
+  width: 21px;
+}
+
+.verticalLineBottom {
+  transform: rotate(90deg) translate(15%, -175%);
+  width: 16px;
+}
+
+.signText {
+  margin: 0;
+
+  &_regular,
+  &_onRectangularSign {
+    text-align: center;
+  }
+
+  &_regular {
+    &.red {
+      color: red;
+    }
+  }
+
+  &_small {
+    bottom: 1px;
+    right: 3px;
+    font-size: 12px;
+  }
+
+  &_onRectangularSign {
+    word-break: break-word;
+    font-size: 11px;
+
+    &.catenaryWireSignText {
+      font-size: 9px;
+    }
+  }
+}

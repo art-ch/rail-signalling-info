@@ -5,7 +5,8 @@ export type SignType =
   | 'standalone'
   | 'dwarfStandalone'
   | 'handheld'
-  | 'onCatenaryPole';
+  | 'onCatenaryPole'
+  | 'onCatenaryWire';
 
 export type SignRotation = 'default' | 'deg315' | 'deg90';
 export type AnimatedSignPath =
