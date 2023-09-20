@@ -1,0 +1,14 @@
+@use '../../../../../../theme/' as *;
+
+.sign {
+  background: repeating-linear-gradient(
+    $white,
+    $white 15px,
+    $black 15px,
+    $black 35px
+  );
+}
+
+.frame {
+  transform: translate(-44%, -10%);
+}

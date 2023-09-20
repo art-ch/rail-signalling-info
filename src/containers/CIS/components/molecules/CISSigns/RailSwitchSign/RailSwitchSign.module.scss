@@ -2,29 +2,31 @@
 
 .frame {
   // modes
+  &.straightAnalog,
+  &.divertAnalog {
+    display: none;
+  }
+
   &.straightDay {
     width: 20px;
     height: 50px;
     border: 5px solid $black;
     background: grey;
   }
+
   &.straightNight {
     width: 20px;
     height: 50px;
     border: 5px solid $black;
   }
-  &.straightAnalog {
-    display: none;
-  }
+
   &.divert {
     width: 30px;
     height: 30px;
     border: 5px solid $black;
   }
+}
 
-  // shrunk
-  &.shrink {
-    transform: scale(0.7);
-    margin: 0 3rem 0 0;
-  }
+.divertAnalogFrame {
+  transform: translate(-50%, 5%);
 }

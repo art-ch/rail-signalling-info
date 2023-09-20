@@ -24,7 +24,7 @@ import { SignWrapper } from 'src/components/molecules/SignWrapper';
 // import NeutralZoneOld from '../../../content/signs/content/NeutralZone';
 // import BoundaryPole from '../../../content/signs/content/BoundaryPole';
 // import { SignWithText } from '../../../content/signs/content/SignWithText';
-import { SnowPlowSign } from '../../../content/signs/content/SnowPlowSign';
+// import { SnowPlowSign } from '../../../content/signs/content/SnowPlowSign';
 // import BioHazardSign from '../../../content/signs/content/BioHazardSign';
 
 // new imports
@@ -44,6 +44,7 @@ import { ToggleCurrent } from '../../molecules/CISSigns/ToggleCurrent';
 import { CISBoundaryPole } from '../../molecules/CISSigns/CISBoundaryPole';
 import { BioHazardSign } from '../../molecules/CISSigns/BioHazardSign';
 import { TextSign } from '../../molecules/CISSigns/TextSign';
+import { CISSnowPlowSign } from '../../molecules/CISSigns/CISSnowPlowSign';
 
 export type CISSignRendererProps = { id: number };
 
@@ -279,10 +280,10 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 23:
       return (
         <SignWrapper>
-          <SnowPlowSign getReady />
-          <SnowPlowSign />
-          <SnowPlowSign doubled />
-          <SnowPlowSign cut />
+          <CISSnowPlowSign snowPlowSignType="drop" />
+          <CISSnowPlowSign snowPlowSignType="approach" />
+          <CISSnowPlowSign snowPlowSignType="approachAtHighSpeed" />
+          <CISSnowPlowSign snowPlowSignType="raise" />
         </SignWrapper>
       );
 

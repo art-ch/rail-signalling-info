@@ -3,22 +3,13 @@ import React from 'react';
 import cx from 'classnames';
 
 import { Sign } from 'src/components/molecules/Sign/components/Sign';
-import { ImageSign } from 'src/components/molecules/Sign/components/ImageSign';
 
-import { CISSignDiscriminantProps, CISSignProps } from './CISSign.types';
-import { ImageSignProps } from 'src/components/molecules/Sign/Sign.types';
+import { CISSignProps } from './CISSign.types';
 
 import css from './CISSign.module.scss';
 
-export const CISSign = ({
-  imageSign = false,
-  ...props
-}: CISSignDiscriminantProps) => {
-  if (imageSign) {
-    return <ImageSign {...(props as ImageSignProps)} />;
-  }
-
-  const { grip, pole, poleGradientColor, children } = props as CISSignProps;
+export const CISSign = (props: CISSignProps) => {
+  const { grip, pole, poleGradientColor, className, children } = props;
 
   const gripClassNameList = grip && css[`${grip}Grip`];
 
@@ -34,7 +25,7 @@ export const CISSign = ({
 
   return (
     <Sign
-      className={cx(css.sign, gripClassNameList, poleClassNameList)}
+      className={cx(css.sign, gripClassNameList, poleClassNameList, className)}
       {...props}
     >
       {children}

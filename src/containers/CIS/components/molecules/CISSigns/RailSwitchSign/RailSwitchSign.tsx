@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Image from 'next/image';
+
 import cx from 'classnames';
 
 import { CISSign } from '../CISSignRoot';
@@ -34,7 +36,18 @@ export const RailSwitchSign = ({
       imageTitle: 'Divert Analog Sign'
     });
 
-    return <CISSign imageSign {...divertAnalogSign} />;
+    return (
+      <CISSign type="dwarfStandalone" grip="black" atDistance={atDistance}>
+        <div className={commonCISSignCSS.cap} />
+        <Image
+          className={css.divertAnalogFrame}
+          src={divertAnalogSign.src}
+          alt={divertAnalogSign.alt}
+          width={divertAnalogSign.width}
+          height={divertAnalogSign.height}
+        />
+      </CISSign>
+    );
   }
 
   return (

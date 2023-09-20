@@ -29,8 +29,6 @@ export const TextSign = (props: TextSignProps) => {
     [css.red]: red
   });
 
-  console.log(pole, props.text);
-
   return (
     <CISSign type={type} pole={pole}>
       <Board className={boardClassNameList}>
