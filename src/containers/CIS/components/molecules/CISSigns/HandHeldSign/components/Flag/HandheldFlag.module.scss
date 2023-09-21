@@ -15,6 +15,7 @@
   &.unfolded {
     width: 50px;
     transform: translateX(-84%);
+    animation-fill-mode: forwards;
   }
 
   // colors

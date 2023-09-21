@@ -46,9 +46,9 @@ import { BioHazardSign } from '../../molecules/CISSigns/BioHazardSign';
 import { TextSign } from '../../molecules/CISSigns/TextSign';
 import { CISSnowPlowSign } from '../../molecules/CISSigns/CISSnowPlowSign';
 
-export type CISSignRendererProps = { id: number };
+export type CISSignRendererProps = { id: number; isHovered: boolean };
 
-export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
+export const CISSignRenderer = ({ id, isHovered }: CISSignRendererProps) => {
   switch (id) {
     case 1:
       return (
@@ -79,14 +79,22 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
         <SignWrapper>
           <HandHeldSign type="flag" props={{ color: 'red' }} />
           <HandHeldSign type="light" props={{ lightColor: 'red' }} />
-          <Hand animatedSignPath="stop" />
+          <Hand animate={isHovered} animatedSignPath="stop" />
           <HandHeldSign
             type="flag"
-            props={{ color: 'yellow', animatedSignPath: 'stop' }}
+            props={{
+              color: 'yellow',
+              animate: isHovered,
+              animatedSignPath: 'stop'
+            }}
           />
           <HandHeldSign
             type="light"
-            props={{ lightColor: 'white', animatedSignPath: 'stop' }}
+            props={{
+              lightColor: 'white',
+              animate: isHovered,
+              animatedSignPath: 'stop'
+            }}
           />
         </SignWrapper>
       );
@@ -96,11 +104,19 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
         <SignWrapper>
           <HandHeldSign
             type="flag"
-            props={{ color: 'yellow', animatedSignPath: 'driveForward' }}
+            props={{
+              color: 'yellow',
+              animate: isHovered,
+              animatedSignPath: 'driveForward'
+            }}
           />
           <HandHeldSign
             type="light"
-            props={{ lightColor: 'white', animatedSignPath: 'driveForward' }}
+            props={{
+              lightColor: 'white',
+              animate: isHovered,
+              animatedSignPath: 'driveForward'
+            }}
           />
         </SignWrapper>
       );
@@ -110,11 +126,19 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
         <SignWrapper>
           <HandHeldSign
             type="flag"
-            props={{ color: 'yellow', animatedSignPath: 'driveBackward' }}
+            props={{
+              color: 'yellow',
+              animate: isHovered,
+              animatedSignPath: 'driveBackward'
+            }}
           />
           <HandHeldSign
             type="light"
-            props={{ lightColor: 'white', animatedSignPath: 'driveBackward' }}
+            props={{
+              lightColor: 'white',
+              animate: isHovered,
+              animatedSignPath: 'driveBackward'
+            }}
           />
         </SignWrapper>
       );
@@ -122,14 +146,22 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 7:
       return (
         <SignWrapper>
-          <Hand animatedSignPath="slowDown" />
+          <Hand animate={isHovered} animatedSignPath="slowDown" />
           <HandHeldSign
             type="flag"
-            props={{ color: 'yellow', animatedSignPath: 'slowDown' }}
+            props={{
+              color: 'yellow',
+              animate: isHovered,
+              animatedSignPath: 'slowDown'
+            }}
           />
           <HandHeldSign
             type="light"
-            props={{ lightColor: 'white', animatedSignPath: 'slowDown' }}
+            props={{
+              lightColor: 'white',
+              animate: isHovered,
+              animatedSignPath: 'slowDown'
+            }}
           />
         </SignWrapper>
       );
@@ -137,10 +169,14 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 8:
       return (
         <SignWrapper>
-          <Hand animatedSignPath="startBreaking" />
+          <Hand animate={isHovered} animatedSignPath="startBreaking" />
           <HandHeldSign
             type="light"
-            props={{ lightColor: 'white', animatedSignPath: 'startBreaking' }}
+            props={{
+              lightColor: 'white',
+              animate: isHovered,
+              animatedSignPath: 'startBreaking'
+            }}
           />
         </SignWrapper>
       );
@@ -148,10 +184,14 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 9:
       return (
         <SignWrapper>
-          <Hand animatedSignPath="endBreaking" />
+          <Hand animate={isHovered} animatedSignPath="endBreaking" />
           <HandHeldSign
             type="light"
-            props={{ lightColor: 'white', animatedSignPath: 'endBreaking' }}
+            props={{
+              lightColor: 'white',
+              animate: isHovered,
+              animatedSignPath: 'endBreaking'
+            }}
           />
         </SignWrapper>
       );
@@ -159,11 +199,15 @@ export const CISSignRenderer = ({ id }: CISSignRendererProps) => {
     case 10:
       return (
         <SignWrapper>
-          <Hand animatedSignPath="endBreaking" />
+          <Hand animate={isHovered} animatedSignPath="endBreaking" />
           <Hand left />
           <HandHeldSign
             type="light"
-            props={{ lightColor: 'white', animatedSignPath: 'damagedCatenary' }}
+            props={{
+              lightColor: 'white',
+              animate: isHovered,
+              animatedSignPath: 'damagedCatenary'
+            }}
           />
         </SignWrapper>
       );

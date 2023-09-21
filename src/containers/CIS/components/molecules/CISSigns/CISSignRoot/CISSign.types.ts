@@ -1,4 +1,7 @@
-import { SignProps } from 'src/components/molecules/Sign/Sign.types';
+import {
+  AnimateSign,
+  SignProps
+} from 'src/components/molecules/Sign/Sign.types';
 import { PropsWithChildren } from 'src/types';
 
 export type CISSignGrip = 'default' | 'black';
@@ -10,8 +13,6 @@ export type CISSignProps = PropsWithChildren<
     grip?: CISSignGrip;
     pole?: CISSignPole;
     poleGradientColor?: string;
-  } & Pick<
-    SignProps,
-    'type' | 'rotation' | 'animatedSignPath' | 'atDistance' | 'className'
-  >
+  } & AnimateSign &
+    Pick<SignProps, 'type' | 'rotation' | 'atDistance' | 'className'>
 >;

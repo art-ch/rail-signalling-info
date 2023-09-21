@@ -9,6 +9,7 @@ export type SignType =
   | 'onCatenaryWire';
 
 export type SignRotation = 'default' | 'deg315' | 'deg90';
+
 export type AnimatedSignPath =
   | 'stop'
   | 'driveForward'
@@ -18,17 +19,20 @@ export type AnimatedSignPath =
   | 'endBreaking'
   | 'damagedCatenary';
 
-export type ImageSignProps = {
-  animatedSignPath?: AnimatedSignPath;
-} & ImageProps &
+export type AnimateSign =
+  | { animate?: true; animatedSignPath: AnimatedSignPath }
+  | { animate?: false };
+
+export type ImageSignProps = ImageProps &
+  AnimateSign &
   UIComponent<{ imageClassName?: string }>;
 
 export type SignProps = {
   children: React.ReactNode | React.ReactNode[];
   type?: SignType;
   rotation?: SignRotation;
-  animatedSignPath?: AnimatedSignPath;
 
   // meaning sign is placed futher from user's point of view
   atDistance?: boolean;
-} & UIComponent;
+} & AnimateSign &
+  UIComponent;

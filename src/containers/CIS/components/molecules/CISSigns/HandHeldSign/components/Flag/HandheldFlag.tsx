@@ -11,15 +11,10 @@ import css from './HandheldFlag.module.scss';
 export const HandheldFlag = ({
   color,
   folded = false,
-  animatedSignPath
+  ...props
 }: HandheldFlagProps) => {
   return (
-    <CISSign
-      type="handheld"
-      grip="default"
-      rotation="deg315"
-      animatedSignPath={animatedSignPath}
-    >
+    <CISSign type="handheld" grip="default" rotation="deg315" {...props}>
       <div
         className={cx(css.fabric, css[color], {
           [css.unfolded]: !folded,

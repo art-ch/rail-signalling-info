@@ -13,10 +13,10 @@ import commonCISSignCSS from '../../../CISSignRoot/CISSign.module.scss';
 
 export const HandheldLight = ({
   lightColor = 'turnedOff',
-  animatedSignPath
+  ...props
 }: HandheldLightProps) => {
   return (
-    <CISSign type="handheld" grip="black" animatedSignPath={animatedSignPath}>
+    <CISSign type="handheld" grip="black" {...props}>
       <Plate
         lights={[
           {
