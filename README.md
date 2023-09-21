@@ -1,6 +1,6 @@
 # [Rail Signalling Info](https://rail-signalling-info.netlify.app/)
 
-This is my first project using React
+This is my first pet project using React
 
 ## History
 I'm a huge railway fan for as long as I can remember myself. My favorite part about railway is signalling. When I was small I created pictures of each aspect on a small piece of paper with the meaning on the back. Sadly, with years passing by, I lost them all.
