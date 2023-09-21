@@ -2,32 +2,6 @@ import React from 'react';
 
 import { SignWrapper } from 'src/components/molecules/SignWrapper';
 
-// import SlowDownPermanent from '../../../content/signs/content/SlowDownPermanent';
-// import SlowDownTemporary from '../../../content/signs/content/SlowDownTemporary';
-// import DangerousPlaceBoundaries from '../../../content/signs/content/DangerousPlaceBoundaries';
-// import Stop from '../../../content/signs/content/Stop';
-// import StopNightTime from '../../../content/signs/content/StopNightTime';
-// import Horn from '../../../content/signs/content/Horn';
-// import Hand from '../../../content/signs/content/Hand';
-// import HandheldLightOld from '../../../content/signs/content/HandheldLight';
-// import HandheldFlag from '../../../content/signs/content/HandheldFlag';
-// import HandheldDisc from '../../../content/signs/content/HandheldDisc';
-// import RailSwitchSign from '../../../content/signs/content/RailSwitchSign';
-// import TrackObstruction from '../../../content/signs/content/TrackObstruction';
-// import HotAxles from '../../../content/signs/content/HotAxles';
-// import BlockBorderALTP from '../../../content/signs/content/BlockBorderALTP';
-// import BlockBorderWWLTP from '../../../content/signs/content/BlockBorderWWLTP';
-// import DropPantographOld from '../../../content/signs/content/DropPantograph';
-// import NeutralZoneAttention from '../../../content/signs/content/NeutralZoneAttention';
-// import TurnOffCurrent from '../../../content/signs/content/TurnOffCurrent';
-// import TurnOnCurrent from '../../../content/signs/content/TurnOnCurrent';
-// import NeutralZoneOld from '../../../content/signs/content/NeutralZone';
-// import BoundaryPole from '../../../content/signs/content/BoundaryPole';
-// import { SignWithText } from '../../../content/signs/content/SignWithText';
-// import { SnowPlowSign } from '../../../content/signs/content/SnowPlowSign';
-// import BioHazardSign from '../../../content/signs/content/BioHazardSign';
-
-// new imports
 import { Hand } from '../../molecules/CISSigns/Hand';
 import { RailSwitchSign } from '../../molecules/CISSigns/RailSwitchSign';
 import { TrackObstruction } from '../../molecules/CISSigns/TrackObstruction';
