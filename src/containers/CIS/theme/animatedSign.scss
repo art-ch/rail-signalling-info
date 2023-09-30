@@ -1,0 +1,103 @@
+@keyframes driveForward {
+  from {
+    transform: rotate(0deg) translateX(-50px) rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg) translateX(-50px) rotate(-180deg);
+  }
+}
+
+@keyframes driveBackward {
+  from {
+    transform: rotate(0deg) translateX(-50px) rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg) translateX(-50px) rotate(180deg);
+  }
+}
+
+@keyframes slowDown {
+  from {
+    transform: rotate(0deg) translateY(50px) rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg) translateY(50px) rotate(-180deg);
+  }
+}
+
+@keyframes stop {
+  from {
+    transform: rotate(0deg) translateX(-50px) rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg) translateX(-50px) rotate(360deg);
+  }
+}
+
+@keyframes startBreaking {
+  from {
+    transform: translateY(-2rem);
+  }
+  to {
+    transform: translateY(3rem);
+  }
+}
+
+@keyframes stopBreaking {
+  from {
+    transform: translateX(-3rem);
+  }
+  to {
+    transform: translateX(2rem);
+  }
+}
+
+@keyframes damagedCatenary {
+  0% {
+    transform: translate(-5rem);
+  }
+  20% {
+    transform: translateX(5rem);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translate(0, -5rem);
+  }
+  80% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-5rem);
+  }
+}
+
+@mixin driveForward {
+  animation: 2s driveForward infinite alternate ease-in-out;
+}
+
+@mixin driveBackward {
+  animation: 2s driveBackward infinite alternate ease-in-out;
+}
+
+@mixin slowDown {
+  animation: 2s slowDown infinite alternate ease-in-out;
+}
+
+@mixin stop {
+  transition: 1s;
+  animation: 3s stop infinite linear;
+}
+
+@mixin startBreaking {
+  animation: 1s startBreaking infinite alternate ease-in-out;
+}
+
+@mixin stopBreaking {
+  animation: 1s stopBreaking infinite alternate ease-in-out;
+}
+
+@mixin damagedCatenary {
+  animation: 5s damagedCatenary infinite ease-in-out;
+}

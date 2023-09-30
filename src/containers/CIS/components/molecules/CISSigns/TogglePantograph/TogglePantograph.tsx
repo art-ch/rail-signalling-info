@@ -9,7 +9,7 @@ import { Board } from 'src/components/atoms/Board';
 import { SignType } from 'src/components/molecules/Sign/Sign.types';
 
 import css from './TogglePantograph.module.scss';
-import commonCISSignCSS from '../CISSignRoot/CISSign.module.scss';
+import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 export type TogglePantographProps = {
   type?: SignType;

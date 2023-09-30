@@ -1,9 +1,10 @@
+import Image from 'next/image';
 import React from 'react';
 
-import { ImageSign } from 'src/components/molecules/Sign/components/ImageSign';
 import { AnimateSign } from 'src/components/molecules/Sign/Sign.types';
 import { useCISSignalContext } from 'src/containers/CIS/context';
 import { getImageFromList } from 'src/utils/miscelaneousUtils';
+import { CISSign } from '../CISSignRoot';
 
 export type HandProps = {
   left?: boolean;
@@ -26,5 +27,14 @@ export const Hand = ({ left, ...props }: HandProps) => {
 
   const handSign = (left && leftHand) || rightHand;
 
-  return <ImageSign {...props} {...handSign} />;
+  return (
+    <CISSign imageSign {...props}>
+      <Image
+        src={handSign.src}
+        alt={handSign.alt}
+        width={handSign.width}
+        height={handSign.height}
+      />
+    </CISSign>
+  );
 };

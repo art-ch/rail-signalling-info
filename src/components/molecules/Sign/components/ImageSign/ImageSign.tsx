@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children, cloneElement } from 'react';
 
 import Image from 'next/image';
 
@@ -6,29 +6,24 @@ import cx from 'classnames';
 
 import css from './ImageSign.module.scss';
 import { ImageSignProps } from '../../Sign.types';
-import { getAnimatedSignClassName } from '../../Sign.utils';
+import { isInstanceOfComponent } from 'src/types/typeGuards';
 
 export const ImageSign = ({
-  src,
-  alt,
-  width,
-  height,
+  children,
   className,
-  imageClassName,
-  ...imageProps
+  imageClassName
 }: ImageSignProps) => {
-  const animatedSignClassName = getAnimatedSignClassName(imageProps);
+  if (!isInstanceOfComponent(children, Image)) {
+    throw new Error(
+      '<Image /> from next/image is the only valid <ImageSign /> child'
+    );
+  }
+
+  const imageWithClassName = Children.map(children, (child) =>
+    cloneElement(child, { className: cx(css.image, imageClassName) })
+  );
 
   return (
-    <div className={cx(css.imageSign, className)}>
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className={cx(css.image, animatedSignClassName, imageClassName)}
-        {...imageProps}
-      />
-    </div>
+    <div className={cx(css.imageSign, className)}>{imageWithClassName}</div>
   );
 };

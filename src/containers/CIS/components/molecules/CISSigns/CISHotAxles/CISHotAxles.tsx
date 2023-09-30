@@ -6,7 +6,7 @@ import { Board } from 'src/components/atoms/Board';
 import { CISSign } from '../CISSignRoot';
 
 import css from './CISHotAxles.module.scss';
-import commonCISSignCSS from '../CISSignRoot/CISSign.module.scss';
+import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 export type CISHotAxlesProps = { turnedOn?: boolean };
 

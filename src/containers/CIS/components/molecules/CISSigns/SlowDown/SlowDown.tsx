@@ -9,7 +9,7 @@ import { CISSign } from '../CISSignRoot';
 import { SlowDownProps } from './SlowDown.types';
 
 import css from './SlowDown.module.scss';
-import commonCISSignCSS from '../CISSignRoot/CISSign.module.scss';
+import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 export const SlowDown = ({ temporary = false, mainColor }: SlowDownProps) => {
   const pole = temporary ? 'temporary' : 'permanent';

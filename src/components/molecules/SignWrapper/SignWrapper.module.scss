@@ -3,7 +3,84 @@
 .container {
   @include flex;
 
-  gap: 100px;
   justify-content: center;
   align-items: flex-end;
+  transition: 1s;
+
+  @include tabletSmall {
+    align-items: center;
+  }
+
+  // width
+  &.narrow {
+    gap: 40px;
+
+    @include tabletSmall {
+      gap: 33px;
+    }
+  }
+
+  &.mediumNarrow {
+    gap: 75px;
+
+    @include tabletSmall {
+      gap: 55px;
+    }
+  }
+
+  &.defaultWidth {
+    gap: 100px;
+
+    @include tabletSmall {
+      gap: 75px;
+    }
+  }
+
+  &.mediumWide {
+    gap: 150px;
+
+    @include tabletSmall {
+      gap: 80px;
+    }
+  }
+
+  &.wide {
+    gap: 200px;
+
+    @include tabletSmall {
+      gap: 100px;
+    }
+  }
+
+  // additional margin for animation
+  // 2 values in class example largeMedium - 40px top and 20px bottom
+  // 1 value in class example large - 40px top and bottom
+  &.animatedSignWrapper {
+    // medium
+    &.mediumLarge {
+      margin: 20px 0 40px;
+    }
+
+    // large
+    &.large {
+      margin: 40px 0;
+    }
+
+    &.largeMedium {
+      margin: 40px 0 20px;
+    }
+
+    &.largeNoMargin {
+      margin: 40px 0 0;
+    }
+
+    &.noMarginLarge {
+      margin: 0 0 40px;
+    }
+
+    // extraLarge
+    &.extraLargeMedium {
+      margin: 60px 0 40px;
+    }
+  }
 }

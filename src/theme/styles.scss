@@ -1,5 +1,4 @@
 @use '../theme/' as *;
-@use '../theme/animations/animatedSign' as animatedSign;
 
 // --------------------------------------------------------- Reset ------------------------------------------------------- //
 
@@ -113,36 +112,6 @@ p {
 .sectionTitle,
 .entityTitle {
   @include defaultTextDimentions;
-}
-
-.animateSign {
-  &.driveForward {
-    @include animatedSign.driveForward;
-  }
-
-  &.driveBackward {
-    @include animatedSign.driveBackward;
-  }
-
-  &.slowDown {
-    @include animatedSign.slowDown;
-  }
-
-  &.stop {
-    @include animatedSign.stop;
-  }
-
-  &.startBreaking {
-    @include animatedSign.startBreaking;
-  }
-
-  &.endBreaking {
-    @include animatedSign.endBreaking;
-  }
-
-  &.damagedCatenary {
-    @include animatedSign.damagedCatenary;
-  }
 }
 
 .section-title,

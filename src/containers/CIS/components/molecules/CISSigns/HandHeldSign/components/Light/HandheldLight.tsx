@@ -9,7 +9,7 @@ import { CISSign } from '../../../CISSignRoot';
 import { HandheldLightProps } from '../../HandHeldSign.types';
 
 import css from './HandheldLight.module.scss';
-import commonCISSignCSS from '../../../CISSignRoot/CISSign.module.scss';
+import commonCISSignCSS from '../../../CISSignRoot/CISSignRoot.module.scss';
 
 export const HandheldLight = ({
   lightColor = 'turnedOff',

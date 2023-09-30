@@ -6,7 +6,7 @@ import { Plate } from 'src/components/molecules/Plate';
 import { CISSign } from '../CISSignRoot';
 
 import css from './Stop.module.scss';
-import commonCISSignCSS from '../CISSignRoot/CISSign.module.scss';
+import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 export type StopProps = { nightTime?: boolean };
 

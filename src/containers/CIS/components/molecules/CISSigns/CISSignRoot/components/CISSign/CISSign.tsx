@@ -2,14 +2,21 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import { Sign } from 'src/components/molecules/Sign/components/Sign';
+import { Sign, getAnimatedSignClassName } from 'src/components/molecules/Sign';
 
-import { CISSignProps } from './CISSign.types';
+import { CISSignProps } from '../../CISSignRoot.types';
 
 import css from './CISSign.module.scss';
 
 export const CISSign = (props: CISSignProps) => {
-  const { grip, pole, poleGradientColor, className, children } = props;
+  const {
+    grip,
+    pole,
+    poleGradientColor,
+    className,
+    animatedSignClassName,
+    children
+  } = props;
 
   const gripClassNameList = grip && css[`${grip}Grip`];
 
@@ -25,7 +32,13 @@ export const CISSign = (props: CISSignProps) => {
 
   return (
     <Sign
-      className={cx(css.sign, gripClassNameList, poleClassNameList, className)}
+      className={cx(
+        css.sign,
+        gripClassNameList,
+        poleClassNameList,
+        animatedSignClassName,
+        className
+      )}
       {...props}
     >
       {children}

@@ -1,62 +1,35 @@
 @use '../../../../../../theme/' as *;
+@use '../../../../theme/' as CISTheme;
 
-.sign {
-  // grips
-  &.defaultGrip {
-    background: $primary1;
+.animatedSign {
+  &.driveForward {
+    @include CISTheme.driveForward;
   }
 
-  &.blackGrip {
-    background: $black;
+  &.driveBackward {
+    @include CISTheme.driveBackward;
   }
 
-  // poles
-  &.pole {
-    height: 170px;
-    width: 5px;
-    border: 1px solid $black;
-
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 1) 10%,
-      rgba(255, 255, 255, 1) 10%,
-      rgba(255, 255, 255, 1) 36%,
-      rgba(0, 0, 0, 1) 36%,
-      rgba(0, 0, 0, 1) 42%,
-      rgba(255, 255, 255, 1) 36%,
-      rgba(255, 255, 255, 1) 76%,
-      rgba(0, 0, 0, 1) 76%
-    );
+  &.slowDown {
+    @include CISTheme.slowDown;
   }
 
-  &.catenaryPole {
-    background: $primary1;
-    width: 30px;
-    height: 200px;
+  &.stop {
+    @include CISTheme.stop;
   }
 
-  &.tempSignPole {
-    @include tempSignPoleMixin();
+  &.startBreaking {
+    @include CISTheme.startBreaking;
+  }
 
-    &.special {
-      @include tempSignPoleMixin(true);
-    }
+  &.stopBreaking {
+    @include CISTheme.stopBreaking;
+  }
 
-    &.green {
-      @include tempSignPoleMixin(false, green);
-    }
-
-    &.yellow {
-      @include tempSignPoleMixin(false, yellow);
-    }
-
-    &.red {
-      @include tempSignPoleMixin(false, red);
-    }
+  &.damagedCatenary {
+    @include CISTheme.damagedCatenary;
   }
 }
-
-// common cis sign css
 
 .cap {
   padding: 5px;

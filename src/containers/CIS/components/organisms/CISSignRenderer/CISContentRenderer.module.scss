@@ -1,0 +1,91 @@
+@use '../../../../../theme/' as *;
+
+.railSwitchDivertWrapper,
+.slowDownWrapper,
+.dropPantographWrapper,
+.raisePantographWrapper,
+.oilGasKarstWrapper {
+  @include tabletSmall {
+    @include flexColumn;
+  }
+}
+
+.approachNeutralZoneWrapper,
+.raisePantographWrapper_group {
+  @include tabletSmall {
+    align-items: flex-end;
+  }
+}
+
+.stationBoundaryWrapper,
+.stopPointWrapper,
+.catenarySignWrapper {
+  @include tabletSmall {
+    gap: 95px !important;
+  }
+}
+
+.stopSignWrapper {
+  @include tabletSmall {
+    flex-direction: column;
+    gap: 50px !important;
+  }
+
+  &_spareOptions {
+    @include tabletSmall {
+      @include flexColumn;
+    }
+  }
+}
+
+.slowDownWrapper {
+  @include tabletSmall {
+    gap: 30px !important;
+  }
+}
+
+.damagedCatenaryWrapper {
+  @include flexCenter;
+
+  flex-direction: column;
+  gap: 25px !important;
+
+  &_hands {
+    @include tabletSmall {
+      @include flex;
+
+      flex-direction: column-reverse;
+      gap: 15px !important;
+    }
+  }
+}
+
+.railSwitchDivertWrapper {
+  @include tabletSmall {
+    gap: 40px !important;
+  }
+}
+
+.waterTowerWrapper {
+  &_turnedOnSigns {
+    @include tabletSmall {
+      gap: 40px !important;
+    }
+  }
+}
+
+.dropPantographWrapper {
+  &_temporarySigns {
+    @include tabletSmall {
+      gap: 80px !important;
+    }
+  }
+}
+
+.raisePantographWrapper {
+  &_group {
+    @include tabletSmall {
+      gap: 65px !important;
+    }
+  }
+}

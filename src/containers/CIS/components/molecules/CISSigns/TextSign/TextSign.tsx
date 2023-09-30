@@ -11,7 +11,7 @@ import { TextSignVariable } from './components/TextSignVariable';
 import { TextSignProps } from './TextSign.types';
 
 import css from './TextSign.module.scss';
-import commonCISSignCSS from '../CISSignRoot/CISSign.module.scss';
+import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 export const TextSign = (props: TextSignProps) => {
   const {

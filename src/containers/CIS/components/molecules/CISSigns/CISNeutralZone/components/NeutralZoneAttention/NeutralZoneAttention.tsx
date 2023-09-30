@@ -8,7 +8,7 @@ import { CISSign } from '../../../CISSignRoot';
 import { NeutralZoneAttentionProps } from '../../CISNeutralZone.types';
 
 import css from './NeutralZoneAttention.module.scss';
-import commonCISSignCSS from '../../../CISSignRoot/CISSign.module.scss';
+import commonCISSignCSS from '../../../CISSignRoot/CISSignRoot.module.scss';
 
 export const NeutralZoneAttention = ({
   type = 'onCatenaryPole'

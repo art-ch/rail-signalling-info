@@ -1,5 +1,5 @@
 import { ImageProps } from 'next/image';
-import { UIComponent } from 'src/types';
+import { PropsWithChildren, UIComponent } from 'src/types';
 
 export type SignType =
   | 'standalone'
@@ -16,23 +16,31 @@ export type AnimatedSignPath =
   | 'driveBackward'
   | 'slowDown'
   | 'startBreaking'
-  | 'endBreaking'
+  | 'stopBreaking'
   | 'damagedCatenary';
 
 export type AnimateSign =
   | { animate?: true; animatedSignPath: AnimatedSignPath }
   | { animate?: false };
 
-export type ImageSignProps = ImageProps &
-  AnimateSign &
-  UIComponent<{ imageClassName?: string }>;
+export type ImageSignProps = { children: React.ReactElement } & AnimateSign &
+  UIComponent<{ animatedSignClassName?: string; imageClassName?: string }>;
 
-export type SignProps = {
-  children: React.ReactNode | React.ReactNode[];
+export type SignProps = PropsWithChildren<{
   type?: SignType;
   rotation?: SignRotation;
-
-  // meaning sign is placed futher from user's point of view
+  /**
+   * Sign is placed futher from user's point of view
+   */
   atDistance?: boolean;
-} & AnimateSign &
-  UIComponent;
+}> &
+  AnimateSign &
+  UIComponent<{ animatedSignClassName?: string }>;
+
+export type GetAnimatedSignClassNameProps = {
+  props: AnimateSign;
+  /**
+   * CSS module containing specific zone sign styling
+   */
+  css: { readonly [key: string]: string };
+};

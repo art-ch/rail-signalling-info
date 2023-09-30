@@ -16,7 +16,7 @@ import { getImageFromList } from 'src/utils/miscelaneousUtils';
 import { RailSwitchSignProps } from './RailSwitchSign.types';
 
 import css from './RailSwitchSign.module.scss';
-import commonCISSignCSS from '../CISSignRoot/CISSign.module.scss';
+import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 export const RailSwitchSign = ({
   mode,

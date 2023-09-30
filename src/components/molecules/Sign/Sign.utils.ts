@@ -1,16 +1,21 @@
 import cx from 'classnames';
 
-import { AnimateSign } from './Sign.types';
+import { GetAnimatedSignClassNameProps } from './Sign.types';
 
-export const getAnimatedSignClassName = (props: AnimateSign) => {
+export const getAnimatedSignClassName = ({
+  props,
+  css
+}: GetAnimatedSignClassNameProps) => {
   let animatedSignClassName = '';
 
   if (props.animate) {
     const { animate, animatedSignPath } = props;
 
     animatedSignClassName = cx(
-      { ['animateSign']: animate && animatedSignPath },
-      animatedSignPath
+      {
+        [css.animatedSign]: animate && animatedSignPath
+      },
+      css[animatedSignPath]
     );
   }
 
