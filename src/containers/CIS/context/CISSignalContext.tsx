@@ -26,8 +26,6 @@ export const CISSignalProvider = ({
   const [trainProtectionZone, setTrainProtectionZone] =
     useState<CISTrainProtectionZone>(CISTrainProtectionZone.All);
 
-  const { signalTypeSigns } = content;
-
   const resetSignalState = () => {
     setTrainProtectionZone(CISTrainProtectionZone.All);
     setSignalType(CISSignalType.All);

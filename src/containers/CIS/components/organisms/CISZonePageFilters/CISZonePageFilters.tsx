@@ -3,7 +3,7 @@ import {
   FilterSection
 } from 'src/components/organisms/FilterSection';
 
-import { ZonePageFiltersProps } from 'src/components/pages/ZonePage';
+import { ZonePageFiltersProps } from 'src/components/pages/ZonePage/ZonePage.types';
 import { useCISSignalContext } from '../../../context/CISSignalContext';
 import { getMainFilters } from 'src/components/pages/ZonePage/ZonePage.utils';
 

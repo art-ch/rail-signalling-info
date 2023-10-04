@@ -12,30 +12,49 @@
 .sidebar {
   @include fixedSidebar;
 
-  z-index: 2;
-
   @include desktopSmall {
     top: 0;
   }
 }
 
 .contentFilters {
-  top: 0;
   position: sticky;
+  top: 80px;
   max-width: 350px;
-  background: white;
+  background: $white;
   overflow-y: scroll;
   max-height: 99.5vh;
+  transition: $transition;
+
+  &.translated {
+    top: 0;
+  }
+
+  @include desktopSmall {
+    top: 79px;
+  }
+}
+
+.filterTogglerWrapper {
+  background: $white;
+  position: sticky;
+  top: 79px;
+  display: none;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 1;
+  transition: $transition;
+
+  &.hidden {
+    transform: translateY(-200%);
+  }
+
+  @include desktopSmall {
+    @include flexCenterCenter;
+  }
 }
 
 .filterToggler {
-  display: none;
-  margin: 0 0 2rem;
-
-  @include desktopSmall {
-    display: block;
-  }
-
   @include mobile {
     width: 85vw;
   }

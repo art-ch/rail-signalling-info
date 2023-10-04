@@ -1,4 +1,5 @@
 import { RichTextContent } from 'contentful';
+
 import cx from 'classnames';
 
 import { RichText } from '../../atoms/RichText';
@@ -23,7 +24,7 @@ export const InfoPage = ({
 
   return (
     <main className={cx(css.container, className)}>
-      <div className="pageHeading">
+      <div className={cx('pageHeading', 'pageHeading_withAdditionalMargin')}>
         <h1 className="pageTitle medium">{title}</h1>
       </div>
       {isContentAvailable && (

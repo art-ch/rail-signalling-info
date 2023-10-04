@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import cx from 'classnames';
 
@@ -9,6 +9,7 @@ import css from './ZonePage.module.scss';
 import { FilterPanelProps } from 'src/components/molecules/FilterPanel';
 import { getContentFilterOptions } from './ZonePage.utils';
 import { ZonePageContentTypes, ZonePageProps } from './ZonePage.types';
+import { useScroll } from 'src/hooks/useScroll';
 
 export const ZonePage = ({
   title,
@@ -16,12 +17,25 @@ export const ZonePage = ({
   filterToggler,
   content,
   additionalInfo,
+  state,
   Filters,
   ContentRenderer
 }: ZonePageProps) => {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
   const [shownContent, setShownContent] =
     useState<ZonePageContentTypes>('Signals');
+
+  const {
+    scrollData: { scrollDirection }
+  } = useScroll();
+
+  const scrollDown = scrollDirection === 'down';
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
+  }, [shownContent, state]);
 
   const { signals, signs, locomotiveSignalization } = content;
 
@@ -49,7 +63,7 @@ export const ZonePage = ({
           shownContent={shownContent}
           contentFilter={contentFilter}
           filterSectionClickHandlers={filterSectionClickHandlers}
-          className={css.contentFilters}
+          className={cx(css.contentFilters, { [css.translated]: scrollDown })}
         />
       </aside>
       <main className={css.content}>
@@ -57,13 +71,17 @@ export const ZonePage = ({
           <h1 className="pageTitle medium">{title}</h1>
           <p>{description}</p>
         </div>
-        <Button
-          {...filterToggler}
-          className={css.filterToggler}
-          onClick={() => setShowSidebar(!showSidebar)}
+        <div
+          className={cx(css.filterTogglerWrapper, { [css.hidden]: scrollDown })}
         >
-          {filterToggler.title}
-        </Button>
+          <Button
+            {...filterToggler}
+            className={css.filterToggler}
+            onClick={() => setShowSidebar(!showSidebar)}
+          >
+            {filterToggler.title}
+          </Button>
+        </div>
         <ContentRenderer content={content} shownContent={shownContent} />
         <RichText content={additionalInfo} />
       </main>

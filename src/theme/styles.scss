@@ -8,6 +8,8 @@
 }
 
 body {
+  @include flexColumn;
+
   min-height: 100vh;
   font-family: $primary-font;
 }
@@ -106,36 +108,15 @@ p {
 
 .pageHeading {
   margin: 2rem;
+
+  // required to prevent header showing over page heading
+  &_withAdditionalMargin {
+    margin: 80px 2rem 2rem;
+  }
 }
 
 .pageTitle,
 .sectionTitle,
 .entityTitle {
   @include defaultTextDimentions;
-}
-
-.section-title,
-.entity-title {
-  text-align: center;
-}
-
-.page-title {
-  padding-top: 2rem;
-}
-
-.section-title {
-  font-size: 48px;
-}
-.entity-title {
-  font-size: 24px;
-  padding: 2rem;
-}
-
-.sign-symbol,
-.sign-text {
-  margin-bottom: 0;
-}
-
-.entity {
-  background: red;
 }

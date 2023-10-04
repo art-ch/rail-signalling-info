@@ -14,6 +14,7 @@ import {
   SignModel,
   UIComponent
 } from 'src/types';
+import { CISSignalState } from 'src/containers/CIS/context/CISSignalContext.types';
 
 export type ZonePageContentTypes =
   | 'Signals'
@@ -50,12 +51,15 @@ export type ZonePageMainProps = {
   additionalInfo: RichTextContent;
 };
 
-export type ZonePageCustomComponents = {
+export type ZoneSpecificZonePageSignalState = CISSignalState;
+
+export type ZoneSpecificZonePageProps = {
+  state: ZoneSpecificZonePageSignalState;
   Filters: FunctionComponent<ZonePageFiltersProps>;
   ContentRenderer: FunctionComponent<ZonePageContentRendererProps>;
 };
 
-export type ZonePageProps = ZonePageMainProps & ZonePageCustomComponents;
+export type ZonePageProps = ZonePageMainProps & ZoneSpecificZonePageProps;
 
 export type GetContentFilterOptionsProps = Omit<
   ZonePageContent,

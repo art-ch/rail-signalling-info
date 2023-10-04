@@ -1,3 +1,5 @@
+import cx from 'classnames';
+
 import {
   NavigationPageLink,
   NavigationPageLinkProps
@@ -20,7 +22,7 @@ export const NavigationPage = ({
 }: NavigationPageProps) => {
   return (
     <main className={css.container}>
-      <div className="pageHeading">
+      <div className={cx('pageHeading', 'pageHeading_withAdditionalMargin')}>
         <h1 className="pageTitle medium">{title}</h1>
         <p>{description}</p>
       </div>

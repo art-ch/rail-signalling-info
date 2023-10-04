@@ -1,9 +1,16 @@
 @use '../../../theme/' as *;
 
 .container {
+  position: fixed;
+  top: 0;
   width: 100%;
-  background: white;
+  background: $white;
   z-index: 1;
+  transition: $transition;
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
 }
 
 .innerCentering {
@@ -41,14 +48,14 @@
 }
 
 .headerLinks_mobile {
-  position: absolute;
+  position: fixed;
   top: 80px;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   display: none;
   padding: 0 0 1rem;
   text-align: center;
-  background: white;
+  background: $white;
 
   @include tablet {
     @include flexColumn;
