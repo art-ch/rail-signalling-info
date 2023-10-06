@@ -1,0 +1,43 @@
+@use '../../../../../../../../theme/' as *;
+
+.handHornSoundContainer {
+  @include flex;
+
+  gap: 5px;
+}
+
+.handHornSfx {
+  display: none;
+
+  &.animatedSign {
+    display: block;
+
+    &.stop {
+      animation: handHornSfxMovement 1s 3 forwards;
+    }
+
+    &.driveForward {
+      animation: handHornSfxMovement 2s 1 forwards;
+    }
+
+    &.driveBackward {
+      animation: handHornSfxMovement 2s 2 forwards;
+    }
+
+    &.slowDown {
+      animation: handHornSfxMovement 1s 2 forwards;
+    }
+  }
+}
+
+@keyframes handHornSfxMovement {
+  from {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(-100%);
+  }
+}

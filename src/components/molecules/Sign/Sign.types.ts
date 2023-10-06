@@ -19,11 +19,16 @@ export type AnimatedSignPath =
   | 'stopBreaking'
   | 'damagedCatenary';
 
-export type AnimateSign =
-  | { animate?: true; animatedSignPath: AnimatedSignPath }
+export type AnimateSign<CustomAnimatedSignPath = AnimatedSignPath> =
+  | {
+      animate?: true;
+      animatedSignPath: CustomAnimatedSignPath;
+    }
   | { animate?: false };
 
-export type ImageSignProps = { children: React.ReactElement } & AnimateSign &
+export type ImageSignProps = {
+  children: React.ReactElement | React.ReactElement[];
+} & AnimateSign &
   UIComponent<{ animatedSignClassName?: string; imageClassName?: string }>;
 
 export type SignProps = PropsWithChildren<{

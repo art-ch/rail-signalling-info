@@ -21,6 +21,7 @@ import { TextSign } from '../../molecules/CISSigns/TextSign';
 import { CISSnowPlowSign } from '../../molecules/CISSigns/CISSnowPlowSign';
 
 import css from './CISContentRenderer.module.scss';
+import { HandheldHorn } from '../../molecules/CISSigns/HandHeldSign/components/Horn';
 
 export type CISSignRendererProps = { id: number; isHovered: boolean };
 
@@ -56,6 +57,9 @@ export const CISSignRenderer = ({ id, isHovered }: CISSignRendererProps) => {
           className={css.stopSignWrapper}
           containerWidth="mediumWide"
         >
+          <SignWrapper>
+            <HandheldHorn animate={isHovered} animatedSignPath={'stop'} />
+          </SignWrapper>
           <SignWrapper containerWidth="mediumNarrow">
             <HandHeldSign type="flag" props={{ color: 'red' }} />
             <HandHeldSign type="light" props={{ lightColor: 'red' }} />
@@ -96,76 +100,28 @@ export const CISSignRenderer = ({ id, isHovered }: CISSignRendererProps) => {
     case 5:
       return (
         <SignWrapper
-          containerWidth="mediumNarrow"
-          animatedWrapperProps={{
-            withAnimatedSigns: isHovered,
-            additionalMargin: 'largeNoMargin'
-          }}
+          containerWidth="mediumWide"
+          className={css.driveForwardWrapper}
         >
-          <HandHeldSign
-            type="flag"
-            props={{
-              color: 'yellow',
-              animate: isHovered,
-              animatedSignPath: 'driveForward'
+          <SignWrapper>
+            <HandheldHorn
+              animate={isHovered}
+              animatedSignPath={'driveForward'}
+            />
+          </SignWrapper>
+          <SignWrapper
+            containerWidth="mediumNarrow"
+            animatedWrapperProps={{
+              withAnimatedSigns: isHovered,
+              additionalMargin: 'largeNoMargin'
             }}
-          />
-          <HandHeldSign
-            type="light"
-            props={{
-              lightColor: 'white',
-              animate: isHovered,
-              animatedSignPath: 'driveForward'
-            }}
-          />
-        </SignWrapper>
-      );
-
-    case 6:
-      return (
-        <SignWrapper
-          containerWidth="mediumNarrow"
-          animatedWrapperProps={{
-            withAnimatedSigns: isHovered,
-            additionalMargin: 'noMarginLarge'
-          }}
-        >
-          <HandHeldSign
-            type="flag"
-            props={{
-              color: 'yellow',
-              animate: isHovered,
-              animatedSignPath: 'driveBackward'
-            }}
-          />
-          <HandHeldSign
-            type="light"
-            props={{
-              lightColor: 'white',
-              animate: isHovered,
-              animatedSignPath: 'driveBackward'
-            }}
-          />
-        </SignWrapper>
-      );
-
-    case 7:
-      return (
-        <SignWrapper
-          containerWidth="mediumNarrow"
-          className={css.slowDownWrapper}
-          animatedWrapperProps={{
-            withAnimatedSigns: isHovered,
-            additionalMargin: 'large'
-          }}
-        >
-          <SignWrapper containerWidth="mediumNarrow">
+          >
             <HandHeldSign
               type="flag"
               props={{
                 color: 'yellow',
                 animate: isHovered,
-                animatedSignPath: 'slowDown'
+                animatedSignPath: 'driveForward'
               }}
             />
             <HandHeldSign
@@ -173,11 +129,91 @@ export const CISSignRenderer = ({ id, isHovered }: CISSignRendererProps) => {
               props={{
                 lightColor: 'white',
                 animate: isHovered,
-                animatedSignPath: 'slowDown'
+                animatedSignPath: 'driveForward'
               }}
             />
           </SignWrapper>
-          <Hand animate={isHovered} animatedSignPath="slowDown" />
+        </SignWrapper>
+      );
+
+    case 6:
+      return (
+        <SignWrapper
+          containerWidth="mediumWide"
+          className={css.driveBackwardWrapper}
+        >
+          <SignWrapper>
+            <HandheldHorn
+              animate={isHovered}
+              animatedSignPath={'driveBackward'}
+            />
+          </SignWrapper>
+          <SignWrapper
+            containerWidth="mediumNarrow"
+            animatedWrapperProps={{
+              withAnimatedSigns: isHovered,
+              additionalMargin: 'noMarginLarge'
+            }}
+          >
+            <HandHeldSign
+              type="flag"
+              props={{
+                color: 'yellow',
+                animate: isHovered,
+                animatedSignPath: 'driveBackward'
+              }}
+            />
+            <HandHeldSign
+              type="light"
+              props={{
+                lightColor: 'white',
+                animate: isHovered,
+                animatedSignPath: 'driveBackward'
+              }}
+            />
+          </SignWrapper>
+        </SignWrapper>
+      );
+
+    case 7:
+      return (
+        <SignWrapper
+          containerWidth="mediumWide"
+          className={css.slowDownWrapper}
+        >
+          <SignWrapper>
+            <HandheldHorn animate={isHovered} animatedSignPath={'slowDown'} />
+          </SignWrapper>
+          <SignWrapper
+            containerWidth="mediumNarrow"
+            className={css.slowDownWrapper_handHeldSignWrapper}
+            animatedWrapperProps={{
+              withAnimatedSigns: isHovered,
+              additionalMargin: 'large'
+            }}
+          >
+            <SignWrapper containerWidth="mediumNarrow">
+              <HandHeldSign
+                type="flag"
+                props={{
+                  color: 'yellow',
+                  animate: isHovered,
+                  animatedSignPath: 'slowDown'
+                }}
+              />
+              <HandHeldSign
+                type="light"
+                props={{
+                  lightColor: 'white',
+                  animate: isHovered,
+                  animatedSignPath: 'slowDown'
+                }}
+              />
+            </SignWrapper>
+            <SignWrapper>
+              <Hand animate={isHovered} animatedSignPath="slowDown" />
+            </SignWrapper>
+          </SignWrapper>
         </SignWrapper>
       );
 

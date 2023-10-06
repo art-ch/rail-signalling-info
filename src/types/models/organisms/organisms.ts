@@ -21,6 +21,7 @@ export type SignalModel = {
   id: number;
   info: SignalInfo[];
   name: string;
+  displayName: string;
   lights: SignalLights;
 };
 
@@ -28,7 +29,7 @@ export type LocomotiveSignalizationModel = Record<string, unknown>;
 
 export type SignModel = {
   id: number;
-  sign: string;
+  name: string;
   description: string;
 };
 

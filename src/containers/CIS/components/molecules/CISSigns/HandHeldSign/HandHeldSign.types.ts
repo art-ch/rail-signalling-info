@@ -8,9 +8,17 @@ export type HandheldFlagProps = {
   folded?: boolean;
 };
 
+export type HandheldHornAnimatedSignPath =
+  | 'stop'
+  | 'driveForward'
+  | 'driveBackward'
+  | 'slowDown';
+
 export type HandheldLightProps = { lightColor?: LightColor } & AnimateSign;
 
-export type HandHeldSignType = 'disc' | 'flag' | 'light';
+export type HandheldHornProps = AnimateSign<HandheldHornAnimatedSignPath>;
+
+export type HandHeldSignType = 'disc' | 'flag' | 'light' | 'horn';
 
 export type HandHeldSignProps = {
   type: HandHeldSignType;

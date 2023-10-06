@@ -17,7 +17,7 @@ export type SignalCardProps = {
 };
 
 export const SignalCard = ({ signal, SignalRenderer }: SignalCardProps) => {
-  const { id, name, lights, info: signalInfo } = signal;
+  const { id, name, displayName, lights, info: signalInfo } = signal;
 
   const formattedSignalInfo = getFormattedSignalInfo(signalInfo);
 
@@ -27,7 +27,10 @@ export const SignalCard = ({ signal, SignalRenderer }: SignalCardProps) => {
     return (
       <ContentCard key={id}>
         <SignalRenderer id={id} aspect={name} lights={lights} />
-        <DescriptionBlock title={name} descriptionList={formattedSignalInfo} />
+        <DescriptionBlock
+          title={displayName}
+          descriptionList={formattedSignalInfo}
+        />
       </ContentCard>
     );
   }

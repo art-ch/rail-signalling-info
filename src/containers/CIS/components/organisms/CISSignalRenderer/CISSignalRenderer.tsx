@@ -19,6 +19,8 @@ import { SignalLights } from 'src/types';
 
 import { SignalWrapper } from 'src/components/molecules/SignalWrapper';
 
+import css from './CISSignalRenderer.module.scss';
+
 export type CISSignalRendererProps = {
   id: number;
   aspect: string;
@@ -134,11 +136,15 @@ export const CISSignalRenderer = ({
       switch (true) {
         case moonWhiteSignal:
           return (
-            <SignalWrapper>
-              <CISBiggestSignal id={id} aspect={aspect} lights={lights} />
-              <CISBigDwarfSignal aspect={aspect} lights={lights} />
-              <CISSmallSignal aspect={aspect} lights={lights} />
-              <CISDwarfManeuveringSignal aspect={aspect} />
+            <SignalWrapper className={css.moonWhiteSignalWrapper}>
+              <SignalWrapper>
+                <CISBiggestSignal id={id} aspect={aspect} lights={lights} />
+                <CISBigDwarfSignal aspect={aspect} lights={lights} />
+              </SignalWrapper>
+              <SignalWrapper>
+                <CISSmallSignal aspect={aspect} lights={lights} />
+                <CISDwarfManeuveringSignal aspect={aspect} />
+              </SignalWrapper>
             </SignalWrapper>
           );
         case showAsBiggestAndDwarfSignal:
@@ -172,11 +178,15 @@ export const CISSignalRenderer = ({
       switch (true) {
         case moonWhiteSignal:
           return (
-            <SignalWrapper>
-              <CISBigSignal id={id} aspect={aspect} lights={lights} />
-              <CISBigDwarfSignal aspect={aspect} lights={lights} />
-              <CISSmallSignal aspect={aspect} lights={lights} />
-              <CISDwarfManeuveringSignal aspect={aspect} />
+            <SignalWrapper className={css.moonWhiteSignalWrapper}>
+              <SignalWrapper>
+                <CISBigSignal id={id} aspect={aspect} lights={lights} />
+                <CISBigDwarfSignal aspect={aspect} lights={lights} />
+              </SignalWrapper>
+              <SignalWrapper>
+                <CISSmallSignal aspect={aspect} lights={lights} />
+                <CISDwarfManeuveringSignal aspect={aspect} />
+              </SignalWrapper>
             </SignalWrapper>
           );
         case showAsRegularFlickeringSignal:
@@ -204,11 +214,15 @@ export const CISSignalRenderer = ({
       switch (true) {
         case moonWhiteSignal:
           return (
-            <SignalWrapper>
-              <CISBigSignal id={id} aspect={aspect} lights={lights} />
-              <CISRegularDwarfSignal aspect={aspect} lights={lights} />
-              <CISSmallSignal aspect={aspect} lights={lights} />
-              <CISDwarfManeuveringSignal aspect={aspect} />
+            <SignalWrapper className={css.moonWhiteSignalWrapper}>
+              <SignalWrapper>
+                <CISBigSignal id={id} aspect={aspect} lights={lights} />
+                <CISRegularDwarfSignal aspect={aspect} lights={lights} />
+              </SignalWrapper>
+              <SignalWrapper>
+                <CISSmallSignal aspect={aspect} lights={lights} />
+                <CISDwarfManeuveringSignal aspect={aspect} />
+              </SignalWrapper>
             </SignalWrapper>
           );
         case showWithBlockSignal:

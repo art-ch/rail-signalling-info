@@ -1,0 +1,7 @@
+@use '../../../../../theme/' as *;
+
+.moonWhiteSignalWrapper {
+  @include mobile {
+    @include flexColumnCenter;
+  }
+}
