@@ -13,6 +13,12 @@ export type SignTypeState<ZoneSpecificSignTypeState> = [
   signType: ZoneSpecificSignTypeState,
   setSignType: SetState<ZoneSpecificSignTypeState>
 ];
+export type LocomotiveSignalizationState<
+  ZoneSpecificLocomotiveSignalizationState
+> = [
+  signType: ZoneSpecificLocomotiveSignalizationState,
+  setSignType: SetState<ZoneSpecificLocomotiveSignalizationState>
+];
 
 export type SignalProviderProps = {
   children: React.ReactNode;

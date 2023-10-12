@@ -1,4 +1,5 @@
 import {
+  LocomotiveSignalizationState,
   SignalContextProps,
   SignalTypeState,
   SignTypeState,
@@ -66,11 +67,17 @@ export enum CISSignType {
   Text = 'Text Signs'
 }
 
+export enum CISLocomotiveSignalization {
+  Regular = 'Regular',
+  ALTP = 'ALTP Zone'
+}
+
 export type CISSignalState = {
   allSignals: CISSignalType | false;
   trainProtectionZone: CISTrainProtectionZone;
   signalType: CISSignalType;
   signType: CISSignType;
+  locomotiveSignalization: CISLocomotiveSignalization;
 };
 
 export type CISSignalStateWithHandlers = {
@@ -78,6 +85,7 @@ export type CISSignalStateWithHandlers = {
   trainProtectionZoneState: TrainProtectionZoneState<CISTrainProtectionZone>;
   signalTypeState: SignalTypeState<CISSignalType>;
   signTypeState: SignTypeState<CISSignType>;
+  locomotiveSignalizationState: LocomotiveSignalizationState<CISLocomotiveSignalization>;
 };
 
 export type CISSignalContextProps = SignalContextProps<

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { GoFilter } from 'react-icons/go';
 
 import cx from 'classnames';
 
@@ -8,13 +9,14 @@ import { Button } from 'src/components/atoms/Button';
 import css from './ZonePage.module.scss';
 import { FilterPanelProps } from 'src/components/molecules/FilterPanel';
 import { getContentFilterOptions } from './ZonePage.utils';
-import { ZonePageContentTypes, ZonePageProps } from './ZonePage.types';
+import { ZonePageContentType, ZonePageProps } from './ZonePage.types';
 import { useScroll } from 'src/hooks/useScroll';
+
+import { Input } from 'src/components/atoms/Input';
 
 export const ZonePage = ({
   title,
   description,
-  filterToggler,
   content,
   additionalInfo,
   state,
@@ -22,20 +24,14 @@ export const ZonePage = ({
   ContentRenderer
 }: ZonePageProps) => {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
-  const [shownContent, setShownContent] =
-    useState<ZonePageContentTypes>('Signals');
+  const [shownContentType, setShownContentType] =
+    useState<ZonePageContentType>('Signals');
+  const [shownContent, setShownContent] = useState<string>('');
 
   const {
     scrollData: { scrollDirection }
   } = useScroll();
-
   const scrollDown = scrollDirection === 'down';
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0);
-    }
-  }, [shownContent, state]);
 
   const { signals, signs, locomotiveSignalization } = content;
 
@@ -48,19 +44,29 @@ export const ZonePage = ({
   const contentFilter: FilterPanelProps = {
     title: 'Content Filters',
     options: contentFilterOptions,
-    filterState: [shownContent, setShownContent]
+    filterState: [shownContentType, setShownContentType]
+  };
+
+  const onSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setShownContent(event.target.value);
   };
 
   const filterSectionClickHandlers = () => {
     setShowSidebar(false);
   };
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
+  }, [shownContentType, state]);
+
   return (
     <div className={css.container}>
       <aside className={cx(css.sidebar, { [css.sidebar_shown]: showSidebar })}>
         <Filters
           isFilterSectionVisible={showSidebar}
-          shownContent={shownContent}
+          shownContentType={shownContentType}
           contentFilter={contentFilter}
           filterSectionClickHandlers={filterSectionClickHandlers}
           className={cx(css.contentFilters, { [css.translated]: scrollDown })}
@@ -72,17 +78,29 @@ export const ZonePage = ({
           <p>{description}</p>
         </div>
         <div
-          className={cx(css.filterTogglerWrapper, { [css.hidden]: scrollDown })}
+          className={cx(css.topFilterOuterWrapper, {
+            [css.hidden]: scrollDown
+          })}
         >
-          <Button
-            {...filterToggler}
-            className={css.filterToggler}
-            onClick={() => setShowSidebar(!showSidebar)}
-          >
-            {filterToggler.title}
-          </Button>
+          <div className={css.topFilterInnerWrapper}>
+            <Button
+              size="mediumSmall"
+              className={css.filterToggler}
+              onClick={() => setShowSidebar(!showSidebar)}
+            >
+              <GoFilter className={css.filterToggler__icon} />
+            </Button>
+            <Input
+              onChange={onSearch}
+              placeholder={`Search ${shownContentType}`}
+            />
+          </div>
         </div>
-        <ContentRenderer content={content} shownContent={shownContent} />
+        <ContentRenderer
+          content={content}
+          shownContent={shownContent}
+          shownContentType={shownContentType}
+        />
         <RichText content={additionalInfo} />
       </main>
     </div>

@@ -9,13 +9,11 @@ import { CISSignalProvider } from 'src/containers/CIS/context/CISSignalContext';
 export default async function CISZone() {
   const cisPage = await api.cms.getZonePage('/zones/cis');
 
-  const { title, description, filterToggler, content, additionalInfo } =
-    cisPage.fields;
+  const { title, description, content, additionalInfo } = cisPage.fields;
 
   const pageProps: ZonePageMainProps = {
     title,
     description,
-    filterToggler: getContent(filterToggler),
     content: getZonePageContent(content),
     additionalInfo
   };

@@ -16,13 +16,13 @@ import {
 } from 'src/types';
 import { CISSignalState } from 'src/containers/CIS/context/CISSignalContext.types';
 
-export type ZonePageContentTypes =
+export type ZonePageContentType =
   | 'Signals'
   | 'Locomotive Signalization'
   | 'Signs';
 
 export type ZonePageFiltersProps = {
-  shownContent: ZonePageContentTypes;
+  shownContentType: ZonePageContentType;
   contentFilter: FilterPanelProps;
   isFilterSectionVisible: boolean;
   filterSectionClickHandlers: () => void;
@@ -30,7 +30,8 @@ export type ZonePageFiltersProps = {
 
 export type ZonePageContentRendererProps = {
   content: ZonePageContent;
-  shownContent: ZonePageContentTypes;
+  shownContent: string;
+  shownContentType: ZonePageContentType;
 };
 
 export type ZonePageContent = {
@@ -41,12 +42,12 @@ export type ZonePageContent = {
   imageSigns: ImageModel[];
   signFilters: SignalizationFilterListModel[];
   locomotiveSignalization?: LocomotiveSignalizationModel[];
+  locomotiveSignalizationFilters?: SignalizationFilterListModel[];
 };
 
 export type ZonePageMainProps = {
   title: string;
   description: string;
-  filterToggler: ButtonProps;
   content: ZonePageContent;
   additionalInfo: RichTextContent;
 };

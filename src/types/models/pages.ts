@@ -24,7 +24,6 @@ export type NavigationPageModel = {
 export type ZonePageModel = {
   title: string;
   description: string;
-  filterToggler: ButtonModel;
   content: ZonePageContentModel;
   additionalInfo: RichTextContent;
 };

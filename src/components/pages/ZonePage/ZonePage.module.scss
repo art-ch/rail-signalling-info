@@ -35,28 +35,42 @@
   }
 }
 
-.filterTogglerWrapper {
+.topFilterOuterWrapper {
+  @include flexCenterCenter;
+
+  width: 100%;
   background: $white;
   position: sticky;
   top: 79px;
-  display: none;
-  width: 100%;
   padding: 1rem 0;
   z-index: 1;
   transition: $transition;
 
   &.hidden {
-    transform: translateY(-200%);
-  }
-
-  @include desktopSmall {
-    @include flexCenterCenter;
+    transform: translateY(-220%);
   }
 }
 
+.topFilterInnerWrapper {
+  @include flexCenterCenter;
+
+  gap: 16px;
+  width: 90%;
+}
+
 .filterToggler {
-  @include mobile {
-    width: 85vw;
+  display: none;
+
+  @include desktopSmall {
+    @include flex;
+  }
+
+  &__icon {
+    font-size: 18px;
+
+    path {
+      stroke-width: 1px;
+    }
   }
 }
 
