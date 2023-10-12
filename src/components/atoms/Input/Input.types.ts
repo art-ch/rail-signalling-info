@@ -1,9 +1,9 @@
-import { HTMLInputTypeAttribute, ChangeEvent } from 'react';
-
 import { PropsWithOptionalChildren } from 'src/types';
 
 export type InputProps = PropsWithOptionalChildren<{
-  type?: HTMLInputTypeAttribute;
+  type?: React.HTMLInputTypeAttribute;
   placeholder?: string;
-  onChange?: (value: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  onPaste?: (event: React.ClipboardEvent<HTMLInputElement>) => void;
 }>;

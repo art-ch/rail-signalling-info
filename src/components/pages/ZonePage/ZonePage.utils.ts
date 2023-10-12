@@ -34,3 +34,6 @@ export const getMainFilters = ({
 
     return { title, options, filterState, additionalClickHandler };
   });
+
+export const isValidContentSearchInput = (input: string) =>
+  /^[a-zA-Z ]{1,140}$/g.test(input);

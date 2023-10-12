@@ -8,7 +8,10 @@ import { Button } from 'src/components/atoms/Button';
 
 import css from './ZonePage.module.scss';
 import { FilterPanelProps } from 'src/components/molecules/FilterPanel';
-import { getContentFilterOptions } from './ZonePage.utils';
+import {
+  getContentFilterOptions,
+  isValidContentSearchInput
+} from './ZonePage.utils';
 import { ZonePageContentType, ZonePageProps } from './ZonePage.types';
 import { useScroll } from 'src/hooks/useScroll';
 
@@ -47,8 +50,32 @@ export const ZonePage = ({
     filterState: [shownContentType, setShownContentType]
   };
 
-  const onSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setShownContent(event.target.value);
+  const onPasteIntoContentSearchField = (
+    event: React.ClipboardEvent<HTMLInputElement>
+  ) => {
+    let input = event.clipboardData.getData('Text');
+
+    if (!isValidContentSearchInput(input)) {
+      event.preventDefault();
+    }
+  };
+
+  const onSearchContentFieldKeyDown = (
+    event: React.KeyboardEvent<HTMLInputElement>
+  ) => {
+    let input = event.key;
+
+    if (!isValidContentSearchInput(input)) {
+      event.preventDefault();
+    }
+  };
+
+  const onContentSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let input = event.target.value;
+
+    if (isValidContentSearchInput(input)) {
+      setShownContent(input);
+    }
   };
 
   const filterSectionClickHandlers = () => {
@@ -91,7 +118,9 @@ export const ZonePage = ({
               <GoFilter className={css.filterToggler__icon} />
             </Button>
             <Input
-              onChange={onSearch}
+              onChange={onContentSearch}
+              onKeyDown={onSearchContentFieldKeyDown}
+              onPaste={onPasteIntoContentSearchField}
               placeholder={`Search ${shownContentType}`}
             />
           </div>

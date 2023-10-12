@@ -8,6 +8,8 @@ export const Input = ({
   type = 'text',
   placeholder = 'Please start typing',
   onChange,
+  onKeyDown,
+  onPaste,
   children
 }: InputProps) => {
   return (
@@ -16,6 +18,8 @@ export const Input = ({
         type={type}
         placeholder={placeholder}
         onChange={onChange}
+        onKeyDown={onKeyDown}
+        onPaste={onPaste}
         className={css.input}
       />
       {children}
