@@ -5,9 +5,8 @@ import { FooterProps } from '../../../components/organisms/Footer';
 import { NavLinksModel } from '../molecules';
 
 import {
-  SignalInfo,
-  SignalizationFilterModel,
-  SignalLights
+  SignalLightsAndInfo,
+  GenericOrganismEntityModel
 } from './organismModelHelperTypes';
 
 export type HeaderModel = {
@@ -17,23 +16,17 @@ export type HeaderModel = {
 
 export type FooterModel = Omit<FooterProps, 'links'> & { links: NavLinksModel };
 
-export type SignalModel = {
-  id: number;
-  info: SignalInfo[];
-  name: string;
-  displayName: string;
-  lights: SignalLights;
-};
+export type SignalModel = GenericOrganismEntityModel & SignalLightsAndInfo;
 
-export type LocomotiveSignalizationModel = Record<string, unknown>;
+export type LocomotiveSignalizationModel<
+  ZoneSpecificSignalizationModel = unknown
+> = GenericOrganismEntityModel & ZoneSpecificSignalizationModel;
 
-export type SignModel = {
-  id: number;
-  name: string;
+export type SignModel = GenericOrganismEntityModel & {
   description: string;
 };
 
 export type SignalizationFilterListModel = {
   title: string;
-  filters: SignalizationFilterModel[];
+  filters: GenericOrganismEntityModel[];
 };

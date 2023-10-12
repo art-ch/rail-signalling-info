@@ -3,6 +3,7 @@
 import React, { useState, useContext } from 'react';
 import { SignalProviderProps } from 'src/types/context';
 import {
+  CISLocomotiveSignalization,
   CISSignalContextProps,
   CISSignalState,
   CISSignalStateWithHandlers,
@@ -19,12 +20,14 @@ export const CISSignalProvider = ({
   children,
   content
 }: SignalProviderProps) => {
-  const [signalType, setSignalType] = useState<CISSignalType>(
-    CISSignalType.All
+  const [signalType, setSignalType] = useState(CISSignalType.All);
+  const [signType, setSignType] = useState(CISSignType.All);
+  const [trainProtectionZone, setTrainProtectionZone] = useState(
+    CISTrainProtectionZone.All
   );
-  const [signType, setSignType] = useState<CISSignType>(CISSignType.All);
-  const [trainProtectionZone, setTrainProtectionZone] =
-    useState<CISTrainProtectionZone>(CISTrainProtectionZone.All);
+  const [locomotiveSignalization, setLocomotiveSignalization] = useState(
+    CISLocomotiveSignalization.Regular
+  );
 
   const resetSignalState = () => {
     setTrainProtectionZone(CISTrainProtectionZone.All);
@@ -41,6 +44,11 @@ export const CISSignalProvider = ({
   const setSignTypeState = (option: CISSignType) => {
     setSignType(option);
   };
+  const setLocomotiveSignalizationState = (
+    option: CISLocomotiveSignalization
+  ) => {
+    setLocomotiveSignalization(option);
+  };
 
   const allSignals =
     trainProtectionZone === CISTrainProtectionZone.All &&
@@ -51,7 +59,8 @@ export const CISSignalProvider = ({
     allSignals: allSignals,
     trainProtectionZone,
     signalType,
-    signType
+    signType,
+    locomotiveSignalization
   };
 
   const stateWithHandlers: CISSignalStateWithHandlers = {
@@ -61,7 +70,11 @@ export const CISSignalProvider = ({
       setTrainProtectionZoneState
     ],
     signalTypeState: [signalType, setSignalTypeState],
-    signTypeState: [signType, setSignTypeState]
+    signTypeState: [signType, setSignTypeState],
+    locomotiveSignalizationState: [
+      locomotiveSignalization,
+      setLocomotiveSignalizationState
+    ]
   };
 
   return (

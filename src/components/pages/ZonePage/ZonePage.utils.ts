@@ -6,11 +6,11 @@ import {
   GetMainFiltersProps
 } from './ZonePage.types';
 
-import { ZonePageContentTypes } from './ZonePage.types';
+import { ZonePageContentType } from './ZonePage.types';
 
 export const getContentFilterOptions = (
   content: GetContentFilterOptionsProps
-): ZonePageContentTypes[] => {
+): ZonePageContentType[] => {
   const filteredContent = Object.entries(content).filter(
     ([_, contentItemValue]) => contentItemValue.length > 0
   );
@@ -19,7 +19,7 @@ export const getContentFilterOptions = (
     convertCamelCaseToTextCase(contentItemKey)
   );
 
-  return contentFilterOptions as ZonePageContentTypes[];
+  return contentFilterOptions as ZonePageContentType[];
 };
 
 export const getMainFilters = ({

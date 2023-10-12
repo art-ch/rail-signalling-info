@@ -11,50 +11,48 @@ import { useCISSignalContext } from '../../../context/CISSignalContext';
 
 import css from './CISLocomotiveSignalization.module.scss';
 
-import { CISTrainProtectionZone } from 'src/containers/CIS/context/CISSignalContext.types';
-import { SignalInfo, SignalLights, SignalModel } from 'src/types';
-
-export type CISLocomotiveSignalModel = Omit<SignalModel, 'info' | 'lights'> & {
-  info: Omit<SignalInfo, 'type'>;
-  lights: SignalLights | 'active';
-};
-
-export type CISLocomotiveSignalizationProps = {
-  title: string;
-  locomotiveSignalization: CISLocomotiveSignalModel[];
-};
+import { CISLocomotiveSignalization as CISLocomotiveSignalizationType } from 'src/containers/CIS/context/CISSignalContext.types';
+import { CISLocomotiveSignalizationProps } from './CISLocomotiveSignalization.types';
+import { NoResults } from 'src/components/atoms/NoResults';
 
 export const CISLocomotiveSignalization = ({
   title,
   locomotiveSignalization
 }: CISLocomotiveSignalizationProps) => {
   const {
-    state: { trainProtectionZone }
+    state: { locomotiveSignalization: locomotiveSignalizationState }
   } = useCISSignalContext();
+
+  const resultsPresent = locomotiveSignalization.length > 0;
 
   return (
     <section>
       <h2 className="sectionTitle large">{title}</h2>
-      <div className={cx(css.cardList, 'cardList')}>
-        {locomotiveSignalization.map((locomotiveSignal) => {
-          const { id, name, info, lights } = locomotiveSignal;
+      {!resultsPresent && <NoResults />}
+      {resultsPresent && (
+        <div className={cx(css.cardList, 'cardList')}>
+          {locomotiveSignalization.map((locomotiveSignal) => {
+            const { id, displayName, info, lights } = locomotiveSignal;
 
-          const altpZone = trainProtectionZone === CISTrainProtectionZone.ALTP;
+            const altpZone =
+              locomotiveSignalizationState ===
+              CISLocomotiveSignalizationType.ALTP;
 
-          const mainText =
-            (altpZone && info.altpDescription) || info.description;
+            const mainText =
+              (altpZone && info.altpDescription) || info.description;
 
-          return (
-            <ContentCard key={id} className={css.contentCard}>
-              <CISLocomotiveSignal
-                lights={lights}
-                className={css.locomotiveSignal}
-              />
-              <Description title={name} mainText={mainText} />
-            </ContentCard>
-          );
-        })}
-      </div>
+            return (
+              <ContentCard key={id} className={css.contentCard}>
+                <CISLocomotiveSignal
+                  lights={lights}
+                  className={css.locomotiveSignal}
+                />
+                <Description title={displayName} mainText={mainText} />
+              </ContentCard>
+            );
+          })}
+        </div>
+      )}
     </section>
   );
 };

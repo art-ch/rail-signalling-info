@@ -1,21 +1,15 @@
-import { SignModel, SignalModel } from 'src/types';
 import {
   CISSignalType,
   CISSignalTypeSimplified,
   CISSignType,
   CISTrainProtectionZone
-} from '../context/CISSignalContext.types';
-
-export type GetFilteredSignalsProps = {
-  signals: SignalModel[];
-  trainProtectionZone: CISTrainProtectionZone;
-  signalType: CISSignalType;
-};
-
-export type GetFilteredSignsProps = {
-  signs: SignModel[];
-  signType: CISSignType;
-};
+} from 'src/containers/CIS/context/CISSignalContext.types';
+import { GenericOrganismEntityModel, SignalModel, SignModel } from 'src/types';
+import {
+  GetFilteredSignalsProps,
+  GetFilteredSignsProps,
+  GetSearchedForContentProps
+} from '../CISLocomotiveSignalization';
 
 export const getFilteredSignalList = ({
   signals,
@@ -161,4 +155,40 @@ export const getFilteredSignList = ({
   }
 
   return filteredSigns;
+};
+
+export const getSearchedForZonePageContentList = ({
+  contentList,
+  shownContent
+}: GetSearchedForContentProps) => {
+  if (!shownContent) return contentList;
+
+  const filtrationResult = (contentList as GenericOrganismEntityModel[]).filter(
+    (contentListItem) => {
+      const contentListItemName = contentListItem.displayName.toLowerCase();
+      const searchWords = shownContent.toLowerCase().split(' ');
+
+      return searchWords.every((word) => contentListItemName.includes(word));
+    }
+  ) as typeof contentList;
+
+  return filtrationResult;
+};
+
+export const getCISSignalCardListTitle = (
+  trainProtectionZone: CISTrainProtectionZone,
+  signalType: CISSignalType
+) => {
+  const isAllTrainProtectionZonesShown =
+    trainProtectionZone === CISTrainProtectionZone.All;
+  const isAllSignalTypesShown = signalType === CISSignalType.All;
+
+  switch (true) {
+    case !isAllTrainProtectionZonesShown:
+      return `${trainProtectionZone} Signals`;
+    case !isAllSignalTypesShown:
+      return signalType;
+    default:
+      return 'All Signals';
+  }
 };

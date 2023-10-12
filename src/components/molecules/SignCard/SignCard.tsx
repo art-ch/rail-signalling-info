@@ -13,12 +13,12 @@ export type SignCardProps = {
 };
 
 export const SignCard = ({ sign, SignRenderer }: SignCardProps) => {
-  const { id, name, description } = sign;
+  const { id, displayName, description } = sign;
 
   return (
     <ContentCard key={id} className={css.contentCard}>
       <SignRenderer id={id} />
-      <Description title={name} mainText={description} />
+      <Description title={displayName} mainText={description} />
     </ContentCard>
   );
 };

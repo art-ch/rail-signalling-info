@@ -3,18 +3,13 @@ import cx from 'classnames';
 
 import defaultCss from './Button.module.scss';
 
-import { UIComponent } from '../../../types';
 import { getCss } from '../../../utils/themeUtils';
 
-export type ButtonProps = {
-  title?: string;
-  link?: string;
-  onClick?: (event?: React.MouseEvent, props?: unknown) => void;
-  children: React.ReactNode;
-} & UIComponent;
+import { ButtonProps } from './Button.types';
 
 export const Button = ({
   link,
+  size = 'default',
   onClick,
   className,
   customCss,
@@ -23,16 +18,18 @@ export const Button = ({
 }: ButtonProps) => {
   const css = getCss(defaultCss, customCss, disableDefaultCss);
 
+  const mutualClassNameList = cx(css.button, css[size], className);
+
   if (link) {
     return (
-      <Link href={link} onClick={onClick} className={cx(css.button, className)}>
+      <Link href={link} onClick={onClick} className={mutualClassNameList}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button onClick={onClick} className={cx(css.button, className)}>
+    <button onClick={onClick} className={mutualClassNameList}>
       {children}
     </button>
   );

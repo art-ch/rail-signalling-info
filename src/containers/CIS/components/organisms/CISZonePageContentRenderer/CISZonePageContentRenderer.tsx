@@ -1,9 +1,9 @@
 import { CISSignalRenderer } from '../CISSignalRenderer';
 import { CISSignRenderer } from '../CISSignRenderer';
 import {
-  CISLocomotiveSignalModel,
-  CISLocomotiveSignalization
-} from '../CISLocomotiveSignalization/';
+  CISLocomotiveSignalization,
+  CISLocomotiveSignalModel
+} from '../CISLocomotiveSignalization';
 
 import { useCISSignalContext } from 'src/containers/CIS/context';
 
@@ -12,15 +12,25 @@ import { SignalCardList } from 'src/components/organisms/SignalCardList';
 import { SignCardList } from 'src/components/organisms/SignCardList';
 import {
   getFilteredSignalList,
-  getFilteredSignList
-} from 'src/containers/CIS/utils';
+  getFilteredSignList,
+  getSearchedForZonePageContentList
+} from './CISZonePageContentRenderer.utils';
+
+import { getCISSignalCardListTitle } from './CISZonePageContentRenderer.utils';
+import { SignalModel, SignModel } from 'src/types';
 
 export const CISZonePageContentRenderer = ({
   content,
-  shownContent
+  shownContent,
+  shownContentType
 }: ZonePageContentRendererProps) => {
   const {
-    state: { trainProtectionZone, signalType, signType }
+    state: {
+      trainProtectionZone,
+      signalType,
+      signType,
+      locomotiveSignalization: locomotiveSignalizationState
+    }
   } = useCISSignalContext();
 
   const { signals, locomotiveSignalization = [], signs } = content;
@@ -33,29 +43,49 @@ export const CISZonePageContentRenderer = ({
 
   const filteredSignList = getFilteredSignList({ signs, signType });
 
-  switch (shownContent) {
+  const signalList = getSearchedForZonePageContentList({
+    contentList: filteredSignalList,
+    shownContent
+  }) as SignalModel[];
+
+  const signList = getSearchedForZonePageContentList({
+    contentList: filteredSignList,
+    shownContent
+  }) as SignModel[];
+
+  const locomotiveSignalizationList = getSearchedForZonePageContentList({
+    contentList: locomotiveSignalization as CISLocomotiveSignalModel[],
+    shownContent
+  });
+
+  const signalCardListTitle = getCISSignalCardListTitle(
+    trainProtectionZone,
+    signalType
+  );
+
+  switch (shownContentType) {
     case 'Signals':
       return (
         <SignalCardList
-          title={'Signals'}
-          signalList={filteredSignalList}
+          title={signalCardListTitle}
+          signalList={signalList}
           SignalRenderer={CISSignalRenderer}
         />
       );
     case 'Signs':
       return (
         <SignCardList
-          title={'Signs'}
-          signList={filteredSignList}
+          title={signType}
+          signList={signList}
           SignRenderer={CISSignRenderer}
         />
       );
     case 'Locomotive Signalization':
       return (
         <CISLocomotiveSignalization
-          title={'Locomotive Signalization'}
+          title={`${locomotiveSignalizationState} Locomotive Signalization`}
           locomotiveSignalization={
-            locomotiveSignalization as CISLocomotiveSignalModel[]
+            locomotiveSignalizationList as CISLocomotiveSignalModel[]
           }
         />
       );

@@ -1,7 +1,7 @@
 @use '../../../theme/' as *;
 
 .button {
-  color: white;
+  color: $white;
   background: seagreen;
   padding: 1rem;
   border: 1px solid transparent;
@@ -9,10 +9,23 @@
   font-size: 16px;
   border-radius: $radius;
   transition: $transition;
+
+  // sizes
+  &.default {
+    padding: 16px;
+  }
+
+  &.mediumSmall {
+    padding: 8px;
+  }
+
+  &.small {
+    padding: 4px;
+  }
 }
 
 .button:hover {
   border: 1px solid seagreen;
-  background: white;
+  background: $white;
   color: seagreen;
 }
