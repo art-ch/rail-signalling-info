@@ -65,8 +65,6 @@ export const onContentSearch = ({
 }: OnContentSearchProps) => {
   let input = event.target.value;
 
-  console.log(input);
-
   if (isValidContentSearchInput(input)) {
     setShownContent(input);
   }
