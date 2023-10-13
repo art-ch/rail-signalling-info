@@ -6,7 +6,7 @@ export type NavigationPageLinkProps = {
   title: string;
   link: string;
   description: string;
-  handleLinkClick: (
+  handleLinkClick?: (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => void;
 };
@@ -22,10 +22,9 @@ export const NavigationPageLink = ({
       <Link
         href={link}
         className={css.zoneName}
-        onClick={(e) => handleLinkClick(e)}
+        onClick={(e) => handleLinkClick?.(e)}
       >
-        <span className={css.loadingText}>Please wait</span> {title}{' '}
-        <span className={css.loadingText}>is now loading...</span>
+        {title}
       </Link>
       <p className={css.zoneInfo}>{description}</p>
     </div>

@@ -37,7 +37,7 @@ export const getMainFilters = ({
   });
 
 export const isValidContentSearchInput = (input: string) =>
-  /^[a-zA-Z, ]{1,140}$/g.test(input);
+  /^[a-zA-Z, ]{0,140}$/g.test(input);
 
 export const onPasteIntoContentSearchField = (
   event: React.ClipboardEvent<HTMLInputElement>
