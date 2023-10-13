@@ -1,3 +1,4 @@
+import { InputProps } from 'src/components/atoms/Input';
 import {
   CISSignalType,
   CISSignType,
@@ -20,4 +21,9 @@ export type GetFilteredSignsProps = {
 export type GetSearchedForContentProps = {
   contentList: SignalModel[] | SignModel[] | CISLocomotiveSignalModel[];
   shownContent: string;
+};
+
+export type GetContentSearchInputProps = {
+  input: InputProps;
+  pageTitle: string;
 };

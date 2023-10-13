@@ -35,45 +35,6 @@
   }
 }
 
-.topFilterOuterWrapper {
-  @include flexCenterCenter;
-
-  width: 100%;
-  background: $white;
-  position: sticky;
-  top: 79px;
-  padding: 1rem 0;
-  z-index: 1;
-  transition: $transition;
-
-  &.hidden {
-    transform: translateY(-220%);
-  }
-}
-
-.topFilterInnerWrapper {
-  @include flexCenterCenter;
-
-  gap: 16px;
-  width: 90%;
-}
-
-.filterToggler {
-  display: none;
-
-  @include desktopSmall {
-    @include flex;
-  }
-
-  &__icon {
-    font-size: 18px;
-
-    path {
-      stroke-width: 1px;
-    }
-  }
-}
-
 .content {
   @include desktopSmall {
     margin: 0 auto;

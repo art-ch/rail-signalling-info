@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react';
 import { RichTextContent } from 'contentful';
-import { ButtonProps } from 'src/components/atoms/Button';
 import {
   FilterPanelProps,
   FilterState
@@ -8,6 +7,7 @@ import {
 import {
   ImageModel,
   LocomotiveSignalizationModel,
+  SetState,
   SignalizationFilterListModel,
   SignalModel,
   SignalTypeSignModel,
@@ -15,6 +15,7 @@ import {
   UIComponent
 } from 'src/types';
 import { CISSignalState } from 'src/containers/CIS/context/CISSignalContext.types';
+import { TopFilterSectionProps } from '../../molecules/TopFilterSection';
 
 export type ZonePageContentType =
   | 'Signals'
@@ -29,9 +30,15 @@ export type ZonePageFiltersProps = {
 } & UIComponent;
 
 export type ZonePageContentRendererProps = {
-  content: ZonePageContent;
-  shownContent: string;
-  shownContentType: ZonePageContentType;
+  content: {
+    predefinedZonePageContent: ZonePageContent;
+    topFilterSectionContent: TopFilterSectionProps;
+  };
+  contentState: {
+    sidebarState: [boolean, SetState<boolean>];
+    shownContent: string;
+    shownContentType: ZonePageContentType;
+  };
 };
 
 export type ZonePageContent = {
@@ -71,4 +78,9 @@ export type GetMainFiltersProps = {
   filters: SignalizationFilterListModel[];
   state: FilterState[];
   additionalClickHandler?: () => void;
+};
+
+export type OnContentSearchProps = {
+  event: React.ChangeEvent<HTMLInputElement>;
+  setShownContent: SetState<string>;
 };
