@@ -1,3 +1,5 @@
+import { InputProps } from 'src/components/atoms/Input';
+import { parseCISAbbreviations } from 'src/containers/CIS/utils';
 import {
   CISSignalType,
   CISSignalTypeSimplified,
@@ -10,6 +12,7 @@ import {
   GetFilteredSignsProps,
   GetSearchedForContentProps
 } from '../CISLocomotiveSignalization';
+import { GetContentSearchInputProps } from './CISZonePageContentRenderer.types';
 
 export const getFilteredSignalList = ({
   signals,
@@ -163,19 +166,46 @@ export const getSearchedForZonePageContentList = ({
 }: GetSearchedForContentProps) => {
   if (!shownContent) return contentList;
 
-  const filtrationResult = (contentList as GenericOrganismEntityModel[]).filter(
-    (contentListItem) => {
-      const contentListItemName = contentListItem.displayName.toLowerCase();
-      const searchWords = shownContent.toLowerCase().split(' ');
+  const searchWords = shownContent.toLowerCase().split(' ');
 
-      return searchWords.every((word) => contentListItemName.includes(word));
+  const exactMatches: GenericOrganismEntityModel[] = [];
+  const partialMatches: GenericOrganismEntityModel[] = [];
+
+  (contentList as GenericOrganismEntityModel[]).forEach((contentListItem) => {
+    const contentListItemName = contentListItem.displayName.toLowerCase();
+
+    const allWordsIncluded = searchWords.every((word) =>
+      contentListItemName.includes(word)
+    );
+    const isExactMatch = contentListItemName === shownContent.toLowerCase();
+
+    if (allWordsIncluded && isExactMatch) {
+      exactMatches.push(contentListItem);
+    } else if (allWordsIncluded) {
+      partialMatches.push(contentListItem);
     }
-  ) as typeof contentList;
+  });
 
-  return filtrationResult;
+  const sortedPartialMatches = partialMatches.sort((a, b) => {
+    const aName = a.displayName.toLowerCase();
+    const bName = b.displayName.toLowerCase();
+    const aIndices = searchWords.map((word) => aName.indexOf(word));
+    const bIndices = searchWords.map((word) => bName.indexOf(word));
+    const aScore = aIndices.reduce(
+      (acc, curr, i) => acc + Math.abs(curr - aIndices[i - 1] || 0),
+      0
+    );
+    const bScore = bIndices.reduce(
+      (acc, curr, i) => acc + Math.abs(curr - bIndices[i - 1] || 0),
+      0
+    );
+    return aScore - bScore;
+  });
+
+  return [...exactMatches, ...sortedPartialMatches];
 };
 
-export const getCISSignalCardListTitle = (
+export const getCISSignalPageTitle = (
   trainProtectionZone: CISTrainProtectionZone,
   signalType: CISSignalType
 ) => {
@@ -185,10 +215,18 @@ export const getCISSignalCardListTitle = (
 
   switch (true) {
     case !isAllTrainProtectionZonesShown:
-      return `${trainProtectionZone} Signals`;
+      return `${parseCISAbbreviations(trainProtectionZone)} Signals`;
     case !isAllSignalTypesShown:
-      return signalType;
+      return parseCISAbbreviations(signalType);
     default:
       return 'All Signals';
   }
 };
+
+export const getContentSearchInputProps = ({
+  input,
+  pageTitle
+}: GetContentSearchInputProps): InputProps => ({
+  ...input,
+  placeholder: `Search Through ${pageTitle}`
+});

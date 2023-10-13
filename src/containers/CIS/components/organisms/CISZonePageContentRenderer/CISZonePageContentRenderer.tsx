@@ -11,18 +11,21 @@ import { ZonePageContentRendererProps } from 'src/components/pages/ZonePage/Zone
 import { SignalCardList } from 'src/components/organisms/SignalCardList';
 import { SignCardList } from 'src/components/organisms/SignCardList';
 import {
+  getContentSearchInputProps,
   getFilteredSignalList,
   getFilteredSignList,
   getSearchedForZonePageContentList
 } from './CISZonePageContentRenderer.utils';
 
-import { getCISSignalCardListTitle } from './CISZonePageContentRenderer.utils';
+import { getCISSignalPageTitle } from './CISZonePageContentRenderer.utils';
 import { SignalModel, SignModel } from 'src/types';
+import { TopFilterSection } from 'src/components/molecules/TopFilterSection';
+
+import { parseCISAbbreviations } from 'src/containers/CIS/utils';
 
 export const CISZonePageContentRenderer = ({
   content,
-  shownContent,
-  shownContentType
+  contentState
 }: ZonePageContentRendererProps) => {
   const {
     state: {
@@ -33,7 +36,15 @@ export const CISZonePageContentRenderer = ({
     }
   } = useCISSignalContext();
 
-  const { signals, locomotiveSignalization = [], signs } = content;
+  const { shownContent, shownContentType } = contentState;
+
+  const { predefinedZonePageContent, topFilterSectionContent } = content;
+  const {
+    signals,
+    locomotiveSignalization = [],
+    signs
+  } = predefinedZonePageContent;
+  const { filterToggler, searchInput } = topFilterSectionContent;
 
   const filteredSignalList = getFilteredSignalList({
     signals,
@@ -58,38 +69,70 @@ export const CISZonePageContentRenderer = ({
     shownContent
   });
 
-  const signalCardListTitle = getCISSignalCardListTitle(
-    trainProtectionZone,
-    signalType
-  );
+  if (shownContentType === 'Signals') {
+    const pageTitle = getCISSignalPageTitle(trainProtectionZone, signalType);
+    const contentSearchInputProps = getContentSearchInputProps({
+      input: searchInput,
+      pageTitle
+    });
 
-  switch (shownContentType) {
-    case 'Signals':
-      return (
+    return (
+      <>
+        <TopFilterSection
+          filterToggler={filterToggler}
+          searchInput={contentSearchInputProps}
+        />
         <SignalCardList
-          title={signalCardListTitle}
+          title={pageTitle}
           signalList={signalList}
           SignalRenderer={CISSignalRenderer}
         />
-      );
-    case 'Signs':
-      return (
+      </>
+    );
+  } else if (shownContentType === 'Signs') {
+    const pageTitle: string = signType;
+    const contentSearchInputProps = getContentSearchInputProps({
+      input: searchInput,
+      pageTitle
+    });
+
+    return (
+      <>
+        <TopFilterSection
+          filterToggler={filterToggler}
+          searchInput={contentSearchInputProps}
+        />
         <SignCardList
-          title={signType}
+          title={pageTitle}
           signList={signList}
           SignRenderer={CISSignRenderer}
         />
-      );
-    case 'Locomotive Signalization':
-      return (
+      </>
+    );
+  } else if (shownContentType === 'Locomotive Signalization') {
+    const pageTitle = `${parseCISAbbreviations(
+      locomotiveSignalizationState
+    )} Locomotive Signalization`;
+    const contentSearchInputProps = getContentSearchInputProps({
+      input: searchInput,
+      pageTitle
+    });
+
+    return (
+      <>
+        <TopFilterSection
+          filterToggler={filterToggler}
+          searchInput={contentSearchInputProps}
+        />
         <CISLocomotiveSignalization
-          title={`${locomotiveSignalizationState} Locomotive Signalization`}
+          title={pageTitle}
           locomotiveSignalization={
             locomotiveSignalizationList as CISLocomotiveSignalModel[]
           }
         />
-      );
-    default:
-      throw new Error('This zone page content type is missing');
+      </>
+    );
+  } else {
+    throw new Error('This zone page content type is missing');
   }
 };
