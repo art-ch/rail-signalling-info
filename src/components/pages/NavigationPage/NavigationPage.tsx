@@ -5,8 +5,6 @@ import {
   NavigationPageLinkProps
 } from '../../molecules/NavigationPageLink';
 
-import { showNavigationPageLinkLoadingText } from './NavigationPage.utils';
-
 import css from './NavigationPage.module.scss';
 
 export type NavigationPageProps = {
@@ -28,11 +26,7 @@ export const NavigationPage = ({
       </div>
       <div className={css.linksContainer}>
         {links.map((link, index) => (
-          <NavigationPageLink
-            {...link}
-            key={index}
-            handleLinkClick={showNavigationPageLinkLoadingText}
-          />
+          <NavigationPageLink {...link} key={index} />
         ))}
       </div>
     </main>
