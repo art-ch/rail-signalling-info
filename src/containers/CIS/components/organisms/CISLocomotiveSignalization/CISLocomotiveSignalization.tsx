@@ -2,18 +2,17 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import { ContentCard } from 'src/components/molecules/ContentCard';
 import { Description } from 'src/components/atoms/Description';
-
-import { CISLocomotiveSignal } from '../CISLocomotiveSignal';
+import { NoResults } from 'src/components/atoms/NoResults';
+import { ContentCard } from 'src/components/molecules/ContentCard';
+import { CISLocomotiveSignalization as CISLocomotiveSignalizationType } from 'src/containers/CIS/context/CISSignalContext.types';
 
 import { useCISSignalContext } from '../../../context/CISSignalContext';
+import { CISLocomotiveSignal } from '../CISLocomotiveSignal';
+
+import { CISLocomotiveSignalizationProps } from './CISLocomotiveSignalization.types';
 
 import css from './CISLocomotiveSignalization.module.scss';
-
-import { CISLocomotiveSignalization as CISLocomotiveSignalizationType } from 'src/containers/CIS/context/CISSignalContext.types';
-import { CISLocomotiveSignalizationProps } from './CISLocomotiveSignalization.types';
-import { NoResults } from 'src/components/atoms/NoResults';
 
 export const CISLocomotiveSignalization = ({
   title,

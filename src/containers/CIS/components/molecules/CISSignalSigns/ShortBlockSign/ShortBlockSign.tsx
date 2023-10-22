@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { ImArrowDown } from 'react-icons/im';
+
 import { Board } from 'src/components/atoms/Board';
 
 import { CISSignalType } from 'src/containers/CIS/context/CISSignalContext.types';

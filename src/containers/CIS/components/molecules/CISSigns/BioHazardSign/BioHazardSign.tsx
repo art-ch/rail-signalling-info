@@ -7,9 +7,9 @@ import { FaSkullCrossbones } from 'react-icons/fa';
 import { Board } from 'src/components/atoms/Board';
 
 import { CISSign } from '../CISSignRoot';
+import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 import css from './BioHazardSign.module.scss';
-import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 export type BioHazardSignProps = {
   pointOfView: 'front' | 'sideways' | 'fromBehind';

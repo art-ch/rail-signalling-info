@@ -1,17 +1,19 @@
 import { InputProps } from 'src/components/atoms/Input';
-import { parseCISAbbreviations } from 'src/containers/CIS/utils';
 import {
   CISSignalType,
   CISSignalTypeSimplified,
   CISSignType,
   CISTrainProtectionZone
 } from 'src/containers/CIS/context/CISSignalContext.types';
+import { parseCISAbbreviations } from 'src/containers/CIS/utils';
 import { GenericOrganismEntityModel, SignalModel, SignModel } from 'src/types';
+
 import {
   GetFilteredSignalsProps,
   GetFilteredSignsProps,
   GetSearchedForContentProps
 } from '../CISLocomotiveSignalization';
+
 import { GetContentSearchInputProps } from './CISZonePageContentRenderer.types';
 
 export const getFilteredSignalList = ({

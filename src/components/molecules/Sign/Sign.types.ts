@@ -1,4 +1,3 @@
-import { ImageProps } from 'next/image';
 import { PropsWithChildren, UIComponent } from 'src/types';
 
 export type SignType =

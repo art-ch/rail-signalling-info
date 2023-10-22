@@ -1,13 +1,12 @@
 import React from 'react';
 
-import { RectangularTextSign } from '../../components/RectangularTextSign';
-import { SquareTextSign } from '../../components/SquareTextSign';
-
 import {
   RectangularTextSignProps,
   SquareTextSignProps,
   TextSignVariableProps
 } from '../../TextSign.types';
+import { RectangularTextSign } from '../../components/RectangularTextSign';
+import { SquareTextSign } from '../../components/SquareTextSign';
 
 export const TextSignVariable = ({
   textSignType,

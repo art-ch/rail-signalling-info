@@ -2,26 +2,25 @@ import React from 'react';
 
 import { SignWrapper } from 'src/components/molecules/SignWrapper';
 
-import { Hand } from '../../molecules/CISSigns/Hand';
-import { RailSwitchSign } from '../../molecules/CISSigns/RailSwitchSign';
-import { TrackObstruction } from '../../molecules/CISSigns/TrackObstruction';
-import { SlowDown } from '../../molecules/CISSigns/SlowDown';
-import { DangerousPlaceBoundaries } from '../../molecules/CISSigns/DangerousPlaceBoundaries';
-import { Stop } from '../../molecules/CISSigns/Stop';
+import { BioHazardSign } from '../../molecules/CISSigns/BioHazardSign';
 import { BlockBorder } from '../../molecules/CISSigns/BlockBorder';
-import { HandHeldSign } from '../../molecules/CISSigns/HandHeldSign';
+import { CISBoundaryPole } from '../../molecules/CISSigns/CISBoundaryPole';
 import { CISHorn } from '../../molecules/CISSigns/CISHorn';
 import { CISHotAxles } from '../../molecules/CISSigns/CISHotAxles';
-import { TogglePantograph } from '../../molecules/CISSigns/TogglePantograph';
 import { CISNeutralZone } from '../../molecules/CISSigns/CISNeutralZone';
-import { ToggleCurrent } from '../../molecules/CISSigns/ToggleCurrent';
-import { CISBoundaryPole } from '../../molecules/CISSigns/CISBoundaryPole';
-import { BioHazardSign } from '../../molecules/CISSigns/BioHazardSign';
-import { TextSign } from '../../molecules/CISSigns/TextSign';
 import { CISSnowPlowSign } from '../../molecules/CISSigns/CISSnowPlowSign';
+import { DangerousPlaceBoundaries } from '../../molecules/CISSigns/DangerousPlaceBoundaries';
+import { Hand } from '../../molecules/CISSigns/Hand';
+import { HandHeldSign } from '../../molecules/CISSigns/HandHeldSign';
+import { RailSwitchSign } from '../../molecules/CISSigns/RailSwitchSign';
+import { SlowDown } from '../../molecules/CISSigns/SlowDown';
+import { Stop } from '../../molecules/CISSigns/Stop';
+import { TextSign } from '../../molecules/CISSigns/TextSign';
+import { ToggleCurrent } from '../../molecules/CISSigns/ToggleCurrent';
+import { TogglePantograph } from '../../molecules/CISSigns/TogglePantograph';
+import { TrackObstruction } from '../../molecules/CISSigns/TrackObstruction';
 
 import css from './CISContentRenderer.module.scss';
-import { HandheldHorn } from '../../molecules/CISSigns/HandHeldSign/components/Horn';
 
 export type CISSignRendererProps = { id: number; isHovered: boolean };
 
@@ -58,7 +57,13 @@ export const CISSignRenderer = ({ id, isHovered }: CISSignRendererProps) => {
           containerWidth="mediumWide"
         >
           <SignWrapper>
-            <HandheldHorn animate={isHovered} animatedSignPath={'stop'} />
+            <HandHeldSign
+              type="horn"
+              props={{
+                animate: isHovered,
+                animatedSignPath: 'stop'
+              }}
+            />
           </SignWrapper>
           <SignWrapper containerWidth="mediumNarrow">
             <HandHeldSign type="flag" props={{ color: 'red' }} />
@@ -104,9 +109,12 @@ export const CISSignRenderer = ({ id, isHovered }: CISSignRendererProps) => {
           className={css.driveForwardWrapper}
         >
           <SignWrapper>
-            <HandheldHorn
-              animate={isHovered}
-              animatedSignPath={'driveForward'}
+            <HandHeldSign
+              type="horn"
+              props={{
+                animate: isHovered,
+                animatedSignPath: 'driveForward'
+              }}
             />
           </SignWrapper>
           <SignWrapper
@@ -143,9 +151,12 @@ export const CISSignRenderer = ({ id, isHovered }: CISSignRendererProps) => {
           className={css.driveBackwardWrapper}
         >
           <SignWrapper>
-            <HandheldHorn
-              animate={isHovered}
-              animatedSignPath={'driveBackward'}
+            <HandHeldSign
+              type="horn"
+              props={{
+                animate: isHovered,
+                animatedSignPath: 'driveBackward'
+              }}
             />
           </SignWrapper>
           <SignWrapper
@@ -182,7 +193,13 @@ export const CISSignRenderer = ({ id, isHovered }: CISSignRendererProps) => {
           className={css.slowDownWrapper}
         >
           <SignWrapper>
-            <HandheldHorn animate={isHovered} animatedSignPath={'slowDown'} />
+            <HandHeldSign
+              type="horn"
+              props={{
+                animate: isHovered,
+                animatedSignPath: 'slowDown'
+              }}
+            />
           </SignWrapper>
           <SignWrapper
             containerWidth="mediumNarrow"

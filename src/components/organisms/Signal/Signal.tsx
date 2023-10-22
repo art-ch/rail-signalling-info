@@ -1,11 +1,11 @@
+import { FunctionComponent } from 'react';
+
 import cx from 'classnames';
 
+import { UIComponent } from '../../../types';
 import { Plate, PlateProps } from '../../molecules/Plate';
 
-import { UIComponent } from '../../../types';
-
 import css from './Signal.module.scss';
-import { FunctionComponent } from 'react';
 
 export type SignalProps = {
   plates: PlateProps[];

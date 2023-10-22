@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { GiHamburgerMenu } from 'react-icons/gi';
 
 import cx from 'classnames';
-
-import { NavLinks, NavLinkProps } from '../../molecules/NavLinks';
-import { Button } from '../../atoms/Button';
-
-import defaultCss from './Header.module.scss';
-import { getCss } from '../../../utils/themeUtils';
-import { UIComponent } from '../../../types';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { GiHamburgerMenu } from 'react-icons/gi';
+
 import { useScroll } from 'src/hooks/useScroll';
+
+import { UIComponent } from '../../../types';
+import { getCss } from '../../../utils/themeUtils';
+import { Button } from '../../atoms/Button';
+import { NavLinks, NavLinkProps } from '../../molecules/NavLinks';
+
+import defaultCss from './Header.module.scss';
 
 export type HeaderProps = {
   logo: string;

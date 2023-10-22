@@ -99,7 +99,7 @@ export const CISRouteIndicator = ({ id, aspect }: CISRouteIndicatorProps) => {
       break;
   }
 
-  const lightColor: LightColor = greenRoutePointer ? 'green' : 'moonWhite';
+  const lightColor: LightColor = greenRoutePointer ? 'green' : 'white';
 
   const routeInicaRouteIndicatorProps = { lightMatrix, lightColor };
 

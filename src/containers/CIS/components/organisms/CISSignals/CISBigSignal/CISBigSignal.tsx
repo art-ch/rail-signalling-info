@@ -5,10 +5,9 @@ import {
   CISSignalType,
   CISTrainProtectionZone
 } from 'src/containers/CIS/context/CISSignalContext.types';
+import { SignalLights } from 'src/types';
 
 import { CISSignal } from '../CISSignalRoot/CISSignal';
-
-import { SignalLights } from 'src/types';
 
 import css from './CISBigSignal.module.scss';
 

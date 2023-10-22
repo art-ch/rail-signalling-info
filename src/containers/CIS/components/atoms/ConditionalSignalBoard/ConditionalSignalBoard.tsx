@@ -1,8 +1,10 @@
 import React from 'react';
+
 import cx from 'classnames';
 
-import css from './ConditionalSignalBoard.module.scss';
 import { Board } from 'src/components/atoms/Board';
+
+import css from './ConditionalSignalBoard.module.scss';
 
 export type ConditionalSignalBoardProps = { aspect: string };
 

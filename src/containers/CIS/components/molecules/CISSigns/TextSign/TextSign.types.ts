@@ -1,4 +1,5 @@
 import { SignType } from 'src/components/molecules/Sign/Sign.types';
+
 import { CISSignPole } from '../CISSignRoot/CISSignRoot.types';
 
 export type SquareTextSignProps = {

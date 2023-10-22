@@ -1,10 +1,9 @@
 import React from 'react';
 
 import { useCISSignalContext } from 'src/containers/CIS/context';
+import { SignalLights } from 'src/types';
 
 import { CISSignal } from '../CISSignalRoot/CISSignal';
-
-import { SignalLights } from 'src/types';
 
 export type CISBiggestSignalProps = {
   id: number;

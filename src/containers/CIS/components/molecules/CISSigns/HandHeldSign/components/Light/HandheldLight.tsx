@@ -5,11 +5,11 @@ import cx from 'classnames';
 import { Plate } from 'src/components/molecules/Plate';
 
 import { CISSign } from '../../../CISSignRoot';
+import commonCISSignCSS from '../../../CISSignRoot/CISSignRoot.module.scss';
 
 import { HandheldLightProps } from '../../HandHeldSign.types';
 
 import css from './HandheldLight.module.scss';
-import commonCISSignCSS from '../../../CISSignRoot/CISSignRoot.module.scss';
 
 export const HandheldLight = ({
   lightColor = 'turnedOff',

@@ -10,12 +10,14 @@ import { UIComponent } from 'src/types';
 
 import { injectZoneSpecificSignalStyles } from 'src/utils/themeUtils';
 
-import css from './CISDwarfSignal.module.scss';
 import {
   CISSignalSignRenderer,
   CISSignalSignRendererProps
 } from '../../../CISSignalSignRenderer';
+
 import { formatCISDwarfSignalSignRendererProps } from './CISDwarfSignal.utils';
+
+import css from './CISDwarfSignal.module.scss';
 
 export type CISDwarfSignalProps = {
   mainDwarfSignalProps: DwarfSignalProps;

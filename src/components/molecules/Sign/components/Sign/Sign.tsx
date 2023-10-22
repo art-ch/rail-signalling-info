@@ -2,9 +2,9 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import css from './Sign.module.scss';
-
 import { SignProps } from '../../Sign.types';
+
+import css from './Sign.module.scss';
 
 export const Sign = ({
   children,

@@ -1,10 +1,9 @@
 import api from 'src/api';
 
-import { getContent, getZonePageContent } from 'src/utils/cmsUtils';
-
-import { CISZonePage } from 'src/containers/CIS/CISZonePage';
 import { ZonePageMainProps } from 'src/components/pages/ZonePage/ZonePage.types';
+import { CISZonePage } from 'src/containers/CIS/CISZonePage';
 import { CISSignalProvider } from 'src/containers/CIS/context/CISSignalContext';
+import { getZonePageContent } from 'src/utils/cmsUtils';
 
 export default async function CISZone() {
   const cisPage = await api.cms.getZonePage('/zones/cis');

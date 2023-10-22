@@ -6,12 +6,12 @@ import { Board } from 'src/components/atoms/Board';
 
 import { CISSign } from '../CISSignRoot';
 
-import { TextSignVariable } from './components/TextSignVariable';
+import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 import { TextSignProps } from './TextSign.types';
+import { TextSignVariable } from './components/TextSignVariable';
 
 import css from './TextSign.module.scss';
-import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 export const TextSign = (props: TextSignProps) => {
   const {

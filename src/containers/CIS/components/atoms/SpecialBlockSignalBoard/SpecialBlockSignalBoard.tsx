@@ -2,13 +2,13 @@ import React from 'react';
 
 import cx from 'classnames';
 
+import { Board } from 'src/components/atoms/Board';
 import {
   CISSignalType,
   CISTrainProtectionZone
 } from 'src/containers/CIS/context/CISSignalContext.types';
 
 import css from './SpecialBlockSignalBoard.module.scss';
-import { Board } from 'src/components/atoms/Board';
 
 export type SpecialBlockSignalBoardProps = {
   signalProperties?: {

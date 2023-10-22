@@ -1,11 +1,11 @@
 import React from 'react';
+
+import cx from 'classnames';
 import { RichTextContent } from 'contentful';
 
 import { UIComponent } from '../../../types';
-import { RichText } from '../../atoms/RichText';
 import { Button, ButtonProps } from '../../atoms/Button';
-
-import cx from 'classnames';
+import { RichText } from '../../atoms/RichText';
 
 import css from './HomePage.module.scss';
 

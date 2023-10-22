@@ -21,10 +21,6 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'src/theme')]
   },
 
-  compiler: {
-    styledComponents: true
-  },
-
   webpack(config) {
     const sassRules = config.module.rules
       .find((rule) => typeof rule.oneOf === 'object')

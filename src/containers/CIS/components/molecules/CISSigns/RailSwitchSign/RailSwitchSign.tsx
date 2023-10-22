@@ -1,10 +1,7 @@
 import React from 'react';
 
-import Image from 'next/image';
-
 import cx from 'classnames';
-
-import { CISSign } from '../CISSignRoot';
+import Image from 'next/image';
 
 import { Board } from 'src/components/atoms/Board';
 import { Light } from 'src/components/atoms/Light';
@@ -13,10 +10,13 @@ import { useCISSignalContext } from 'src/containers/CIS/context';
 
 import { getImageFromList } from 'src/utils/miscelaneousUtils';
 
+import { CISSign } from '../CISSignRoot';
+
+import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
+
 import { RailSwitchSignProps } from './RailSwitchSign.types';
 
 import css from './RailSwitchSign.module.scss';
-import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 export const RailSwitchSign = ({
   mode,

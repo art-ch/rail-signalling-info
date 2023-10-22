@@ -24,7 +24,7 @@ export type RouteIndicatorProps = {
 
 export const RouteIndicator = ({
   lightMatrix,
-  lightColor = 'moonWhite',
+  lightColor = 'white',
   className,
   frameClassName,
   lineClassName,

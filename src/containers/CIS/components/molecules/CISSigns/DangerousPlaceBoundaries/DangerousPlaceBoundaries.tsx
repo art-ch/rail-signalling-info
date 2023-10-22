@@ -2,8 +2,9 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import css from './DangerousPlaceBoundaries.module.scss';
 import { CISSign } from '../CISSignRoot';
+
+import css from './DangerousPlaceBoundaries.module.scss';
 
 export type DangerousPlaceBoundariesProps = {
   temporary?: boolean;

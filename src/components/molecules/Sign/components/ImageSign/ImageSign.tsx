@@ -1,12 +1,13 @@
 import React, { Children, cloneElement } from 'react';
 
+import cx from 'classnames';
 import Image from 'next/image';
 
-import cx from 'classnames';
+import { isInstanceOfComponentWithinOptionalDiv } from 'src/types';
+
+import { ImageSignProps } from '../../Sign.types';
 
 import css from './ImageSign.module.scss';
-import { ImageSignProps } from '../../Sign.types';
-import { isInstanceOfComponentWithinOptionalDiv } from 'src/types';
 
 export const ImageSign = ({
   children,

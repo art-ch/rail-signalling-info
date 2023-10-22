@@ -9,7 +9,7 @@ import {
   SignalLights
 } from 'src/types';
 
-import { SignModel, SignalModel, GenericOrganismEntityModel } from 'src/types';
+import { SignModel, SignalModel } from 'src/types';
 
 export type GetFilteredSignalsProps = {
   signals: SignalModel[];

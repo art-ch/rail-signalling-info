@@ -1,14 +1,13 @@
 import React from 'react';
 
-import Image from 'next/image';
-
 import cx from 'classnames';
-
-import { CISSign } from '../../../CISSignRoot';
+import Image from 'next/image';
 
 import { useCISSignalContext } from 'src/containers/CIS/context';
 
 import { getImageFromList } from 'src/utils/miscelaneousUtils';
+
+import { CISSign } from '../../../CISSignRoot';
 
 import { HandheldHornProps } from '../../HandHeldSign.types';
 

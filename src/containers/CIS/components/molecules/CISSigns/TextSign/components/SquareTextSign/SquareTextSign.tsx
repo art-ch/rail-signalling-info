@@ -2,9 +2,8 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import { SquareTextSignProps } from '../../TextSign.types';
-
 import css from '../../TextSign.module.scss';
+import { SquareTextSignProps } from '../../TextSign.types';
 
 export const SquareTextSign = ({
   text,

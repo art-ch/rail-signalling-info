@@ -1,9 +1,12 @@
 import { FunctionComponent } from 'react';
+
 import { RichTextContent } from 'contentful';
+
 import {
   FilterPanelProps,
   FilterState
 } from 'src/components/molecules/FilterPanel';
+import { CISSignalState } from 'src/containers/CIS/context/CISSignalContext.types';
 import {
   ImageModel,
   LocomotiveSignalizationModel,
@@ -14,7 +17,7 @@ import {
   SignModel,
   UIComponent
 } from 'src/types';
-import { CISSignalState } from 'src/containers/CIS/context/CISSignalContext.types';
+
 import { TopFilterSectionProps } from '../../molecules/TopFilterSection';
 
 export type ZonePageContentType =

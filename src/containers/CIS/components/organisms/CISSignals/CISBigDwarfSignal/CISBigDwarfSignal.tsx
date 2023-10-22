@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { CISDwarfSignal } from '../CISSignalRoot/CISDwarfSignal';
-
 import { SignalLights } from 'src/types';
+
+import { CISDwarfSignal } from '../CISSignalRoot/CISDwarfSignal';
 
 export type CISBigDwarfSignalProps = {
   aspect: string;

@@ -1,15 +1,14 @@
 import React from 'react';
 
-import { CISImageSign } from './components/CISImageSign';
-import { CISSign } from './components/CISSign';
+import { getAnimatedSignClassName } from 'src/components/molecules/Sign';
 
 import {
   CISImageSignProps,
   CISSignProps,
   CISSignRootProps
 } from './CISSignRoot.types';
-
-import { getAnimatedSignClassName } from 'src/components/molecules/Sign';
+import { CISImageSign } from './components/CISImageSign';
+import { CISSign } from './components/CISSign';
 
 import css from './CISSignRoot.module.scss';
 

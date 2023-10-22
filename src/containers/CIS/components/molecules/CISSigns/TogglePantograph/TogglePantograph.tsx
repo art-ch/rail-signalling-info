@@ -2,14 +2,14 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import { CISSign } from '../CISSignRoot';
-
 import { Board } from 'src/components/atoms/Board';
-
 import { SignType } from 'src/components/molecules/Sign/Sign.types';
 
-import css from './TogglePantograph.module.scss';
+import { CISSign } from '../CISSignRoot';
+
 import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
+
+import css from './TogglePantograph.module.scss';
 
 export type TogglePantographProps = {
   type?: SignType;

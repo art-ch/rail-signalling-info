@@ -1,5 +1,5 @@
-import { SetState } from '../utilityTypes';
 import { ZonePageContent } from '../../components/pages/ZonePage/ZonePage.types';
+import { SetState } from '../utilityTypes';
 
 export type TrainProtectionZoneState<ZoneSpecificTrainProtectionZoneState> = [
   trainProtectionZone: ZoneSpecificTrainProtectionZoneState,

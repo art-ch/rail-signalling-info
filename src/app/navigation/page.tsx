@@ -1,11 +1,11 @@
+import api from '../../api';
+
 import {
   NavigationPage,
   NavigationPageProps
 } from '../../components/pages/NavigationPage';
 
-import api from '../../api';
-
-import { getContent, getImage } from '../../utils/cmsUtils';
+import { getContent } from '../../utils/cmsUtils';
 
 export default async function Navigation() {
   const navigationPage = await api.cms.getNavigationPage('/navigation');

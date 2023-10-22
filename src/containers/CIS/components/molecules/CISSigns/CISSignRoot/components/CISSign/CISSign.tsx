@@ -2,7 +2,7 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import { Sign, getAnimatedSignClassName } from 'src/components/molecules/Sign';
+import { Sign } from 'src/components/molecules/Sign';
 
 import { CISSignProps } from '../../CISSignRoot.types';
 

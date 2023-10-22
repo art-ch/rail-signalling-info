@@ -3,12 +3,13 @@ import React from 'react';
 import cx from 'classnames';
 
 import { Board } from 'src/components/atoms/Board';
+
 import { CISSign } from '../../../CISSignRoot';
 
+import commonCISSignCSS from '../../../CISSignRoot/CISSignRoot.module.scss';
 import { NeutralZoneAttentionProps } from '../../CISNeutralZone.types';
 
 import css from './NeutralZoneAttention.module.scss';
-import commonCISSignCSS from '../../../CISSignRoot/CISSignRoot.module.scss';
 
 export const NeutralZoneAttention = ({
   type = 'onCatenaryPole'
