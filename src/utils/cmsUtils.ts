@@ -1,9 +1,9 @@
-import api from '../api';
-
 import { Asset, Entry } from 'contentful';
 
-import { ZonePageContentModel } from 'src/types';
 import { ZonePageContent } from 'src/components/pages/ZonePage/ZonePage.types';
+import { ZonePageContentModel } from 'src/types';
+
+import api from '../api';
 
 export const getImage = (entry: Asset) => entry.fields.file.url;
 

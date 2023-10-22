@@ -1,8 +1,9 @@
 import { FunctionComponent } from 'react';
 
-import { SignalModel, SignalLights } from 'src/types';
-import { SignalCard } from 'src/components/molecules/SignalCard';
 import { NoResults } from 'src/components/atoms/NoResults';
+import { SignalCard } from 'src/components/molecules/SignalCard';
+
+import { SignalModel, SignalLights } from 'src/types';
 
 export type SignalCardListProps = {
   title: string;

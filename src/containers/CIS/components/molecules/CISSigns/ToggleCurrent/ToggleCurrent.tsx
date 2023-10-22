@@ -5,9 +5,9 @@ import cx from 'classnames';
 import { Board } from 'src/components/atoms/Board';
 
 import { CISSign } from '../CISSignRoot';
+import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 import css from './ToggleCurrent.module.scss';
-import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 export type ToggleCurrentProps = { turnOn?: boolean; doubled?: boolean };
 

@@ -2,9 +2,8 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import { RectangularTextSignProps } from '../../TextSign.types';
-
 import css from '../../TextSign.module.scss';
+import { RectangularTextSignProps } from '../../TextSign.types';
 
 export const RectangularTextSign = ({
   text,

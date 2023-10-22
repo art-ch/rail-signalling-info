@@ -3,12 +3,12 @@ import {
   Options
 } from '@contentful/rich-text-react-renderer';
 
+import { UIComponent } from '../../../types';
+
 import {
   applyClassListToRichText,
   RichTextContentClassNameList
 } from './RichText.utils';
-
-import { UIComponent } from '../../../types';
 
 export type RichTextProps = {
   content: any;

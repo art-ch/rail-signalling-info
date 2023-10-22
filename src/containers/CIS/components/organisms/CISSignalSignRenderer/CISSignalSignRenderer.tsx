@@ -1,15 +1,6 @@
 import React from 'react';
 
 import { OutOfServicePlanks } from 'src/components/molecules/OutOfServicePlanks';
-import { Stripes, StripesProps } from '../Stripes';
-import {
-  CISRouteIndicator,
-  CISRouteIndicatorProps
-} from '../CISRouteIndicator';
-import {
-  ConditionalSignalBoard,
-  ConditionalSignalBoardProps
-} from '../../atoms/ConditionalSignalBoard';
 import {
   CISSignalTypeSign,
   CISSignalTypeSignProps
@@ -18,10 +9,21 @@ import {
   ShortBlockSign,
   ShortBlockSignProps
 } from 'src/containers/CIS/components/molecules/CISSignalSigns/ShortBlockSign';
+
+import {
+  ConditionalSignalBoard,
+  ConditionalSignalBoardProps
+} from '../../atoms/ConditionalSignalBoard';
+
 import {
   SpecialBlockSignalBoard,
   SpecialBlockSignalBoardProps
 } from '../../atoms/SpecialBlockSignalBoard';
+import {
+  CISRouteIndicator,
+  CISRouteIndicatorProps
+} from '../CISRouteIndicator';
+import { Stripes, StripesProps } from '../Stripes';
 
 import css from './CISSignalSignRenderer.module.scss';
 

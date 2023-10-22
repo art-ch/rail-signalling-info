@@ -1,8 +1,8 @@
 import cx from 'classnames';
 
-import { FilterPanel, FilterPanelProps } from '../../molecules/FilterPanel';
-
 import { UIComponent } from '../../../types';
+
+import { FilterPanel, FilterPanelProps } from '../../molecules/FilterPanel';
 
 import css from './FilterSection.module.scss';
 

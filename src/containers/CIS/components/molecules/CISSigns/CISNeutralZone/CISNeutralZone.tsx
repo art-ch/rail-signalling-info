@@ -1,13 +1,12 @@
 import React from 'react';
 
-import { NeutralZoneAttention } from './components/NeutralZoneAttention';
-import { NeutralZoneBoundaries } from './components/NeutralZoneBoundaries';
-
 import {
   NeutralZoneAttentionProps,
   NeutralZoneBoundariesProps,
   CISNeutralZoneSignProps
 } from './CISNeutralZone.types';
+import { NeutralZoneAttention } from './components/NeutralZoneAttention';
+import { NeutralZoneBoundaries } from './components/NeutralZoneBoundaries';
 
 export const CISNeutralZone = ({
   neutralZoneSignType,

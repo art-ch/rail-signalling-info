@@ -2,8 +2,9 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import css from './SignWrapper.module.scss';
 import { SignWrapperProps } from './SignWrapper.types';
+
+import css from './SignWrapper.module.scss';
 
 export const SignWrapper = ({
   containerWidth = 'defaultWidth',

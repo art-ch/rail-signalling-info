@@ -1,7 +1,6 @@
 import React from 'react';
-import { LightColor } from 'src/components/atoms/Light/Light.types';
 
-import { useCISSignalContext } from 'src/containers/CIS/context';
+import { LightColor } from 'src/components/atoms/Light/Light.types';
 
 import { CISDwarfSignal } from '../CISSignalRoot/CISDwarfSignal';
 
@@ -12,10 +11,6 @@ export type CISDwarfManeuveringSignalProps = { aspect: string };
 export const CISDwarfManeuveringSignal = ({
   aspect
 }: CISDwarfManeuveringSignalProps) => {
-  const {
-    state: { signalType }
-  } = useCISSignalContext();
-
   const moonWhiteAspect = aspect === 'moonWhite';
   const blueAspect = aspect === 'blue';
 

@@ -4,10 +4,9 @@ import cx from 'classnames';
 
 import { SignalTypeSign } from 'src/components/molecules/SignalTypeSign';
 import { useCISSignalContext } from 'src/containers/CIS/context';
+import { CISSignalTypeSimplified } from 'src/containers/CIS/context/CISSignalContext.types';
 
 import { getSignalTypeSign, validateSignalType } from './CISSignalType.utils';
-
-import { CISSignalTypeSimplified } from 'src/containers/CIS/context/CISSignalContext.types';
 
 import css from './CISSignalTypeSign.module.scss';
 

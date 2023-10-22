@@ -4,9 +4,9 @@ import { Board } from 'src/components/atoms/Board';
 import { Plate } from 'src/components/molecules/Plate';
 
 import { CISSign } from '../CISSignRoot';
+import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 import css from './Stop.module.scss';
-import commonCISSignCSS from '../CISSignRoot/CISSignRoot.module.scss';
 
 export type StopProps = { nightTime?: boolean };
 

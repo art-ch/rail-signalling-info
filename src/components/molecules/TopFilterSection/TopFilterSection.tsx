@@ -2,12 +2,14 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import { Button, ButtonProps } from 'src/components/atoms/Button';
 import { GoFilter } from 'react-icons/go';
+
+import { Button, ButtonProps } from 'src/components/atoms/Button';
+
 import { Input, InputProps } from 'src/components/atoms/Input';
+import { useScroll } from 'src/hooks/useScroll';
 
 import css from './TopFilterSection.module.scss';
-import { useScroll } from 'src/hooks/useScroll';
 
 export type TopFilterSectionProps = {
   filterToggler: ButtonProps;

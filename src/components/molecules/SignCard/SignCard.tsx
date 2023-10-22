@@ -1,9 +1,10 @@
 import { FunctionComponent } from 'react';
 
-import { ContentCard } from '../ContentCard';
 import { Description } from 'src/components/atoms/Description';
 
 import { SignModel } from 'src/types';
+
+import { ContentCard } from '../ContentCard';
 
 import css from './SignCard.module.scss';
 

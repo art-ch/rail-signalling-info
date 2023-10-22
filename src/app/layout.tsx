@@ -1,13 +1,13 @@
-import { Roboto_Slab, Oswald } from 'next/font/google';
-
 import cx from 'classnames';
-
-import { NavLinkProps } from 'src/components/molecules/NavLinks';
-import { Header, HeaderProps } from 'src/components/organisms/Header';
-import { Footer, FooterProps } from 'src/components/organisms/Footer';
+import { Roboto_Slab, Oswald } from 'next/font/google';
 
 import api from 'src/api';
 import { ASSET_DOMAIN_LINK } from 'src/api/cms';
+
+import { NavLinkProps } from 'src/components/molecules/NavLinks';
+import { Footer, FooterProps } from 'src/components/organisms/Footer';
+import { Header, HeaderProps } from 'src/components/organisms/Header';
+
 import { fetchReferences, getContent, getImage } from 'src/utils/cmsUtils';
 
 import 'src/theme/styles.scss';

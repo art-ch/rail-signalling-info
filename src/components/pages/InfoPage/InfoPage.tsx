@@ -1,12 +1,10 @@
+import cx from 'classnames';
 import { RichTextContent } from 'contentful';
 
-import cx from 'classnames';
-
+import { UIComponent } from '../../../types';
 import { RichText } from '../../atoms/RichText';
 
 import css from './InfoPage.module.scss';
-
-import { UIComponent } from '../../../types';
 
 export type InfoPageProps = {
   title: string;

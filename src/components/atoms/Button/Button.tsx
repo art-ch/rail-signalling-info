@@ -1,11 +1,11 @@
-import Link from 'next/link';
 import cx from 'classnames';
-
-import defaultCss from './Button.module.scss';
+import Link from 'next/link';
 
 import { getCss } from '../../../utils/themeUtils';
 
 import { ButtonProps } from './Button.types';
+
+import defaultCss from './Button.module.scss';
 
 export const Button = ({
   link,

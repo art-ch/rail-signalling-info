@@ -1,14 +1,5 @@
+import { SignalWrapper } from 'src/components/molecules/SignalWrapper';
 import { useCISSignalContext } from 'src/containers/CIS/context';
-
-import { CISBiggestSignal } from '../CISSignals/CISBiggestSignal';
-import { CISBigSignal } from '../CISSignals/CISBigSignal';
-import { CISRegularSignal } from '../CISSignals/CISRegularSignal';
-import { CISSmallSignal } from '../CISSignals/CISSmallSignal';
-import { CISInvitationalSignal } from '../CISSignals/CISInvitationalSignal';
-import { CISDiamondShapedSignal } from '../CISSignals/CISDiamondShapedSignal';
-import { CISBigDwarfSignal } from '../CISSignals/CISBigDwarfSignal';
-import { CISRegularDwarfSignal } from '../CISSignals/CISRegularDwarfSignal';
-import { CISDwarfManeuveringSignal } from '../CISSignals/CISDwarfManeuveringSignal';
 
 import {
   CISTrainProtectionZone,
@@ -17,7 +8,15 @@ import {
 
 import { SignalLights } from 'src/types';
 
-import { SignalWrapper } from 'src/components/molecules/SignalWrapper';
+import { CISBigDwarfSignal } from '../CISSignals/CISBigDwarfSignal';
+import { CISBigSignal } from '../CISSignals/CISBigSignal';
+import { CISBiggestSignal } from '../CISSignals/CISBiggestSignal';
+import { CISDiamondShapedSignal } from '../CISSignals/CISDiamondShapedSignal';
+import { CISDwarfManeuveringSignal } from '../CISSignals/CISDwarfManeuveringSignal';
+import { CISInvitationalSignal } from '../CISSignals/CISInvitationalSignal';
+import { CISRegularDwarfSignal } from '../CISSignals/CISRegularDwarfSignal';
+import { CISRegularSignal } from '../CISSignals/CISRegularSignal';
+import { CISSmallSignal } from '../CISSignals/CISSmallSignal';
 
 import css from './CISSignalRenderer.module.scss';
 

@@ -1,6 +1,6 @@
-import { CISSignal } from '../CISSignalRoot/CISSignal';
-
 import { SignalLights } from 'src/types';
+
+import { CISSignal } from '../CISSignalRoot/CISSignal';
 
 export type CISInvitationalSignalProps = {
   aspect: string;

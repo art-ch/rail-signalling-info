@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 
-import { SignModel } from 'src/types';
-import { SignCard } from 'src/components/molecules/SignCard';
 import { NoResults } from 'src/components/atoms/NoResults';
+import { SignCard } from 'src/components/molecules/SignCard';
+import { SignModel } from 'src/types';
 
 export type SignCardListProps = {
   title: string;

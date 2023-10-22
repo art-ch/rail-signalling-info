@@ -4,10 +4,9 @@ import cx from 'classnames';
 
 import { Light } from 'src/components/atoms/Light';
 import { LightColor } from 'src/components/atoms/Light/Light.types';
+import { SignalLights, UIComponent } from 'src/types';
 
 import { RedYellowLight } from './RedYellowLight';
-
-import { SignalLights, UIComponent } from 'src/types';
 
 import css from './CISLocomotiveSignal.module.scss';
 

@@ -1,9 +1,11 @@
 import React from 'react';
+
 import cx from 'classnames';
 
-import css from './FilterPanel.module.scss';
-import { Button } from '../../atoms/Button';
 import { SetState, UIComponent } from '../../../types';
+import { Button } from '../../atoms/Button';
+
+import css from './FilterPanel.module.scss';
 
 export type FilterState = [
   state: React.ReactNode,

@@ -1,11 +1,11 @@
 import { FunctionComponent } from 'react';
 
-import { ContentCard } from '../ContentCard';
 import { DescriptionBlock } from 'src/components/molecules/DescriptionBlock';
+import { SignalModel, SignalLights } from 'src/types';
+
+import { ContentCard } from '../ContentCard';
 
 import { getFormattedSignalInfo } from './SignalCard.utils';
-
-import { SignalModel, SignalLights } from 'src/types';
 
 export type SignalCardProps = {
   signal: SignalModel;

@@ -2,14 +2,13 @@ import React from 'react';
 
 import { useCISSignalContext } from 'src/containers/CIS/context';
 
-import { CISSignal } from '../CISSignalRoot/CISSignal';
-
 import {
   CISSignalType,
   CISTrainProtectionZone
 } from 'src/containers/CIS/context/CISSignalContext.types';
 import { SignalLights } from 'src/types';
 
+import { CISSignal } from '../CISSignalRoot/CISSignal';
 import CISSignalCSS from '../CISSignalRoot/CISSignal/CISSignal.module.scss';
 
 export type CISRegularSignalProps = { aspect: string; lights: SignalLights };

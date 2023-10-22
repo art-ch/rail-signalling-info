@@ -1,7 +1,8 @@
 import cx from 'classnames';
 
-import css from './Description.module.scss';
 import { UIComponent } from 'src/types';
+
+import css from './Description.module.scss';
 
 export type DescriptionProps = {
   title: string;

@@ -1,4 +1,5 @@
 import cx from 'classnames';
+
 import { DwarfSignalProps } from 'src/components/organisms/DwarfSignal';
 
 import { SignalProps } from 'src/components/organisms/Signal';

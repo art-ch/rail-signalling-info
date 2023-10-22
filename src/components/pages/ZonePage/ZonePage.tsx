@@ -2,21 +2,21 @@ import { useEffect, useState } from 'react';
 
 import cx from 'classnames';
 
-import { RichText } from 'src/components/atoms/RichText';
 import { ButtonProps } from 'src/components/atoms/Button';
-
-import css from './ZonePage.module.scss';
+import { InputProps } from 'src/components/atoms/Input';
+import { RichText } from 'src/components/atoms/RichText';
 import { FilterPanelProps } from 'src/components/molecules/FilterPanel';
+import { useScroll } from 'src/hooks/useScroll';
+
+import { ZonePageContentType, ZonePageProps } from './ZonePage.types';
 import {
   getContentFilterOptions,
   onContentSearch,
   onPasteIntoContentSearchField,
   onSearchContentFieldKeyDown
 } from './ZonePage.utils';
-import { ZonePageContentType, ZonePageProps } from './ZonePage.types';
-import { useScroll } from 'src/hooks/useScroll';
 
-import { InputProps } from 'src/components/atoms/Input';
+import css from './ZonePage.module.scss';
 
 export const ZonePage = ({
   title,

@@ -1,9 +1,9 @@
+import { capitalize, getImageFromList } from 'src/utils/miscelaneousUtils';
+
 import {
   CISSnowPlowSignType,
   GetCISSnowPlowSignImageProps
 } from './CISSnowPlowSign.types';
-
-import { capitalize, getImageFromList } from 'src/utils/miscelaneousUtils';
 
 export const getCISSnowPlowSignName = (type: CISSnowPlowSignType) => {
   let signName = '';

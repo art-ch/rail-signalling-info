@@ -3,9 +3,9 @@ import React from 'react';
 import cx from 'classnames';
 
 import { CISSign } from '../../../CISSignRoot';
+import commonCISSignCSS from '../../../CISSignRoot/CISSignRoot.module.scss';
 
 import css from './ALTPBlockBorder.module.scss';
-import commonCISSignCSS from '../../../CISSignRoot/CISSignRoot.module.scss';
 
 export const ALTPBlockBorder = () => (
   <CISSign pole="permanent">
