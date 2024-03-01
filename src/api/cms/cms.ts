@@ -5,7 +5,8 @@ import {
   HomePageModel,
   InfoPageModel,
   NavigationPageModel,
-  ZonePageModel
+  ZonePageModel,
+  ErrorPageModel
 } from '../../types/models';
 
 const client = createClient({
@@ -42,6 +43,10 @@ const cms = {
 
   async getHomePage(url: string) {
     return await getPage<HomePageModel>(url, 'homePage');
+  },
+
+  async getErrorPage(url: string) {
+    return await getPage<ErrorPageModel>(url, 'errorPage');
   },
 
   async getInfoPage(url: string) {
