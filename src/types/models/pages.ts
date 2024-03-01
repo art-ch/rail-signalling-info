@@ -4,6 +4,12 @@ import { ButtonModel } from './atoms';
 import { NavigationPageLinkModel } from './molecules';
 import { ZonePageContentModel } from './templates';
 
+export type ErrorPageModel = {
+  code: string;
+  hero: RichTextContent;
+  heroButton: ButtonModel;
+};
+
 export type HomePageModel = {
   hero: RichTextContent;
   heroButton: ButtonModel;
