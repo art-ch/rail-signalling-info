@@ -1,8 +1,6 @@
-import { Asset } from 'contentful';
+import { EntryFieldTypes } from 'contentful';
 
-import { FooterProps } from '../../../components/organisms/Footer';
-
-import { NavLinksModel } from '../molecules';
+import { NavLinkModel } from '../molecules';
 
 import {
   SignalLightsAndInfo,
@@ -10,11 +8,20 @@ import {
 } from './organismModelHelperTypes';
 
 export type HeaderModel = {
-  logo: Asset;
-  links: NavLinksModel;
+  contentTypeId: 'header';
+  fields: {
+    logo: EntryFieldTypes.AssetLink;
+    links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<NavLinkModel>>;
+  };
 };
 
-export type FooterModel = Omit<FooterProps, 'links'> & { links: NavLinksModel };
+export type FooterModel = {
+  contentTypeId: 'footer';
+  fields: {
+    links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<NavLinkModel>>;
+    copyright: EntryFieldTypes.RichText;
+  };
+};
 
 export type SignalModel = GenericOrganismEntityModel & SignalLightsAndInfo;
 

@@ -1,4 +1,4 @@
-import { RichTextContent } from 'contentful';
+import { Document } from '@contentful/rich-text-types';
 
 import { RichText } from '../../atoms/RichText';
 import { NavLinks, NavLinkProps } from '../../molecules/NavLinks';
@@ -7,7 +7,7 @@ import css from './Footer.module.scss';
 
 export type FooterProps = {
   links: NavLinkProps[];
-  copyright: RichTextContent;
+  copyright?: Document;
 };
 
 export const Footer = ({ links, copyright }: FooterProps) => {
@@ -23,7 +23,9 @@ export const Footer = ({ links, copyright }: FooterProps) => {
         className={css.footerLinks}
         linkClassName={css.footerLinks__link}
       />
-      <RichText content={copyright} classNameList={copyrightClassNameList} />
+      {copyright && (
+        <RichText content={copyright} classNameList={copyrightClassNameList} />
+      )}
     </div>
   );
 };

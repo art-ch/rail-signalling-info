@@ -1,16 +1,38 @@
-import { Entry, Asset } from 'contentful';
+import { EntryFieldTypes } from 'contentful';
 
-import { ZonePageContent } from '../../components/pages/ZonePage/ZonePage.types';
+import {
+  LocomotiveSignalizationModel,
+  SignModel,
+  SignalTypeSignModel,
+  SignalizationFilterListModel
+} from '..';
 
-import { HeaderModel, FooterModel } from './organisms/organisms';
+import { FooterModel, HeaderModel, SignalModel } from './organisms/organisms';
 
-type LayoutModel<Content> = {
-  title: string;
-  content: { [ContentItem in keyof Content]: Entry<Content[ContentItem]> };
+export type WebsiteModel = {
+  contentTypeId: 'layout';
+  fields: {
+    title: EntryFieldTypes.Text;
+    content: EntryFieldTypes.Array<
+      EntryFieldTypes.EntryLink<HeaderModel | FooterModel>
+    >;
+  };
 };
 
-export type ZonePageContentModel = Entry<
-  Omit<ZonePageContent, 'imageSigns'> & { imageSigns: Asset[] }
->;
-
-export type WebsiteModel = LayoutModel<[HeaderModel, FooterModel]>;
+export type ZonePageContentModel = {
+  contentTypeId: 'content';
+  fields: {
+    signals: EntryFieldTypes.Object<SignalModel[]>;
+    signalTypeSigns: EntryFieldTypes.Object<SignalTypeSignModel[]>;
+    signalFilters: EntryFieldTypes.Object<SignalizationFilterListModel[]>;
+    signs: EntryFieldTypes.Object<SignModel[]>;
+    imageSigns: EntryFieldTypes.Array<EntryFieldTypes.AssetLink>;
+    signFilters: EntryFieldTypes.Object<SignalizationFilterListModel[]>;
+    locomotiveSignalization?: EntryFieldTypes.Object<
+      LocomotiveSignalizationModel[]
+    >;
+    locomotiveSignalizationFilters?: EntryFieldTypes.Object<
+      SignalizationFilterListModel[]
+    >;
+  };
+};

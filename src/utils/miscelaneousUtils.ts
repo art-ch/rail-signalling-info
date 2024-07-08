@@ -5,19 +5,19 @@ export const getImageFromList = ({
   imageTitle,
   customDimensions
 }: {
-  imageList: ImageModel[];
+  imageList?: ImageModel[];
   imageTitle: string;
   customDimensions?: { width: number; height: number };
 }) => {
-  const imageSign = imageList.find((imageSign) =>
-    imageSign.title.includes(imageTitle)
+  const imageSign = imageList?.find((imageSign) =>
+    imageSign.title?.includes(imageTitle)
   );
 
   return {
-    src: imageSign?.file.url || '',
+    src: imageSign?.file?.url || '',
     alt: imageTitle,
-    width: customDimensions?.width || imageSign?.file.details.image?.width,
-    height: customDimensions?.height || imageSign?.file.details.image?.height
+    width: customDimensions?.width || imageSign?.file?.details.image?.width,
+    height: customDimensions?.height || imageSign?.file?.details.image?.height
   };
 };
 
@@ -54,3 +54,6 @@ export const parseAbbreviations = ({
 
   return result;
 };
+
+export const filterOutUndefinedValues = <T>(array?: (T | undefined)[]): T[] =>
+  array?.filter((item): item is T => item !== undefined) || [];

@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { Document } from '@contentful/rich-text-types';
 import cx from 'classnames';
-import { RichTextContent } from 'contentful';
 
 import { Board } from 'src/components/atoms/Board';
 import { Button, ButtonProps } from 'src/components/atoms/Button';
@@ -12,8 +12,8 @@ import css from './ErrorPage.module.scss';
 
 export type ErrorPageProps = {
   code: string;
-  hero: RichTextContent;
-  heroButton: ButtonProps;
+  hero: Document;
+  heroButton?: ButtonProps;
 } & UIComponent;
 
 export const ErrorPage = ({ code, hero, heroButton }: ErrorPageProps) => {
@@ -39,7 +39,7 @@ export const ErrorPage = ({ code, hero, heroButton }: ErrorPageProps) => {
         </div>
         <div className={css.heroContainer}>
           <RichText content={hero} classNameList={classNameList} />
-          <Button {...heroButton}>{heroButton.title}</Button>
+          {heroButton && <Button {...heroButton}>{heroButton.title}</Button>}
         </div>
       </div>
     </div>

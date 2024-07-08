@@ -1,34 +1,66 @@
-import { Asset, Entry } from 'contentful';
+import { EntrySkeletonType } from 'contentful';
 
+import { ZONE_PAGE_CONTENT_STUB, client } from 'src/api/cms';
 import { ZonePageContent } from 'src/components/pages/ZonePage/ZonePage.types';
-import { ZonePageContentModel } from 'src/types';
+import {
+  Entry,
+  UnresolvedAsset,
+  UnresolvedEntry,
+  ZonePageContentModel
+} from 'src/types';
 
-import api from '../api';
+import { filterOutUndefinedValues } from './miscelaneousUtils';
 
-export const getImage = (entry: Asset) => entry.fields.file.url;
+export const getImage = (entry: UnresolvedAsset) => {
+  if ('fields' in entry) {
+    return entry?.fields.file?.url;
+  }
+};
 
-export const getImageWithDetails = (entry: Asset) => entry.fields;
+export const getImageWithDetails = (entry: UnresolvedAsset) => {
+  if ('fields' in entry) {
+    return entry?.fields;
+  }
+};
 
-export const getContent = <T>(entry: Entry<T>) => entry.fields;
+export const getContent = <T extends EntrySkeletonType>(
+  entry: UnresolvedEntry<T>
+) => {
+  if ('fields' in entry) {
+    return entry.fields;
+  }
+};
 
-export const fetchReferences = async <T>(referenceList: Entry<T>[]) => {
+export const fetchReferences = async <T extends EntrySkeletonType>(
+  referenceList?: UnresolvedEntry<T>[]
+) => {
+  if (!referenceList || referenceList.length === 0) {
+    return [];
+  }
+
   const data = (await Promise.all(
     referenceList.map(
-      async (reference) => await api.cms.getEntry(reference.sys.id)
+      async (reference) => await client.getEntry(reference.sys.id)
     )
   )) as Entry<T>[];
 
-  return data.map((reference) => getContent(reference));
+  const fetchedReferences = data.map((reference) => getContent(reference));
+
+  return filterOutUndefinedValues(fetchedReferences);
 };
 
 export const getZonePageContent = (
-  content: ZonePageContentModel
+  content: UnresolvedEntry<ZonePageContentModel>
 ): ZonePageContent => {
   const filteredContent = getContent(content);
 
-  const imageSigns = filteredContent.imageSigns.map((sign) =>
-    getImageWithDetails(sign)
+  const imageSignList = filteredContent?.imageSigns.map((imageSignAsset) =>
+    getImageWithDetails(imageSignAsset)
   );
 
-  return { ...filteredContent, imageSigns } as ZonePageContent;
+  const imageSigns = filterOutUndefinedValues(imageSignList);
+
+  const zonePageContent = filteredContent || ZONE_PAGE_CONTENT_STUB;
+
+  return { ...zonePageContent, imageSigns };
 };

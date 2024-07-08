@@ -1,35 +1,57 @@
-import { RichTextContent } from 'contentful';
+import { EntryFieldTypes } from 'contentful';
 
 import { ButtonModel } from './atoms';
 import { NavigationPageLinkModel } from './molecules';
 import { ZonePageContentModel } from './templates';
 
+export type CommonPageFields = {
+  url: EntryFieldTypes.Text;
+};
+
+export type HeroPageFields = {
+  hero: EntryFieldTypes.RichText;
+  heroButton: EntryFieldTypes.EntryLink<ButtonModel>;
+};
+
 export type ErrorPageModel = {
-  code: string;
-  hero: RichTextContent;
-  heroButton: ButtonModel;
+  contentTypeId: 'errorPage';
+  fields: HeroPageFields &
+    CommonPageFields & {
+      code: EntryFieldTypes.Text;
+    };
 };
 
 export type HomePageModel = {
-  hero: RichTextContent;
-  heroButton: ButtonModel;
+  contentTypeId: 'homePage';
+  fields: CommonPageFields & HeroPageFields;
 };
 
 export type InfoPageModel = {
-  title: string;
-  subtitle: RichTextContent;
-  description: RichTextContent;
+  contentTypeId: 'infoPage';
+  fields: CommonPageFields & {
+    title: EntryFieldTypes.Text;
+    subtitle: EntryFieldTypes.RichText;
+    description: EntryFieldTypes.RichText;
+  };
 };
 
 export type NavigationPageModel = {
-  title: string;
-  description: string;
-  links: NavigationPageLinkModel[];
+  contentTypeId: 'navigationPage';
+  fields: CommonPageFields & {
+    title: EntryFieldTypes.Text;
+    description: EntryFieldTypes.Text;
+    links: EntryFieldTypes.Array<
+      EntryFieldTypes.EntryLink<NavigationPageLinkModel>
+    >;
+  };
 };
 
 export type ZonePageModel = {
-  title: string;
-  description: string;
-  content: ZonePageContentModel;
-  additionalInfo: RichTextContent;
+  contentTypeId: 'zonePage';
+  fields: CommonPageFields & {
+    title: EntryFieldTypes.Text;
+    description: EntryFieldTypes.Text;
+    content: EntryFieldTypes.EntryLink<ZonePageContentModel>;
+    additionalInfo: EntryFieldTypes.RichText;
+  };
 };

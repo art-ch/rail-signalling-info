@@ -16,12 +16,12 @@ import { NavLinks, NavLinkProps } from '../../molecules/NavLinks';
 import defaultCss from './Header.module.scss';
 
 export type HeaderProps = {
-  logo: string;
+  logo?: string;
   links: NavLinkProps[];
 } & UIComponent;
 
 export const Header = ({
-  logo,
+  logo = '',
   links,
   customCss,
   disableDefaultCss

@@ -1,5 +1,5 @@
+import { Document } from '@contentful/rich-text-types';
 import cx from 'classnames';
-import { RichTextContent } from 'contentful';
 
 import { UIComponent } from '../../../types';
 import { RichText } from '../../atoms/RichText';
@@ -8,8 +8,8 @@ import css from './InfoPage.module.scss';
 
 export type InfoPageProps = {
   title: string;
-  subtitle?: RichTextContent;
-  description?: RichTextContent;
+  subtitle?: Document;
+  description?: Document;
 } & UIComponent;
 
 export const InfoPage = ({

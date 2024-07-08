@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { Document } from '@contentful/rich-text-types';
 import cx from 'classnames';
-import { RichTextContent } from 'contentful';
 
 import { UIComponent } from '../../../types';
 import { Button, ButtonProps } from '../../atoms/Button';
@@ -10,8 +10,8 @@ import { RichText } from '../../atoms/RichText';
 import css from './HomePage.module.scss';
 
 export type HomePageProps = {
-  hero: RichTextContent;
-  heroButton: ButtonProps;
+  hero: Document;
+  heroButton?: ButtonProps;
 } & UIComponent;
 
 export const HomePage = ({ hero, heroButton }: HomePageProps) => {
@@ -25,7 +25,7 @@ export const HomePage = ({ hero, heroButton }: HomePageProps) => {
     <main className={css.container}>
       <div className={css.heroContainer}>
         <RichText content={hero} classNameList={classNameList} />
-        <Button {...heroButton}>{heroButton.title}</Button>
+        {heroButton && <Button {...heroButton}>{heroButton.title}</Button>}
       </div>
     </main>
   );

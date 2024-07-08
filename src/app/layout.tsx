@@ -1,16 +1,19 @@
 import cx from 'classnames';
 import { Roboto_Slab, Oswald } from 'next/font/google';
 
-import api from 'src/api';
-import { ASSET_DOMAIN_LINK } from 'src/api/cms';
-
-import { NavLinkProps } from 'src/components/molecules/NavLinks';
+import { ASSET_DOMAIN_LINK, client } from 'src/api/cms';
 import { Footer, FooterProps } from 'src/components/organisms/Footer';
 import { Header, HeaderProps } from 'src/components/organisms/Header';
-
+import {
+  FooterModel,
+  HeaderModel,
+  UnresolvedEntry,
+  WebsiteModel
+} from 'src/types';
 import { fetchReferences, getContent, getImage } from 'src/utils/cmsUtils';
 
 import 'src/theme/styles.scss';
+import { filterOutUndefinedValues } from 'src/utils/miscelaneousUtils';
 
 export const metadata = {
   title: 'Rail Signalling Info',
@@ -36,30 +39,33 @@ export type RootLayoutProps = {
 };
 
 export default async function RootLayout({ children }: RootLayoutProps) {
-  const rootLayoutData = await api.cms.getRootLayout();
+  const rootLayoutData = await client
+    .getEntries<WebsiteModel>({
+      content_type: 'layout',
+      'fields.title[match]': 'Website'
+    })
+    .then((data) => data.items[0]);
 
-  const [header, footer] = rootLayoutData.fields.content;
+  const [header, footer] = getContent(rootLayoutData)?.content || [];
 
-  const headerProps = getContent(header);
+  const headerProps = getContent(header as UnresolvedEntry<HeaderModel>);
 
-  const parsedHeaderLinks = await fetchReferences<NavLinkProps>(
-    headerProps.links
-  );
+  const headerLinkList = filterOutUndefinedValues(headerProps?.links);
+  const formattedHeaderLinks = await fetchReferences(headerLinkList);
 
   const formattedHeaderProps: HeaderProps = {
-    logo: getImage(headerProps.logo),
-    links: parsedHeaderLinks
+    logo: headerProps && getImage(headerProps.logo),
+    links: formattedHeaderLinks
   };
 
-  const footerProps = getContent(footer);
+  const footerProps = getContent(footer as UnresolvedEntry<FooterModel>);
 
-  const parsedFooterLinks = await fetchReferences<NavLinkProps>(
-    footerProps.links
-  );
+  const footerLinkList = filterOutUndefinedValues(footerProps?.links);
+  const formattedFooterLinks = await fetchReferences(footerLinkList);
 
   const formattedFooterProps: FooterProps = {
-    links: parsedFooterLinks,
-    copyright: footerProps.copyright
+    links: formattedFooterLinks,
+    copyright: footerProps?.copyright
   };
 
   return (
