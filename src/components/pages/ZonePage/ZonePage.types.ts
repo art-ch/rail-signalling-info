@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react';
 
-import { RichTextContent } from 'contentful';
+import { Document } from '@contentful/rich-text-types';
+import { AssetFields } from 'contentful';
 
 import {
   FilterPanelProps,
@@ -8,7 +9,6 @@ import {
 } from 'src/components/molecules/FilterPanel';
 import { CISSignalState } from 'src/containers/CIS/context/CISSignalContext.types';
 import {
-  ImageModel,
   LocomotiveSignalizationModel,
   SetState,
   SignalizationFilterListModel,
@@ -49,7 +49,7 @@ export type ZonePageContent = {
   signalTypeSigns: SignalTypeSignModel[];
   signalFilters: SignalizationFilterListModel[];
   signs: SignModel[];
-  imageSigns: ImageModel[];
+  imageSigns?: AssetFields[];
   signFilters: SignalizationFilterListModel[];
   locomotiveSignalization?: LocomotiveSignalizationModel[];
   locomotiveSignalizationFilters?: SignalizationFilterListModel[];
@@ -59,7 +59,7 @@ export type ZonePageMainProps = {
   title: string;
   description: string;
   content: ZonePageContent;
-  additionalInfo: RichTextContent;
+  additionalInfo: Document;
 };
 
 export type ZoneSpecificZonePageSignalState = CISSignalState;

@@ -25,7 +25,7 @@ export const NavigationPage = ({
         <p>{description}</p>
       </div>
       <div className={css.linksContainer}>
-        {links.map((link, index) => (
+        {(links || []).map((link, index) => (
           <NavigationPageLink {...link} key={index} />
         ))}
       </div>

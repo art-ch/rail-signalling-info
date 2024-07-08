@@ -2,6 +2,7 @@ import {
   documentToReactComponents,
   Options
 } from '@contentful/rich-text-react-renderer';
+import { Document } from '@contentful/rich-text-types';
 
 import { UIComponent } from '../../../types';
 
@@ -11,7 +12,7 @@ import {
 } from './RichText.utils';
 
 export type RichTextProps = {
-  content: any;
+  content: Document;
   classNameList?: RichTextContentClassNameList;
 } & UIComponent;
 

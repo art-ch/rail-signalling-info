@@ -1,7 +1,8 @@
-import { Asset, Entry } from 'contentful';
+import { AssetFields, EntryFieldTypes } from 'contentful';
 
-import { ButtonProps } from '../../components/atoms/Button';
+export type ImageModel = AssetFields;
 
-export type ImageModel = Asset['fields'];
-
-export type ButtonModel = Entry<ButtonProps>;
+export type ButtonModel = {
+  contentTypeId: 'button';
+  fields: { title: EntryFieldTypes.Text; link: EntryFieldTypes.Text };
+};

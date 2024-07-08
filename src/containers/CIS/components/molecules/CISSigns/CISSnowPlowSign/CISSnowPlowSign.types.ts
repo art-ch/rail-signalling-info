@@ -9,6 +9,6 @@ export type CISSnowPlowSignType =
 export type CISSnowPlowSignProps = { snowPlowSignType: CISSnowPlowSignType };
 
 export type GetCISSnowPlowSignImageProps = {
-  imageList: ImageModel[];
+  imageList?: ImageModel[];
   imageName: string;
 };
