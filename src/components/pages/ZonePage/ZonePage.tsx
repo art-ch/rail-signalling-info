@@ -50,7 +50,7 @@ export const ZonePage = ({
     onPaste: onPasteIntoContentSearchField
   };
 
-  const filterSectionClickHandlers = () => {
+  const closeFilterSectionHandler = () => {
     setShowSidebar(false);
   };
 
@@ -79,7 +79,7 @@ export const ZonePage = ({
           isFilterSectionVisible={showSidebar}
           shownContentType={shownContentType}
           contentFilter={contentFilter}
-          filterSectionClickHandlers={filterSectionClickHandlers}
+          closeFilterSectionHandler={closeFilterSectionHandler}
           className={cx(css.contentFilters, { [css.translated]: scrollDown })}
         />
       </aside>

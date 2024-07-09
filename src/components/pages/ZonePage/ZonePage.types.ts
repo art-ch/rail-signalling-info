@@ -29,7 +29,8 @@ export type ZonePageFiltersProps = {
   shownContentType: ZonePageContentType;
   contentFilter: FilterPanelProps;
   isFilterSectionVisible: boolean;
-  filterSectionClickHandlers: () => void;
+  filterSectionClickHandlers?: () => void;
+  closeFilterSectionHandler: () => void;
 } & UIComponent;
 
 export type ZonePageContentRendererProps = {
