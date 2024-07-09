@@ -3,5 +3,24 @@
 .filterSection {
   @include fixedSidebar;
 
+  position: relative;
   border: 1px solid $interactiveElementColor;
+}
+
+.closeFilterSectionIcon {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  font-size: 28px;
+}
+
+.closeFilterSectionButtonWrapper {
+  @include flexCenterCenter;
+
+  padding: 1rem 0;
+  border-radius: 0;
+}
+
+.closeFilterSectionButton {
+  border-radius: 0;
 }

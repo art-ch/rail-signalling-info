@@ -15,6 +15,7 @@ export const CISZonePageFilters = ({
   contentFilter,
   isFilterSectionVisible,
   filterSectionClickHandlers,
+  closeFilterSectionHandler,
   className
 }: ZonePageFiltersProps) => {
   const { content, stateWithHandlers } = useCISSignalContext();
@@ -65,6 +66,7 @@ export const CISZonePageFilters = ({
       filters={filters}
       isFilterSectionVisible={isFilterSectionVisible}
       filterSectionClickHandlers={filterSectionClickHandlers}
+      closeFilterSectionHandler={closeFilterSectionHandler}
       className={className}
     />
   );
