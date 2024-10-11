@@ -1,26 +1,30 @@
 import React from 'react';
 
-import {
-  HandheldFlagProps,
-  HandheldHornProps,
-  HandheldLightProps,
-  HandHeldSignProps
-} from './HandHeldSign.types';
+import { HandHeldSignProps } from './HandHeldSign.types';
 
+import { isHandHeldSignWithProps } from './HandHeldSign.utils';
 import { HandheldDisc } from './components/Disc';
 import { HandheldFlag } from './components/Flag';
 import { HandheldHorn } from './components/Horn';
 import { HandheldLight } from './components/Light';
 
-export const HandHeldSign = ({ type, props }: HandHeldSignProps) => {
-  switch (type) {
-    case 'disc':
-      return <HandheldDisc />;
-    case 'flag':
-      return <HandheldFlag {...(props as HandheldFlagProps)} />;
-    case 'light':
-      return <HandheldLight {...(props as HandheldLightProps)} />;
-    case 'horn':
-      return <HandheldHorn {...(props as HandheldHornProps)} />;
+export const HandHeldSign = (props: HandHeldSignProps) => {
+  const { type } = props;
+
+  if (type === 'disc') {
+    return <HandheldDisc />;
   }
+
+  if (isHandHeldSignWithProps(props)) {
+    switch (type) {
+      case 'flag':
+        return <HandheldFlag {...props.props} />;
+      case 'light':
+        return <HandheldLight {...props.props} />;
+      case 'horn':
+        return <HandheldHorn {...props.props} />;
+    }
+  }
+
+  return null;
 };
