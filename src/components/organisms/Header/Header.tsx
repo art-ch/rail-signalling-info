@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-import cx from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { GiHamburgerMenu } from 'react-icons/gi';
-
-import { useScroll } from 'src/hooks/useScroll';
 
 import { UIComponent } from '../../../types';
 import { getCss } from '../../../utils/themeUtils';
@@ -28,27 +25,11 @@ export const Header = ({
 }: HeaderProps) => {
   const [showLinks, setShowLinks] = useState(false);
 
-  const {
-    scrollData: { scrollDirection }
-  } = useScroll();
-
   const css = getCss(defaultCss, customCss, disableDefaultCss);
-
-  const scrollDown = scrollDirection === 'down';
-
-  useEffect(() => {
-    if (scrollDown) {
-      setShowLinks(false);
-    }
-  }, [scrollDown]);
 
   return (
     <>
-      <div
-        className={cx(css.container, {
-          [css.hidden]: scrollDirection === 'down'
-        })}
-      >
+      <div className={css.container}>
         <div className={css.innerCentering}>
           <Link href="/" className={css.logo}>
             <Image src={logo} alt="logo" fill />

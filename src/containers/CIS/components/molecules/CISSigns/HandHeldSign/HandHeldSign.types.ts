@@ -6,7 +6,7 @@ export type HandheldFlagColor = 'red' | 'yellow';
 export type HandheldFlagProps = {
   color: HandheldFlagColor;
   folded?: boolean;
-};
+} & AnimateSign;
 
 export type HandheldHornAnimatedSignPath =
   | 'stop'
@@ -20,7 +20,8 @@ export type HandheldHornProps = AnimateSign<HandheldHornAnimatedSignPath>;
 
 export type HandHeldSignType = 'disc' | 'flag' | 'light' | 'horn';
 
-export type HandHeldSignProps = {
-  type: HandHeldSignType;
-  props?: HandheldFlagProps | HandheldLightProps;
-} & AnimateSign;
+export type HandHeldSignProps =
+  | { type: 'disc' }
+  | { type: 'flag'; props: HandheldFlagProps }
+  | { type: 'light'; props: HandheldLightProps }
+  | { type: 'horn'; props: HandheldHornProps };

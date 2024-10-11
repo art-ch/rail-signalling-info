@@ -6,7 +6,6 @@ import { ButtonProps } from 'src/components/atoms/Button';
 import { InputProps } from 'src/components/atoms/Input';
 import { RichText } from 'src/components/atoms/RichText';
 import { FilterPanelProps } from 'src/components/molecules/FilterPanel';
-import { useScroll } from 'src/hooks/useScroll';
 
 import { ZonePageContentType, ZonePageProps } from './ZonePage.types';
 import {
@@ -32,12 +31,7 @@ export const ZonePage = ({
     useState<ZonePageContentType>('Signals');
   const [shownContent, setShownContent] = useState<string>('');
 
-  const {
-    scrollData: { scrollDirection }
-  } = useScroll();
-
   const { signals, signs, locomotiveSignalization } = content;
-  const scrollDown = scrollDirection === 'down';
 
   const filterTogglerProps: ButtonProps = {
     size: 'mediumSmall',
@@ -80,7 +74,7 @@ export const ZonePage = ({
           shownContentType={shownContentType}
           contentFilter={contentFilter}
           closeFilterSectionHandler={closeFilterSectionHandler}
-          className={cx(css.contentFilters, { [css.translated]: scrollDown })}
+          className={css.contentFilters}
         />
       </aside>
       <main className={css.content}>
